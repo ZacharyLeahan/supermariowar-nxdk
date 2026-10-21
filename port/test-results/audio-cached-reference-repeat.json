@@ -1,0 +1,87 @@
+{
+  "runs": [
+    {
+      "xbe_sha256": "5ef1a48cf712182d868d800df73f3475427e643e8c01ef1dd62e11f4c26f5548",
+      "source_commit": "53292ebf",
+      "source_dirty": null,
+      "reference_build_result": {
+        "xbe_sha256": "5ef1a48cf712182d868d800df73f3475427e643e8c01ef1dd62e11f4c26f5548",
+        "source_commit": "53292ebf",
+        "hardware": "128 MB Stellar Xbox, previously verified 64 MB application budget",
+        "compiled": true,
+        "emulator_tested": false,
+        "hardware_gameplay_match_completed": true,
+        "startup_callbacks": 0,
+        "callbacks": 0,
+        "music_samples_consumed": 0,
+        "effect_starts": 19,
+        "effect_completions": 0,
+        "stderr_bytes": 0,
+        "audio_acceptance_passed": false,
+        "performance_comparison_valid": false,
+        "reason": "Callback never ran, so 61-62 FPS samples do not demonstrate faster active audio mixing. Zero underruns does not establish success.",
+        "physical_stock_64mb_console_tested": false,
+        "audible_quality_confirmed": false
+      },
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 1,
+      "retrieved_at": "2026-10-16T03:56:06.103996+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "callback_samples": [
+        576,
+        1046
+      ],
+      "error_bytes": 0,
+      "scope": "Exact preserved earlier failed XBE, title screen only; not a fix or audible-output test"
+    },
+    {
+      "xbe_sha256": "5ef1a48cf712182d868d800df73f3475427e643e8c01ef1dd62e11f4c26f5548",
+      "source_commit": "53292ebf",
+      "source_dirty": null,
+      "reference_build_result": {
+        "xbe_sha256": "5ef1a48cf712182d868d800df73f3475427e643e8c01ef1dd62e11f4c26f5548",
+        "source_commit": "53292ebf",
+        "hardware": "128 MB Stellar Xbox, previously verified 64 MB application budget",
+        "compiled": true,
+        "emulator_tested": false,
+        "hardware_gameplay_match_completed": true,
+        "startup_callbacks": 0,
+        "callbacks": 0,
+        "music_samples_consumed": 0,
+        "effect_starts": 19,
+        "effect_completions": 0,
+        "stderr_bytes": 0,
+        "audio_acceptance_passed": false,
+        "performance_comparison_valid": false,
+        "reason": "Callback never ran, so 61-62 FPS samples do not demonstrate faster active audio mixing. Zero underruns does not establish success.",
+        "physical_stock_64mb_console_tested": false,
+        "audible_quality_confirmed": false
+      },
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 2,
+      "retrieved_at": "2026-10-16T03:57:42.770057+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "callback_samples": [
+        576,
+        1046
+      ],
+      "error_bytes": 0,
+      "scope": "Exact preserved earlier failed XBE, title screen only; not a fix or audible-output test"
+    }
+  ],
+  "earlier_failure_still_open": true
+}

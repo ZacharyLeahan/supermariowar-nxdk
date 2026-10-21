@@ -1,0 +1,21 @@
+{
+  "source_commit": "373066d1",
+  "xbe_sha256": "5ffd0ecf21df27a82d4a53806616cab2dbbb68e11b9e58ae79eb61fb31bad67e",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "startup_callbacks": 5,
+  "startup_interrupt_connected": 1,
+  "stderr_bytes": 0,
+  "hal_trace_lines": [
+    "[audio-hal-init] phase=reset-asserted-before-delay global_control=00000000 global_status=00300100",
+    "[audio-hal-init] phase=reset-asserted-after-delay global_control=00000000 global_status=00300100",
+    "[audio-hal-init] reset_delay_status=00000000 requested_100ns=-10",
+    "[audio-hal-init] interrupt_connected=1",
+    "[audio-hal-init] phase=interrupt-connect-returned global_control=00000002 global_status=00300100"
+  ],
+  "log_sha256": "05dadc4f796107d0ed656c45c67cd7928c64b0f8dc0c7dab7daa21b2c449f6b9",
+  "scope": "One healthy startup. Codec-ready status remained high in both reset-asserted samples; this alone proves neither bad reset nor root cause. No failed-startup interrupt registration observed. Logging changes timing.",
+  "audio_startup_resolved": false,
+  "evidence": "workspace logs/hardware/audio-hal-init-trace-first"
+}

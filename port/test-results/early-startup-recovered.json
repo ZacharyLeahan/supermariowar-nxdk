@@ -1,0 +1,15 @@
+{
+  "xbe_sha256": "e00bb91f7626d82e282da8ebaa9eac733d805f43e77437af184c16783fd9f0b8",
+  "source_commit": "d453631a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audio_startup_resolved": false,
+  "startup_callbacks": 0,
+  "stderr_bytes": 0,
+  "last_completed_log": "audio-pci raw_slot=6 id=01b110de command_status=00b00007 bar2=fec00000",
+  "pci_ac97_bus_master_enabled_at_sample": true,
+  "hang_location": "Unknown; log stops after PCI slot 6 output, before later audio diagnostics. This is not proof that the PCI scan caused the hang.",
+  "scope": "Failed launch archived after physical recovery. No startup watchdog in this older executable. Save bytes retrieved without mutation.",
+  "evidence": "workspace logs/hardware/recovered-early-startup-20261016",
+  "log_sha256": "0e606c31678246d32702674d3efc0590362c0fce9f990b5454a9650d4b498f6e"
+}

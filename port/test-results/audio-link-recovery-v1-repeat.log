@@ -1,0 +1,131 @@
+--- run 1 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+STDERR:
+
+
+--- run 2 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=0
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-link-experiment] progress_window before=0 after=0
+[audio-link-experiment] skipped callbacks=0 control=00000002 status=00300100
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+STDERR:
+[audio] Output callback stalled at startup; DMA failure samples recorded
+
+
+--- run 3 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+STDERR:
+
+
+--- run 4 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+STDERR:
+
+
+--- run 5 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=469 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+STDERR:
+
+
+--- run 6 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=0
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-link-experiment] progress_window before=0 after=0
+[audio-link-experiment] skipped callbacks=0 control=00000002 status=00300100
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+STDERR:
+[audio] Output callback stalled at startup; DMA failure samples recorded
+
+
+--- run 7 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+STDERR:
+
+
+--- run 8 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+STDERR:
+
+
+--- run 9 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=0
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-link-experiment] progress_window before=0 after=0
+[audio-link-experiment] skipped callbacks=0 control=00000002 status=00300100
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+STDERR:
+[audio] Output callback stalled at startup; DMA failure samples recorded
+
+
+--- run 10 ---
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=0
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-link-experiment] progress_window before=0 after=0
+[audio-link-experiment] skipped callbacks=0 control=00000002 status=00300100
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+STDERR:
+[audio] Output callback stalled at startup; DMA failure samples recorded
+

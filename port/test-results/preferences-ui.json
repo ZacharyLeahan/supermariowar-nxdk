@@ -1,0 +1,24 @@
+{
+  "xbe_sha256": "2c054f45e32e1a71fd1111d625cba3871ebd57f118bb6499205f6d8fcb4cb0a2",
+  "source_commit": "6858aaaa5a5fca02b93575f7ccac34ed30b79632",
+  "build_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1"
+  ],
+  "installed_as": "F:\\SMW-nxdk-test\\preferences-test.xbe",
+  "original_default_preserved": true,
+  "preference_reboot_roundtrip_passed": true,
+  "preference_fields_tested": [
+    "soundvolume",
+    "musicvolume"
+  ],
+  "saved_half_volume": 64,
+  "restored_full_volume": 128,
+  "ui_after_reboot": "half-volume-after-reboot.jpg",
+  "normal_exit_clean": false,
+  "normal_exit_issue": "SDL assertion when destroying null texture in window-surface path; subsequent source fix requires regression",
+  "phase2_stderr_bytes": 243,
+  "audible_quality_confirmed": false,
+  "full_preferences_implemented": false,
+  "emulator_tested": false
+}

@@ -1,0 +1,37 @@
+{
+  "source_commit": "bfac4a335f77eced3f6e18a2324654b9a10c52b6",
+  "xbe_sha256": "0146f93a1c5848c9141f576c246fe93063711f471a9f62f02e6dbc87b963edb0",
+  "scope": "One virtual Xbox pad: change P1 Jump A to Y, swap Use Item Y to A, save via Controls-to-Main, reboot and visually verify reloaded bindings.",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "save_schema": 7,
+  "saved_generation": 15,
+  "saved_record_bytes": 3264,
+  "save_crc_verified": true,
+  "saved_record_sha256": "ff693ca53cc42890df0acddf6f3beab37860a849505d9be3430aa84b681131e3",
+  "p1_game_bindings": [
+    10,
+    11,
+    15,
+    9,
+    14,
+    12,
+    19,
+    13
+  ],
+  "reloaded_ui_jump": "Button 4 (Y)",
+  "reloaded_ui_use_item": "Button 1 (A)",
+  "first_session_stderr_bytes": 0,
+  "first_session_last_callbacks": 5169,
+  "first_session_recorded_underruns": [
+    0
+  ],
+  "installed_default_preserved_sha256": "fc5cd6f7fd071e9e62b5d62f141a3762509aa86a3366d26ecd6d103e8df891a1",
+  "full_evidence": "workspace logs/hardware/controller-autosave-v7-session and controller-autosave-v7-reload; saved source diffs and BUILD-INFO.json included",
+  "limitations": [
+    "Second-session logs still pending retrieval at this checkpoint.",
+    "Missing-device, keyboard-capture recovery and restored defaults require subsequent tests.",
+    "Four physical pads, cold boot, audible quality and final release acceptance remain unverified."
+  ]
+}

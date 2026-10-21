@@ -1,0 +1,36 @@
+{
+  "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+  "source_commit": "0476190f5a1827a49befacb5dd6b777ddff94005",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "saved_reload_ui_verified": {
+    "classic_lives": 5,
+    "time_seconds": 600,
+    "extra_time": 0,
+    "players": "one virtual human and three CPU"
+  },
+  "saved_load_log_lines": [
+    "[save] controls loaded profiles=1,1,1,1 players=1,2,2,2",
+    "[save] goals loaded classic=5 time=600",
+    "[save] preferences loaded generation=3 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0"
+  ],
+  "post_reload_match": {
+    "mode": "Classic",
+    "lives": 5,
+    "map": "0smw.map",
+    "winner": 4,
+    "remaining_lives": 4
+  },
+  "startup_callbacks": 5,
+  "last_callbacks": 7053,
+  "maximum_underruns": 0,
+  "decoder_loops_last": 0,
+  "minimum_available_kib": 19832,
+  "normal_exit_clean_audio_close": true,
+  "stderr_bytes": 0,
+  "failure_markers": [],
+  "log_sha256": "a50bc246366d0b8b630146c39d1eae4c0e7acf526b2d4fb725f2cc9c506ad21a",
+  "audible_output_confirmed": false,
+  "four_physical_pads_tested": false,
+  "physical_64mb_tested": false
+}

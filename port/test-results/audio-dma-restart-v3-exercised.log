@@ -1,0 +1,35 @@
+=== completed run 1 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== completed run 2 ===
+[audio] startup callbacks=0
+[audio-dma-failure] sample=0 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300000 analog base=003f3370 remaining=1696 prefetched=0 digital base=003f3270 remaining=1728 prefetched=0
+[audio-dma-descriptors] sample=0 next=2 expected_analog_base=003f3370 expected_digital_base=003f3270
+[audio-dma-buffer] sample=0 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=0 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=1 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300000 analog base=003f3370 remaining=1696 prefetched=0 digital base=003f3270 remaining=1728 prefetched=0
+[audio-dma-descriptors] sample=1 next=2 expected_analog_base=003f3370 expected_digital_base=003f3270
+[audio-dma-buffer] sample=1 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=1 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=2 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300000 analog base=003f3370 remaining=1696 prefetched=0 digital base=003f3270 remaining=1728 prefetched=0
+[audio-dma-descriptors] sample=2 next=2 expected_analog_base=003f3370 expected_digital_base=003f3270
+[audio-dma-buffer] sample=2 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=2 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=3 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300000 analog base=003f3370 remaining=1696 prefetched=0 digital base=003f3270 remaining=1728 prefetched=0
+[audio-dma-descriptors] sample=3 next=2 expected_analog_base=003f3370 expected_digital_base=003f3270
+[audio-dma-buffer] sample=3 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=3 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-link-experiment] progress_window before=0 after=0
+[audio-link-experiment] protocol=v3 dma_restart frozen_ms=50 analog_position=000006a0 digital_position=000006c0 control=00000002 status=00300000
+[audio-link-experiment] protocol=v3 end elapsed_ms=100 callbacks=0 next=2 control=00000002 status=00300000 analog_position=00000800 digital_position=00000800
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0

@@ -1,0 +1,63 @@
+{
+  "runs": [
+    {
+      "probe": "audio-startup",
+      "xbe_sha256": "c910ed82f9ff6321fbb884aa3c02c8d6513dc425011a686c70ffe57589c4d754",
+      "source_commit": "7de5dc85f6cd938fdedaf00fbe566a4c351a2f6a",
+      "source_dirty": false,
+      "probe_source_sha256": "ebac53bf68d54a0d091c9d41f6a6b07d76f3b3e174ee226c17c3466c42026535",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "nxdk_sdl_tracked_changes": "",
+      "silent_probe": true,
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 1,
+      "retrieved_at": "2026-10-16T03:46:10.968946+00:00",
+      "log_retrieved": true,
+      "log_sha256": "98a4c14f96b8b57c1d1111b677dc8abfd76e28ba86cb7a3cc2be34471e536f22",
+      "callbacks_at_10_seconds": 476,
+      "scope": "Warm-launch silent standalone SDL baseline; no game or decoder; does not disprove intermittent failure"
+    },
+    {
+      "probe": "audio-startup",
+      "xbe_sha256": "c910ed82f9ff6321fbb884aa3c02c8d6513dc425011a686c70ffe57589c4d754",
+      "source_commit": "7de5dc85f6cd938fdedaf00fbe566a4c351a2f6a",
+      "source_dirty": false,
+      "probe_source_sha256": "ebac53bf68d54a0d091c9d41f6a6b07d76f3b3e174ee226c17c3466c42026535",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "nxdk_sdl_tracked_changes": "",
+      "silent_probe": true,
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 2,
+      "retrieved_at": "2026-10-16T03:47:27.454050+00:00",
+      "log_retrieved": true,
+      "log_sha256": "98a4c14f96b8b57c1d1111b677dc8abfd76e28ba86cb7a3cc2be34471e536f22",
+      "callbacks_at_10_seconds": 476,
+      "scope": "Warm-launch silent standalone SDL baseline; no game or decoder; does not disprove intermittent failure"
+    },
+    {
+      "probe": "audio-startup",
+      "xbe_sha256": "c910ed82f9ff6321fbb884aa3c02c8d6513dc425011a686c70ffe57589c4d754",
+      "source_commit": "7de5dc85f6cd938fdedaf00fbe566a4c351a2f6a",
+      "source_dirty": false,
+      "probe_source_sha256": "ebac53bf68d54a0d091c9d41f6a6b07d76f3b3e174ee226c17c3466c42026535",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "nxdk_sdl_tracked_changes": "",
+      "silent_probe": true,
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 3,
+      "retrieved_at": "2026-10-16T03:48:43.965189+00:00",
+      "log_retrieved": true,
+      "log_sha256": "98a4c14f96b8b57c1d1111b677dc8abfd76e28ba86cb7a3cc2be34471e536f22",
+      "callbacks_at_10_seconds": 476,
+      "scope": "Warm-launch silent standalone SDL baseline; no game or decoder; does not disprove intermittent failure"
+    }
+  ],
+  "failures_reproduced": 0,
+  "speaker_output_tested": false
+}

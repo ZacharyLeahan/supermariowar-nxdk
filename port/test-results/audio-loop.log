@@ -1,0 +1,64 @@
+[memory] startup: total=131072 KiB available=60284 KiB image=4116 KiB
+[memory] resource lists: total=131072 KiB available=60156 KiB image=4116 KiB
+[audio] startup callbacks=5
+[memory] running: total=131072 KiB available=29288 KiB image=4116 KiB
+[audio] callbacks=590 nonzero_buffers=1 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[memory] running: total=131072 KiB available=22092 KiB image=4116 KiB
+[audio] callbacks=1172 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=1 paused=0
+[audio] Ogg memory stream D:\data\music\game\Standard\Menu\menu.ogg rate=44100 channels=2 generation=1 compressed_bytes=1282580
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=1645 nonzero_buffers=449 effect_starts=1 completed=1
+[audio] music_samples=823296 decoded_frames=421888 underruns=0 loops=0 buffered_samples=93936 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=2116 nonzero_buffers=920 effect_starts=1 completed=1
+[audio] music_samples=1785856 decoded_frames=864256 underruns=0 loops=0 buffered_samples=94304 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=2587 nonzero_buffers=1391 effect_starts=1 completed=1
+[audio] music_samples=2750464 decoded_frames=1306624 underruns=0 loops=0 buffered_samples=92624 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=3058 nonzero_buffers=1862 effect_starts=1 completed=1
+[audio] music_samples=3715072 decoded_frames=1748992 underruns=0 loops=0 buffered_samples=90944 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=3529 nonzero_buffers=2333 effect_starts=1 completed=1
+[audio] music_samples=4679680 decoded_frames=2191360 underruns=0 loops=0 buffered_samples=89264 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=4000 nonzero_buffers=2804 effect_starts=1 completed=1
+[audio] music_samples=5646336 decoded_frames=2637824 underruns=0 loops=0 buffered_samples=94452 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=4471 nonzero_buffers=3275 effect_starts=1 completed=1
+[audio] music_samples=6610944 decoded_frames=3080192 underruns=0 loops=0 buffered_samples=92772 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=4942 nonzero_buffers=3746 effect_starts=1 completed=1
+[audio] music_samples=7575552 decoded_frames=3522560 underruns=0 loops=0 buffered_samples=91092 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=5413 nonzero_buffers=4217 effect_starts=1 completed=1
+[audio] music_samples=8538112 decoded_frames=3964928 underruns=0 loops=0 buffered_samples=91460 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=5884 nonzero_buffers=4688 effect_starts=1 completed=1
+[audio] music_samples=9502720 decoded_frames=4407296 underruns=0 loops=0 buffered_samples=89780 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=6355 nonzero_buffers=5159 effect_starts=1 completed=1
+[audio] music_samples=10467328 decoded_frames=4849664 underruns=0 loops=0 buffered_samples=88100 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=6825 nonzero_buffers=5629 effect_starts=1 completed=1
+[audio] music_samples=11431936 decoded_frames=5296128 underruns=0 loops=0 buffered_samples=95336 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=7296 nonzero_buffers=6100 effect_starts=1 completed=1
+[audio] music_samples=12396544 decoded_frames=5738496 underruns=0 loops=0 buffered_samples=93656 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=7767 nonzero_buffers=6571 effect_starts=1 completed=1
+[audio] music_samples=13361152 decoded_frames=6180864 underruns=0 loops=0 buffered_samples=91976 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=8239 nonzero_buffers=7043 effect_starts=1 completed=1
+[audio] music_samples=14325760 decoded_frames=6623232 underruns=0 loops=0 buffered_samples=90296 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=8709 nonzero_buffers=7513 effect_starts=1 completed=1
+[audio] music_samples=15290368 decoded_frames=7069440 underruns=0 loops=1 buffered_samples=95858 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=9181 nonzero_buffers=7985 effect_starts=1 completed=1
+[audio] music_samples=16254976 decoded_frames=7511808 underruns=0 loops=1 buffered_samples=94178 active=1 paused=0
+[memory] running: total=131072 KiB available=20840 KiB image=4116 KiB
+[audio] callbacks=9652 nonzero_buffers=8456 effect_starts=1 completed=1
+[audio] music_samples=17219584 decoded_frames=7954176 underruns=0 loops=1 buffered_samples=92498 active=1 paused=0

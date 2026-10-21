@@ -1,0 +1,21 @@
+--- run 1 ---
+Silent SDL close fault probe; suppress real completion notifications
+startup_callbacks=10
+fault_callbacks_before=10 after=10 withheld=2
+stage=close-enter watchdog_ms=3000
+stage=close-return elapsed_ms=121
+result=closed-after-withheld-notifications
+
+--- run 2 ---
+Silent SDL close fault probe; suppress real completion notifications
+startup_callbacks=10
+fault_callbacks_before=10 after=10 withheld=2
+stage=close-enter watchdog_ms=3000
+stage=close-return elapsed_ms=121
+result=closed-after-withheld-notifications
+
+--- run 3 ---
+Silent SDL close fault probe; suppress real completion notifications
+startup_callbacks=1
+fault_callbacks_before=1 after=1 withheld=0
+result=inconclusive fault did not block output

@@ -1,0 +1,34 @@
+{
+  "kind": "bad-crc",
+  "reference_build": {
+    "source_commit": "89ccc01a2a2d7a1cc52f318713386414964f4fb2",
+    "source_dirty": false,
+    "xbe_sha256": "057c8de21cdbc5d9c99e9d1fc0cb08b6f9bb5020c93dfc54e1de9ac5ac82be4d",
+    "build_flags": [
+      "PREFERENCES=1",
+      "AUDIO_FAILURE_DMA_LOG=1",
+      "EXIT_WATCHDOG_MS=0"
+    ],
+    "compiled": true,
+    "hardware_tested": false,
+    "emulator_tested": false
+  },
+  "generations": [
+    13,
+    14
+  ],
+  "fixture_slot": 1,
+  "expected_loaded_generation": 13,
+  "original_slots_restored": true,
+  "recovery_verified": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "original_sha256": [
+    "6bb35c9995f975a6972fa7ac7aa8bb1c4957e9077cfe7f731b42cbd6150e5c96",
+    "417dc4eb00f968665420960a5a79557edc2b2dc8476f9d8f2ce419e4931d8cdd"
+  ],
+  "fixture_sha256": "796edba213bc26fc42c42195d31b18b855c22eacc095783e5fea7c5e28f3c242",
+  "startup_runner_exit_code": 0,
+  "stderr_bytes": 0,
+  "hardware_tested": true
+}

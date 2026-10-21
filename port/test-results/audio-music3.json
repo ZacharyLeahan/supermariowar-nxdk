@@ -1,0 +1,37 @@
+{
+  "xbe_sha256": "fc5cd6f7fd071e9e62b5d62f141a3762509aa86a3366d26ecd6d103e8df891a1",
+  "source_commit": "964bb665",
+  "compiled": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox, previously verified 64 MB application budget",
+  "hardware_tested": true,
+  "startup_callbacks": 5,
+  "callbacks": 11900,
+  "nonzero_buffers": 6069,
+  "music_samples_consumed": 11479784,
+  "effect_starts": 240,
+  "effect_completions": 172,
+  "underruns": 0,
+  "music_loops_observed": 0,
+  "stderr_bytes": 0,
+  "minimum_available_memory_kib": 19964,
+  "match": "0smw, Time Limit 30 seconds, one virtual controller plus three CPU players; completed",
+  "other_checks": [
+    "Classic match started",
+    "movement/jump",
+    "pause/resume",
+    "quit to settings",
+    "music track replacement",
+    "stage-clear to menu transition",
+    "Back+Start reboot"
+  ],
+  "steady_gameplay_fps_samples": [
+    52.1,
+    56.1,
+    53.9,
+    54.0
+  ],
+  "audible_quality_confirmed": false,
+  "physical_stock_64mb_console_tested": false,
+  "four_physical_controllers_tested": false
+}

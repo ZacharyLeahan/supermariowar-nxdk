@@ -1,0 +1,10 @@
+Silent HAL drain/resume probe: 4096 bytes per buffer; 100 ms gaps
+submitted=1 callbacks=1 analog_civ=0 lvi=0 status=0 control=29 digital_civ=0 lvi=0 status=0 control=29
+submitted=2 callbacks=2 analog_civ=1 lvi=1 status=0 control=29 digital_civ=0 lvi=1 status=0 control=29
+submitted=3 callbacks=3 analog_civ=0 lvi=2 status=0 control=29 digital_civ=0 lvi=2 status=0 control=29
+submitted=4 callbacks=4 analog_civ=1 lvi=3 status=0 control=29 digital_civ=1 lvi=3 status=0 control=29
+submitted=5 callbacks=5 analog_civ=1 lvi=4 status=0 control=29 digital_civ=1 lvi=4 status=0 control=29
+submitted=6 callbacks=6 analog_civ=1 lvi=5 status=0 control=29 digital_civ=0 lvi=5 status=0 control=29
+submitted=7 callbacks=7 analog_civ=6 lvi=6 status=0 control=29 digital_civ=6 lvi=6 status=0 control=29
+submitted=8 callbacks=8 analog_civ=3 lvi=7 status=0 control=29 digital_civ=3 lvi=7 status=0 control=29
+done; callback count should continue to advance after each resubmission

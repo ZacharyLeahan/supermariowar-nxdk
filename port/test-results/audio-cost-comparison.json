@@ -1,0 +1,127 @@
+{
+  "scope": "Single silent native run per build on the same 128 MB Xbox; SDK source unchanged. No device, rendering or listening test. SDK cache optimization is the variable.",
+  "runs": [
+    {
+      "label": "before",
+      "evidence": {
+        "probe": "audio-cost",
+        "xbe_sha256": "874df2b777b84839117bba76703a1b40136f987c1ad97e45d2ebf7261b723193",
+        "source_commit": "e145aef6d4dc890a62129d7f29b041cbd4227480",
+        "source_dirty": false,
+        "probe_source_sha256": "2238eb35ce044dc4090792fc18fe0955e842f81bf3f7c6dbcc55e92fde8ee8c6",
+        "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+        "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+        "nxdk_sdl_tracked_changes": "",
+        "asset_sha256": {
+          "menu.ogg": "80321a3ce91f7fbb27ae68c9c93daf27d2d89b272a8d47cfdd2ded3e4b5be002",
+          "overground.ogg": "a473be05e9d1f5a6cdc6b89381bbc5548a4c13c399100ec305c176c14216fa19",
+          "stageclear.ogg": "08da2fcbad8ff737404fd16c3659d47db83a7869b36ed4bcac8d16d99390f199"
+        },
+        "data_revision": "1139d89ef7e38368536317afd7db54cea2488d5b",
+        "silent_probe": true,
+        "audible_quality_tested": false,
+        "emulator_tested": false,
+        "run": 1,
+        "retrieved_at": "2026-10-16T04:38:22.347164+00:00",
+        "log_retrieved": true,
+        "log_sha256": "5ed352e69aacb73f9dc110db45634c8cfd39f3e3c7168dd766f4beb2bf5a9f10",
+        "log_text": "Silent audio-cost probe: first 15 seconds per track; no device opened, no game rendering\ntrack=menu.ogg compressed_bytes=1282580 read_ms=130\nmode=decode-only rate=44100 source_frames=663552 source_ms=15046 decode_ms=346 resample_ms=0 wall_ms=346 output_frames=0 ok=1\nmode=decode-resample rate=44100 source_frames=663552 source_ms=15046 decode_ms=392 resample_ms=1459 wall_ms=1852 output_frames=721638 ok=1\ntrack=overground.ogg compressed_bytes=3766228 read_ms=382\nmode=decode-only rate=44100 source_frames=663552 source_ms=15046 decode_ms=471 resample_ms=0 wall_ms=471 output_frames=0 ok=1\nmode=decode-resample rate=44100 source_frames=663552 source_ms=15046 decode_ms=529 resample_ms=1464 wall_ms=1993 output_frames=721638 ok=1\ntrack=stageclear.ogg compressed_bytes=91171 read_ms=9\nmode=decode-only rate=44100 source_frames=294400 source_ms=6675 decode_ms=162 resample_ms=0 wall_ms=162 output_frames=0 ok=1\nmode=decode-resample rate=44100 source_frames=294400 source_ms=6675 decode_ms=184 resample_ms=650 wall_ms=834 output_frames=319860 ok=1\nresult=passed failures=0\n"
+      },
+      "sdk_libraries": {
+        "library_sha256": {
+          "SDL2_test.lib": "69752ccef07b4a59374205cf408ead62e1198bbb705c924ede4c54483ecf83d8",
+          "libSDL2.lib": "f1082e2c6d9521c34a03491a6f224d9b35f70688a893c77dc80803322e2104d8",
+          "libSDL2_image.lib": "1a367f4cc7620046793b043a4e3fda832248702335e4a609adec0dee03372a04",
+          "libSDL_ttf.lib": "d9c521e3d9abcfe20c10a9c82609f6522883057fb88c43556ac0785381a6955e",
+          "libc++.lib": "f00be1fbf9af9932bf4d6f78261793d963ff7c1d2cf635e938ccb84c3537c92a",
+          "libfreetype.lib": "9cceaefe28230b98314b2b0b3f78f9f78fefa8b38820691b21e6b9b64e60e835",
+          "libjpeg.lib": "61666c8a85b620f1dcaad8584ebf36542caf35ecd9617eac430532a56ce072fb",
+          "libnxdk.lib": "4f9591c6d5f770fb920ffbcc3d7d7ed730ee31a517a50eb23231f0df51eb7f83",
+          "libnxdk_automount_d.lib": "2d8acc8d550140c13bfcee11d20cdb3a117825c1532c670742b3f8b76382e55a",
+          "libnxdk_hal.lib": "9e7590ee31cea9b056776815fa1fdb279d3b83a1216a02044c7c7f074b0816a1",
+          "libnxdk_net.lib": "ef76158eb06a086632739f0944094efc7f8864457abcb3358197e7ab318bdb79",
+          "libpbkit.lib": "1a3179602c0f8e98c2052471530b8ee584543fe44c26a24c1e631cee5b21f2e5",
+          "libpdclib.lib": "8514d165ca89c55d950585034f93716364977b532606068548752b068d140913",
+          "libpng.lib": "83e3963377b6f456b3b129d6c1640275b4cdd97bc013ed21c2ca502867de12b0",
+          "libwinapi.lib": "f7a111b0025664612153fb267462e64e5eed0093f8ecbd58dc694e674dcf48ba",
+          "libxboxrt.lib": "f6fb6abc5adb0a7adf851ad7aeec407e2ef8d03b0689d9ddd02ecc190cbced75",
+          "libzlib.lib": "61d94ca384d0584a503ad61d842f3aeae74a92435bc233e63b4447088852f99c",
+          "nxdk_usb.lib": "2ef3040f415608b241ec8d90e10e9842e6a8eca3f6cd5f625d47fca805d34fd2",
+          "winmm.lib": "0da5f079b9f27565cb52ee3913a9ab8d82f34445b9b6b3823b987b160a67cce5"
+        },
+        "scope": "Cached SDK libraries built before explicit clean optimized rebuild; source pins unchanged. Initial SDL example supplied no optimization flags; representative disassembly is unoptimized.",
+        "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
+      }
+    },
+    {
+      "label": "after",
+      "evidence": {
+        "probe": "audio-cost",
+        "xbe_sha256": "f29ee8401aa48dc7639c568b1dff15f34d0064ca7a0ced9a9f7825169c4a9893",
+        "source_commit": "fe295fd68ae3791664f0482a7630c4d6c35574af",
+        "source_dirty": false,
+        "probe_source_sha256": "2238eb35ce044dc4090792fc18fe0955e842f81bf3f7c6dbcc55e92fde8ee8c6",
+        "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+        "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+        "nxdk_sdl_tracked_changes": "",
+        "asset_sha256": {
+          "menu.ogg": "80321a3ce91f7fbb27ae68c9c93daf27d2d89b272a8d47cfdd2ded3e4b5be002",
+          "overground.ogg": "a473be05e9d1f5a6cdc6b89381bbc5548a4c13c399100ec305c176c14216fa19",
+          "stageclear.ogg": "08da2fcbad8ff737404fd16c3659d47db83a7869b36ed4bcac8d16d99390f199"
+        },
+        "data_revision": "1139d89ef7e38368536317afd7db54cea2488d5b",
+        "silent_probe": true,
+        "audible_quality_tested": false,
+        "emulator_tested": false,
+        "run": 1,
+        "retrieved_at": "2026-10-16T04:41:30.638075+00:00",
+        "log_retrieved": true,
+        "log_sha256": "bbff148ee24db1c67409891c77b570312206eb7fb8cd4efc5fd1bd5cb956bf45",
+        "log_text": "Silent audio-cost probe: first 15 seconds per track; no device opened, no game rendering\ntrack=menu.ogg compressed_bytes=1282580 read_ms=97\nmode=decode-only rate=44100 source_frames=663552 source_ms=15046 decode_ms=307 resample_ms=0 wall_ms=307 output_frames=0 ok=1\nmode=decode-resample rate=44100 source_frames=663552 source_ms=15046 decode_ms=352 resample_ms=742 wall_ms=1095 output_frames=721638 ok=1\ntrack=overground.ogg compressed_bytes=3766228 read_ms=285\nmode=decode-only rate=44100 source_frames=663552 source_ms=15046 decode_ms=430 resample_ms=0 wall_ms=430 output_frames=0 ok=1\nmode=decode-resample rate=44100 source_frames=663552 source_ms=15046 decode_ms=486 resample_ms=745 wall_ms=1231 output_frames=721638 ok=1\ntrack=stageclear.ogg compressed_bytes=91171 read_ms=7\nmode=decode-only rate=44100 source_frames=294400 source_ms=6675 decode_ms=144 resample_ms=0 wall_ms=144 output_frames=0 ok=1\nmode=decode-resample rate=44100 source_frames=294400 source_ms=6675 decode_ms=166 resample_ms=333 wall_ms=499 output_frames=319860 ok=1\nresult=passed failures=0\n"
+      },
+      "sdk_libraries": {
+        "library_sha256": {
+          "SDL2_test.lib": "fa70c47b9bb28181f44b896e830a33528c7d5dc28e62bb0d7224a0239fd97aa3",
+          "libSDL2.lib": "ca10584a6ae862ea01149085da28e50e8d996b6c9fc61cfe82930384a8f144e1",
+          "libSDL2_image.lib": "e0816d4d80a58a7274b5f25e003d52934e22a13d88cfdd9f4dbc9f40aca26105",
+          "libSDL_ttf.lib": "4e71a4b419aa1a408e9463960bd0f785769678c4af2be94690d8135d7f66ca70",
+          "libc++.lib": "dab116a9a884ba4672f792a763e8263d51641116dc8514c7c7119c421198ff77",
+          "libfreetype.lib": "4a25d41abb194de3e79a362346f9eaf2f35e772f76584414134de45563240962",
+          "libjpeg.lib": "61666c8a85b620f1dcaad8584ebf36542caf35ecd9617eac430532a56ce072fb",
+          "libnxdk.lib": "7808c4fe0718439a1eaaf9f72e819a4bab4837d691b02a21260a65818275f9d1",
+          "libnxdk_automount_d.lib": "f6da3c7e6ab8730c1d21d478e67f25567a88b486516362d9b57eba58f84ad7fa",
+          "libnxdk_hal.lib": "c6005e8ab6b73bdb2f1895bbd0c0710ac9a800fd544abaa0815e37dbb4764d25",
+          "libnxdk_net.lib": "d2e3afa32484c718edd2f4aac4f719400cccfe1cf0f06cfcbd4a492fe6b8e5a7",
+          "libpbkit.lib": "a9fe4f8a1a4657f7175ed205aafa584f4f72ee3e15db16f9b020ab505e8c5925",
+          "libpdclib.lib": "08e2817ed4b7a1eff8d494da9a581b4d0e55bea54121b9f545b77ae5257cad05",
+          "libpng.lib": "c9a053f498b2b1b463b291907644deb71bd4e4cd87730676b071ff916a567cdf",
+          "libwinapi.lib": "a0424a712f2582ec6064d69f71633979af92eb66a17cc20ff7edba5588df13f5",
+          "libxboxrt.lib": "ebc99828f78f9aaf078452e1d2fa053f31de993b123f2135c02ca67362a452b9",
+          "libzlib.lib": "d89b168f1328c8c7d2d1c7c68d9736a4e42e40f022f739bba96f00be7862c6c7",
+          "nxdk_usb.lib": "aa67e25faa438679abbd7a2728fd577351f01be3d3c73cbbe3b07a7a96ebd361",
+          "winmm.lib": "b44f833bba4693ebfb861b566e92c3040a1f0c607767a5446ba7bc5264a5706f"
+        },
+        "build": "clean SDK and game rebuild through versioned wrapper with -O2 -DNDEBUG, unchanged source revisions",
+        "build_command": "ports/nxdk/tools/build-game.sh clean-build PREFERENCES=1 AUDIO_FAILURE_DMA_LOG=1",
+        "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
+      }
+    }
+  ],
+  "resample_ms": {
+    "menu": [
+      1459,
+      742
+    ],
+    "overground": [
+      1464,
+      745
+    ],
+    "stageclear": [
+      650,
+      333
+    ]
+  },
+  "frame_counts_identical": true,
+  "audio_startup_resolved": false,
+  "gameplay_performance_tested": false
+}

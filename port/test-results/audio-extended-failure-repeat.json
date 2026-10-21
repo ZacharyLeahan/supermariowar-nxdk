@@ -1,0 +1,176 @@
+{
+  "scope": "Five warm game launches on 128 MB Stellar Xbox with optimized unmodified SDK; failure-only register logger, no HAL restart or replaced callbacks.",
+  "runs": [
+    {
+      "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+      "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+      "source_dirty": null,
+      "reference_build_result": {
+        "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+        "source_dirty": false,
+        "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+        "build_flags": [
+          "PREFERENCES=1",
+          "AUDIO_FAILURE_DMA_LOG=1",
+          "EXIT_WATCHDOG_MS=0"
+        ],
+        "compiled": true,
+        "hardware_tested": false,
+        "emulator_tested": false,
+        "payload_schema": 4,
+        "sdk_tracked_source_changed": false
+      },
+      "diagnostic_variant": "historical-reference",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 1,
+      "retrieved_at": "2026-10-16T05:18:21.275220+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "stderr_bytes": 0,
+      "hardware_tested": true
+    },
+    {
+      "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+      "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+      "source_dirty": null,
+      "reference_build_result": {
+        "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+        "source_dirty": false,
+        "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+        "build_flags": [
+          "PREFERENCES=1",
+          "AUDIO_FAILURE_DMA_LOG=1",
+          "EXIT_WATCHDOG_MS=0"
+        ],
+        "compiled": true,
+        "hardware_tested": false,
+        "emulator_tested": false,
+        "payload_schema": 4,
+        "sdk_tracked_source_changed": false
+      },
+      "diagnostic_variant": "historical-reference",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 2,
+      "retrieved_at": "2026-10-16T05:19:58.051810+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "stderr_bytes": 0,
+      "hardware_tested": true
+    },
+    {
+      "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+      "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+      "source_dirty": null,
+      "reference_build_result": {
+        "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+        "source_dirty": false,
+        "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+        "build_flags": [
+          "PREFERENCES=1",
+          "AUDIO_FAILURE_DMA_LOG=1",
+          "EXIT_WATCHDOG_MS=0"
+        ],
+        "compiled": true,
+        "hardware_tested": false,
+        "emulator_tested": false,
+        "payload_schema": 4,
+        "sdk_tracked_source_changed": false
+      },
+      "diagnostic_variant": "historical-reference",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 3,
+      "retrieved_at": "2026-10-16T05:21:34.813335+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": 5,
+      "last_callbacks": 1407,
+      "stderr_bytes": 0,
+      "hardware_tested": true
+    },
+    {
+      "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+      "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+      "source_dirty": null,
+      "reference_build_result": {
+        "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+        "source_dirty": false,
+        "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+        "build_flags": [
+          "PREFERENCES=1",
+          "AUDIO_FAILURE_DMA_LOG=1",
+          "EXIT_WATCHDOG_MS=0"
+        ],
+        "compiled": true,
+        "hardware_tested": false,
+        "emulator_tested": false,
+        "payload_schema": 4,
+        "sdk_tracked_source_changed": false
+      },
+      "diagnostic_variant": "historical-reference",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 4,
+      "retrieved_at": "2026-10-16T05:23:11.661206+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "stderr_bytes": 0,
+      "hardware_tested": true
+    },
+    {
+      "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+      "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+      "source_dirty": null,
+      "reference_build_result": {
+        "source_commit": "8233f2cfbce549b0db453dc28385e869aff86d13",
+        "source_dirty": false,
+        "xbe_sha256": "88397100df062ffaddb0ed0bb594423b661fb749a2eb2f4c2fb4529b5271d14d",
+        "build_flags": [
+          "PREFERENCES=1",
+          "AUDIO_FAILURE_DMA_LOG=1",
+          "EXIT_WATCHDOG_MS=0"
+        ],
+        "compiled": true,
+        "hardware_tested": false,
+        "emulator_tested": false,
+        "payload_schema": 4,
+        "sdk_tracked_source_changed": false
+      },
+      "diagnostic_variant": "historical-reference",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 5,
+      "retrieved_at": "2026-10-16T05:24:59.614478+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "stderr_bytes": 73,
+      "hardware_tested": true
+    }
+  ],
+  "initialization_issue_resolved": false,
+  "failure_register_interpretation": "On run 5 both DMA engines retain nonzero remaining samples at CIV0/LVI1 across 4 samples. Base registers match descriptors. Global control=2; global status=0x00300000 lacks the 0x100 bit XAudioInit waited for. This does not prove why the hardware stopped.",
+  "root_cause_confirmed": false,
+  "link_shutoff_bit_hypothesis_supported": false,
+  "audible_quality_confirmed": false,
+  "emulator_tested": false
+}

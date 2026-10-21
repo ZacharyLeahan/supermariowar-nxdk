@@ -1,0 +1,7 @@
+Silent SDL close fault probe; suppress real completion notifications
+startup_callbacks=10
+fault_callbacks_before=10 after=10 withheld=2
+stage=close-enter watchdog_ms=3000
+
+WATCHDOG:
+audio close exceeded 3000 ms; watchdog reboot

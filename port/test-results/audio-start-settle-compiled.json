@@ -1,0 +1,15 @@
+{
+  "source_commit": "5eca1f6884c7ae1b2ee3730127e3b52fb69f162f",
+  "xbe_sha256": "2fdd64317ad11c5d652315fdaa4b39dbda8edbc76d80494b6de927e196171e08",
+  "compiled": true,
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "AUDIO_INIT_STATE_LOG=1",
+    "AUDIO_START_SETTLE_EXPERIMENT=1",
+    "STARTUP_WATCHDOG_MS=45000"
+  ],
+  "scope": "Same-image paired 0/1000-us delay before first XAudioPlay after each XAudioInit. Configuration read before audio initialization; wait timed with performance counter. No SDK source/library mutation, no fake callbacks, no PCI scan or recovery protocol. Requires native baseline failures before any prevention claim."
+}

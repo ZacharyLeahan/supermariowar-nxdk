@@ -1,0 +1,37 @@
+{
+  "kind": "both-bad-crc",
+  "runner_sha256": "4524a525cafa87f9ba38f35cc084d461357cc4409a0bfc2a747c07b3d394a4a7",
+  "generations": [
+    59,
+    58
+  ],
+  "payload_schemas": [
+    8,
+    8
+  ],
+  "fixture_slot": 0,
+  "fixture_slots": [
+    0,
+    1
+  ],
+  "expected_loaded_generation": null,
+  "original_slots_restored": true,
+  "recovery_verified": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "original_sha256": [
+    "72cd045bf255d5277ac211fd5d27544650e9c60c244d237f42365615b6891ca7",
+    "184c6f50320f409786999630bc176116b9818d042d26bfe1937cb2d109f56828"
+  ],
+  "fixture_sha256": "72dddbec704db5d6be41c787e5a40d9c15cf069a526cfbfc38c13bb7b5e3c89e",
+  "startup_runner_exit_code": 0,
+  "loaded_defaults": true,
+  "loaded_expected_state": true,
+  "stderr_bytes": 0,
+  "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+  "source_commit": "0476190f5a1827a49befacb5dd6b777ddff94005",
+  "compiled": true,
+  "hardware_tested": true,
+  "evidence": "logs/hardware/opaque-copy-both-bad-crc",
+  "startup_callbacks": 5
+}

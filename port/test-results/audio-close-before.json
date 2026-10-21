@@ -1,0 +1,29 @@
+{
+  "probe": "audio-close",
+  "xbe_sha256": "b7b3cec84a61782394d9be7d1de8e5a2883487b2314918b9c1649286f5d7a30f",
+  "source_commit": "9b6cc9293da370a50822251e7a78e189ef192ffd",
+  "source_dirty": false,
+  "probe_source_sha256": "164db037736db5362f048ec23c0533039563466d240a6bc201d7de19e2bf3934",
+  "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "nxdk_sdl_tracked_changes": "",
+  "nxdk_sdl_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "asset_sha256": {},
+  "data_revision": "1139d89ef7e38368536317afd7db54cea2488d5b",
+  "silent_probe": true,
+  "audible_quality_tested": false,
+  "emulator_tested": false,
+  "run": 1,
+  "retrieved_at": "2026-10-16T05:29:54.430536+00:00",
+  "log_retrieved": true,
+  "log_sha256": "ddf4ad37072d37bb1431992735e9108668e3c3648bb4292e6352113a0b072daa",
+  "log_text": "Silent SDL close fault probe; suppress real completion notifications\nstartup_callbacks=10\nfault_callbacks_before=10 after=10 withheld=2\nstage=close-enter watchdog_ms=3000\n",
+  "extra_logs_present": [
+    "close-watchdog.log"
+  ],
+  "hardware_tested": true,
+  "fault_injection_verified": true,
+  "close_returned": false,
+  "watchdog_fired": true,
+  "startup_stall_reproduced": false
+}

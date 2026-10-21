@@ -1,0 +1,20 @@
+{
+  "xbe_sha256": "6141c697ae8ce3d76eda91cc1b030b3252ea8e3fa6109398b069a43b4a45327c",
+  "source_commit": "dda2a59127489941d63b2f909bdc3f7a76beefa4",
+  "hardware_result": "failed: unresponsive initial Main; physical restart required",
+  "recovery_program_verified": true,
+  "log_sha256": "f18002f200788170d7a9a5523cf013722f944083e8c961572423026c914b21f5",
+  "stderr_bytes": 0,
+  "frame_inventory": {
+    "mr-dda2a5912748-0-s.bmp": {
+      "bytes": 921654,
+      "sha256": "d1c1e30216b584b4f9235a1a144137019385580183c811c4b575069ef5c2941d"
+    },
+    "mr-dda2a5912748-0-b.bmp": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "finding": "Screen BMP complete, backdrop BMP empty, no capture-completion log. Stall narrowed to backdrop capture, precise cause unproven. No before/after comparison.",
+  "candidate_ec21_changed": false
+}

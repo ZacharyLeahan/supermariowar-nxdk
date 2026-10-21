@@ -1,0 +1,105 @@
+{
+  "xbe_sha256": "608d7833cc0d01974ba427195546b01b32cb1d3f171932679b2d37ec9efc95f2",
+  "source_commit": "9333b9b0602570f30a65897addd8060b091c4f82",
+  "mode": "clean",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_tested": false,
+  "twenty_cycle_lifecycle_pass": false,
+  "rejection_reasons": [
+    "not-20-progressing-cycles",
+    "not-20-returned-closes",
+    "interrupt-connection-not-confirmed",
+    "terminal-success-missing",
+    "clean-shutdown-ledger-incomplete"
+  ],
+  "callbacks": [
+    [
+      1,
+      10,
+      19
+    ],
+    [
+      2,
+      10,
+      19
+    ],
+    [
+      3,
+      10,
+      19
+    ],
+    [
+      4,
+      1,
+      1
+    ]
+  ],
+  "closes": [
+    [
+      1,
+      69,
+      0,
+      15931
+    ],
+    [
+      2,
+      69,
+      0,
+      15931
+    ],
+    [
+      3,
+      69,
+      0,
+      15931
+    ],
+    [
+      4,
+      146,
+      0,
+      15931
+    ]
+  ],
+  "connection_returns": [
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ]
+  ],
+  "stderr_bytes": 0,
+  "extra_logs_present": [
+    "audio-reopen-error.log"
+  ],
+  "available_pages_after_each_close": [
+    15931,
+    15931,
+    15931,
+    15931
+  ],
+  "scope": "Silent in-process lifecycle only; memory samples reported, not a proof of no leaks or prevention of cross-application startup failures.",
+  "log_sha256": "e1af42482aea070462b5d7e8b41ad6e114a2b974034962425b74be4f39dab102",
+  "runner_sha256": "573059bdc61ad176c33ab04de850983b8f8aabbce221b33c2d451a338772e565",
+  "evidence": "workspace logs/hardware/audio-reopen-clean-reversal",
+  "observed_failure": "Cycle four callbacks stayed 1 to 1 despite successful interrupt connection. Clean close returned in 146 ms without watchdog or failure fallback. Therefore cleanup alone does not fix startup reliability."
+}

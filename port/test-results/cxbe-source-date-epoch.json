@@ -1,0 +1,28 @@
+{
+  "scope": "Host converter only; identical existing PE input. No full-build or runtime qualification.",
+  "pe_sha256": "a3d8e95bbeaa2b91cfdb8a1fa6fc23ad6b0e1e44a5af41e78b4274b19e82d8db",
+  "cxbe_sha256": "17f20bac9e7d160a4525e5c7c387fadb53a0478917a04a39b1a9a2f1d7c9fab4",
+  "valid_cases": [
+    {
+      "epoch": "0",
+      "sha256": "fdf94e988835e8f2e5782d3b93345e38974c15154b525c0f7f90912ef657dbdd",
+      "identical_reconversion": true
+    },
+    {
+      "epoch": "1700000000",
+      "sha256": "f0b1a7e8e7bcf7e43ef4bd8595858a3a3811d668a083f0d6f806205d1ceaa75f",
+      "identical_reconversion": true
+    },
+    {
+      "epoch": "0001700000000",
+      "sha256": "f0b1a7e8e7bcf7e43ef4bd8595858a3a3811d668a083f0d6f806205d1ceaa75f",
+      "identical_reconversion": true
+    },
+    {
+      "epoch": "4294967295",
+      "sha256": "f4a097a9c8a4ee1c2ca73d787b858075db0df8fd3bfaa0a28a4bc609d4f380d5",
+      "identical_reconversion": true
+    }
+  ],
+  "invalid_cases_rejected_without_overwrite": 8
+}

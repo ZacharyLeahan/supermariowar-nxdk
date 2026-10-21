@@ -1,0 +1,53 @@
+{
+  "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+  "source_commit": "0476190f5a1827a49befacb5dd6b777ddff94005",
+  "sdk_commit": "c5c574c6ba5778595b782064044ff56b407e835b",
+  "package": "artifacts/smw-nxdk-copy-candidate.zip",
+  "package_sha256": "1961bdc80ecaad8610a909a10568dac47fcc59c1b852fc09df4108de8bcca3ed",
+  "source_archive": "artifacts/opaque-copy-source-v2.zip",
+  "source_archive_sha256": "6735268d0744ea44b9f125c64df5ce8b790fc99bd223d0646df4caef536b52d7",
+  "source_bundle_restore_verified": true,
+  "package_inventory_entries_verified": 1511,
+  "all_zip_members_readback_verified": true,
+  "installed_directory": "/F/SMW-nxdk-final-test",
+  "installed_program": "default.xbe",
+  "installed_files_verified_before_launch": 1512,
+  "xbe_init_flags": 5,
+  "xbe_limit64mb_flag": true,
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "qualified_results": [
+    "opaque-copy-menu.json",
+    "opaque-copy-full-clean-rebuild.json",
+    "opaque-copy-invalid-controller.json",
+    "opaque-copy-both-bad-crc.json",
+    "opaque-copy-classic-and-ten-minute.json",
+    "opaque-copy-reload-and-match.json",
+    "opaque-copy-captured-audio.json"
+  ],
+  "healthy_starts_observed": {
+    "total": 6,
+    "normal_menu_exit": 1,
+    "save_fixture_startup_and_reset": 2,
+    "fresh_install_two_matches_normal_exit": 1,
+    "saved_reload_one_match_normal_exit": 1,
+    "scope": "Heterogeneous starts, not a five-run automated warm-launch batch.",
+    "captured_audio_match_normal_exit": 1
+  },
+  "audible_output_confirmed": false,
+  "four_physical_pads_tested": false,
+  "physical_64mb_tested": false,
+  "cold_power_other_firmware_qualified": false,
+  "status": "Private test candidate; not fully accepted or publicly released. Console back in XBMC; no active hardware job.",
+  "remaining": [
+    "Human review of music/effects/loops and all controller actions",
+    "Four physical controllers, simultaneous input, ports and reconnect",
+    "Physical stock64MB and broader cold/firmware coverage; current 128MB console only, software64MB budget probe separate",
+    "Broader modes/packs require explicit coverage; do not infer all game content acceptance"
+  ],
+  "sdk_rle_candidate_patch_applied": false,
+  "captured_audio_output_confirmed": true,
+  "audio_capture_loop_gapless_qualified": false,
+  "audio_capture_limit": "KVM long stream lost39600 frames (0.825sec); subjective quality and seamless output not accepted."
+}

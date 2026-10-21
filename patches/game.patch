@@ -1,0 +1,3394 @@
+diff --git a/.gitignore b/.gitignore
+index a5309e6b906e70a1fc24bd8ec477aa4918ef403e..9a894a41fda72e9c5504db6f5f833131f9181d89 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,20 @@
+ build*/
++
++# nxdk build products
++*.obj
++*.cpp.d
++ports/nxdk/main.exe
++ports/nxdk/bin/
++ports/nxdk/main.lib
++
++# nxdk C dependency files
++*.c.d
++
++# nxdk game compiler configuration stamp
++ports/nxdk/.build-config*
++
++# Native probe build products and local Python caches
++ports/nxdk/probes/*/bin/
++ports/nxdk/probes/*/main.exe
++ports/nxdk/probes/*/main.lib
++ports/nxdk/tools/__pycache__/
+diff --git a/.gitmodules b/.gitmodules
+index 1b4486b21d5f66304b0763c9be39ec7c35038ed2..f72b1782db5ccec5846167533aa97b111a1a0399 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -1,3 +1,9 @@
+ [submodule "data"]
+ 	path = data
+ 	url = https://github.com/mmatyas/supermariowar-data
++[submodule "ports/nxdk/vendor/fmt"]
++	path = ports/nxdk/vendor/fmt
++	url = https://github.com/fmtlib/fmt
++[submodule "ports/nxdk/vendor/stb"]
++	path = ports/nxdk/vendor/stb
++	url = https://github.com/nothings/stb.git
+diff --git a/ports/nxdk/vendor/fmt b/ports/nxdk/vendor/fmt
+new file mode 160000
+index 0000000000000000000000000000000000000000..e69e5f977d458f2650bb346dadf2ad30c5320281
+--- /dev/null
++++ b/ports/nxdk/vendor/fmt
+@@ -0,0 +1 @@
++Subproject commit e69e5f977d458f2650bb346dadf2ad30c5320281
+diff --git a/ports/nxdk/vendor/stb b/ports/nxdk/vendor/stb
+new file mode 160000
+index 0000000000000000000000000000000000000000..2c980bb59875b0d32144a71867fbdebb2f77cd20
+--- /dev/null
++++ b/ports/nxdk/vendor/stb
+@@ -0,0 +1 @@
++Subproject commit 2c980bb59875b0d32144a71867fbdebb2f77cd20
+diff --git a/src/common/CmdArgs.cpp b/src/common/CmdArgs.cpp
+index 29e275859413b7aa5bfa1905c555e7c0b5ed0773..ac7dd221c7f3be3d63680ec2bead57c73ba0c893 100644
+--- a/src/common/CmdArgs.cpp
++++ b/src/common/CmdArgs.cpp
+@@ -1,6 +1,6 @@
+ #include "CmdArgs.h"
+ 
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(NXDK)
+ #define WIN32_LEAN_AND_MEAN
+ #include <windows.h>
+ #endif
+@@ -10,7 +10,7 @@ namespace cmd {
+ 
+ void show_windows_console()
+ {
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(NXDK)
+     AllocConsole();
+     freopen("CONIN$", "r", stdin);
+     freopen("CONOUT$", "w", stderr);
+diff --git a/src/common/FileIO.cpp b/src/common/FileIO.cpp
+index 99e2277dd689d9ab53fe0bfba67f165677865e53..4b73a2c121930b3fb728187feca09c8c575edfc2 100644
+--- a/src/common/FileIO.cpp
++++ b/src/common/FileIO.cpp
+@@ -1,10 +1,11 @@
++#include "util/Error.h"
+ #include "FileIO.h"
+ 
+ #include "SDL_endian.h"
+ 
+ #include <cassert>
+ #include <cstring>
+-#include <format>
++#include "util/Format.h"
+ #include <stdexcept>
+ 
+ BinaryFile::BinaryFile(const char* path, const char* options)
+@@ -17,7 +18,7 @@ BinaryFile::BinaryFile(const std::string& path, const char* options)
+     : BinaryFile(path.c_str(), options)
+ {}
+ 
+-BinaryFile::BinaryFile(const std::filesystem::path& path, const char* options)
++BinaryFile::BinaryFile(const smw::filesystem::path& path, const char* options)
+     : BinaryFile(path.string().c_str(), options)
+ {}
+ 
+@@ -31,7 +32,7 @@ void BinaryFile::fread_or_exception(void* ptr, size_t size, size_t count)
+ {
+     long pos = ftell(fp);
+     if (fread(ptr, size, count, fp) != count) {
+-        std::string msg = std::format(
++        std::string msg = smw::format(
+             "File read error in {}\n"
+             "Tried to read {} bytes at position {}, but failed\n"
+             "The file might be damaged, or it's not in the expected format",
+@@ -40,7 +41,7 @@ void BinaryFile::fread_or_exception(void* ptr, size_t size, size_t count)
+             msg += "\nSystem message: ";
+             msg += std::strerror(errno);
+         }
+-        throw std::runtime_error(std::move(msg));
++        SMW_RAISE(std::runtime_error(std::move(msg)));
+     }
+ }
+ 
+@@ -48,7 +49,7 @@ void BinaryFile::fwrite_or_exception(const void* ptr, size_t size, size_t count)
+ {
+     long pos = ftell(fp);
+     if (fwrite(ptr, size, count, fp) != count) {
+-        std::string msg = std::format(
++        std::string msg = smw::format(
+             "File write error in {}\n"
+             "Tried to write {} bytes at position {}, but failed",
+             m_path, size * count, pos);
+@@ -56,7 +57,7 @@ void BinaryFile::fwrite_or_exception(const void* ptr, size_t size, size_t count)
+             msg += "\nSystem message: ";
+             msg += std::strerror(errno);
+         }
+-        throw std::runtime_error(std::move(msg));
++        SMW_RAISE(std::runtime_error(std::move(msg)));
+     }
+ }
+ 
+@@ -131,11 +132,11 @@ void BinaryFile::write_float(float value)
+ void BinaryFile::write_string_long(const std::string& string)
+ {
+     if (string.length() > 255) {
+-        std::string msg = std::format(
++        std::string msg = smw::format(
+             "File write error in {}\n"
+             "Tried to write a text that would take {} bytes, which is too long",
+             m_path, string.length());
+-        throw std::runtime_error(std::move(msg));
++        SMW_RAISE(std::runtime_error(std::move(msg)));
+     }
+ 
+     // NOTE: `size()` doesn't include the terminating null byte
+diff --git a/src/common/FileIO.h b/src/common/FileIO.h
+index 384450ce3b1e6afd6a963109430d30f8ba3556e9..86b01038c81af3cbec0e8058e59f56f34eacf208 100644
+--- a/src/common/FileIO.h
++++ b/src/common/FileIO.h
+@@ -3,14 +3,14 @@
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <string>
+-#include <filesystem>
++#include "util/Filesystem.h"
+ 
+ 
+ class BinaryFile {
+ public:
+     BinaryFile(const char* path, const char* options);
+     BinaryFile(const std::string& path, const char* options);
+-    BinaryFile(const std::filesystem::path& path, const char* options);
++    BinaryFile(const smw::filesystem::path& path, const char* options);
+     ~BinaryFile();
+ 
+     bool is_open() const { return fp; };
+@@ -38,7 +38,7 @@ public:
+     void read_raw(void*, size_t);
+ 
+ private:
+-    const char* m_path = nullptr;
++    std::string m_path;
+     FILE* fp = nullptr;
+ 
+     void fread_or_exception(void*, size_t, size_t);
+diff --git a/src/common/FileList.cpp b/src/common/FileList.cpp
+index ebb1415c59fa00261f9faa4a699acb86fb305b43..e14a1e019addd0d79ed90e73a0136d20445f0a3e 100644
+--- a/src/common/FileList.cpp
++++ b/src/common/FileList.cpp
+@@ -1,3 +1,4 @@
++#include "util/Error.h"
+ #include "FileList.h"
+ 
+ #include "linfunc.h"
+@@ -7,11 +8,11 @@
+ #include "util/DirIterator.h"
+ 
+ #include <algorithm>
+-#include <format>
++#include "util/Format.h"
+ #include <fstream>
+ #include <variant>
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ #define MAXCATEGORYTRACKS 64
+ 
+@@ -267,16 +268,23 @@ MusicList::MusicList()
+ {
+     SubdirsIterator dir(convertPath("music/game/"));
+     while (auto path = dir.next()) {
+-        try {
++#ifndef NXDK
++    try
++#endif
++    {
+             if (auto pack = MusicPack::load(*path))
+                 m_entries.emplace_back(std::move(*pack));
+-        } catch (const std::exception& ex) {
+-            throw std::format("ERROR: Could not load music pack at {}\nReason: {}", path->string(), ex.what());
+         }
++#ifndef NXDK
++    catch (const std::exception& ex) {
++            SMW_RAISE(smw::format("ERROR: Could not load music pack at {}\nReason: {}", path->string(), ex.what()));
++        }
++#endif
++
+     }
+ 
+     if (m_entries.empty()) {
+-        throw "Could not load any map music!";
++        SMW_RAISE("Could not load any map music!");
+     }
+ }
+ 
+@@ -320,7 +328,7 @@ std::optional<MusicPack> MusicPack::load(const fs::path& musicdirectory)
+     MusicPack self(musicdirectory.filename().string());
+ 
+     const fs::path file_path = musicdirectory / "Music.txt";
+-    std::ifstream file(file_path);
++    std::ifstream file(file_path.string());
+     if (!file) {
+         printf("Error: Could not open: %s\n", file_path.generic_string().c_str());
+         return {};
+@@ -561,16 +569,23 @@ WorldMusicList::WorldMusicList()
+ {
+     SubdirsIterator dir(convertPath("music/world/"));
+     while (auto path = dir.next()) {
+-        try {
++#ifndef NXDK
++    try
++#endif
++    {
+             if (auto pack = WorldMusicPack::load(*path)) {
+                 m_entries.emplace_back(std::move(*pack));
+             }
+-        } catch (const std::exception& ex) {
+-            throw std::format("ERROR: Could not load world music pack at {}\nReason: {}", path->string(), ex.what());
+         }
++#ifndef NXDK
++    catch (const std::exception& ex) {
++            SMW_RAISE(smw::format("ERROR: Could not load world music pack at {}\nReason: {}", path->string(), ex.what()));
++        }
++#endif
++
+     }
+     if (m_entries.empty()) {
+-        throw "Could not load any world music!";
++        SMW_RAISE("Could not load any world music!");
+     }
+ }
+ 
+@@ -604,7 +619,7 @@ std::optional<WorldMusicPack> WorldMusicPack::load(const fs::path& musicdirector
+     WorldMusicPack self(musicdirectory.filename().string());
+ 
+     const fs::path file_path = musicdirectory / "Music.txt";
+-    std::ifstream file(file_path);
++    std::ifstream file(file_path.string());
+     if (!file) {
+         printf("Error: Could not open: %s\n", file_path.generic_string().c_str());
+         return {};
+diff --git a/src/common/FileList.h b/src/common/FileList.h
+index 6f60f831500fe566022aeb6defcf86d0975db303..c63fc6bd4465ee01ca372cb9724cf1285e2bfe7f 100644
+--- a/src/common/FileList.h
++++ b/src/common/FileList.h
+@@ -1,6 +1,6 @@
+ #pragma once
+ 
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <memory>
+ #include <optional>
+ #include <string>
+@@ -12,33 +12,33 @@
+ class SimpleFileList {
+ public:
+     SimpleFileList() = default;
+-    SimpleFileList(const std::filesystem::path& dirpath, const std::string& extension, bool fAlphabetize = false);
++    SimpleFileList(const smw::filesystem::path& dirpath, const std::string& extension, bool fAlphabetize = false);
+     virtual ~SimpleFileList() = default;
+ 
+-    const std::filesystem::path& at(size_t index) const { return m_filelist.at(index); }
++    const smw::filesystem::path& at(size_t index) const { return m_filelist.at(index); }
+     size_t count() const { return m_filelist.size(); }
+     size_t currentIndex() const { return m_index; }
+-    const std::filesystem::path& currentPath() const { return at(m_index); }
++    const smw::filesystem::path& currentPath() const { return at(m_index); }
+ 
+     void setCurrentIndex(size_t index);
+-    void setCurrentPath(const std::filesystem::path& path);
++    void setCurrentPath(const smw::filesystem::path& path);
+ 
+     void next();
+     void prev();
+     void random();
+ 
+-    void add(std::filesystem::path path);
++    void add(smw::filesystem::path path);
+     bool find(const std::string& name);
+ 
+ protected:
+-    std::vector<std::filesystem::path> m_filelist;
++    std::vector<smw::filesystem::path> m_filelist;
+     size_t m_index = -1;
+ };
+ 
+ 
+ class SimpleDirectoryList : public SimpleFileList {
+ public:
+-    SimpleDirectoryList(const std::filesystem::path& dirpath);
++    SimpleDirectoryList(const smw::filesystem::path& dirpath);
+     virtual ~SimpleDirectoryList() = default;
+ };
+ 
+@@ -81,7 +81,7 @@ public:
+ 
+ struct SkinListNode {
+     std::string name;
+-    std::filesystem::path path;
++    smw::filesystem::path path;
+ };
+ 
+ class SkinList {
+@@ -135,7 +135,7 @@ constexpr std::string_view to_string(MusicCategory category) noexcept {
+ 
+ struct MapMusicOverride {
+     std::string mapname;
+-    std::vector<std::filesystem::path> songs;
++    std::vector<smw::filesystem::path> songs;
+ };
+ 
+ 
+@@ -143,20 +143,20 @@ class MusicPack {
+ public:
+     explicit MusicPack(std::string name);
+ 
+-    static std::optional<MusicPack> load(const std::filesystem::path& musicDirectory);
++    static std::optional<MusicPack> load(const smw::filesystem::path& musicDirectory);
+ 
+     void updateWithOverrides(const std::vector<MapMusicOverride>& overrides);
+ 
+     const std::string& name() const { return m_name; }
+-    const std::filesystem::path& music(size_t musicID) const;
+-    const std::filesystem::path& randomMusic(MusicCategory category, const std::string& mapName, const std::string& background);
+-    const std::filesystem::path& nextMusic(MusicCategory category, const std::string& mapName, const std::string& background);
++    const smw::filesystem::path& music(size_t musicID) const;
++    const smw::filesystem::path& randomMusic(MusicCategory category, const std::string& mapName, const std::string& background);
++    const smw::filesystem::path& nextMusic(MusicCategory category, const std::string& mapName, const std::string& background);
+ 
+ private:
+     std::string m_name;
+     size_t m_currentMusic = 0;
+ 
+-    std::vector<std::filesystem::path> m_all_songs;
++    std::vector<smw::filesystem::path> m_all_songs;
+ 
+     std::unordered_map<MusicCategory, std::vector<size_t>> m_category_songs;
+     std::unordered_map<std::string, std::vector<size_t>> m_map_overrides;
+@@ -168,11 +168,13 @@ class MusicList
+ {
+ public:
+     MusicList();
++    size_t count() const { return m_entries.size(); }
++    const std::string& nameAt(size_t index) const { return m_entries.at(index).name(); }
+ 
+-    const std::filesystem::path& music(size_t musicID) const {
++    const smw::filesystem::path& music(size_t musicID) const {
+         return m_entries.at(m_currentIndex).music(musicID);
+     }
+-    const std::filesystem::path& currentMusic() const {
++    const smw::filesystem::path& currentMusic() const {
+         return m_currentMusic;
+     }
+     void setRandomMusic(MusicCategory category, const std::string& mapName, const std::string& background);
+@@ -195,7 +197,7 @@ public:
+     void updateEntriesWithOverrides(const std::vector<MapMusicOverride>& overrides);
+ 
+ private:
+-    std::filesystem::path m_currentMusic;
++    smw::filesystem::path m_currentMusic;
+     std::vector<MusicPack> m_entries;
+     size_t m_currentIndex = 0;
+ };
+@@ -252,7 +254,7 @@ inline WorldMusicCategory operator++(WorldMusicCategory& self, int) {
+ 
+ struct WorldMusicOverride {
+     std::string worldname;
+-    std::filesystem::path song;
++    smw::filesystem::path song;
+ };
+ 
+ 
+@@ -260,23 +262,24 @@ class WorldMusicPack {
+ public:
+     explicit WorldMusicPack(std::string name);
+ 
+-    static std::optional<WorldMusicPack> load(const std::filesystem::path& musicDirectory);
++    static std::optional<WorldMusicPack> load(const smw::filesystem::path& musicDirectory);
+ 
+-    const std::filesystem::path& music(WorldMusicCategory category, const std::string& worldName) const;
++    const smw::filesystem::path& music(WorldMusicCategory category, const std::string& worldName) const;
+     const std::string& name() const { return m_name; }
+ 
+     void updateWithOverrides(const std::vector<WorldMusicOverride>& overrides);
+ 
+ private:
+     std::string m_name;
+-    std::unordered_map<std::string, std::filesystem::path> m_world_overrides;
+-    std::unordered_map<WorldMusicCategory, std::filesystem::path> m_category_song;
++    std::unordered_map<std::string, smw::filesystem::path> m_world_overrides;
++    std::unordered_map<WorldMusicCategory, smw::filesystem::path> m_category_song;
+ };
+ 
+ 
+ class WorldMusicList {
+ public:
+     WorldMusicList();
++    const std::string& nameAt(size_t index) const { return m_entries.at(index).name(); }
+ 
+     size_t currentIndex() const {
+         return m_currentIndex;
+@@ -287,7 +290,7 @@ public:
+     const std::string& currentName() const {
+         return m_entries[m_currentIndex].name();
+     }
+-    const std::filesystem::path& currentMusic(WorldMusicCategory category, const std::string& worldName) const {
++    const smw::filesystem::path& currentMusic(WorldMusicCategory category, const std::string& worldName) const {
+         return m_entries[m_currentIndex].music(category, worldName);
+     }
+     size_t count() const {
+diff --git a/src/common/GameMode.h b/src/common/GameMode.h
+index f745d18ab99e8ccf4037a28175ce7c4df9f0b83f..37ba89612ac14817a369dffea7f4f8e1561777b8 100644
+--- a/src/common/GameMode.h
++++ b/src/common/GameMode.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #ifndef GAMEMODE_H
+ #define GAMEMODE_H
+ 
+@@ -19,6 +20,8 @@ struct SModeOption {
+ //gamemode base class
+ class CGameMode
+ {
++    SMW_RTTI_ROOT(CGameMode)
++
+ 	public:
+ 
+ 		CGameMode();
+diff --git a/src/common/GameValues.cpp b/src/common/GameValues.cpp
+index 53025e03dad272ae41378e5bd90ab6faee61aec0..775649dceffe9b0b54971b965ac9a9d350cb552d 100644
+--- a/src/common/GameValues.cpp
++++ b/src/common/GameValues.cpp
+@@ -1,4 +1,7 @@
+ #include "GameValues.h"
++#ifdef NXDK_PREFERENCES
++#include "Preferences.h"
++#endif
+ 
+ #include "FileIO.h"
+ #include "FileList.h"
+@@ -288,6 +291,7 @@ void CGameValues::resetSecretCounters()
+     unlocksecretunlocked[3] = false;
+ }
+ 
++#ifndef NXDK
+ // Read saved settings from disk
+ void CGameConfig::ReadBinaryConfig() {
+     try {
+@@ -558,3 +562,16 @@ void CGameConfig::WriteConfig() const
+     maplist->WriteFilters();
+     maplist->WriteMapSummaryCache();
+ }
++
++#else
++void CGameConfig::ReadBinaryConfig() {
++#ifdef NXDK_PREFERENCES
++    nxdk_load_preferences(*this);
++#endif
++}
++void CGameConfig::WriteConfig() const {
++#ifdef NXDK_PREFERENCES
++    nxdk_write_preferences(*this);
++#endif
++}
++#endif
+diff --git a/src/common/MapList.cpp b/src/common/MapList.cpp
+index 40f6bb562ae0eae7f8b2758d1266abbf9f61e1b0..99f14729cc5ab6a344f30a91f60ad31b9b33e1f8 100644
+--- a/src/common/MapList.cpp
++++ b/src/common/MapList.cpp
+@@ -1,3 +1,4 @@
++#include "util/Error.h"
+ #include "MapList.h"
+ 
+ #include "FileList.h"
+@@ -71,7 +72,7 @@ MapList::MapList(bool fWorldEditor)
+     //TODO: add proper test via size
+     if (maps.empty()) {
+         printf("ERROR: Empty map directory!\n");
+-        throw std::runtime_error("ERROR: Empty map directory!");
++        SMW_RAISE(std::runtime_error("ERROR: Empty map directory!"));
+     }
+ 
+     current = maps.begin();
+diff --git a/src/common/MovingPlatformPaths.h b/src/common/MovingPlatformPaths.h
+index a86a6b7ffebeee1c7028475b0aa6200c59571ebe..606be1e21a38d76467a6bebd588d9d4f8230e794 100644
+--- a/src/common/MovingPlatformPaths.h
++++ b/src/common/MovingPlatformPaths.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "math/Vec2.h"
+@@ -15,6 +16,8 @@ enum class PlatformPathType: unsigned char {
+ 
+ 
+ class MovingPlatformPath {
++    SMW_RTTI_ROOT(MovingPlatformPath)
++
+ public:
+     MovingPlatformPath(float speed, Vec2f startPos, Vec2f endPos, bool preview);
+     virtual ~MovingPlatformPath() = default;
+@@ -45,6 +48,8 @@ protected:
+ 
+ 
+ class StraightPath : public MovingPlatformPath {
++    SMW_RTTI(StraightPath, MovingPlatformPath)
++
+ public:
+     StraightPath(float speed, Vec2f startPos, Vec2f endPos, bool preview);
+ 
+@@ -67,6 +72,8 @@ private:
+ 
+ 
+ class StraightPathContinuous : public MovingPlatformPath {
++    SMW_RTTI(StraightPathContinuous, MovingPlatformPath)
++
+ public:
+     StraightPathContinuous(float speed, Vec2f startPos, float angle, bool preview);
+ 
+@@ -91,6 +98,8 @@ private:
+ 
+ 
+ class EllipsePath : public MovingPlatformPath {
++    SMW_RTTI(EllipsePath, MovingPlatformPath)
++
+ public:
+     EllipsePath(float speed, float dAngle, Vec2f radius, Vec2f centerPos, bool preview);
+ 
+diff --git a/src/common/ObjectBase.h b/src/common/ObjectBase.h
+index c74ad947c8584715d44f17d8de10f2f973563646..d6497706e27b9eb0f9ceea9ffe47fc8d4412b12e 100644
+--- a/src/common/ObjectBase.h
++++ b/src/common/ObjectBase.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "math/Vec2.h"
+@@ -34,6 +35,8 @@ float CapSideVelocity(float vel);
+ 
+ //object base class
+ class CObject {
++    SMW_RTTI_ROOT(CObject)
++
+ public:
+     CObject(gfxSprite* nspr, Vec2s pos);
+     virtual ~CObject() = default;
+diff --git a/src/common/ResourceManager.cpp b/src/common/ResourceManager.cpp
+index 47b6138fd8d6bf6ccd1c21395a999b64591ce3d5..2d7fe10da5c66e0e3c99fb4e4963be702f2841d0 100644
+--- a/src/common/ResourceManager.cpp
++++ b/src/common/ResourceManager.cpp
+@@ -1,3 +1,4 @@
++#include "util/Log.h"
+ #include "ResourceManager.h"
+ 
+ #include "FileList.h"
+@@ -9,7 +10,7 @@
+ 
+ #include <iostream>
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ extern SkinList *skinlist;
+ extern GraphicsList *menugraphicspacklist;
+@@ -44,14 +45,21 @@ bool CResourceManager::LoadMenuSkin(short playerID, const fs::path& path, short
+         }
+     }
+ 
+-    try {
++#ifndef NXDK
++    try
++#endif
++    {
+         spr_player[playerID] = gfx_loadmenuskin(path, colorID, fLoadBothDirections);
+         loaded_player_sprites[playerID] = std::move(new_info);
+         return true;
+-    } catch (const std::string& what) {
+-        std::cout << "ERROR: " << what << std::endl;
++    }
++#ifndef NXDK
++    catch (const std::string& what) {
++        smw::cout << "ERROR: " << what << smw::endl;
+         return false;
+     }
++#endif
++
+ }
+ 
+ SpriteStrip CResourceManager::LoadFullSkin(const fs::path& path, short colorID)
+diff --git a/src/common/ResourceManager.h b/src/common/ResourceManager.h
+index eff0ffcceb2149a83f36691a9a953051e5347d10..9640b6fab3897da7339a7ad7ef15e33de6c45e3c 100644
+--- a/src/common/ResourceManager.h
++++ b/src/common/ResourceManager.h
+@@ -7,7 +7,7 @@
+ #include "sfx.h"
+ 
+ #include <array>
+-#include <filesystem>
++#include "util/Filesystem.h"
+ 
+ using SpriteStrip = std::array<gfxSprite, PGFX_LAST>;
+ 
+@@ -15,10 +15,10 @@ using SpriteStrip = std::array<gfxSprite, PGFX_LAST>;
+ class CResourceManager {
+ public:
+ 	SpriteStrip LoadFullSkin(short skinID, short colorID);
+-	SpriteStrip LoadFullSkin(const std::filesystem::path& path, short colorID);
++	SpriteStrip LoadFullSkin(const smw::filesystem::path& path, short colorID);
+ 
+ 	bool LoadMenuSkin(short playerID, short skinID, short colorID, bool fLoadBothDirections);
+-	bool LoadMenuSkin(short playerID, const std::filesystem::path& path, short colorID, bool fLoadBothDirections);
++	bool LoadMenuSkin(short playerID, const smw::filesystem::path& path, short colorID, bool fLoadBothDirections);
+ 
+ 	void loadAllGraphics();
+ 	void loadMenuGraphics();
+@@ -33,7 +33,7 @@ private:
+ 
+ public:
+     struct LoadedSpriteInfo {
+-        std::filesystem::path path;
++        smw::filesystem::path path;
+         short colorScheme;
+ 
+         bool operator==(const LoadedSpriteInfo&) const = default;
+diff --git a/src/common/TilesetManager.cpp b/src/common/TilesetManager.cpp
+index 1cc8b5f24e1d0313136f1c61dbfab6830ab451ba..4722a709573735265184f6b258282fc5a94ffe79 100644
+--- a/src/common/TilesetManager.cpp
++++ b/src/common/TilesetManager.cpp
+@@ -1,3 +1,5 @@
++#include "util/Error.h"
++#include <stdexcept>
+ #include "TilesetManager.h"
+ 
+ #include "FileIO.h"
+@@ -9,14 +11,14 @@
+ #include <cassert>
+ #include <cstdio>
+ #include <cstring>
+-#include <format>
++#include "util/Format.h"
+ #include <unordered_set>
+ 
+ #if defined(__APPLE__)
+ #include <sys/stat.h>
+ #endif
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ 
+ namespace {
+@@ -63,31 +65,36 @@ std::vector<TileType> readTileTypeFile(const fs::path& path)
+     return tiletypes;
+ }
+ 
+-gfxSprite loadImageOrDownscale(const std::filesystem::path& path, const gfxSprite& largeRes)
++gfxSprite loadImageOrDownscale(const smw::filesystem::path& path, const gfxSprite& largeRes)
+ {
++#ifdef NXDK
++    if (fs::exists(path)) return ImageLoader(path).create();
++#else
+     try {
+         return ImageLoader(path).create();
+     } catch (const std::string& err) {
+         printf("\nwarning: %s -> falling back to downscaled image\n", err.c_str());
+-
++#endif
+         auto surf = SdlSurfacePtr(SDL_CreateRGBSurfaceWithFormat(
+             0, largeRes.getWidth() / 2, largeRes.getHeight() / 2,
+             largeRes.getSurface()->format->BitsPerPixel,
+             largeRes.getSurface()->format->format));
+-        if (SDL_BlitSurface(largeRes.getSurface(), nullptr, surf.get(), nullptr) < 0) {
+-            fprintf(stderr, "SDL_BlitSurface error: %s\n", SDL_GetError());
+-        }
+-
++        if (!surf) SMW_RAISE(std::runtime_error("Could not allocate tileset preview"));
++        if (SDL_BlitSurface(largeRes.getSurface(), nullptr, surf.get(), nullptr) < 0)
++            SMW_RAISE(std::runtime_error(SDL_GetError()));
+         return gfxSprite(std::move(surf), std::nullopt);
++#ifndef NXDK
+     }
++#endif
+ }
++
+ } // namespace
+ 
+ 
+ /*********************************
+ *  CTileset
+ *********************************/
+-CTileset::CTileset(std::filesystem::path dir)
++CTileset::CTileset(smw::filesystem::path dir)
+     : m_name(dir.filename().string())
+     , m_tileset_dir(std::move(dir))
+ {}
+diff --git a/src/common/TilesetManager.h b/src/common/TilesetManager.h
+index 30b89bccf999f334df9b10bee4af556e67f2253a..5a405512649dd7ff05c8c55c2564b1e7528a770f 100644
+--- a/src/common/TilesetManager.h
++++ b/src/common/TilesetManager.h
+@@ -4,7 +4,7 @@
+ #include "TileTypes.h"
+ 
+ #include <array>
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <vector>
+ 
+ 
+@@ -21,7 +21,7 @@ public:
+     static constexpr int MAX_TILES_PER_AXIS = 128;
+     static constexpr int MAX_TILES = MAX_TILES_PER_AXIS * MAX_TILES_PER_AXIS;
+ 
+-    explicit CTileset(std::filesystem::path dir);
++    explicit CTileset(smw::filesystem::path dir);
+     void ensureLoaded();
+     bool isLoaded() const { return m_sprite_large.operator bool(); }
+     bool isModified() const { return m_modified; }
+@@ -43,7 +43,7 @@ public:
+ 
+ private:
+     std::string m_name;
+-    std::filesystem::path m_tileset_dir;
++    smw::filesystem::path m_tileset_dir;
+     std::vector<TileType> m_tiletypes;
+ 
+     gfxSprite m_sprite_large;
+@@ -58,7 +58,7 @@ private:
+ 
+ class CTilesetManager {
+ public:
+-    explicit CTilesetManager(const std::filesystem::path& gfxPack);
++    explicit CTilesetManager(const smw::filesystem::path& gfxPack);
+ 
+     size_t indexFromName(const std::string& name) const;
+     CTileset* tileset(size_t index);
+diff --git a/src/common/gfx.cpp b/src/common/gfx.cpp
+index 30683d778f0f604c83d7099b7ba3798ee5aacbcf..bc85ee29d02153a73a77f53b25afa28d793796bf 100644
+--- a/src/common/gfx.cpp
++++ b/src/common/gfx.cpp
+@@ -1,3 +1,4 @@
++#include "util/Error.h"
+ #include "gfx.h"
+ 
+ #include "gfx/Color.h"
+@@ -9,13 +10,13 @@
+ #include <algorithm>
+ #include <cassert>
+ #include <cstdio>
+-#include <format>
++#include "util/Format.h"
+ #include <iostream>
+ #include <string>
+ 
+ using namespace std;
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ extern SDL_Surface * blitdest;
+ extern SDL_Surface * screen;
+@@ -127,10 +128,10 @@ gfxSprite createSkinSurface(
+ 
+     const auto color_key = SDL_MapRGB(out.getSurface()->format, colors::MAGENTA.r, colors::MAGENTA.g, colors::MAGENTA.b);
+     if (SDL_SetColorKey(out.getSurface(), SDL_TRUE, color_key) < 0) {
+-        throw std::format("Couldn't set color key for new skin surface: {}", SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't set color key for new skin surface: {}", SDL_GetError()));
+     }
+     if (SDL_SetSurfaceRLE(out.getSurface(), 1) < 0) {
+-        throw std::format("Couldn't set RLE acceleration for new skin surface: {}", SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't set RLE acceleration for new skin surface: {}", SDL_GetError()));
+     }
+ 
+     return out;
+@@ -209,7 +210,7 @@ void gfx_take_screenshot() {
+ }
+ 
+ void gfx_close() {}
+-bool gfx_loadpalette(const std::filesystem::path& palette_path) {
++bool gfx_loadpalette(const smw::filesystem::path& palette_path) {
+     return gfx_palette.load(palette_path);
+ }
+ 
+@@ -218,7 +219,7 @@ SpriteStrip gfx_loadmenuskin(const fs::path& path, short colorScheme, bool fLoad
+     const gfxSprite skin = ImageLoader(path).withoutColorKey().withoutOptimization().create();
+ 
+     if (!validSkinSurface(skin))
+-        throw std::format("Invalid skin file: {} has incorrect dimensions", path.generic_string());
++        SMW_RAISE(smw::format("Invalid skin file: {} has incorrect dimensions", path.generic_string()));
+ 
+     SpriteStrip strip;
+ 
+@@ -240,7 +241,7 @@ SpriteStrip gfx_loadfullskin(const fs::path& path, short colorScheme)
+     const gfxSprite skin = ImageLoader(path).withoutColorKey().withoutOptimization().create();
+ 
+     if (!validSkinSurface(skin))
+-        throw std::format("Invalid skin file: {} has incorrect dimensions", path.generic_string());
++        SMW_RAISE(smw::format("Invalid skin file: {} has incorrect dimensions", path.generic_string()));
+ 
+     SpriteStrip strip;
+ 
+diff --git a/src/common/gfx.h b/src/common/gfx.h
+index 3f689120575cfa79b0b3f9684a49f48c45686648..299e07df0d6d9bed5304a1be6f5053e4b5c3e6ea 100644
+--- a/src/common/gfx.h
++++ b/src/common/gfx.h
+@@ -27,7 +27,7 @@
+ #include "gfx/gfxFont.h"
+ 
+ #include "SDL.h"
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <optional>
+ 
+ using SpriteStrip = std::array<gfxSprite, PGFX_LAST>;
+@@ -41,7 +41,7 @@ void gfx_show_catched_error(const std::string&);
+ void gfx_take_screenshot();
+ 
+ void gfx_close();
+-bool gfx_loadpalette(const std::filesystem::path& palette_path);
++bool gfx_loadpalette(const smw::filesystem::path& palette_path);
+ 
+ void gfx_cliprect(SDL_Rect& srcRect, SDL_Rect& dstRect, const SDL_Rect& clipRect);
+ 
+@@ -59,8 +59,8 @@ void gfx_drawpreview(gfxSprite& sprite,
+     bool wrap,
+     std::optional<std::pair<ClipEdge, int>> clip = std::nullopt);
+ 
+-SpriteStrip gfx_loadfullskin(const std::filesystem::path& path, short colorScheme);
+-SpriteStrip gfx_loadmenuskin(const std::filesystem::path& path, short colorScheme, bool fLoadBothDirections);
++SpriteStrip gfx_loadfullskin(const smw::filesystem::path& path, short colorScheme);
++SpriteStrip gfx_loadmenuskin(const smw::filesystem::path& path, short colorScheme, bool fLoadBothDirections);
+ 
+ void gfx_setjoystickteamcolor(SDL_Joystick * joystick, short team, float brightness);
+ 
+diff --git a/src/common/gfx/gfxFont.cpp b/src/common/gfx/gfxFont.cpp
+index 0fa2c172f2a7bd73f06a9583cbc5a2ec0f2cac76..37e8b13315e0705183546d7ef8d070a1e73b0592 100644
+--- a/src/common/gfx/gfxFont.cpp
++++ b/src/common/gfx/gfxFont.cpp
+@@ -1,10 +1,12 @@
++#include "util/Log.h"
++#include "util/Error.h"
+ #include "gfxFont.h"
+ 
+ #include "gfx.h"
+ 
+ #include "SDL_image.h"
+ 
+-#include <format>
++#include "util/Format.h"
+ #include <iostream>
+ 
+ extern SDL_Surface * blitdest;
+@@ -15,14 +17,14 @@ constexpr int ASCII_FIRST_PRINTABLE = 33;
+ } // namespace
+ 
+ 
+-gfxFont::gfxFont(const std::filesystem::path& path)
++gfxFont::gfxFont(const smw::filesystem::path& path)
+ {
+     const std::string path_str = path.generic_string();
+ 
+-    std::cout << "loading font " << path_str << " ...";
++    smw::cout << "loading font " << path_str << " ...";
+     auto surf = SdlSurfacePtr(IMG_Load(path_str.c_str()));
+     if (!surf) {
+-        throw std::format("Couldn't load {}: {}", path_str, IMG_GetError());
++        SMW_RAISE(smw::format("Couldn't load {}: {}", path_str, IMG_GetError()));
+     }
+ 
+     if (SDL_MUSTLOCK(surf.get()))
+@@ -65,23 +67,23 @@ gfxFont::gfxFont(const std::filesystem::path& path)
+     }
+ 
+     if (m_glyph_areas.empty())
+-        throw std::format("Didn't find any characters on font image {}", path_str);
++        SMW_RAISE(smw::format("Didn't find any characters on font image {}", path_str));
+ 
+     m_glyph_areas.shrink_to_fit();
+ 
+     const Uint32 color_key = getRawPixel(surf.get(), 0, 1);
+     if (SDL_SetColorKey(surf.get(), SDL_TRUE, color_key) < 0)
+-        throw std::format("Couldn't set color key on font image: {}", SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't set color key on font image: {}", SDL_GetError()));
+ 
+     auto surf_opti = SdlSurfacePtr(SDL_ConvertSurface(surf.get(), screen->format, 0));
+     if (!surf_opti)
+-        throw std::format("Couldn't convert {} to the display's pixel format: {}", path_str, SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't convert {} to the display's pixel format: {}", path_str, SDL_GetError()));
+ 
+     if (SDL_SetSurfaceRLE(surf_opti.get(), 1) < 0)
+-        throw std::format("Couldn't set RLE acceleration for {}: {}", path_str, SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't set RLE acceleration for {}: {}", path_str, SDL_GetError()));
+ 
+     m_sprite = gfxSprite(std::move(surf_opti), std::nullopt);
+-    std::cout << "done" << std::endl;
++    smw::cout << "done" << smw::endl;
+ }
+ 
+ void gfxFont::draw(int x, int y, std::string_view text, int dst_min_x, int dst_max_x) const
+diff --git a/src/common/gfx/gfxFont.h b/src/common/gfx/gfxFont.h
+index fc2937ddb3cb070788c436dcf8beb14bc092eabe..497fcd50b34ed92b976b62c55d3bbdd7a8e361fa 100644
+--- a/src/common/gfx/gfxFont.h
++++ b/src/common/gfx/gfxFont.h
+@@ -2,7 +2,7 @@
+ 
+ #include "gfx/gfxSprite.h"
+ 
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <limits>
+ #include <string_view>
+ #include <vector>
+@@ -11,7 +11,7 @@
+ class gfxFont {
+ public:
+     explicit gfxFont() = default;
+-    explicit gfxFont(const std::filesystem::path& path);
++    explicit gfxFont(const smw::filesystem::path& path);
+ 
+     void draw(int x, int y, std::string_view text,
+         int dst_min_x = std::numeric_limits<int>::min(),
+diff --git a/src/common/gfx/gfxPalette.cpp b/src/common/gfx/gfxPalette.cpp
+index 66a3cb41ac1f596cbba1f7635f6333e78ffdaac9..38a4cd94335938d27fe5d53e986a8e1fcb717384 100644
+--- a/src/common/gfx/gfxPalette.cpp
++++ b/src/common/gfx/gfxPalette.cpp
+@@ -6,7 +6,7 @@
+ 
+ #include <cstdio>
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ 
+ std::optional<RGB> gfxPalette::replacementFor(RGB keyColor, size_t teamIndex, PlayerPalette playerState) const
+diff --git a/src/common/gfx/gfxPalette.h b/src/common/gfx/gfxPalette.h
+index 95aa24d7d050fb31bcb77a8a8df968b0e5800bf3..840671e34b1eecf0990b220cccdb4f0f9fa8b5c6 100644
+--- a/src/common/gfx/gfxPalette.h
++++ b/src/common/gfx/gfxPalette.h
+@@ -1,10 +1,11 @@
+ #pragma once
++#include <unordered_map>
+ 
+ #include "Color.h"
+ #include "GlobalConstants.h"
+ 
+ #include <array>
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <optional>
+ 
+ 
+@@ -34,7 +35,7 @@ struct ColorSheet {
+ 
+ class gfxPalette {
+ public:
+-    bool load(const std::filesystem::path& path);
++    bool load(const smw::filesystem::path& path);
+ 
+     const std::unordered_map<RGB, ColorSheet>& colorSheets() const { return m_colorsheets; }
+     std::optional<RGB> replacementFor(RGB keyColor, size_t teamIndex, PlayerPalette playerState) const;
+diff --git a/src/common/gfx/gfxSDL.cpp b/src/common/gfx/gfxSDL.cpp
+index ba18f2f2b36ce8ff80a130135948589c19732ca7..090cd14f23748785a05bab7e34c461a0bfe80503 100644
+--- a/src/common/gfx/gfxSDL.cpp
++++ b/src/common/gfx/gfxSDL.cpp
+@@ -1,3 +1,8 @@
++#ifdef NXDK
++#include "Platform.h"
++#endif
++#include "util/Format.h"
++#include "util/Error.h"
+ #include "gfxSDL.h"
+ 
+ #include "path.h"
+@@ -17,8 +22,8 @@ extern SDL_Surface* screen;
+ #define GFX_SCREEN_H 480
+ 
+ template<typename... Args>
+-[[noreturn]] void throw_error(std::format_string<Args...> fmt, Args&&... args) {
+-    throw std::runtime_error(std::format(fmt, std::forward<Args>(args)...));
++[[noreturn]] void throw_error(smw::format_string<Args...> fmt, Args&&... args) {
++    SMW_RAISE(std::runtime_error(smw::format(fmt, std::forward<Args>(args)...)));
+ }
+ 
+ namespace {
+@@ -47,7 +52,11 @@ void quitSdl()
+ 
+ SDL_Window* createWindow(bool fullscreen)
+ {
++    #ifdef NXDK
++    Uint32 window_flags = SDL_WINDOW_FULLSCREEN;
++#else
+     Uint32 window_flags = SDL_WINDOW_RESIZABLE;
++#endif
+     if (fullscreen)
+         window_flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+ 
+@@ -83,7 +92,12 @@ int findPreferredRendererIndex() {
+ 
+ SDL_Renderer* createRenderer(SDL_Window* window)
+ {
++#ifdef NXDK
++    // nxdk SDL2 exposes the software renderer; do not require acceleration.
++    constexpr Uint32 rendering_flags = 0;
++#else
+     constexpr Uint32 rendering_flags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE;
++#endif
+ 
+     SDL_Renderer* renderer = SDL_CreateRenderer(window, findPreferredRendererIndex(), rendering_flags);
+     if (!renderer)
+@@ -104,12 +118,19 @@ SDL_Renderer* createRenderer(SDL_Window* window)
+ 
+ SDL_Surface* createScreenSurface()
+ {
++#ifdef NXDK
++    // The game's sprites and map caches inherit this format. RGB565 halves
++    // their memory footprint for the stock 64 MB target.
++    SDL_Surface* surface = SDL_CreateRGBSurfaceWithFormat(0,
++        GFX_SCREEN_W, GFX_SCREEN_H, 16, SDL_PIXELFORMAT_RGB565);
++#else
+     SDL_Surface* surface = SDL_CreateRGBSurface(0x0,
+         GFX_SCREEN_W, GFX_SCREEN_H, 32,
+         0x00FF0000,
+         0x0000FF00,
+         0x000000FF,
+         0xFF000000);
++#endif
+     if (!surface)
+         throw_error("Couldn't create video buffer: {}", SDL_GetError());
+ 
+@@ -119,7 +140,11 @@ SDL_Surface* createScreenSurface()
+ SDL_Texture* createScreenTexture(SDL_Renderer* renderer)
+ {
+     SDL_Texture* texture = SDL_CreateTexture(renderer,
++#ifdef NXDK
++        SDL_PIXELFORMAT_RGB565,
++#else
+         SDL_PIXELFORMAT_ARGB8888,
++#endif
+         SDL_TEXTUREACCESS_STREAMING,
+         GFX_SCREEN_W, GFX_SCREEN_H);
+     if (!texture)
+@@ -132,10 +157,16 @@ SDL_Texture* createScreenTexture(SDL_Renderer* renderer)
+ 
+ GraphicsSDL::~GraphicsSDL()
+ {
+-    SDL_DestroyTexture(sdl_screen_texture);
+-    SDL_FreeSurface(sdl_screen_surface);
+-    SDL_DestroyRenderer(sdl_renderer);
+-    SDL_DestroyWindow(sdl_window);
++    if (sdl_screen_texture)
++        SDL_DestroyTexture(sdl_screen_texture);
++#ifndef NXDK
++    if (sdl_screen_surface)
++        SDL_FreeSurface(sdl_screen_surface);
++#endif
++    if (sdl_renderer)
++        SDL_DestroyRenderer(sdl_renderer);
++    if (sdl_window)
++        SDL_DestroyWindow(sdl_window);
+ 
+     quitSdl();
+ }
+@@ -145,9 +176,18 @@ bool GraphicsSDL::init(bool fullscreen)
+     initSdl();
+ 
+     sdl_window = createWindow(fullscreen);
++#ifdef NXDK
++    // SDL owns this surface. Present it once, without a redundant software
++    // renderer, streaming texture, conversion, and full-screen clear.
++    sdl_screen_surface = SDL_GetWindowSurface(sdl_window);
++    if (!sdl_screen_surface)
++        throw_error("Couldn't get window surface: {}", SDL_GetError());
++    printf("[gfx] SDL window surface: %s\n", SDL_GetPixelFormatName(sdl_screen_surface->format->format));
++#else
+     sdl_renderer = createRenderer(sdl_window);
+     sdl_screen_surface = createScreenSurface();
+     sdl_screen_texture = createScreenTexture(sdl_renderer);
++#endif
+ 
+     printf("[gfx] Game window initialized (%dx%d, %dbpp)\n",
+         sdl_screen_surface->w,
+@@ -170,14 +210,31 @@ void GraphicsSDL::setTitle(const char* title) const
+ 
+ void GraphicsSDL::flipScreen() const
+ {
++#ifdef NXDK
++    static Uint32 last_memory_log = 0;
++    if (SDL_GetTicks() - last_memory_log > 10000) {
++        nxdk_log_memory("running");
++        last_memory_log = SDL_GetTicks();
++    }
++#endif
++#ifdef NXDK
++    nxdk_poll_recovery();
++    if (SDL_UpdateWindowSurface(sdl_window) < 0)
++        throw_error("Couldn't present window surface: {}", SDL_GetError());
++#else
+     SDL_UpdateTexture(sdl_screen_texture, nullptr, sdl_screen_surface->pixels, sdl_screen_surface->pitch);
+     SDL_RenderClear(sdl_renderer);
+     SDL_RenderCopy(sdl_renderer, sdl_screen_texture, nullptr, nullptr);
+     SDL_RenderPresent(sdl_renderer);
++#endif
+ }
+ 
+ void GraphicsSDL::changeFullScreen(bool fullscreen) const
+ {
++#ifdef NXDK
++    // The fixed Xbox mode must not invalidate the SDL-owned drawing surface.
++    return;
++#endif
+     Uint32 flags = SDL_GetWindowFlags(sdl_window);
+     if (fullscreen) {
+         flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+diff --git a/src/common/gfx/gfxSprite.cpp b/src/common/gfx/gfxSprite.cpp
+index 4533b07c4137ee2070620b1f10945bbdac16c80c..64eb971d0fd3f5fc8f441b7e7d788d18aa0b0b73 100644
+--- a/src/common/gfx/gfxSprite.cpp
++++ b/src/common/gfx/gfxSprite.cpp
+@@ -1,3 +1,5 @@
++#include "util/Log.h"
++#include "util/Error.h"
+ #include "gfxSprite.h"
+ 
+ #include "gfx.h"
+@@ -6,12 +8,12 @@
+ 
+ #include <cassert>
+ #include <cstdio>
+-#include <filesystem>
+-#include <format>
++#include "util/Filesystem.h"
++#include "util/Format.h"
+ #include <iostream>
+ #include <optional>
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ extern SDL_Surface * blitdest;
+ extern SDL_Surface * screen;
+@@ -27,49 +29,55 @@ SdlSurfacePtr loadImage(
+ {
+     const std::string path_str = path.generic_string();
+ 
+-    std::cout << "loading sprite ";
++    smw::cout << "loading sprite ";
+     if (color_key) {
+-        std::cout << "with key";
++        smw::cout << "with key";
+         if (alpha) {
+-            std::cout << "+alpha";
++            smw::cout << "+alpha";
+         }
+-        std::cout << " ";
++        smw::cout << " ";
+     }
+-    std::cout << path_str << " ...";
++    smw::cout << path_str << " ...";
+ 
+     auto raw = SdlSurfacePtr(IMG_Load(path_str.c_str()));
+     if (!raw) {
+-        throw std::format("Couldn't load {}: {}", path_str, IMG_GetError());
++        SMW_RAISE(smw::format("Couldn't load {}: {}", path_str, IMG_GetError()));
+     }
+ 
+     if (color_key) {
+         const Uint32 key = SDL_MapRGB(raw->format, color_key->r, color_key->g, color_key->b);
+         if (SDL_SetColorKey(raw.get(), SDL_TRUE, key) < 0) {
+-            throw std::format("Couldn't set color key for {}: {}", path_str, SDL_GetError());
++            SMW_RAISE(smw::format("Couldn't set color key for {}: {}", path_str, SDL_GetError()));
+         }
+     }
+ 
+     auto img = SdlSurfacePtr(SDL_ConvertSurface(raw.get(), screen->format, 0));
+     if (!img) {
+-        throw std::format("Couldn't convert {} to the display's pixel format: {}", path_str, SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't convert {} to the display's pixel format: {}", path_str, SDL_GetError()));
+     }
+ 
++#ifdef NXDK
++    // SDL 2.0.9's RLE path uses a color key even for unkeyed, blended
++    // RGB565 surfaces. Black pixels then leave previous scene pixels visible.
++    // Keep keyed sprites accelerated; unkeyed surfaces use ordinary blits.
++    optimize = optimize && (color_key.has_value() || img->format->Amask != 0);
++#endif
+     if (optimize) {
+         if (SDL_SetSurfaceRLE(img.get(), 1) < 0) {
+-            throw std::format("Couldn't set RLE acceleration for {}: {}", path_str, SDL_GetError());
++            SMW_RAISE(smw::format("Couldn't set RLE acceleration for {}: {}", path_str, SDL_GetError()));
+         }
+     }
+ 
+     if (alpha) {
+         if (SDL_SetSurfaceBlendMode(img.get(), SDL_BLENDMODE_BLEND) < 0) {
+-            throw std::format("Couldn't set blend mode for {}: {}", path_str, SDL_GetError());
++            SMW_RAISE(smw::format("Couldn't set blend mode for {}: {}", path_str, SDL_GetError()));
+         }
+         if (SDL_SetSurfaceAlphaMod(img.get(), *alpha) < 0) {
+-            throw std::format("Couldn't set alpha modulation for {}: {}", path_str, SDL_GetError());
++            SMW_RAISE(smw::format("Couldn't set alpha modulation for {}: {}", path_str, SDL_GetError()));
+         }
+     }
+ 
+-    std::cout << " done" << std::endl;
++    smw::cout << " done" << smw::endl;
+     return img;
+ }
+ 
+@@ -91,10 +99,10 @@ gfxSprite gfxSprite::blank(unsigned w, unsigned h)
+ {
+     auto surf = SdlSurfacePtr(SDL_CreateRGBSurfaceWithFormat(0x0, w, h, screen->format->BitsPerPixel, screen->format->format));
+     if (!surf)
+-        throw std::format("Couldn't create blank surface: {}", SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't create blank surface: {}", SDL_GetError()));
+ 
+     if (SDL_SetSurfaceBlendMode(surf.get(), SDL_BLENDMODE_NONE) < 0)
+-        throw std::format("Couldn't set blend mode for blank surface: {}", SDL_GetError());
++        SMW_RAISE(smw::format("Couldn't set blend mode for blank surface: {}", SDL_GetError()));
+ 
+     return gfxSprite(std::move(surf));
+ }
+@@ -179,7 +187,14 @@ void gfxSprite::setalpha(Uint8 alpha)
+ {
+     assert(m_picture != NULL);
+ 
+-    if (SDL_SetSurfaceBlendMode(m_picture.get(), SDL_BLENDMODE_BLEND) < 0) {
++    SDL_BlendMode blend = SDL_BLENDMODE_BLEND;
++#ifdef NXDK
++    // Fully opaque RGB565 has no pixel alpha to blend. Select the copy path
++    // rather than SDL 2.0.9's expensive generic per-pixel blend.
++    if (alpha == 255 && m_picture->format->Amask == 0)
++        blend = SDL_BLENDMODE_NONE;
++#endif
++    if (SDL_SetSurfaceBlendMode(m_picture.get(), blend) < 0) {
+         fprintf(stderr, "\n ERROR: couldn't set blend mode on sprite: %s\n", SDL_GetError());
+         return;
+     }
+diff --git a/src/common/gfx/gfxSprite.h b/src/common/gfx/gfxSprite.h
+index 0b635a8162f4e9bb0eafa973a02db9a7204f6ae2..2c86b5b426d676ed0f21edbfbe54fcfe35590439 100644
+--- a/src/common/gfx/gfxSprite.h
++++ b/src/common/gfx/gfxSprite.h
+@@ -7,7 +7,7 @@
+ 
+ #include "SDL.h"
+ 
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <optional>
+ 
+ enum class ClipEdge : unsigned char { Top, Right, Bottom, Left };
+@@ -72,7 +72,7 @@ private:
+ 
+ class ImageLoader {
+ public:
+-    explicit ImageLoader(std::filesystem::path path)
++    explicit ImageLoader(smw::filesystem::path path)
+         : m_path(std::move(path))
+     {}
+     ImageLoader& withColorKey(RGB key) {
+@@ -98,7 +98,7 @@ public:
+     gfxSprite create() const;
+ 
+ private:
+-    std::filesystem::path m_path;
++    smw::filesystem::path m_path;
+     bool m_optimize = true;
+     std::optional<RGB> m_color_key = colors::MAGENTA;
+     std::optional<Uint8> m_alpha = std::nullopt;
+diff --git a/src/common/input.cpp b/src/common/input.cpp
+index c983716fb1c30bbb8ceb82a2ca08b367f6a023c7..1ce080c9b407b8020fe65635959d3fa6ec1ba5ef 100644
+--- a/src/common/input.cpp
++++ b/src/common/input.cpp
+@@ -4,6 +4,35 @@
+ #include "GlobalConstants.h"
+ 
+ extern CGameValues game_values;
++#ifdef NXDK
++extern short joystickcount;
++extern SDL_Joystick** joysticks;
++// nxdk's Xbox backend reports ports 1..4. Configuration uses zero-based
++// physical slots; the dense SDL enumeration index must never identify a player.
++static int joystickSlotAt(int index)
++{
++    const int port = SDL_JoystickGetPlayerIndex(joysticks[index]);
++    if (port >= 1 && port <= 4) return port - 1;
++    // The SDK falls back to a device index when USB topology is unavailable.
++    // Preserve that limited fallback; stable physical ordering then is unknown.
++    return index < 4 ? index : -1;
++}
++int nxdk_joystick_slot(SDL_JoystickID instance)
++{
++    for (short i = 0; i < joystickcount; ++i)
++        if (joysticks[i] && SDL_JoystickGetAttached(joysticks[i]) &&
++            SDL_JoystickInstanceID(joysticks[i]) == instance) return joystickSlotAt(i);
++    return -1;
++}
++SDL_Joystick *nxdk_joystick_for_slot(int slot)
++{
++    if (slot < 0 || slot >= 4) return nullptr;
++    for (short i = 0; i < joystickcount; ++i)
++        if (joysticks[i] && SDL_JoystickGetAttached(joysticks[i]) && joystickSlotAt(i) == slot)
++            return joysticks[i];
++    return nullptr;
++}
++#endif
+ 
+ CPlayerInput::CPlayerInput()
+ {
+@@ -66,6 +95,39 @@ void CPlayerInput::ResetKeys()
+ //iGameState == 0 for in game and 1 for menu
+ void CPlayerInput::Update(SDL_Event event, short iGameState)
+ {
++#ifdef NXDK
++    // A saved keyboard profile or absent selected pad must not lock the user
++    // out of Options. Use the first attached pad for menu recovery only;
++    // gameplay and the saved configuration retain their actual assignments.
++    int recoveryDevice = -1;
++    const auto *selected = inputControls[0];
++    if (iGameState == 1 && (!selected || selected->iDevice < 0 ||
++        !nxdk_joystick_for_slot(selected->iDevice))) {
++        for (short slot = 0; slot < 4; ++slot)
++            if (nxdk_joystick_for_slot(slot)) { recoveryDevice = slot; break; }
++    }
++    if (nxdkRecoveryDevice != recoveryDevice) {
++        ResetKeys();
++        nxdkRecoveryDevice = recoveryDevice;
++    }
++    CInputPlayerControl recovery{};
++    if (recoveryDevice >= 0) {
++        recovery.iDevice = recoveryDevice;
++        const SDL_Keycode keys[8] = {JOY_HAT_UP, JOY_HAT_DOWN, JOY_HAT_LEFT, JOY_HAT_RIGHT,
++            JOY_BUTTON_START, JOY_BUTTON_START + 1, JOY_BUTTON_START + 2, JOY_BUTTON_START + 3};
++        for (int k = 0; k < 8; ++k) recovery.inputGameControls[1].keys[k] = keys[k];
++    }
++    // Configurations store physical slots; SDL2 events carry instance IDs.
++    SDL_JoystickID* instance = nullptr;
++    if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP) instance=&event.jbutton.which;
++    else if (event.type == SDL_JOYHATMOTION) instance=&event.jhat.which;
++    else if (event.type == SDL_JOYAXISMOTION) instance=&event.jaxis.which;
++    if (instance) {
++        const int index = nxdk_joystick_slot(*instance);
++        if (index < 0) return;
++        *instance = index;
++    }
++#endif
+ 	bool fFound = false;
+     for (short iPlayer = -1; iPlayer < MAX_PLAYERS; iPlayer++) {
+ 		CInputControl * inputControl;
+@@ -74,7 +136,11 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
+ 
+ 		//Allow keyboard input from player 1 at all times (even when he is configured to use joystick)
+         if (iPlayer == -1) {
+-            if (iGameState == 1 && inputControls[0]->iDevice != DEVICE_KEYBOARD) {
++            if (iGameState == 1 && inputControls[0] && (inputControls[0]->iDevice != DEVICE_KEYBOARD
++#ifdef NXDK
++                || recoveryDevice >= 0
++#endif
++                )) {
+ 				inputControl = &game_values.inputConfiguration[0][0].inputGameControls[1];
+ 				outputControl = &outputControls[0];
+ 				iDeviceID = game_values.inputConfiguration[0][0].iDevice;
+@@ -85,9 +151,13 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
+ 			if (!inputControls[iPlayer])
+ 				continue;
+ 
+-			inputControl = &inputControls[iPlayer]->inputGameControls[iGameState];
+-			outputControl = &outputControls[iPlayer];
+-			iDeviceID = inputControls[iPlayer]->iDevice;
++            auto *configured = inputControls[iPlayer];
++#ifdef NXDK
++            if (iPlayer == 0 && recoveryDevice >= 0) configured = &recovery;
++#endif
++            inputControl = &configured->inputGameControls[iGameState];
++            outputControl = &outputControls[iPlayer];
++            iDeviceID = configured->iDevice;
+ 		}
+ 
+         if (iDeviceID == DEVICE_KEYBOARD) {
+diff --git a/src/common/input.h b/src/common/input.h
+index d33009894c91f6c855a92a276339e81c3e0f0850..e34ace7086d58f53bc100faa0d56ebb8403abc60 100644
+--- a/src/common/input.h
++++ b/src/common/input.h
+@@ -43,6 +43,11 @@
+ 
+ #define KEY_NONE            -1
+ 
++#ifdef NXDK
++int nxdk_joystick_slot(SDL_JoystickID instance);
++SDL_Joystick *nxdk_joystick_for_slot(int slot);
++#endif
++
+ 
+ struct CKeyState {
+ 	bool fDown;
+@@ -116,6 +121,9 @@ class CPlayerInput
+ 		COutputControl outputControls[4];
+ 
+ 		SDL_Keycode iPressedKey;
++#ifdef NXDK
++        int nxdkRecoveryDevice = -1;
++#endif
+ };
+ 
+ #endif // INPUT_H
+diff --git a/src/common/map.cpp b/src/common/map.cpp
+index e2d6b7056afe02a21506e4f0a2196fd7851ff182..7744ccb11c07b9303302f1b8672eb8bd9da8f55a 100644
+--- a/src/common/map.cpp
++++ b/src/common/map.cpp
+@@ -1,3 +1,5 @@
++#include "util/Log.h"
++#include "util/Error.h"
+ #include "map.h"
+ 
+ #include "IO_Block.h"
+@@ -18,8 +20,8 @@
+ 
+ #include <cmath>
+ #include <iostream>
+-using std::cout;
+-using std::endl;
++using smw::cout;
++using smw::endl;
+ 
+ #if defined(__APPLE__)
+ #include <sys/stat.h>
+@@ -93,7 +95,7 @@ int GetScreenWidth(int iSize) {
+         case 0: return App::screenWidth;
+         case 1: return App::screenWidth / 2;
+         case 2: return App::screenWidth / 4;
+-        default: throw "invalid iSize for width";
++        default: SMW_RAISE("invalid iSize for width");
+     }
+ }
+ 
+@@ -102,7 +104,7 @@ int GetScreenHeight(int iSize) {
+         case 0: return App::screenHeight;
+         case 1: return App::screenHeight / 2;
+         case 2: return App::screenHeight / 4;
+-        default: throw "invalid iSize for height";
++        default: SMW_RAISE("invalid iSize for height");
+     }
+ }
+ } // namespace
+@@ -969,18 +971,18 @@ void CMap::saveMap(const std::string& file)
+         short iPathType = static_cast<short>(platform->pPath->typeId());
+         mapfile.write_i32(iPathType);
+ 
+-        if (auto* path = dynamic_cast<StraightPath*>(platform->pPath)) {
++        if (auto* path = smw::checked_cast<StraightPath*>(platform->pPath)) {
+             mapfile.write_float(path->startPos().x);
+             mapfile.write_float(path->startPos().y);
+             mapfile.write_float(path->endPos().x);
+             mapfile.write_float(path->endPos().y);
+             mapfile.write_float(path->speed());
+-        } else if (auto* path = dynamic_cast<StraightPathContinuous*>(platform->pPath)) {
++        } else if (auto* path = smw::checked_cast<StraightPathContinuous*>(platform->pPath)) {
+             mapfile.write_float(path->startPos().x);
+             mapfile.write_float(path->startPos().y);
+             mapfile.write_float(path->angle());
+             mapfile.write_float(path->speed());
+-        } else if (auto* path = dynamic_cast<EllipsePath*>(platform->pPath)) {
++        } else if (auto* path = smw::checked_cast<EllipsePath*>(platform->pPath)) {
+             mapfile.write_float(path->radius().x);
+             mapfile.write_float(path->radius().y);
+             mapfile.write_float(path->centerPos().x);
+@@ -1678,11 +1680,11 @@ void CMap::drawThumbnailPlatforms(gfxSprite& targetSurface)
+     for (MovingPlatform* platform : platforms) {
+         MovingPlatformPath * basepath = platform->pPath;
+ 
+-        if (auto* path = dynamic_cast<StraightPath*>(basepath)) {
++        if (auto* path = smw::checked_cast<StraightPath*>(basepath)) {
+             DrawPlatform(path->typeId(), platform->iTileData, path->startPos().x * 2.f, path->startPos().y * 2.f, path->endPos().x * 2.f, path->endPos().y * 2.f, 0.0f, 0.0f, 0.0f, 2, platform->iTileWidth, platform->iTileHeight, true, true, targetSurface.getSurface());
+-        } else if (auto* path = dynamic_cast<StraightPathContinuous*>(basepath)) {
++        } else if (auto* path = smw::checked_cast<StraightPathContinuous*>(basepath)) {
+             DrawPlatform(path->typeId(), platform->iTileData, path->startPos().x * 2.f, path->startPos().y * 2.f, 0, 0, path->angle(), 0.0f, 0.0f, 2, platform->iTileWidth, platform->iTileHeight, true, true, targetSurface.getSurface());
+-        } else if (auto* path = dynamic_cast<EllipsePath*>(basepath)) {
++        } else if (auto* path = smw::checked_cast<EllipsePath*>(basepath)) {
+             DrawPlatform(path->typeId(), platform->iTileData, path->centerPos().x * 2.f, path->centerPos().y * 2.f, 0, 0, path->startAngle(), path->radius().x * 2, path->radius().y * 2, 2, platform->iTileWidth, platform->iTileHeight, true, true, targetSurface.getSurface());
+         }
+     }
+diff --git a/src/common/map/MapReader16xx.cpp b/src/common/map/MapReader16xx.cpp
+index 925ab12ba42acb41e0f2d5c616152de7e9fd1450..4d9b1b12f83bed240795aad340be60e667f54a64 100644
+--- a/src/common/map/MapReader16xx.cpp
++++ b/src/common/map/MapReader16xx.cpp
+@@ -1,3 +1,4 @@
++#include "util/Log.h"
+ #include "MapReader.h"
+ 
+ #include "GameValues.h"
+@@ -168,9 +169,9 @@ bool MapReader1600::read_spawn_areas(CMap& map, BinaryFile& mapfile)
+     map.numspawnareas[0] = (short)mapfile.read_i32();
+ 
+     if (map.numspawnareas[0] > MAXSPAWNAREAS) {
+-        std::cout << std::endl << " ERROR: Number of spawn areas (" << map.numspawnareas[0]
++        smw::cout << smw::endl << " ERROR: Number of spawn areas (" << map.numspawnareas[0]
+                   << ") was greater than max allowed (" << MAXSPAWNAREAS << ')'
+-                  << std::endl;
++                  << smw::endl;
+         return false;
+     }
+ 
+@@ -219,9 +220,9 @@ bool MapReader1600::read_draw_areas(CMap& map, BinaryFile& mapfile)
+     map.numdrawareas = (short)mapfile.read_i32();
+ 
+     if (map.numdrawareas > MAXDRAWAREAS) {
+-        std::cout << std::endl << " ERROR: Number of draw areas (" << map.numdrawareas
++        smw::cout << smw::endl << " ERROR: Number of draw areas (" << map.numdrawareas
+                   << ") was greater than max allowed (" << MAXDRAWAREAS << ')'
+-                  << std::endl;
++                  << smw::endl;
+         return false;
+     }
+ 
+diff --git a/src/common/map/MapReader17xx.cpp b/src/common/map/MapReader17xx.cpp
+index 56f0cf847a6c286879e607a976561cda59d903a6..ad0185b7157649ec55f2deddd4056d36c35aa88c 100644
+--- a/src/common/map/MapReader17xx.cpp
++++ b/src/common/map/MapReader17xx.cpp
+@@ -1,3 +1,4 @@
++#include "util/Log.h"
+ #include "MapReader.h"
+ 
+ #include "GameValues.h"
+@@ -180,9 +181,9 @@ bool MapReader1700::read_spawn_areas(CMap& map, BinaryFile& mapfile)
+         map.numspawnareas[i] = (short)mapfile.read_i32();
+ 
+         if (map.numspawnareas[i] > MAXSPAWNAREAS) {
+-            std::cout << std::endl << " ERROR: Number of spawn areas (" << map.numspawnareas[i]
++            smw::cout << smw::endl << " ERROR: Number of spawn areas (" << map.numspawnareas[i]
+                 << ") was greater than max allowed (" << MAXSPAWNAREAS << ')'
+-                << std::endl;
++                << smw::endl;
+             return false;
+         }
+ 
+diff --git a/src/common/map/MapReader18xx.cpp b/src/common/map/MapReader18xx.cpp
+index f13c66c74c53a770f5f1f6f51807a9c73b3f540f..80d8ba571204ab3e93bf0bf1d272d781c5a9f004 100644
+--- a/src/common/map/MapReader18xx.cpp
++++ b/src/common/map/MapReader18xx.cpp
+@@ -1,3 +1,4 @@
++#include "util/Log.h"
+ #include "MapReader.h"
+ 
+ #include "map.h"
+@@ -212,9 +213,9 @@ bool MapReader1800::read_spawn_areas(CMap& map, BinaryFile& mapfile)
+         map.numspawnareas[i] = (short)mapfile.read_i32();
+ 
+         if (map.numspawnareas[i] > MAXSPAWNAREAS) {
+-            std::cout << std::endl << " ERROR: Number of spawn areas (" << map.numspawnareas[i]
++            smw::cout << smw::endl << " ERROR: Number of spawn areas (" << map.numspawnareas[i]
+                 << ") was greater than max allowed (" << MAXSPAWNAREAS << ')'
+-                << std::endl;
++                << smw::endl;
+             return false;
+         }
+ 
+diff --git a/src/common/path.cpp b/src/common/path.cpp
+index 355892800ea0a412fba071c3aec622a172add77f..b963c200630942f3ee10481ffc6fbdbd1edcc12a 100644
+--- a/src/common/path.cpp
++++ b/src/common/path.cpp
+@@ -6,16 +6,18 @@
+ #include <cassert>
+ #include <cstring>
+ #include <string>
++#ifndef NXDK
+ #include <sys/stat.h>
++#endif
+ 
+-#ifdef _WIN32
++#if defined(_WIN32) && !defined(NXDK)
+ #include <shlobj.h>
+ #include "SDL_platform.h"
+ #else
+ #include <stdlib.h>
+ #endif
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ 
+ extern std::string RootDataDirectory;
+@@ -25,14 +27,16 @@ std::string SMW_Root_Data_Dir;
+ 
+ std::string GetHomeDirectory()
+ {
+-#ifdef __APPLE__
++#ifdef NXDK
++    return "D:/"; // Title-local files live beside the executable.
++#elif defined(__APPLE__)
+     std::string result("/Library/Preferences/.smw/");
+     char* folder = getenv("HOME");
+     if (folder)
+         result = std::string(folder) + result;
+     return result;
+ 
+-#elif _WIN32
++#elif defined(_WIN32) && !defined(NXDK)
+     std::string result(".smw/");
+     char folder[MAX_PATH];
+     if (SHGetFolderPathA(NULL, CSIDL_PROFILE, NULL, 0, folder) == S_OK)
+@@ -72,9 +76,13 @@ std::string GetRootDirectory()
+ 
+ bool FileExists(const std::string& path)
+ {
++#ifdef NXDK
++    return smw::filesystem::exists(path);
++#else
+     struct stat buffer {};
+     int i = stat(path.c_str(), &buffer);
+     return i == 0;
++#endif
+ }
+ 
+ /*********************************************************************
+@@ -142,10 +150,14 @@ std::string convertPath(const std::string& source)
+ 		are_paths_initialized = true;
+     }
+ 
++#ifdef NXDK
++    return fs::path(SMW_Root_Data_Dir + source).string();
++#else
+     return SMW_Root_Data_Dir + source;
++#endif
+ }
+ 
+-std::string convertPath(std::string_view relpath, const std::filesystem::path& packdir)
++std::string convertPath(std::string_view relpath, const smw::filesystem::path& packdir)
+ {
+     constexpr std::array<std::string_view, 2> prefixes {
+         "gfx/packs/",
+@@ -171,12 +183,11 @@ std::string convertPath(std::string_view relpath, const std::filesystem::path& p
+ // Takes a path to a file and gives you back the file name (with or without author) as a char *
+ std::string GetNameFromFileName(const std::string& path, bool stripAuthor)
+ {
+-    constexpr char PATH_SEPARATOR = '/';
+ 
+     size_t left_pos = 0;
+     size_t right_pos = path.length();
+ 
+-    const size_t sep_pos = path.find_last_of(PATH_SEPARATOR);
++    const size_t sep_pos = path.find_last_of("/\\");
+     if (sep_pos != std::string::npos)
+         left_pos = sep_pos + 1;
+ 
+@@ -219,7 +230,7 @@ std::string stripPathAndExtension(const std::string& path)
+ {
+     size_t chopHere = path.find("_");   //find first _
+     if (chopHere == std::string::npos) {    //if not found, then find the beginning of the filename
+-        chopHere = path.find_last_of(dirSeparator());  //find last /
++        chopHere = path.find_last_of("/\\");  //find last /
+         if (chopHere == std::string::npos)  //if not found, start with first character
+             chopHere = 0;
+         else
+diff --git a/src/common/path.h b/src/common/path.h
+index a4ee118c41687da0e27b04ec86aa5aa0f68746c1..cc19bbaf1d7e1b1a598f22c520d09cade63155a4 100644
+--- a/src/common/path.h
++++ b/src/common/path.h
+@@ -1,6 +1,6 @@
+ #pragma once
+ 
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <string>
+ #include <string_view>
+ 
+@@ -15,7 +15,7 @@ bool FileExists(const std::string& path);
+ /* All filenames must go through this door */
+ // TODO: Return fs::path
+ std::string convertPath(const std::string& source);
+-std::string convertPath(std::string_view relpath, const std::filesystem::path& packdir);
++std::string convertPath(std::string_view relpath, const smw::filesystem::path& packdir);
+ 
+ constexpr char dirSeparator() { return '/'; }
+ 
+diff --git a/src/common/sfx.cpp b/src/common/sfx.cpp
+index ef232b6772bbbbd3bca9657600944f5c2e0ba92a..176901f4f46d77337953533429865cc4c868430b 100644
+--- a/src/common/sfx.cpp
++++ b/src/common/sfx.cpp
+@@ -1,12 +1,13 @@
++#include "util/Log.h"
+ #include "sfx.h"
+ 
+ #include "SDL.h"
+ 
+-#include <format>
++#include "util/Format.h"
+ #include <iostream>
+ #include <string>
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ 
+ bool fResumeMusic = true;
+@@ -73,13 +74,13 @@ bool sfx_canPlayAudio()
+ sfxSound::sfxSound(const fs::path& path)
+ {
+     const std::string path_str = path.generic_string();
+-    std::cout << "loading " << path_str << " ...";
++    smw::cout << "loading " << path_str << " ...";
+ 
+     m_sfx = MixChunkPtr(Mix_LoadWAV(path_str.c_str()));
+     if (!m_sfx)
+-        throw std::format("Failed to load {}: {}", path_str, Mix_GetError());
++        throw smw::format("Failed to load {}: {}", path_str, Mix_GetError());
+ 
+-    std::cout << " done" << std::endl;
++    smw::cout << " done" << smw::endl;
+ }
+ 
+ bool sfxSound::play()
+@@ -129,13 +130,13 @@ void sfxSound::onChannelFinished(int channel)
+ sfxMusic::sfxMusic(const fs::path& path)
+ {
+     const std::string path_str = path.generic_string();
+-    std::cout << "loading " << path_str << " ...";
++    smw::cout << "loading " << path_str << " ...";
+ 
+     m_music = MixMusicPtr(Mix_LoadMUS(path_str.c_str()));
+     if (!m_music)
+-        throw std::format("Failed to load {}: {}", path_str, Mix_GetError());
++        throw smw::format("Failed to load {}: {}", path_str, Mix_GetError());
+ 
+-    std::cout << " done" << std::endl;
++    smw::cout << " done" << smw::endl;
+ }
+ 
+ void sfxMusic::play(bool fPlayonce, bool fResume)
+diff --git a/src/common/sfx.h b/src/common/sfx.h
+index ffa6d6a99c9f72518c0778f598c9f23d0ebe80d6..882a9eef7561626167a5c3732ce5c9d5ff6a4bd7 100644
+--- a/src/common/sfx.h
++++ b/src/common/sfx.h
+@@ -1,10 +1,20 @@
+ #pragma once
+ 
++#ifndef NXDK
+ #include "SDL_mixer.h"
++#else
++#include <memory>
++#include <vector>
++#include <string>
++#include <cstdint>
++// Game-local storage behind the existing sound interface; not SDL_mixer.
++struct Mix_Chunk { std::vector<int16_t> pcm; };
++struct Mix_Music { std::string path; };
++#endif
+ 
+ #include <array>
+ #include <bitset>
+-#include <filesystem>
++#include "util/Filesystem.h"
+ 
+ struct MixDeleter {
+     void operator()(Mix_Chunk* ptr) const noexcept;
+@@ -27,13 +37,17 @@ public:
+     static constexpr int k_channels = 16;
+ 
+     sfxSound() = default;
+-    sfxSound(const std::filesystem::path& path);
++    sfxSound(const smw::filesystem::path& path);
+ 
+     bool play();
+     void playLoop(int iLoop);
+     void stop();
+ 
++#ifdef NXDK
++    bool isPlaying() const;
++#else
+     bool isPlaying() const { return m_channels.any(); }
++#endif
+ 
+     static void onChannelFinished(int channel);
+ 
+@@ -49,7 +63,7 @@ private:
+ class sfxMusic {
+ public:
+     sfxMusic() = default;
+-    sfxMusic(const std::filesystem::path& path);
++    sfxMusic(const smw::filesystem::path& path);
+ 
+     void play(bool fPlayonce, bool fResume);
+     void stop();
+diff --git a/src/common/ui/MI_MapPreview.cpp b/src/common/ui/MI_MapPreview.cpp
+index 7f0a645a382af533b377fd100270c0c56c339080..327c1c8f73e9d20b2f60c77b5a653138aa2ad0c2 100644
+--- a/src/common/ui/MI_MapPreview.cpp
++++ b/src/common/ui/MI_MapPreview.cpp
+@@ -88,15 +88,15 @@ void MI_MapPreview::Draw()
+ 
+     //Draw map hazards
+     for (const std::unique_ptr<CObject>& obj : objectcontainer[1].list()) {
+-        if (auto* hazard = dynamic_cast<OMO_OrbitHazard*>(obj.get())) {
++        if (auto* hazard = smw::checked_cast<OMO_OrbitHazard*>(obj.get())) {
+             hazard->draw(rectDst.x, rectDst.y);
+-        } else if (auto* hazard = dynamic_cast<OMO_StraightPathHazard*>(obj.get())) {
++        } else if (auto* hazard = smw::checked_cast<OMO_StraightPathHazard*>(obj.get())) {
+             hazard->draw(rectDst.x, rectDst.y);
+-        } else if (auto* hazard = dynamic_cast<IO_FlameCannon*>(obj.get())) {
++        } else if (auto* hazard = smw::checked_cast<IO_FlameCannon*>(obj.get())) {
+             hazard->draw(rectDst.x, rectDst.y);
+-        } else if (auto* hazard = dynamic_cast<MO_BulletBill*>(obj.get())) {
++        } else if (auto* hazard = smw::checked_cast<MO_BulletBill*>(obj.get())) {
+             hazard->draw(rectDst.x, rectDst.y);
+-        } else if (auto* hazard = dynamic_cast<MO_PirhanaPlant*>(obj.get())) {
++        } else if (auto* hazard = smw::checked_cast<MO_PirhanaPlant*>(obj.get())) {
+             hazard->draw(rectDst.x, rectDst.y);
+         }
+     }
+diff --git a/src/common/ui/MI_SelectField.cpp b/src/common/ui/MI_SelectField.cpp
+index f4f43abd1ce7a0aa570e925f239c509b4c7a0a6e..4ed2072dec4d21e19f8a0a4ea02f768292736d6a 100644
+--- a/src/common/ui/MI_SelectField.cpp
++++ b/src/common/ui/MI_SelectField.cpp
+@@ -304,6 +304,8 @@ bool MI_SelectField<T>::moveNext()
+     if (m_items.empty())
+         return false;
+ 
++    // A failed scan must not change the selected index or output value.
++    const size_t original_index = m_index;
+     // stop when detecting a restart or a loop
+     const size_t stop_idx = m_wraps ? m_index : 0;
+ 
+@@ -317,6 +319,7 @@ bool MI_SelectField<T>::moveNext()
+         }
+     }
+ 
++    m_index = original_index;
+     return false;
+ }
+ 
+@@ -327,6 +330,8 @@ bool MI_SelectField<T>::movePrev()
+     if (m_items.empty())
+         return false;
+ 
++    // A failed scan must not change the selected index or output value.
++    const size_t original_index = m_index;
+     // stop when detecting a restart or a loop
+     const size_t stop_idx = m_wraps ? m_index : (m_items.size() - 1);
+ 
+@@ -340,6 +345,7 @@ bool MI_SelectField<T>::movePrev()
+         }
+     }
+ 
++    m_index = original_index;
+     return false;
+ }
+ 
+diff --git a/src/common/util/CheckedCast.h b/src/common/util/CheckedCast.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..c0f3ebc3c3444c9ea2623c82323fdfadd6a2d952
+--- /dev/null
++++ b/src/common/util/CheckedCast.h
+@@ -0,0 +1,24 @@
++#pragma once
++#include <type_traits>
++// SMW uses single-inheritance hierarchies. Preserve checked pointer downcasts on
++// nxdk without requiring Microsoft's absent __RTDynamicCast runtime.
++namespace smw {
++#ifdef NXDK
++template<class T> inline char type_key;
++template<class Target, class Source> Target checked_cast(Source* source) {
++    using Type = std::remove_pointer_t<Target>;
++    return source ? static_cast<Target>(source->smwQueryType(&type_key<Type>)) : nullptr;
++}
++#else
++template<class Target, class Source> Target checked_cast(Source* source) {
++    return dynamic_cast<Target>(source);
++}
++#endif
++}
++#ifdef NXDK
++#define SMW_RTTI_ROOT(Type) public: virtual void* smwQueryType(const void* key) { return key==&smw::type_key<Type> ? this : nullptr; } private:
++#define SMW_RTTI(Type, Base) public: void* smwQueryType(const void* key) override { return key==&smw::type_key<Type> ? this : Base::smwQueryType(key); } private:
++#else
++#define SMW_RTTI_ROOT(Type)
++#define SMW_RTTI(Type, Base)
++#endif
+diff --git a/src/common/util/DirIterator.cpp b/src/common/util/DirIterator.cpp
+index f446884fe38e6de9825f07916005f0afc39ec7ef..cb4191e1e9ea6cb59c003073129d6f1dcef51701 100644
+--- a/src/common/util/DirIterator.cpp
++++ b/src/common/util/DirIterator.cpp
+@@ -3,7 +3,7 @@
+ #include "linfunc.h"
+ #include "util/ContainerHelpers.h"
+ 
+-namespace fs = std::filesystem;
++namespace fs = smw::filesystem;
+ 
+ 
+ namespace {
+@@ -15,13 +15,24 @@ std::string lowercaseExt(const fs::directory_entry& entry) {
+ 
+ DirIterator::DirIterator(const fs::path& path)
+ {
++#ifdef NXDK
++    m_entries = fs::list_directory(path);
++#else
+     std::error_code err;  // It's OK if the directory doesn't exist
+     m_iter = fs::directory_iterator(path, err);
++#endif
+ }
+ 
+ 
+ std::optional<fs::path> DirIterator::next()
+ {
++#ifdef NXDK
++    while (m_index < m_entries.size()) {
++        const auto& entry = m_entries[m_index++];
++        if (isAccepted(entry)) return entry.path();
++    }
++    return std::nullopt;
++#else
+     std::optional<fs::path> result = std::nullopt;
+ 
+     while (m_iter != fs::end(m_iter) && !result) {
+@@ -32,6 +43,7 @@ std::optional<fs::path> DirIterator::next()
+     }
+ 
+     return result;
++#endif
+ }
+ 
+ 
+diff --git a/src/common/util/DirIterator.h b/src/common/util/DirIterator.h
+index b3f5aef187d65e63e4c4e7613d45ed89a9dc63b4..d94a58412818fc72346d4d82b48e7273d436bd59 100644
+--- a/src/common/util/DirIterator.h
++++ b/src/common/util/DirIterator.h
+@@ -1,42 +1,47 @@
+ #pragma once
+ 
+-#include <filesystem>
++#include "util/Filesystem.h"
+ #include <optional>
+ #include <vector>
+ 
+ 
+ class DirIterator {
+ protected:
+-    DirIterator(const std::filesystem::path& path);
++    DirIterator(const smw::filesystem::path& path);
+     virtual ~DirIterator() = default;
+ 
+-    virtual bool isAccepted(const std::filesystem::directory_entry& entry) const = 0;
++    virtual bool isAccepted(const smw::filesystem::directory_entry& entry) const = 0;
+ 
+ public:
+-    std::optional<std::filesystem::path> next();
++    std::optional<smw::filesystem::path> next();
+ 
+ protected:
+-    std::filesystem::directory_iterator m_iter;
++#ifdef NXDK
++    std::vector<smw::filesystem::directory_entry> m_entries;
++    size_t m_index = 0;
++#else
++    smw::filesystem::directory_iterator m_iter;
++#endif
+ };
+ 
+ 
+ /// Iterates over the files inside a directory.
+ class FilesIterator : public DirIterator {
+ public:
+-    FilesIterator(const std::filesystem::path& path, std::vector<std::string> extensions = {});
++    FilesIterator(const smw::filesystem::path& path, std::vector<std::string> extensions = {});
+ 
+ private:
+     std::vector<std::string> m_extensions;
+ 
+-    bool isAccepted(const std::filesystem::directory_entry& entry) const override;
++    bool isAccepted(const smw::filesystem::directory_entry& entry) const override;
+ };
+ 
+ 
+ /// Iterates over the subdirectories inside a directory.
+ class SubdirsIterator : public DirIterator  {
+ public:
+-    SubdirsIterator(const std::filesystem::path& path);
++    SubdirsIterator(const smw::filesystem::path& path);
+ 
+ private:
+-    bool isAccepted(const std::filesystem::directory_entry& entry) const override;
++    bool isAccepted(const smw::filesystem::directory_entry& entry) const override;
+ };
+diff --git a/src/common/util/Error.h b/src/common/util/Error.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..9772deb8b0c2ad506c673b109112e018df6dbd86
+--- /dev/null
++++ b/src/common/util/Error.h
+@@ -0,0 +1,13 @@
++#pragma once
++#ifdef NXDK
++#include <string>
++#include <exception>
++namespace smw {
++[[noreturn]] void fatal(const char* message);
++[[noreturn]] inline void fatal(const std::string& s) { fatal(s.c_str()); }
++[[noreturn]] inline void fatal(const std::exception& e) { fatal(e.what()); }
++}
++#define SMW_RAISE(error) ::smw::fatal(error)
++#else
++#define SMW_RAISE(error) throw error
++#endif
+diff --git a/src/common/util/Filesystem.h b/src/common/util/Filesystem.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..d7e4ab828673499b7c957580cc6b0ec63cd7e19f
+--- /dev/null
++++ b/src/common/util/Filesystem.h
+@@ -0,0 +1,47 @@
++#pragma once
++#ifndef NXDK
++#include <filesystem>
++namespace smw { namespace filesystem = std::filesystem; }
++#else
++#include <string>
++#include <string_view>
++#include <vector>
++#include <algorithm>
++namespace smw::filesystem {
++// Deliberately small path interface used by SMW; not a std::filesystem emulation.
++class path {
++    std::string value;
++    void normalize() { std::replace(value.begin(),value.end(), '/', '\\'); }
++public:
++    path() = default;
++    path(const char* s): value(s) { normalize(); }
++    path(std::string s): value(std::move(s)) { normalize(); }
++    path(std::string_view s): value(s) { normalize(); }
++    const char* c_str() const { return value.c_str(); }
++    std::string string() const { return value; }
++    std::string generic_string() const { return value; }
++    bool empty() const { return value.empty(); }
++    path filename() const { auto i=value.find_last_of("/\\"); return i==std::string::npos ? value : value.substr(i+1); }
++    path extension() const { auto f=filename().string(); auto i=f.rfind('.'); return i==std::string::npos || i==0 ? "" : f.substr(i); }
++    friend path operator/(const path& a, const path& b) {
++        if (a.empty()) return b;
++        if (b.empty()) return a;
++        return a.value + ((a.value.back()=='/' || a.value.back()=='\\') ? "" : "/") + b.value;
++    }
++    friend bool operator==(const path& a,const path& b) { return a.value==b.value; }
++    friend bool operator!=(const path& a,const path& b) { return !(a==b); }
++    friend bool operator<(const path& a,const path& b) { return a.value<b.value; }
++};
++class directory_entry {
++    filesystem::path name;
++    bool dir;
++public:
++    directory_entry(filesystem::path p, bool d): name(std::move(p)), dir(d) {}
++    const filesystem::path& path() const { return name; }
++    bool is_directory() const { return dir; }
++};
++std::vector<directory_entry> list_directory(const path&);
++bool exists(const path&);
++bool is_directory(const path&);
++}
++#endif
+diff --git a/src/common/util/Format.h b/src/common/util/Format.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..5611577e582945fd0383817ffc3c5ad593f40c18
+--- /dev/null
++++ b/src/common/util/Format.h
+@@ -0,0 +1,17 @@
++#pragma once
++#ifdef NXDK
++#include <algorithm>
++#include <string>
++#include <locale>
++#include <cmath>
++#include <system_error>
++// fmt's desktop Win32 console helpers are irrelevant to string formatting.
++#pragma push_macro("_WIN32")
++#undef _WIN32
++#include <fmt/format.h>
++#pragma pop_macro("_WIN32")
++namespace smw { using fmt::format; using fmt::format_string; }
++#else
++#include <format>
++namespace smw { using std::format; using std::format_string; }
++#endif
+diff --git a/src/common/util/Log.h b/src/common/util/Log.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..05cab4e3d74229712c2a872a26e995e15bfbf13b
+--- /dev/null
++++ b/src/common/util/Log.h
+@@ -0,0 +1,24 @@
++#pragma once
++#ifdef NXDK
++#include <cstdio>
++#include <string>
++#include <type_traits>
++namespace smw {
++struct EndLine {};
++inline EndLine endl;
++struct LogStream {
++    LogStream& operator<<(const char* s) { fputs(s, stdout); return *this; }
++    LogStream& operator<<(const std::string& s) { return *this << s.c_str(); }
++    LogStream& operator<<(EndLine) { fputc('\n',stdout); return *this; }
++    template<class T> LogStream& operator<<(T n) {
++        if constexpr(std::is_integral_v<T>) fprintf(stdout,"%lld",static_cast<long long>(n));
++        else fprintf(stdout,"%g",static_cast<double>(n));
++        return *this;
++    }
++};
++inline LogStream cout;
++}
++#else
++#include <iostream>
++namespace smw { using std::cout; using std::endl; }
++#endif
+diff --git a/src/leveleditor/leveleditor.cpp b/src/leveleditor/leveleditor.cpp
+index 335e868fcf48f1ea17021b7036f0fe6a641aec4e..f57a562bb3101ce7518f7417aee40def52848ccb 100644
+--- a/src/leveleditor/leveleditor.cpp
++++ b/src/leveleditor/leveleditor.cpp
+@@ -4373,7 +4373,7 @@ void LoadBackgroundPage(std::array<gfxSprite, 16>& sBackgrounds, short iPage)
+ 		if (iPage * 16 + iIndex >= backgroundlist->count())
+ 			break;
+ 
+-		const std::filesystem::path& path = backgroundlist->at(iPage * 16 + iIndex);
++		const smw::filesystem::path& path = backgroundlist->at(iPage * 16 + iIndex);
+ 		if (path.empty())
+ 			return;
+ 
+diff --git a/src/smw/FPSLimiter.cpp b/src/smw/FPSLimiter.cpp
+index 9b065afa710fdf7671bc40c81c90fbb70c290221..80d214ad67bc06db5fae9a4dad6a989e0808d540 100644
+--- a/src/smw/FPSLimiter.cpp
++++ b/src/smw/FPSLimiter.cpp
+@@ -5,7 +5,11 @@
+ 
+ #include "SDL.h"
+ 
+-#include <format>
++#include "util/Format.h"
++#ifdef NXDK_AUDIO_STATUS_HUD
++#include "AudioDiagnostics.h"
++#include <cstdio>
++#endif
+ 
+ 
+ extern CGameValues game_values;
+@@ -49,12 +53,39 @@ void FPSLimiter::beforeFlip()
+ #endif
+     {
+         float potentialFps = 1000.0f / (float)(game_values.framelimiter == 0 ? 1 : game_values.framelimiter);
+-        rm->menu_font_large.draw(0, 480 - rm->menu_font_large.getHeight(), std::format("Actual:{:.1f}/{:.1f}, Flip:{:.1f}, Potential:{:.1f}", realfps, potentialFps, flipfps, 1000.0f / (float)ticks));
++        rm->menu_font_large.draw(0, 480 - rm->menu_font_large.getHeight(), smw::format("Actual:{:.1f}/{:.1f}, Flip:{:.1f}, Potential:{:.1f}", realfps, potentialFps, flipfps, 1000.0f / (float)ticks));
++    }
++#ifdef NXDK_AUDIO_STATUS_HUD
++    // Splash assets/fonts may still be loading. This diagnostic stays off
++    // until the menu/game can render fonts, and never changes audio state.
++    if (game_values.appstate != AppState::Splash) {
++        const auto audio = nxdk_audio_status();
++        char status[96];
++        std::snprintf(status, sizeof(status), "Audio callbacks:%lu underruns:%lu loops:%lu",
++                      audio.callbacks, audio.underruns, audio.loops);
++        rm->menu_font_small.draw(4, 478 - rm->menu_font_small.getHeight(), status);
+     }
++#endif
+ }
+ 
+ void FPSLimiter::afterFlip()
+ {
++#ifdef NXDK
++    static Uint32 reportStart=SDL_GetTicks(), frames=0, updateMs=0, presentMs=0;
++    ++frames;
++    updateMs+=ticks;
++    const Uint32 frameMs=SDL_GetTicks()-framestart;
++    presentMs+=frameMs>ticks ? frameMs-ticks : 0;
++    if(SDL_GetTicks()-reportStart>=10000) {
++        const Uint32 elapsed=SDL_GetTicks()-reportStart;
++        // nxdk's configured printf omits floating-point conversion.
++        printf("[perf] fps_x10=%lu update_us=%lu present_us=%lu state=%d\n",
++            (unsigned long)(frames*10000/elapsed),
++            (unsigned long)(updateMs*1000/frames),
++            (unsigned long)(presentMs*1000/frames),(int)game_values.appstate);
++        reportStart=SDL_GetTicks();frames=updateMs=presentMs=0;
++    }
++#endif
+     flipfps = 1000.0f / (float)ticks;
+ 
+     //Sleep for time just under what we need
+diff --git a/src/smw/GSGameplay.cpp b/src/smw/GSGameplay.cpp
+index 5413c8b2edd782b7093d777efa4f776bd0621959..300402a39d92202f77e9dc6074ee291b1266884b 100644
+--- a/src/smw/GSGameplay.cpp
++++ b/src/smw/GSGameplay.cpp
+@@ -522,8 +522,8 @@ void GameplayState::CleanDeadPlayers()
+ {
+     bool fCheckForGameOver = false;
+ 
+-    auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode);
+-    auto* gmTag = dynamic_cast<CGM_Tag*>(game_values.gamemode);
++    auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode);
++    auto* gmTag = smw::checked_cast<CGM_Tag*>(game_values.gamemode);
+ 
+     for (size_t i = 0; i < players.size(); i++) {
+         if (players[i]->state == PlayerState::Dead) {
+@@ -683,7 +683,7 @@ void shakeScreen()
+ 
+     //Kill goombas and koopas
+     for (const std::unique_ptr<CObject>& obj : objectcontainer[0].list()) {
+-        if (auto* movingobject = dynamic_cast<IO_MovingObject*>(obj.get())) {
++        if (auto* movingobject = smw::checked_cast<IO_MovingObject*>(obj.get())) {
+             MovingObjectType type = movingobject->getMovingObjectType();
+ 
+             if ((type == movingobject_goomba || type == movingobject_koopa || type == movingobject_buzzybeetle || type == movingobject_spiny)
+@@ -708,7 +708,7 @@ void shakeScreen()
+ 
+     //Destroy throw blocks and flip shells over
+     for (const std::unique_ptr<CObject>& obj : objectcontainer[1].list()) {
+-        if (auto* movingobject = dynamic_cast<IO_MovingObject*>(obj.get())) {
++        if (auto* movingobject = smw::checked_cast<IO_MovingObject*>(obj.get())) {
+             if (game_values.flags.screenshakekillinair == movingobject->inair) {
+                 if (movingobject->getMovingObjectType() == movingobject_shell) {
+                     CO_Shell * shell = (CO_Shell*)movingobject;
+@@ -851,7 +851,7 @@ void handleObj2ObjCollisions()
+         for (size_t iObject1 = 0; iObject1 < iContainerEnd1; iObject1++) {
+             CObject * object1 = objectcontainer[iLayer1].list()[iObject1].get();
+ 
+-            auto* movingobject1 = dynamic_cast<IO_MovingObject*>(object1);
++            auto* movingobject1 = smw::checked_cast<IO_MovingObject*>(object1);
+             if (!movingobject1)
+                 continue;
+ 
+@@ -863,7 +863,7 @@ void handleObj2ObjCollisions()
+                     if (object2->isDead())
+                         continue;
+ 
+-                    auto* movingobject2 = dynamic_cast<IO_MovingObject*>(object2);
++                    auto* movingobject2 = smw::checked_cast<IO_MovingObject*>(object2);
+                     if (!movingobject2)
+                         continue;
+ 
+@@ -2077,6 +2077,10 @@ void GameplayState::onEnterState()
+     previous_playerKeys = *current_playerKeys;
+ 
+     initRunGame();
++#ifdef NXDK_MENU_TEST_SPIN
++    game_values.spinscreen=true;
++    printf("[menu-frame] controlled screen-spin effect enabled for rendering fixture\n");
++#endif
+ 
+ #ifdef _DEBUG
+     exitgametimer = 0;
+diff --git a/src/smw/GSMenu.cpp b/src/smw/GSMenu.cpp
+index 0e3d6ef8937202ed05fec729d6744954ae25e70b..e11062c78332db6376bd3bf38b8c17b3e8674d9c 100644
+--- a/src/smw/GSMenu.cpp
++++ b/src/smw/GSMenu.cpp
+@@ -1,4 +1,7 @@
+ #include "GSMenu.h"
++#ifdef NXDK
++#include "Platform.h"
++#endif
+ 
+ #include "FileList.h"
+ #include "Game.h"
+@@ -65,6 +68,15 @@
+ 
+ extern SDL_Surface* screen;
+ extern SDL_Surface* blitdest;
++#ifdef NXDK_MENU_FRAME_CAPTURE
++#include <cstdio>
++extern short x_shake, y_shake;
++namespace {
++bool menuCapturePending=true;
++Uint32 menuCaptureAt=0;
++unsigned menuCaptureIndex=0;
++}
++#endif
+ 
+ #ifdef _DEBUG
+ extern bool	g_fAutoTest;
+@@ -170,6 +182,9 @@ bool MenuState::init()
+ 
+ void MenuState::onEnterState()
+ {
++#ifdef NXDK_MENU_FRAME_CAPTURE
++    menuCapturePending=true;menuCaptureAt=0;
++#endif
+     iUnlockMinigameOptionIndex = 0;
+ 
+     iTournamentAIStep = 0;
+@@ -562,6 +577,10 @@ void MenuState::update()
+             Exit();
+             return;
+         } else if (MENU_CODE_TO_MAIN_MENU == code) {
++#ifdef NXDK_PREFERENCES
++            if (mCurrentMenu == mOptionsMenu.get() || mCurrentMenu == mPlayerControlsSelectMenu.get())
++                game_values.WriteConfig();
++#endif
+             iDisplayError = DISPLAY_ERROR_NONE;
+             iDisplayErrorTimer = 0;
+             net_endSession();
+@@ -719,7 +738,10 @@ void MenuState::update()
+                     mTournamentScoreboardMenu->miTournamentScoreboard->CreateScoreboard(score_cnt, game_values.tournamentgames, &rm->menu_mode_large);
+                 } else if (game_values.matchtype == MatchType::World) {
+                     printf("  Match type: World\n");
+-                    try {
++#ifndef NXDK
++    try
++#endif
++    {
+                         g_worldmap = WorldMap(worldlist->at(game_values.worldindex).string(), TILESIZE);
+ 
+                         mTournamentScoreboardMenu->miTournamentScoreboard->CreateScoreboard(score_cnt, 0, &rm->spr_tour_markers);
+@@ -740,11 +762,14 @@ void MenuState::update()
+                         mWorldMenu->miWorld->Init();
+                         mWorldMenu->miWorld->SetControllingTeam(RANDOM_INT( score_cnt));
+                     }
+-                    catch (const std::runtime_error& err) {
++#ifndef NXDK
++    catch (const std::runtime_error& err) {
+                         iDisplayError = DISPLAY_ERROR_READ_WORLD_FILE;
+                         iDisplayErrorTimer = 120;
+                         fErrorReadingTourFile = true;
+                     }
++#endif
++
+                 }
+ 
+                 if (!fErrorReadingTourFile) {
+@@ -982,12 +1007,19 @@ void MenuState::update()
+         } else if (MENU_CODE_WORLD_GRAPHICS_PACK_CHANGED == code) {
+             rm->loadWorldGraphics();
+         } else if (MENU_CODE_GAME_GRAPHICS_PACK_CHANGED == code) {
+-            try {
++#ifndef NXDK
++    try
++#endif
++    {
+                 gfx_loadpalette(convertPath("gfx/packs/palette.png", gamegraphicspacklist->currentPath()));
+-            } catch (const std::string& err) {
++            }
++#ifndef NXDK
++    catch (const std::string& err) {
+                 printf("\nwarning: %s -> falling back to BMP\n", err.c_str());
+                 gfx_loadpalette(convertPath("gfx/packs/palette.bmp", gamegraphicspacklist->currentPath()));
+             }
++#endif
++
+             rm->loadGameGraphics();
+         } else if (MENU_CODE_SOUND_PACK_CHANGED == code) {
+             rm->LoadGameSounds();
+@@ -1251,6 +1283,34 @@ void MenuState::update()
+ 
+     mCurrentMenu->Update();
+     mCurrentMenu->Draw();
++#ifdef NXDK_MENU_FRAME_CAPTURE
++    // Read-only rendering fixture, delayed until the main menu has settled.
++    if (menuCapturePending && mCurrentMenu==mMainMenu.get()) {
++        if (!menuCaptureAt) menuCaptureAt=SDL_GetTicks()+1500;
++        if (SDL_TICKS_PASSED(SDL_GetTicks(),menuCaptureAt)) {
++            SDL_Surface* background=rm->menu_backdrop.getSurface();
++            Uint8 alpha=0;SDL_GetSurfaceAlphaMod(background,&alpha);
++            SDL_BlendMode blend=SDL_BLENDMODE_NONE;SDL_GetSurfaceBlendMode(background,&blend);
++            // Screen capture completed on hardware; saving the cached backdrop
++            // stalled the first observer. Leave that surface untouched here.
++            char screenPath[64];
++            std::snprintf(screenPath,sizeof(screenPath),"D:\\mr-%s-%u-s.bmp",GIT_REVISION,menuCaptureIndex);
++            FILE* existingScreen=std::fopen(screenPath,"rb");
++            const bool exists=existingScreen!=nullptr;
++            if (existingScreen) std::fclose(existingScreen);
++            printf("[menu-frame] begin index=%u x_shake=%d y_shake=%d screen=%dx%d clip=%d,%d,%d,%d background=%dx%d alpha=%u blend=%d destination_is_screen=%d existing=%d path=%s\n",
++                menuCaptureIndex,x_shake,y_shake,screen->w,screen->h,
++                screen->clip_rect.x,screen->clip_rect.y,screen->clip_rect.w,screen->clip_rect.h,
++                background->w,background->h,static_cast<unsigned>(alpha),static_cast<int>(blend),
++                blitdest==screen,exists,screenPath);
++            std::fflush(stdout);
++            const int savedScreen=exists ? -2 : SDL_SaveBMP(screen,screenPath);
++            printf("[menu-frame] end index=%u saved_screen=%d\n",menuCaptureIndex,savedScreen);
++            std::fflush(stdout);
++            menuCapturePending=false;++menuCaptureIndex;
++        }
++    } else if (mCurrentMenu!=mMainMenu.get()) menuCaptureAt=0;
++#endif
+ 
+     if (iDisplayError > DISPLAY_ERROR_NONE) {
+         rm->spr_selectfield.draw(70, 400, {0, 0, 484, 32});
+@@ -1542,12 +1602,19 @@ void MenuState::StartGame()
+                     path << GetHomeDirectory() << "net_skin" << k << ".bmp";
+                     printf("  player %d -> %s\n", k, path.str().c_str());
+ 
+-                    try {
++#ifndef NXDK
++    try
++#endif
++    {
+                         rm->spr_player[k] = rm->LoadFullSkin(path.str(), k);
+-                    } catch (...) {
++                    }
++#ifndef NXDK
++    catch (...) {
+                         printf("[warning] Could not load netplay skin of player %d, using default\n", k);
+                         rm->spr_player[k] = rm->LoadFullSkin(game_values.skinids[k], game_values.colorids[k]);
+                     }
++#endif
++
+                 }
+             }
+             else if (game_values.randomskin[k]) {
+@@ -1664,6 +1731,9 @@ void MenuState::Exit()
+ {
+ #ifdef __EMSCRIPTEN__
+     return;
++#endif
++#ifdef NXDK
++    nxdk_guard_normal_exit();
+ #endif
+     game_values.appstate = AppState::Quit;
+     game_values.WriteConfig();
+diff --git a/src/smw/GSSplashScreen.cpp b/src/smw/GSSplashScreen.cpp
+index 611320268307258744e874402269d03ea5ccbe4e..65d0e7796c42d0eac05eace0538ae8e48a512b63 100644
+--- a/src/smw/GSSplashScreen.cpp
++++ b/src/smw/GSSplashScreen.cpp
+@@ -1,4 +1,7 @@
+ #include "GSSplashScreen.h"
++#ifdef NXDK
++#include "Platform.h"
++#endif
+ 
+ #include "FileList.h"
+ #include "MapList.h"
+@@ -297,8 +300,9 @@ void SplashScreenState::update()
+         maplist->ApplyFilters(game_values.pfFilters);
+ 
+         ifSoundOnPlay(rm->sfx_coin);
+-
+-
++#ifdef NXDK
++        nxdk_startup_checkpoint(NxdkStartupStage::ready);
++#endif
+         state++;
+     }
+ }
+diff --git a/src/smw/ObjectContainer.cpp b/src/smw/ObjectContainer.cpp
+index b2323a8cd698816445ad89543872730ead849d01..eda2521e3bba422be8ab35e6db1088bb8e686507 100644
+--- a/src/smw/ObjectContainer.cpp
++++ b/src/smw/ObjectContainer.cpp
+@@ -75,7 +75,7 @@ float CObjectContainer::getClosestMovingObject(short ix, short iy, MovingObjectT
+     float minDist = std::numeric_limits<float>::max();
+ 
+     for (const std::unique_ptr<CObject>& obj : m_list) {
+-        auto* movobj = dynamic_cast<IO_MovingObject*>(obj.get());
++        auto* movobj = smw::checked_cast<IO_MovingObject*>(obj.get());
+         if (!movobj || movobj->getMovingObjectType() != movingObjectType)
+             continue;
+ 
+@@ -108,7 +108,7 @@ size_t CObjectContainer::countMovingTypes(MovingObjectType type) const
+     size_t count = 0;
+ 
+     for (const std::unique_ptr<CObject>& obj : m_list) {
+-        auto* movobj = dynamic_cast<IO_MovingObject*>(obj.get());
++        auto* movobj = smw::checked_cast<IO_MovingObject*>(obj.get());
+         if (movobj && movobj->getMovingObjectType() == type) {
+             count++;
+         }
+diff --git a/src/smw/ai.cpp b/src/smw/ai.cpp
+index e38cd5e15b52f8512575e1d31fea3d220ac1797e..dab76d89660c20ef3065416503c90ee5c0ba8032 100644
+--- a/src/smw/ai.cpp
++++ b/src/smw/ai.cpp
+@@ -109,14 +109,14 @@ void CPlayerAI::Init()
+ 
+         //Scan Yoshis to see which ones are present
+         for (const std::unique_ptr<CObject>& obj : objectcontainer[1].list()) {
+-            if (auto* yoshi = dynamic_cast<MO_Yoshi*>(obj.get())) {
++            if (auto* yoshi = smw::checked_cast<MO_Yoshi*>(obj.get())) {
+                 fYoshi[yoshi->getColor()] = true;
+             }
+         }
+ 
+         //Now scan eggs and ignore any egg that doesn't have a yoshi
+         for (const std::unique_ptr<CObject>& obj : objectcontainer[1].list()) {
+-            if (auto* egg = dynamic_cast<CO_Egg*>(obj.get())) {
++            if (auto* egg = smw::checked_cast<CO_Egg*>(obj.get())) {
+                 if (!fYoshi[egg->getColor()]) {
+                     AttentionObject * ao = new AttentionObject();
+                     ao->iID = egg->networkId();
+@@ -150,8 +150,8 @@ void CPlayerAI::Think(COutputControl * playerKeys)
+     if (pPlayer->isdead() || pPlayer->isspawning())
+         return;
+ 
+-    auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode);
+-    auto* gmTag = dynamic_cast<CGM_Tag*>(game_values.gamemode);
++    auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode);
++    auto* gmTag = smw::checked_cast<CGM_Tag*>(game_values.gamemode);
+ 
+     /***************************************************
+     * 1. Figure out what objects are nearest to us
+@@ -359,16 +359,16 @@ void CPlayerAI::Think(COutputControl * playerKeys)
+                 if (!pPlayer->inair) playerKeys->game_down.fDown = true;
+             }
+ 
+-            if (dynamic_cast<CO_Egg*>(goal))
++            if (smw::checked_cast<CO_Egg*>(goal))
+                 playerKeys->game_turbo.fDown = true;
+-            else if (dynamic_cast<CO_Star*>(goal) && pPlayer->throw_star == 0)
++            else if (smw::checked_cast<CO_Star*>(goal) && pPlayer->throw_star == 0)
+                 playerKeys->game_turbo.fDown = true;
+-            else if (dynamic_cast<CO_Flag*>(goal))
++            else if (smw::checked_cast<CO_Flag*>(goal))
+                 playerKeys->game_turbo.fDown = true;
+ 
+             //Drop current item if we're going after another carried item
+             if (carriedItem) {
+-                if (auto* movingobject = dynamic_cast<IO_MovingObject*>(goal)) {
++                if (auto* movingobject = smw::checked_cast<IO_MovingObject*>(goal)) {
+                     MovingObjectType goalobjecttype = movingobject->getMovingObjectType();
+                     if (goalobjecttype == movingobject_egg || goalobjecttype == movingobject_flag ||
+                             goalobjecttype == movingobject_star || goalobjecttype == movingobject_phantokey) {
+@@ -384,7 +384,7 @@ void CPlayerAI::Think(COutputControl * playerKeys)
+             }
+ 
+             //Open treasure chests in bonus houses in world mode
+-            if (dynamic_cast<MO_BonusHouseChest*>(goal))
++            if (smw::checked_cast<MO_BonusHouseChest*>(goal))
+                 playerKeys->game_turbo.fPressed = true;
+         } else if (actionType == 2) { //Evade Threat
+             CObject * threat = nearestObjects.threat;
+@@ -513,7 +513,7 @@ void CPlayerAI::Think(COutputControl * playerKeys)
+         }
+ 
+         //Drop live bombs if they are not yours
+-        if (auto* bomb = dynamic_cast<CO_Bomb*>(carriedItem)) {
++        if (auto* bomb = smw::checked_cast<CO_Bomb*>(carriedItem)) {
+             if (bomb->iTeamID != pPlayer->teamID)
+                 playerKeys->game_turbo.fDown = false;
+         } else if (carriedobjecttype == movingobject_carried || carriedobjecttype == movingobject_throwbox) { //Drop springs,spikes,shoes
+@@ -1045,7 +1045,7 @@ void CPlayerAI::GetNearestObjects()
+         }
+     }
+ 
+-    auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode);
++    auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode);
+ 
+     //Figure out where the other players are
+     for (size_t iPlayer = 0; iPlayer < players.size(); iPlayer++) {
+diff --git a/src/smw/gamemodes/Chicken.h b/src/smw/gamemodes/Chicken.h
+index 8d7762a767ceea90b79f48d60c5352d8843aa0d7..dbebbb8141e1054cc1f4e1c949f07f530cb18bf5 100644
+--- a/src/smw/gamemodes/Chicken.h
++++ b/src/smw/gamemodes/Chicken.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "GameMode.h"
+@@ -5,6 +6,8 @@
+ 
+ //capture the chicken
+ class CGM_Chicken : public CGameMode {
++    SMW_RTTI(CGM_Chicken, CGameMode)
++
+ public:
+     CGM_Chicken();
+ 
+diff --git a/src/smw/gamemodes/Domination.cpp b/src/smw/gamemodes/Domination.cpp
+index 346f5c28b3dc0684921e28adaad57e5db7ea219c..a2e1b7f241409c4f0fe813a5356794ce752b5f6a 100644
+--- a/src/smw/gamemodes/Domination.cpp
++++ b/src/smw/gamemodes/Domination.cpp
+@@ -18,7 +18,7 @@ namespace {
+ void adjustPlayerAreas(CObjectContainer& container, CPlayer* player, CPlayer* other)
+ {
+     for (const std::unique_ptr<CObject>& obj : container.list()) {
+-        auto* area = dynamic_cast<OMO_Area*>(obj.get());
++        auto* area = smw::checked_cast<OMO_Area*>(obj.get());
+         if (!area)
+             continue;
+ 
+diff --git a/src/smw/gamemodes/Race.cpp b/src/smw/gamemodes/Race.cpp
+index d2d56b71c1f5fca2328f7c1f58cb00441a638c04..f2eb2fec60ee33327a99f8aa992a83b081619985 100644
+--- a/src/smw/gamemodes/Race.cpp
++++ b/src/smw/gamemodes/Race.cpp
+@@ -20,7 +20,7 @@ void removePlayerRaceGoals(CObjectContainer& container, short id, short iGoal)
+         return;
+ 
+     for (const std::unique_ptr<CObject>& obj : container.list()) {
+-        auto* goal = dynamic_cast<OMO_RaceGoal*>(obj.get());
++        auto* goal = smw::checked_cast<OMO_RaceGoal*>(obj.get());
+         if (!goal)
+             continue;
+ 
+diff --git a/src/smw/gamemodes/Tag.h b/src/smw/gamemodes/Tag.h
+index 523e76dc198ff78e4af3a07417fdb1f8ef6257cf..b200e288e36d2c8a4bdaa76373ecc63518333d26 100644
+--- a/src/smw/gamemodes/Tag.h
++++ b/src/smw/gamemodes/Tag.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "GameMode.h"
+ 
+ 
+ class CGM_Tag : public CGameMode {
++    SMW_RTTI(CGM_Tag, CGameMode)
++
+ public:
+     CGM_Tag();
+ 
+diff --git a/src/smw/main.cpp b/src/smw/main.cpp
+index bc7783b758d9ea187bb91c84e8c362704ee0af1e..d465295434317bd3adaa44202b9e58422102c11e 100644
+--- a/src/smw/main.cpp
++++ b/src/smw/main.cpp
+@@ -1,3 +1,7 @@
++#ifdef NXDK
++#include "Platform.h"
++#endif
++#include "util/Error.h"
+ /* This file is part of SMW.
+ 
+     SMW is free software: you can redistribute it and/or modify
+@@ -176,7 +180,7 @@ void create_globals()
+ 
+     //TODO: add proper test via size
+     if (maplist->isEmpty()) {
+-        throw "Empty map directory!";
++        SMW_RAISE("Empty map directory!");
+     }
+ 
+     skinlist = new SkinList();
+@@ -201,11 +205,18 @@ void create_globals()
+ 
+     players.reserve(4);
+ 
+-    try {
++#ifndef NXDK
++    try
++#endif
++    {
+         UpdateMusicWithOverrides(*musiclist, *worldmusiclist);
+-    } catch (const std::exception& ex) {
+-        throw std::format("ERROR: Could not load music overrides: {}", ex.what());
+     }
++#ifndef NXDK
++    catch (const std::exception& ex) {
++        SMW_RAISE(smw::format("ERROR: Could not load music overrides: {}", ex.what()));
++    }
++#endif
++
+ }
+ 
+ void init_joysticks()
+@@ -292,6 +303,9 @@ void main_game();
+ 
+ int main(int argc, char *argv[])
+ {
++#ifdef NXDK
++    nxdk_startup();
++#endif
+     const cmd::Args cmd = cmd::parse_args(argc, argv);
+     if (!cmd.success) {
+         return 1;
+@@ -307,25 +321,40 @@ int main(int argc, char *argv[])
+         RootDataDirectory = cmd.data_root;
+ 
+ 
+-    try {
++#ifndef NXDK
++    try
++#endif
++    {
+         main_game();
+     }
++#ifndef NXDK
+     catch (const char* what) {
+         gfx_show_catched_error(what);
+         return 1;
+     }
++#endif
++
++#ifndef NXDK
+     catch (const std::string& ex) {
+         gfx_show_catched_error(ex);
+         return 1;
+     }
++#endif
++
++#ifndef NXDK
+     catch (const std::exception& ex) {
+         gfx_show_catched_error(ex.what());
+         return 1;
+     }
++#endif
++
++#ifndef NXDK
+     catch (...) {
+         gfx_show_catched_error({});
+         return 1;
+     }
++#endif
++
+ 
+     return 0;
+ }
+@@ -337,9 +366,20 @@ void main_game()
+     printf("-------------------------------------------------------------------------------\n");
+     printf("\n---------------- startup ----------------\n");
+ 
++#ifndef NXDK
+     ensureSettingsDir();
++#endif
++#ifdef NXDK
++    nxdk_startup_checkpoint(NxdkStartupStage::lists);
++#endif
+     create_globals();
++#ifdef NXDK
++    nxdk_log_memory("resource lists");
++#endif
+ 
++#ifdef NXDK
++    nxdk_startup_checkpoint(NxdkStartupStage::graphics);
++#endif
+ 	gfx_init(App::screenWidth, App::screenHeight, false);		//initialize the graphics (SDL)
+     blitdest = screen;
+ 
+@@ -356,9 +396,15 @@ void main_game()
+     return 0;
+ #endif
+ 
++#ifdef NXDK
++    nxdk_startup_checkpoint(NxdkStartupStage::audio);
++#endif
+     sfx_init();                     //init the sound system
+     net_init();                     //init the networking
+ 
++#ifdef NXDK
++    nxdk_startup_checkpoint(NxdkStartupStage::input);
++#endif
+     init_joysticks();
+ 
+     //currently this only sets the title, not the icon.
+@@ -377,6 +423,12 @@ void main_game()
+ 
+     create_gamemodes();
+ 
++#ifdef NXDK
++    nxdk_configure_controllers(true);
++#endif
++#ifdef NXDK
++    nxdk_startup_checkpoint(NxdkStartupStage::preferences);
++#endif
+     game_values.ReadBinaryConfig();
+ 
+     //Assign the powerup weights to the selected preset
+@@ -392,12 +444,19 @@ void main_game()
+     init_spawnlocations();
+ 
+     //Load the gfx color palette
+-    try {
++#ifndef NXDK
++    try
++#endif
++    {
+         gfx_loadpalette(convertPath("gfx/packs/palette.png", gamegraphicspacklist->currentPath()));
+-    } catch (const std::string& err) {
++    }
++#ifndef NXDK
++    catch (const std::string& err) {
+         printf("\nwarning: %s -> falling back to BMP\n", err.c_str());
+         gfx_loadpalette(convertPath("gfx/packs/palette.bmp", gamegraphicspacklist->currentPath()));
+     }
++#endif
++
+ 
+     srand((unsigned int)time(NULL));
+ /*
+@@ -416,6 +475,9 @@ void main_game()
+     //**********************************************************
+ 
+ 
++#ifdef NXDK
++    nxdk_startup_checkpoint(NxdkStartupStage::assets);
++#endif
+     gameloop(); // all the game logic happens here
+ 
+ 
+diff --git a/src/smw/menu/MainMenu.cpp b/src/smw/menu/MainMenu.cpp
+index 8f4fc07a7fbdff6f82449a5752b3f5a959c8f147..e563a08ed6d9cb435d71e6e6a8c81ae96d8bed69 100644
+--- a/src/smw/menu/MainMenu.cpp
++++ b/src/smw/menu/MainMenu.cpp
+@@ -29,9 +29,13 @@ UI_MainMenu::UI_MainMenu()
+     miMultiplayerButton = new MI_Button(&rm->spr_selectfield, 120, 322, "Multiplayer - Under Construction", 400);
+     miOptionsButton = new MI_Button(&rm->spr_selectfield, 120, 362, "Options", 400);
+     miControlsButton = new MI_Button(&rm->spr_selectfield, 120, 402, "Controls", 400);
++#else
++#ifdef NETWORK_DISABLED
++    miMultiplayerButton = new MI_Button(&rm->spr_selectfielddisabled, 120, 322, "Online play unavailable", 400);
+ #else
+     miMultiplayerButton = new MI_Button(&rm->spr_selectfield, 120, 322, "Multiplayer", 400);
+     miMultiplayerButton->SetCode(MENU_CODE_TO_NET_SERVERS_MENU);
++#endif
+ 
+     miOptionsButton = new MI_Button(&rm->spr_selectfield, 120, 362, "Options", 200);
+     miControlsButton = new MI_Button(&rm->spr_selectfield, 320, 362, "Controls", 200);
+@@ -49,10 +53,17 @@ UI_MainMenu::UI_MainMenu()
+ #ifndef __EMSCRIPTEN__
+     AddControl(miMainStartButton, miExitButton, miPlayerSelect, NULL, miQuickGameButton);
+     AddControl(miQuickGameButton, miExitButton, miPlayerSelect, miMainStartButton, NULL);
++#ifdef NETWORK_DISABLED
++    AddNonControl(miMultiplayerButton);
++    AddControl(miPlayerSelect, miMainStartButton, miOptionsButton, NULL, NULL);
++    AddControl(miOptionsButton, miPlayerSelect, miExitButton, miControlsButton, miControlsButton);
++    AddControl(miControlsButton, miPlayerSelect, miExitButton, miOptionsButton, miOptionsButton);
++#else
+     AddControl(miPlayerSelect, miMainStartButton, miMultiplayerButton, NULL, NULL);
+     AddControl(miMultiplayerButton, miPlayerSelect, miOptionsButton, NULL, NULL);
+     AddControl(miOptionsButton, miMultiplayerButton, miExitButton, miControlsButton, miControlsButton);
+     AddControl(miControlsButton, miMultiplayerButton, miExitButton, miOptionsButton, miOptionsButton);
++#endif
+     AddControl(miExitButton, miOptionsButton, miMainStartButton, NULL, NULL);
+ #else
+     AddControl(miMainStartButton, miControlsButton, miPlayerSelect, NULL, miQuickGameButton);
+@@ -65,7 +76,13 @@ UI_MainMenu::UI_MainMenu()
+ 
+     setInitialFocus(miMainStartButton);
+ #ifndef __EMSCRIPTEN__
++#ifdef NXDK
++    // Back from an options screen must not cascade into quitting the console game.
++    // Keep quitting an explicit selection of the visible Exit button.
++    SetCancelCode(MENU_CODE_NONE);
++#else
+     SetCancelCode(MENU_CODE_EXIT_APPLICATION);
++#endif
+ #endif
+ 
+     AddNonControl(miSMWTitle);
+diff --git a/src/smw/net.cpp b/src/smw/net.cpp
+index 23cbfa3041c3cd6efd724f8c5c166ad9213538bc..a419434b5209ac7fec47c781529eb513f712a8ea 100644
+--- a/src/smw/net.cpp
++++ b/src/smw/net.cpp
+@@ -1,3 +1,4 @@
++#include <sstream>
+ #include "net.h"
+ 
+ #include "GlobalConstants.h"
+diff --git a/src/smw/objects/IO_FlameCannon.h b/src/smw/objects/IO_FlameCannon.h
+index e1848cb71197410d01d108fb1ff55b5429afc5a3..acc403b09d56370a1edcf2632c2504503019d157 100644
+--- a/src/smw/objects/IO_FlameCannon.h
++++ b/src/smw/objects/IO_FlameCannon.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "ObjectBase.h"
+ 
+ 
+ class IO_FlameCannon : public CObject {
++    SMW_RTTI(IO_FlameCannon, CObject)
++
+ public:
+     IO_FlameCannon(Vec2s pos, short freq, short direction);
+ 
+diff --git a/src/smw/objects/blocks/IO_Block.cpp b/src/smw/objects/blocks/IO_Block.cpp
+index 575af4c2db6320a83cb8b54d2d7e32f2ed8eb31a..e4499b1356225d1205adfe4db1f0952fe1fd1886 100644
+--- a/src/smw/objects/blocks/IO_Block.cpp
++++ b/src/smw/objects/blocks/IO_Block.cpp
+@@ -244,7 +244,7 @@ void IO_Block::KillPlayersAndObjectsInsideBlock(short playerID)
+     //Loop through objects
+     for (short iLayer = 0; iLayer < 3; iLayer++) {
+         for (const std::unique_ptr<CObject>& obj : objectcontainer[iLayer].list()) {
+-            auto* movingobject = dynamic_cast<IO_MovingObject*>(obj.get());
++            auto* movingobject = smw::checked_cast<IO_MovingObject*>(obj.get());
+             if (!movingobject || !movingobject->CollidesWithMap())
+                 continue;
+ 
+diff --git a/src/smw/objects/blocks/WeaponBreakableBlock.h b/src/smw/objects/blocks/WeaponBreakableBlock.h
+index 1d5d31d6c6dc0132a6969883ef15c8628a9ba4f5..db6473cdc8aae5de697a415f0c6a77e963a8fbf7 100644
+--- a/src/smw/objects/blocks/WeaponBreakableBlock.h
++++ b/src/smw/objects/blocks/WeaponBreakableBlock.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "IO_Block.h"
+@@ -18,6 +19,8 @@ enum class WeaponDamageType : unsigned char {
+ 
+ 
+ class B_WeaponBreakableBlock : public IO_Block {
++    SMW_RTTI(B_WeaponBreakableBlock, IO_Block)
++
+ public:
+     B_WeaponBreakableBlock(gfxSprite *nspr, Vec2s pos, WeaponDamageType type);
+ 
+diff --git a/src/smw/objects/carriable/CO_Bomb.h b/src/smw/objects/carriable/CO_Bomb.h
+index 68311b65c58d2ad1347859c871a0ee98ebe581f8..3b75dcac12636002ac8fe96d45c653a20edb6b3c 100644
+--- a/src/smw/objects/carriable/CO_Bomb.h
++++ b/src/smw/objects/carriable/CO_Bomb.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "objects/moving/MO_CarriedObject.h"
+@@ -7,6 +8,8 @@ class gfxSprite;
+ class Spotlight;
+ 
+ class CO_Bomb : public MO_CarriedObject {
++    SMW_RTTI(CO_Bomb, MO_CarriedObject)
++
+ public:
+     CO_Bomb(gfxSprite* nspr, Vec2s pos, Vec2f vel, short aniSpeed, short iGlobalID, short iTeamID, short iColorID, short timetolive);
+ 
+diff --git a/src/smw/objects/carriable/CO_Egg.h b/src/smw/objects/carriable/CO_Egg.h
+index 5185d254854c91d9d95f9b1bc31048eb6a3668dd..5692b6b4c8bca98017e929d414f5d937b95194c1 100644
+--- a/src/smw/objects/carriable/CO_Egg.h
++++ b/src/smw/objects/carriable/CO_Egg.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "objects/moving/MO_CarriedObject.h"
+@@ -6,6 +7,8 @@ class CPlayer;
+ class gfxSprite;
+ 
+ class CO_Egg : public MO_CarriedObject {
++    SMW_RTTI(CO_Egg, MO_CarriedObject)
++
+ public:
+     CO_Egg(gfxSprite* nspr, short iColor);
+ 
+diff --git a/src/smw/objects/carriable/CO_Flag.h b/src/smw/objects/carriable/CO_Flag.h
+index 85347ed8f994a8632fc3ba3bb506627049d2d976..1e5d930879771b0de564a2b3f04cb0426d02097b 100644
+--- a/src/smw/objects/carriable/CO_Flag.h
++++ b/src/smw/objects/carriable/CO_Flag.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "objects/moving/MO_CarriedObject.h"
+@@ -7,6 +8,8 @@ class gfxSprite;
+ class MO_FlagBase;
+ 
+ class CO_Flag : public MO_CarriedObject {
++    SMW_RTTI(CO_Flag, MO_CarriedObject)
++
+ public:
+     CO_Flag(gfxSprite* nspr, MO_FlagBase* base, short iTeamID, short iColorID);
+ 
+diff --git a/src/smw/objects/carriable/CO_Star.h b/src/smw/objects/carriable/CO_Star.h
+index c071dec68034c1a1782acaf5d38bc442e5f58643..6f97874bb138e9e401ee6dff28164d446e2a8691 100644
+--- a/src/smw/objects/carriable/CO_Star.h
++++ b/src/smw/objects/carriable/CO_Star.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "objects/moving/MO_CarriedObject.h"
+@@ -6,6 +7,8 @@ class CPlayer;
+ class gfxSprite;
+ 
+ class CO_Star : public MO_CarriedObject {
++    SMW_RTTI(CO_Star, MO_CarriedObject)
++
+ public:
+     CO_Star(gfxSprite* nspr, short type, short id);
+ 
+diff --git a/src/smw/objects/moving/MO_BonusHouseChest.h b/src/smw/objects/moving/MO_BonusHouseChest.h
+index 21e68a7411304e8d81a20c9c25e3bf4b25e55e28..f2c026308ce2a3cdc035b311caba6f5b91aa6216 100644
+--- a/src/smw/objects/moving/MO_BonusHouseChest.h
++++ b/src/smw/objects/moving/MO_BonusHouseChest.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "MovingObject.h"
+ 
+ 
+ class MO_BonusHouseChest : public IO_MovingObject {
++    SMW_RTTI(MO_BonusHouseChest, IO_MovingObject)
++
+ public:
+     MO_BonusHouseChest(gfxSprite* nspr, Vec2s pos, short iBonusItem);
+ 
+diff --git a/src/smw/objects/moving/MO_Boomerang.cpp b/src/smw/objects/moving/MO_Boomerang.cpp
+index b3e68385dcedb11dbdc1ca27c2a82dc2a6615015..84d84242262927e7cf01fa8ea3863917043eceb2 100644
+--- a/src/smw/objects/moving/MO_Boomerang.cpp
++++ b/src/smw/objects/moving/MO_Boomerang.cpp
+@@ -70,7 +70,7 @@ void MO_Boomerang::update()
+     // Detection collision with boomerang breakable blocks
+     const std::array<IO_Block*, 4> blocks = GetCollisionBlocks();
+     for (short iBlock = 0; iBlock < 4; iBlock++) {
+-        if (auto* weaponbreakableblock = dynamic_cast<B_WeaponBreakableBlock*>(blocks[iBlock])) {
++        if (auto* weaponbreakableblock = smw::checked_cast<B_WeaponBreakableBlock*>(blocks[iBlock])) {
+             if (weaponbreakableblock->type() == WeaponDamageType::Boomerang) {
+                 weaponbreakableblock->triggerBehavior(iPlayerID, iTeamID);
+                 forcedead();
+diff --git a/src/smw/objects/moving/MO_BulletBill.h b/src/smw/objects/moving/MO_BulletBill.h
+index f19beefd74ab99b4e230449cd61f7c66d7e0bd15..03fb21da786d96653777ec7d4a9145dac7c4121b 100644
+--- a/src/smw/objects/moving/MO_BulletBill.h
++++ b/src/smw/objects/moving/MO_BulletBill.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "MovingObject.h"
+ 
+ 
+ class MO_BulletBill : public IO_MovingObject {
++    SMW_RTTI(MO_BulletBill, IO_MovingObject)
++
+ public:
+     MO_BulletBill(gfxSprite* nspr, gfxSprite* nsprdead, Vec2s pos, float nspeed, short playerID, bool isspawned);
+ 
+diff --git a/src/smw/objects/moving/MO_Explosion.cpp b/src/smw/objects/moving/MO_Explosion.cpp
+index 57103c25e00c18c22232c0e5a36ebf4e664980bb..bb9405ce961f62d957a55846ee326568ed67ffa9 100644
+--- a/src/smw/objects/moving/MO_Explosion.cpp
++++ b/src/smw/objects/moving/MO_Explosion.cpp
+@@ -56,7 +56,7 @@ void MO_Explosion::update()
+                 short iTestRow = iTestY / TILESIZE;
+                 for (short iCol = 0; iCol < 7; iCol++) {
+                     IO_Block* block = g_map->block(iTestX / TILESIZE, iTestRow);
+-                    if (auto* weaponbreakableblock = dynamic_cast<B_WeaponBreakableBlock*>(block)) {
++                    if (auto* weaponbreakableblock = smw::checked_cast<B_WeaponBreakableBlock*>(block)) {
+                         if (weaponbreakableblock->type() == WeaponDamageType::Bomb) {
+                             weaponbreakableblock->triggerBehavior(iPlayerID, iTeamID);
+                         }
+diff --git a/src/smw/objects/moving/MO_Hammer.cpp b/src/smw/objects/moving/MO_Hammer.cpp
+index 3b378780c7321d25fc58b05c9d0a22b8bb4d5762..00481cc668ef5d9996df38718a455206ef3e1e65 100644
+--- a/src/smw/objects/moving/MO_Hammer.cpp
++++ b/src/smw/objects/moving/MO_Hammer.cpp
+@@ -82,7 +82,7 @@ void MO_Hammer::update()
+     // Detection collision with hammer breakable blocks
+     const std::array<IO_Block*, 4> blocks = GetCollisionBlocks();
+     for (short iBlock = 0; iBlock < 4; iBlock++) {
+-        if (auto* weaponbreakableblock = dynamic_cast<B_WeaponBreakableBlock*>(blocks[iBlock])) {
++        if (auto* weaponbreakableblock = smw::checked_cast<B_WeaponBreakableBlock*>(blocks[iBlock])) {
+             if (weaponbreakableblock->type() == WeaponDamageType::Hammer) {
+                 weaponbreakableblock->triggerBehavior(iPlayerID, iTeamID);
+                 removeifprojectile(this, false, false);
+diff --git a/src/smw/objects/moving/MO_PirhanaPlant.h b/src/smw/objects/moving/MO_PirhanaPlant.h
+index 2ce193cbf209ed6af1f105d7aad52c7ee1098962..0ee29ef6ac3fad11c31bf2908320f83a59d85927 100644
+--- a/src/smw/objects/moving/MO_PirhanaPlant.h
++++ b/src/smw/objects/moving/MO_PirhanaPlant.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "MovingObject.h"
+ 
+ 
+ class MO_PirhanaPlant : public IO_MovingObject {
++    SMW_RTTI(MO_PirhanaPlant, IO_MovingObject)
++
+ public:
+     MO_PirhanaPlant(Vec2s pos, short type, short freq, short direction, bool preview);
+ 
+diff --git a/src/smw/objects/moving/MO_SledgeBrother.cpp b/src/smw/objects/moving/MO_SledgeBrother.cpp
+index 3731b566975dd34da85cfe18bce84a0bb6045645..30dc5c2022e301094cc8d8286e4208879957ad6c 100644
+--- a/src/smw/objects/moving/MO_SledgeBrother.cpp
++++ b/src/smw/objects/moving/MO_SledgeBrother.cpp
+@@ -28,7 +28,7 @@ namespace {
+ void pushBombs(CObjectContainer& container, short x, short y)
+ {
+     for (const std::unique_ptr<CObject>& obj : container.list()) {
+-        auto* bomb = dynamic_cast<CO_Bomb*>(obj.get());
++        auto* bomb = smw::checked_cast<CO_Bomb*>(obj.get());
+         if (!bomb || bomb->HasOwner())
+             continue;
+ 
+diff --git a/src/smw/objects/moving/MO_Yoshi.h b/src/smw/objects/moving/MO_Yoshi.h
+index dbf761318fa9d1c648a28d5ac09a2617c314828a..25711ffb2b9a2cea20768e396f0f93d67cc160fc 100644
+--- a/src/smw/objects/moving/MO_Yoshi.h
++++ b/src/smw/objects/moving/MO_Yoshi.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "MovingObject.h"
+ 
+ 
+ class MO_Yoshi : public IO_MovingObject {
++    SMW_RTTI(MO_Yoshi, IO_MovingObject)
++
+ public:
+     MO_Yoshi(gfxSprite* nspr, short iColor);
+ 
+diff --git a/src/smw/objects/moving/MovingObject.h b/src/smw/objects/moving/MovingObject.h
+index cc8c514fcf5c025914dfc7ca6ae73099fc6e9527..8cd246a51679edeb2f7976e7edb4807720ce24f2 100644
+--- a/src/smw/objects/moving/MovingObject.h
++++ b/src/smw/objects/moving/MovingObject.h
+@@ -1,3 +1,4 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "MovingObjectTypes.h"
+@@ -6,6 +7,8 @@
+ class MovingPlatform;
+ 
+ class IO_MovingObject : public CObject {
++    SMW_RTTI(IO_MovingObject, CObject)
++
+ public:
+     IO_MovingObject(gfxSprite* nspr, Vec2s pos, short iNumSpr, short aniSpeed, short iCollisionWidth = -1, short iCollisionHeight = -1, short iCollisionOffsetX = -1, short iCollisionOffsetY = -1, short iAnimationOffsetX = -1, short iAnimationOffsetY = -1, short iAnimationHeight = -1, short iAnimationWidth = -1);
+ 
+diff --git a/src/smw/objects/overmap/WO_Area.h b/src/smw/objects/overmap/WO_Area.h
+index 1b1deefdb461f959ee40f1b7240549650d64cf3d..4eef9a049a8241a1d9c032a53385f4e359ce0d78 100644
+--- a/src/smw/objects/overmap/WO_Area.h
++++ b/src/smw/objects/overmap/WO_Area.h
+@@ -1,8 +1,11 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "OverMapObject.h"
+ 
+ class OMO_Area : public IO_OverMapObject {
++    SMW_RTTI(OMO_Area, IO_OverMapObject)
++
+ public:
+     OMO_Area(gfxSprite* nspr, short numAreas);
+ 
+diff --git a/src/smw/objects/overmap/WO_OrbitHazard.h b/src/smw/objects/overmap/WO_OrbitHazard.h
+index 6c6476cca05f51ecfaed99430bc6244ab3a72ff0..95744a006dad456ab52224ed75f67ba378ad6503 100644
+--- a/src/smw/objects/overmap/WO_OrbitHazard.h
++++ b/src/smw/objects/overmap/WO_OrbitHazard.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "OverMapObject.h"
+ 
+ 
+ class OMO_OrbitHazard : public IO_OverMapObject {
++    SMW_RTTI(OMO_OrbitHazard, IO_OverMapObject)
++
+ public:
+     OMO_OrbitHazard(gfxSprite* nspr, Vec2s pos, float radius, float vel, float angle, short iNumSpr, short aniSpeed, short iCollisionWidth, short iCollisionHeight, short iCollisionOffsetX, short iCollisionOffsetY, short iAnimationOffsetX, short iAnimationOffsetY, short iAnimationHeight, short iAnimationWidth);
+ 
+diff --git a/src/smw/objects/overmap/WO_RaceGoal.h b/src/smw/objects/overmap/WO_RaceGoal.h
+index 134012a83230b980c9f1029d5ad04948c25aa01d..5497d2cd191703b8ba05b0e6c9f604080a1d2ea6 100644
+--- a/src/smw/objects/overmap/WO_RaceGoal.h
++++ b/src/smw/objects/overmap/WO_RaceGoal.h
+@@ -1,8 +1,11 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "OverMapObject.h"
+ 
+ class OMO_RaceGoal : public IO_OverMapObject {
++    SMW_RTTI(OMO_RaceGoal, IO_OverMapObject)
++
+ public:
+     OMO_RaceGoal(gfxSprite* nspr, short id);
+ 
+diff --git a/src/smw/objects/overmap/WO_StraightPathHazard.h b/src/smw/objects/overmap/WO_StraightPathHazard.h
+index bca4e86521a5510e67d9234f82d4a2726a6ee61a..725eb14e0a299ae410a7be351e0bbaf4ce3b9738 100644
+--- a/src/smw/objects/overmap/WO_StraightPathHazard.h
++++ b/src/smw/objects/overmap/WO_StraightPathHazard.h
+@@ -1,9 +1,12 @@
++#include "util/CheckedCast.h"
+ #pragma once
+ 
+ #include "OverMapObject.h"
+ 
+ 
+ class OMO_StraightPathHazard : public IO_OverMapObject {
++    SMW_RTTI(OMO_StraightPathHazard, IO_OverMapObject)
++
+ public:
+     OMO_StraightPathHazard(gfxSprite* nspr, Vec2s pos, float angle, float vel, short iNumSpr, short aniSpeed, short iCollisionWidth, short iCollisionHeight, short iCollisionOffsetX, short iCollisionOffsetY, short iAnimationOffsetX, short iAnimationOffsetY, short iAnimationHeight, short iAnimationWidth);
+ 
+diff --git a/src/smw/player.cpp b/src/smw/player.cpp
+index d80f1609a0c1d4f3dd4be544461968e3f5bcc6fc..480ca7ca0977b90b036ebbb9798b7b8096e6725b 100644
+--- a/src/smw/player.cpp
++++ b/src/smw/player.cpp
+@@ -192,7 +192,7 @@ void CPlayer::accelerate(float direction)
+ 
+     float maxVel = 0.0f;
+     if (!frozen) {
+-        auto* gmTag = dynamic_cast<CGM_Tag*>(game_values.gamemode);
++        auto* gmTag = smw::checked_cast<CGM_Tag*>(game_values.gamemode);
+ 
+         if ((game_values.flags.slowdownon != -1 && game_values.flags.slowdownon != teamID) || jail.isActive())
+             maxVel = VELSLOWMOVING;
+@@ -868,7 +868,7 @@ PlayerPalette CPlayer::getPlayerPalette() const
+             return (starmodetype == StarStyle::Ztar) ? PlayerPalette::ztarred : PlayerPalette::got_shine;
+         }
+     }
+-    if (auto* gmTag = dynamic_cast<CGM_Tag*>(game_values.gamemode)) {
++    if (auto* gmTag = smw::checked_cast<CGM_Tag*>(game_values.gamemode)) {
+         if (gmTag->tagged() == this) {
+             return PlayerPalette::tagged;
+         }
+@@ -996,7 +996,7 @@ void CPlayer::tryShakingTail()
+         return;
+ 
+     bool isGlidingChicken = false;
+-    if (auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode)) {
++    if (auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode)) {
+         isGlidingChicken = gmChicken->chicken() == this
+             && game_values.gamemodesettings.chicken.glide
+             && powerup == -1;
+@@ -1627,7 +1627,7 @@ void CPlayer::die(PlayerDeathStyle deathStyle, bool fTeamRemoved, bool fKillCarr
+         short iDeathSprite = deathStyle == PlayerDeathStyle::Jump ? PGFX_DEADFLYING : PGFX_DEAD;
+ 
+         gfxSprite* corpseSprite = &sprites->at(iDeathSprite);
+-        auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode);
++        auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode);
+ 
+         //If the player was a bobomb or chicken, make sure their death sprite matches
+         if (diedas == 1 || (gmChicken && gmChicken->chicken() == this))
+@@ -1864,7 +1864,7 @@ PlayerKillType CPlayer::KilledPlayer(CPlayer * killed, PlayerDeathStyle deathsty
+     if (killed->state != PlayerState::Ready)
+         return PlayerKillType::None;
+ 
+-    auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode);
++    auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode);
+     if (gmChicken && gmChicken->chicken() == killer && style != KillStyle::Pow)
+         ifSoundOnPlay(rm->sfx_chicken);
+ 
+@@ -1905,7 +1905,7 @@ void CPlayer::TransferTag(CPlayer* o2)
+ {
+     CPlayer * o1 = this;
+ 
+-    auto* gmTag = dynamic_cast<CGM_Tag*>(game_values.gamemode);
++    auto* gmTag = smw::checked_cast<CGM_Tag*>(game_values.gamemode);
+     if (!gmTag)
+         return;
+ 
+@@ -2022,7 +2022,7 @@ void CPlayer::draw()
+     pScoreboardSprite = sprites;
+ 
+     CPlayer* chicken = nullptr;
+-    if (auto* gmChicken = dynamic_cast<CGM_Chicken*>(game_values.gamemode)) {
++    if (auto* gmChicken = smw::checked_cast<CGM_Chicken*>(game_values.gamemode)) {
+         chicken = gmChicken->chicken();
+     }
+ 
+diff --git a/src/smw/ui/MI_InputControlContainer.cpp b/src/smw/ui/MI_InputControlContainer.cpp
+index debf67535f4d37d296e4c12538a42d12a66d17fc..f2fadde25ae8d3359ed11909f8f3a04640405058 100644
+--- a/src/smw/ui/MI_InputControlContainer.cpp
++++ b/src/smw/ui/MI_InputControlContainer.cpp
+@@ -9,6 +9,10 @@
+ #include "ui/MI_Text.h"
+ #include "ResourceManager.h"
+ 
++#ifdef NXDK
++#include "Platform.h"
++#endif
++
+ #include <cstdlib>
+ #include <cstring>
+ 
+@@ -84,9 +88,30 @@ MenuCodeEnum MI_InputControlField::SendInput(CPlayerInput *)
+     bool done = false;
+ 
+     while (!done) {
+-        #ifndef __EMSCRIPTEN__
++#ifdef NXDK
++        // Keep reconnection and Back+Start recovery alive while waiting for a
++        // binding. SDL_WaitEvent would otherwise bypass the main platform poll.
++        nxdk_poll_recovery();
++        if (iDevice != DEVICE_KEYBOARD && !nxdk_joystick_for_slot(iDevice)) break;
++        if (!SDL_WaitEventTimeout(&event, 16)) continue;
++        SDL_JoystickID instance = -1;
++        const bool joystickEvent = event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP ||
++            event.type == SDL_JOYHATMOTION || event.type == SDL_JOYAXISMOTION;
++        if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP) instance = event.jbutton.which;
++        else if (event.type == SDL_JOYHATMOTION) instance = event.jhat.which;
++        else if (event.type == SDL_JOYAXISMOTION) instance = event.jaxis.which;
++        if (joystickEvent) {
++            const int eventDevice = nxdk_joystick_slot(instance);
++            if (eventDevice < 0) continue;
++            // Keyboard profiles can be left with B on an attached pad, without
++            // converting that button into a keyboard binding.
++            if (iDevice == DEVICE_KEYBOARD && event.type == SDL_JOYBUTTONDOWN && event.jbutton.button == 1) break;
++            if (eventDevice != iDevice) continue;
++            if (event.type == SDL_JOYBUTTONDOWN && event.jbutton.button >= 18) continue;
++        }
++#elif !defined(__EMSCRIPTEN__)
+         SDL_WaitEvent(&event);
+-        #endif
++#endif
+ 
+         /*
+         if (event.type == SDL_KEYDOWN)
+@@ -340,11 +365,7 @@ MI_InputControlContainer::MI_InputControlContainer(gfxSprite * spr_button, short
+ 
+     miDeviceSelectField = new MI_SelectField<short>(spr_button, x + 16, y + 38, "Device", 420, 150);
+     miDeviceSelectField->setItemChangedCode(MENU_CODE_INPUT_DEVICE_CHANGED);
+-    miDeviceSelectField->add("Keyboard", -1);
+-
+-    for (short iJoystick = 0; iJoystick < joystickcount; iJoystick++) {
+-        miDeviceSelectField->add(SDL_JoystickNameForIndex(iJoystick), iJoystick, false);
+-    }
++    RefreshDeviceList();
+ 
+     //If the device is not found, default to the keyboard
+     if (!miDeviceSelectField->setCurrentValue(iDevice)) {
+@@ -481,15 +502,39 @@ void MI_InputControlContainer::SetVisibleInputFields()
+     }
+ }
+ 
++void MI_InputControlContainer::RefreshDeviceList()
++{
++    miDeviceSelectField->clear();
++    miDeviceSelectField->add("Keyboard", DEVICE_KEYBOARD);
++#ifdef NXDK
++    // Retain absent saved assignments visibly, and refresh connected state
++    // whenever controls are opened after a hotplug event.
++    for (short i = 0; i < 4; ++i) {
++        const bool attached = nxdk_joystick_for_slot(i) != nullptr;
++        miDeviceSelectField->add("Controller " + std::to_string(i + 1) +
++            (attached ? "" : " (absent)"), i, false);
++    }
++#else
++    for (short i = 0; i < joystickcount; ++i)
++        miDeviceSelectField->add(SDL_JoystickNameForIndex(i), i, false);
++#endif
++}
++
+ void MI_InputControlContainer::SetPlayer(short playerID)
+ {
++#ifdef NXDK
++    RefreshDeviceList();
++#endif
+     //Hide input options that other players are using
+     miDeviceSelectField->hideAllItems(false);
+ 
+     for (short iPlayer = 0; iPlayer < 4; iPlayer++) {
+         if (iPlayer == playerID)
+             continue;
+-
++#ifdef NXDK
++        // CPU/off slots do not reserve pads and prevent reassignment.
++        if (game_values.playercontrol[iPlayer] != 1) continue;
++#endif
+         if (game_values.playerInput.inputControls[iPlayer]->iDevice > -1)
+             miDeviceSelectField->hideItem(game_values.playerInput.inputControls[iPlayer]->iDevice, true);
+     }
+diff --git a/src/smw/ui/MI_InputControlContainer.h b/src/smw/ui/MI_InputControlContainer.h
+index 28208a0f0e73e81f3a0250328b66ec223619b854..786174046c7b27caa9d4df48de1cfca241e6d428 100644
+--- a/src/smw/ui/MI_InputControlContainer.h
++++ b/src/smw/ui/MI_InputControlContainer.h
+@@ -74,6 +74,7 @@ class MI_InputControlContainer : public UI_Control
+ 	private:
+ 
+ 		void SetVisibleInputFields();
++        void RefreshDeviceList();
+ 
+ 		short iPlayerID;
+ 		short iDevice;
+diff --git a/src/smw/world.cpp b/src/smw/world.cpp
+index 7640d8e9bc1e89e8e4b1af13d0999db07c3cae34..5e57da069848da45d0d25b49fefd47670ac018d4 100644
+--- a/src/smw/world.cpp
++++ b/src/smw/world.cpp
+@@ -1,3 +1,4 @@
++#include "util/Error.h"
+ #include "world.h"
+ 
+ #include "FileList.h"
+@@ -380,7 +381,7 @@ WorldMap::WorldMap(const std::string& path, short tilesize)
+ 
+     std::ifstream file(path);
+     if (!file)
+-        throw std::runtime_error("Could not open the world file");
++        SMW_RAISE(std::runtime_error("Could not open the world file"));
+ 
+     ResetTourStops();
+ 
+@@ -671,7 +672,7 @@ WorldMap::WorldMap(const std::string& path, short tilesize)
+ 
+ RETURN:
+     if (iReadType != 17)
+-        throw std::runtime_error("Invalid world file");
++        SMW_RAISE(std::runtime_error("Invalid world file"));
+ }
+ 
+ void WorldMap::SetTileConnections(short iCol, short iRow)

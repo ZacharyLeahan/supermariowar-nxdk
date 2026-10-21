@@ -1,0 +1,15 @@
+{
+  "source_commit": "603c33e8",
+  "epoch": 1700000000,
+  "scope": "Two builds of all game objects and links; identical prebuilt SDK archives, same toolchain and paths. Not two fresh SDK builds. No runtime testing.",
+  "pe_hashes": [
+    "f53db7a014cd7d29e999615fd4ddf343cd3fb833ebf109f87d3402c5182bb436",
+    "f53db7a014cd7d29e999615fd4ddf343cd3fb833ebf109f87d3402c5182bb436"
+  ],
+  "xbe_hashes": [
+    "65448fc37dc07cb0dab114ffb700389c83c5f01218fb0d62a54353d5787c6121",
+    "65448fc37dc07cb0dab114ffb700389c83c5f01218fb0d62a54353d5787c6121"
+  ],
+  "identical_pe": true,
+  "identical_xbe": true
+}

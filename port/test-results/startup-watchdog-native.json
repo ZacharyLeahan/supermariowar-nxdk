@@ -1,0 +1,14 @@
+{
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "xbe_sha256": "ac332c9ca6acdfbb77186cd2bfc14c2ac5c05966dcf04d74ee7c2b3a7070434d",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "injected_stage": 3,
+  "timeout_ms": 15000,
+  "controller_reset_sent": false,
+  "autonomous_dashboard_return": true,
+  "marker": "startup watchdog timeout stage=3\n",
+  "saved_preferences_unchanged": true,
+  "scope": "One controlled Sleep-loop startup fault before audio initialization. Does not prove recovery from kernel/IRQL hangs or resolve audio startup.",
+  "evidence": "workspace logs/hardware/startup-watchdog-fixture-fixed"
+}

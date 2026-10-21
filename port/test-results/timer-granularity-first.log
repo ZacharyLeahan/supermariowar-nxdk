@@ -1,0 +1,9 @@
+Kernel timer measurement; no SDL/audio initialization or AC97 writes
+counter_frequency_hz=3375000
+kind=counter-baseline requested_us=0 samples=1000 min_ticks=4 median_ticks=4 p95_ticks=5 max_ticks=5 total_ticks=4115 definite_under_target=0 errors=0
+kind=thread-delay requested_us=1 samples=1000 min_ticks=819 median_ticks=3371 p95_ticks=3372 max_ticks=3376 total_ticks=3368132 definite_under_target=0 errors=0
+kind=thread-delay requested_us=10 samples=1000 min_ticks=237 median_ticks=3371 p95_ticks=3371 max_ticks=3373 total_ticks=3367583 definite_under_target=0 errors=0
+kind=thread-delay requested_us=100 samples=1000 min_ticks=3124 median_ticks=3371 p95_ticks=3372 max_ticks=3373 total_ticks=3370432 definite_under_target=0 errors=0
+kind=processor-stall requested_us=1 samples=1000 min_ticks=8 median_ticks=8 p95_ticks=9 max_ticks=19 total_ticks=8173 definite_under_target=0 errors=0
+kind=processor-stall requested_us=10 samples=1000 min_ticks=38 median_ticks=39 p95_ticks=39 max_ticks=48 total_ticks=38924 definite_under_target=0 errors=0
+result=measurement-complete not-an-audio-or-reset-pulse-test

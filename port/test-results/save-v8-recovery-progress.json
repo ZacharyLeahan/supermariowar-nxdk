@@ -1,0 +1,74 @@
+{
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "scope": "Five current-schema native malformed-newer-slot cases completed. Older valid generation loaded, empty stderr and originals restored byte-for-byte in each case. Does not cover both slots corrupt or physical power loss during writes.",
+  "cases": [
+    {
+      "kind": "invalid-controller",
+      "generations": [
+        25,
+        24
+      ],
+      "expected_loaded_generation": 24,
+      "recovery_verified": true,
+      "original_slots_restored": true,
+      "stderr_bytes": 0,
+      "startup_callbacks": 5,
+      "log_sha256": "746f5a6efc327e89363232135baf0210f5500389725f2a5163bbb35e0f3bb7f2"
+    },
+    {
+      "kind": "truncated",
+      "generations": [
+        25,
+        24
+      ],
+      "expected_loaded_generation": 24,
+      "recovery_verified": true,
+      "original_slots_restored": true,
+      "stderr_bytes": 0,
+      "startup_callbacks": 5,
+      "log_sha256": "164e770078935c425c044e303902a44fa5a3f6475779acbd5dc08a54c4b8f961"
+    },
+    {
+      "kind": "bad-crc",
+      "generations": [
+        25,
+        24
+      ],
+      "expected_loaded_generation": 24,
+      "recovery_verified": true,
+      "original_slots_restored": true,
+      "stderr_bytes": 0,
+      "startup_callbacks": 5,
+      "log_sha256": "8d1acbe5da3b37a0229334c13ab08a650298c95d21c6f93c9e373c07378faff2"
+    },
+    {
+      "kind": "unsupported-schema",
+      "generations": [
+        25,
+        24
+      ],
+      "expected_loaded_generation": 24,
+      "recovery_verified": true,
+      "original_slots_restored": true,
+      "stderr_bytes": 0,
+      "startup_callbacks": 5,
+      "log_sha256": "6b5c4b119d95c2c152496b126ebb98bf29ce83a711edc38b49aa7177ea0153c9"
+    },
+    {
+      "kind": "invalid-choice",
+      "generations": [
+        25,
+        24
+      ],
+      "expected_loaded_generation": 24,
+      "recovery_verified": true,
+      "original_slots_restored": true,
+      "stderr_bytes": 0,
+      "startup_callbacks": 5,
+      "log_sha256": "55d7d188498583bc8fe9673db5d2f977dbab115d8dee65a05984ca1c64c9a62f"
+    }
+  ]
+}

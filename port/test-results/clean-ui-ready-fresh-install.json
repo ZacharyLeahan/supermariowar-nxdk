@@ -1,0 +1,79 @@
+{
+  "xbe_sha256": "ec21c4f7cfce68b3f2f22d76836a782f1f258bc28e8162f7067a7521f118d671",
+  "source_commit": "8d6fcf899177a324b8773ef2b96b3ace18f18e53",
+  "directory": "/F/SMW-nxdk-ready-test",
+  "installation_verified_files": 1513,
+  "fresh_directory": true,
+  "classic_match": {
+    "map": "0smw",
+    "lives": 5,
+    "players": "one virtual human plus three CPU",
+    "results": "Player 2 Wins; one life remaining",
+    "pause_resume_observed": true,
+    "input_commands_sent": [
+      "right+a",
+      "right+x",
+      "left+a"
+    ],
+    "individual_controls_all_verified": false
+  },
+  "reload_ui_verified": {
+    "classic_lives": 5,
+    "players": "one human plus three CPU"
+  },
+  "runs": [
+    {
+      "phase": "after-classic-exit",
+      "log_sha256": "e18cb8913a688e5bc7f132bfb7f3fd556400e19db37edb66c07b98b31aa3b8ec",
+      "startup_callbacks": 5,
+      "last_callbacks": 8467,
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close": true,
+      "save_lines": [
+        "[save] defaults: no valid supported preference slot",
+        "[save] goals committed classic=5 time=60",
+        "[save] preferences committed generation=1 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0",
+        "[save] goals committed classic=5 time=60",
+        "[save] preferences committed generation=2 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0"
+      ],
+      "max_underruns": 0,
+      "minimum_available_kib": 19184
+    },
+    {
+      "phase": "after-reload-exit",
+      "log_sha256": "b261365fd1dba01d4b3f304c989c5e95b54363dca43061d10a9ba6298181b299",
+      "startup_callbacks": 5,
+      "last_callbacks": 2351,
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close": true,
+      "save_lines": [
+        "[save] controls loaded profiles=1,1,1,1 players=1,2,2,2",
+        "[save] asset slot=0 name=None.txt fallback=0",
+        "[save] asset slot=1 name=Standard fallback=0",
+        "[save] asset slot=2 name=Standard fallback=0",
+        "[save] asset slot=3 name=Classic fallback=0",
+        "[save] asset slot=4 name=Classic fallback=0",
+        "[save] asset slot=5 name=Classic fallback=0",
+        "[save] asset slot=6 name=Classic fallback=0",
+        "[save] asset slot=7 name=0smw.png fallback=0",
+        "[save] asset slot=8 name=0smw.png fallback=0",
+        "[save] asset slot=9 name=0smw.png fallback=0",
+        "[save] asset slot=10 name=0smw.png fallback=0",
+        "[save] goals loaded classic=5 time=60",
+        "[save] preferences loaded generation=2 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0",
+        "[save] goals committed classic=5 time=60",
+        "[save] preferences committed generation=3 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0"
+      ],
+      "max_underruns": 0,
+      "minimum_available_kib": 21248
+    }
+  ],
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_output_confirmed": false,
+  "four_physical_pads_tested": false,
+  "physical_64mb_tested": false,
+  "remaining": "Menu border artifacts visible; separate observer investigation. Human listening and physical-controller testing pending."
+}

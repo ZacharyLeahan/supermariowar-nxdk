@@ -1,0 +1,122 @@
+{
+  "source_commit": "bfac4a335f77eced3f6e18a2324654b9a10c52b6",
+  "xbe_sha256": "0146f93a1c5848c9141f576c246fe93063711f471a9f62f02e6dbc87b963edb0",
+  "scope": "128 MB Stellar Xbox with prior verified 64 MB application allocation budget; one KVM virtual pad plus three CPU players; Time Limit 30s on 0smw, AntiGuy skin, pause/resume, winner display, menu return and unguarded normal Exit.",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "four_physical_controllers_tested": false,
+  "physical_stock_64mb_tested": false,
+  "winner": "Player 4",
+  "pause_timer_frozen": 21,
+  "resumed_timer_observed": 17,
+  "normal_exit_dashboard_verified": true,
+  "reset_chord_used_for_exit": false,
+  "stderr_bytes": 0,
+  "watchdog_marker_present": false,
+  "last_callbacks": 24008,
+  "last_effect_starts": 119,
+  "recorded_underruns": [
+    0
+  ],
+  "completed_music_loops": 2,
+  "minimum_logged_available_kib": 20444,
+  "state5_performance_samples": [
+    {
+      "fps_x10": 452,
+      "update_us": 13567,
+      "present_us": 6494
+    },
+    {
+      "fps_x10": 611,
+      "update_us": 3313,
+      "present_us": 6318
+    },
+    {
+      "fps_x10": 614,
+      "update_us": 1048,
+      "present_us": 6087
+    },
+    {
+      "fps_x10": 612,
+      "update_us": 1009,
+      "present_us": 6122
+    },
+    {
+      "fps_x10": 611,
+      "update_us": 2632,
+      "present_us": 6299
+    },
+    {
+      "fps_x10": 610,
+      "update_us": 3152,
+      "present_us": 6397
+    },
+    {
+      "fps_x10": 609,
+      "update_us": 3409,
+      "present_us": 6563
+    },
+    {
+      "fps_x10": 624,
+      "update_us": 3225,
+      "present_us": 6830
+    },
+    {
+      "fps_x10": 624,
+      "update_us": 3235,
+      "present_us": 6818
+    },
+    {
+      "fps_x10": 624,
+      "update_us": 3275,
+      "present_us": 6780
+    },
+    {
+      "fps_x10": 624,
+      "update_us": 3288,
+      "present_us": 6766
+    },
+    {
+      "fps_x10": 624,
+      "update_us": 3221,
+      "present_us": 6833
+    }
+  ],
+  "performance_limit": "State 5 includes intro, pause and results; these samples are not a sustained unpaused benchmark. Menus also showed lower FPS; do not generalize gameplay observations to all screens/maps.",
+  "saved_records": [
+    {
+      "slot": "smw-pref0.bin",
+      "generation": 19,
+      "sha256": "b7941b7a7cc6bb195884d8d50a462547d9eacc6e2ae686083a84b9aaa5848ec4",
+      "bytes": 3274
+    },
+    {
+      "slot": "smw-pref1.bin",
+      "generation": 18,
+      "sha256": "8c52bfb71bd6c7e098b9d155d9ec14bde195521877157f701e0ef351f501047a",
+      "bytes": 3274
+    }
+  ],
+  "saved_nondefault_values": {
+    "time_goal": 30,
+    "time_extra_chance": 0,
+    "time_extra_payload_offset": 2416,
+    "p1_skin": "Sgraff_AntiGuy.png",
+    "players": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "p1_device": 0
+  },
+  "reload_qualification_pending": [
+    "Time goal 30",
+    "Time extra chance 0",
+    "AntiGuy skin",
+    "Four-player choices"
+  ],
+  "installed_default_preserved_sha256": "fc5cd6f7fd071e9e62b5d62f141a3762509aa86a3366d26ecd6d103e8df891a1",
+  "full_evidence": "workspace logs/hardware/controller-autosave-v7-missing-reload including BUILD-INFO.json, provenance, images and after-match-exit/"
+}

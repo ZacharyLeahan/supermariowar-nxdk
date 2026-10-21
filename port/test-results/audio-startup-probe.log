@@ -1,0 +1,14 @@
+Silent nxdk SDL2 startup probe; no audibility test
+driver=xbox frequency=48000 channels=2 samples=1024
+elapsed_ms=0 callbacks=0 analog_civ=0 lvi=1 status=0 control=29 digital_civ=0 lvi=1 status=0 control=29
+elapsed_ms=1000 callbacks=47 analog_civ=15 lvi=16 status=0 control=29 digital_civ=15 lvi=16 status=0 control=29
+elapsed_ms=2000 callbacks=95 analog_civ=31 lvi=0 status=0 control=29 digital_civ=31 lvi=0 status=0 control=29
+elapsed_ms=3000 callbacks=143 analog_civ=15 lvi=16 status=0 control=29 digital_civ=15 lvi=16 status=0 control=29
+elapsed_ms=4000 callbacks=190 analog_civ=30 lvi=31 status=0 control=29 digital_civ=30 lvi=31 status=0 control=29
+elapsed_ms=5000 callbacks=238 analog_civ=14 lvi=15 status=0 control=29 digital_civ=14 lvi=15 status=0 control=29
+elapsed_ms=6000 callbacks=286 analog_civ=30 lvi=31 status=0 control=29 digital_civ=30 lvi=31 status=0 control=29
+elapsed_ms=7000 callbacks=333 analog_civ=13 lvi=14 status=0 control=29 digital_civ=13 lvi=14 status=0 control=29
+elapsed_ms=8000 callbacks=381 analog_civ=29 lvi=30 status=0 control=29 digital_civ=29 lvi=30 status=0 control=29
+elapsed_ms=9000 callbacks=429 analog_civ=13 lvi=14 status=0 control=29 digital_civ=13 lvi=14 status=0 control=29
+elapsed_ms=10000 callbacks=476 analog_civ=28 lvi=29 status=0 control=29 digital_civ=28 lvi=29 status=0 control=29
+result=progress (callback progress only)

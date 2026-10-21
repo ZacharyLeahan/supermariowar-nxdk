@@ -1,0 +1,25 @@
+{
+  "test": "Production worker loop continuity versus uninterrupted resampling",
+  "pre_change": {
+    "failed": true,
+    "first_mismatch_sample": 640872,
+    "worker_sample": 0,
+    "reference_sample": -1
+  },
+  "post_change": {
+    "passed": true,
+    "comparison": "Byte-exact PCM through first loop seam, approximately 1.5 laps",
+    "sanitizers": [
+      "ASan",
+      "UBSan"
+    ],
+    "lifecycle_suite_passed": true,
+    "shipped_ogg_assets_decoded": 42
+  },
+  "host_sdl_api_version": "2.32.74",
+  "host_runtime": "Homebrew SDL2-compat",
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "audio_startup_fixed": false
+}

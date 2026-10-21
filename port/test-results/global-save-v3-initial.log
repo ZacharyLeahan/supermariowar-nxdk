@@ -1,0 +1,10 @@
+ Super Mario War 187379a5e5b1 2026-10-16
+[audio] startup callbacks=5
+[save] preferences loaded generation=10 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[input] 0 controllers detected
+[input] controller setup=initial defaults
+[input] 1 controllers detected
+[input] index=0 instance=2205 name=Original Xbox Controller #1 open=1
+[input] controller setup=preserve choices and bindings
+[save] preferences committed generation=11 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+---------------- shutdown ----------------

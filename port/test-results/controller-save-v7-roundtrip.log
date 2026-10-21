@@ -1,0 +1,39 @@
+[audio] startup callbacks=5
+[save] controls loaded profiles=1,1,1,1 players=1,2,0,0
+[save] asset slot=0 name=None.txt fallback=0
+[save] asset slot=1 name=Standard fallback=0
+[save] asset slot=2 name=Standard fallback=0
+[save] asset slot=3 name=Classic fallback=0
+[save] asset slot=4 name=Classic fallback=0
+[save] asset slot=5 name=Classic fallback=0
+[save] asset slot=6 name=Classic fallback=0
+[save] asset slot=7 name=0smw.png fallback=0
+[save] asset slot=8 name=0smw.png fallback=0
+[save] asset slot=9 name=0smw.png fallback=0
+[save] asset slot=10 name=0smw.png fallback=0
+[save] goals loaded classic=10 time=60
+[save] preferences loaded generation=14 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio] callbacks=938 nonzero_buffers=80 effect_starts=1 completed=1
+[audio] music_samples=65536 decoded_frames=73728 underruns=0 loops=0 buffered_samples=93836 active=1 paused=0
+[audio] callbacks=1408 nonzero_buffers=550 effect_starts=1 completed=1
+[audio] music_samples=1028096 decoded_frames=516096 underruns=0 loops=0 buffered_samples=94204 active=1 paused=0
+[audio] callbacks=1878 nonzero_buffers=1020 effect_starts=1 completed=1
+[audio] music_samples=1990656 decoded_frames=958464 underruns=0 loops=0 buffered_samples=94572 active=1 paused=0
+[audio] callbacks=2348 nonzero_buffers=1490 effect_starts=1 completed=1
+[audio] music_samples=2955264 decoded_frames=1400832 underruns=0 loops=0 buffered_samples=92892 active=1 paused=0
+[audio] callbacks=2818 nonzero_buffers=1960 effect_starts=1 completed=1
+[audio] music_samples=3917824 decoded_frames=1843200 underruns=0 loops=0 buffered_samples=93260 active=1 paused=0
+[audio] callbacks=3288 nonzero_buffers=2430 effect_starts=1 completed=1
+[audio] music_samples=4880384 decoded_frames=2285568 underruns=0 loops=0 buffered_samples=93628 active=1 paused=0
+[audio] callbacks=3758 nonzero_buffers=2900 effect_starts=1 completed=1
+[audio] music_samples=5842944 decoded_frames=2727936 underruns=0 loops=0 buffered_samples=93996 active=1 paused=0
+[save] goals committed classic=10 time=60
+[save] preferences committed generation=15 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=4229 nonzero_buffers=3371 effect_starts=1 completed=1
+[audio] music_samples=6805504 decoded_frames=3170304 underruns=0 loops=0 buffered_samples=94364 active=1 paused=0
+[audio] callbacks=4699 nonzero_buffers=3841 effect_starts=1 completed=1
+[audio] music_samples=7768064 decoded_frames=3612672 underruns=0 loops=0 buffered_samples=94732 active=1 paused=0
+[audio] callbacks=5169 nonzero_buffers=4311 effect_starts=1 completed=1
+[audio] music_samples=8730624 decoded_frames=4055040 underruns=0 loops=0 buffered_samples=95100 active=1 paused=0

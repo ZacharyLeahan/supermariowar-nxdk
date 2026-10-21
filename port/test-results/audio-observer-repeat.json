@@ -1,0 +1,65 @@
+{
+  "runs": [
+    {
+      "xbe_sha256": "a29397432545b9ba776ec527a8840f6332f41eee6653cc3e3f6d2602abc84cdb",
+      "source_commit": "824e3e48d0036939d10976e4fb0a9f2be1ba7207",
+      "source_dirty": false,
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 1,
+      "retrieved_at": "2026-10-16T03:50:59.808829+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "last_completed_callbacks": 1047,
+      "error_bytes": 0,
+      "startup_passed_this_run": true,
+      "test_scope": "Title screen startup only; no menu music, match or audible output verification"
+    },
+    {
+      "xbe_sha256": "a29397432545b9ba776ec527a8840f6332f41eee6653cc3e3f6d2602abc84cdb",
+      "source_commit": "824e3e48d0036939d10976e4fb0a9f2be1ba7207",
+      "source_dirty": false,
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 2,
+      "retrieved_at": "2026-10-16T03:52:36.560392+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "last_completed_callbacks": 1046,
+      "error_bytes": 0,
+      "startup_passed_this_run": true,
+      "test_scope": "Title screen startup only; no menu music, match or audible output verification"
+    },
+    {
+      "xbe_sha256": "a29397432545b9ba776ec527a8840f6332f41eee6653cc3e3f6d2602abc84cdb",
+      "source_commit": "824e3e48d0036939d10976e4fb0a9f2be1ba7207",
+      "source_dirty": false,
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 3,
+      "retrieved_at": "2026-10-16T03:54:13.367702+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "last_completed_callbacks": 1047,
+      "error_bytes": 0,
+      "startup_passed_this_run": true,
+      "test_scope": "Title screen startup only; no menu music, match or audible output verification"
+    }
+  ],
+  "startup_reliability_established": false
+}

@@ -1,0 +1,19 @@
+--- phase1 ---
+ Super Mario War 89ccc01a2a2d 2026-10-16
+[audio] startup callbacks=5
+[save] preferences loaded generation=11 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[input] 1 controllers detected
+[input] index=0 instance=251 name=Original Xbox Controller #1 open=1
+[input] controller setup=initial defaults
+[save] preferences committed generation=12 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+
+--- phase2 ---
+ Super Mario War 89ccc01a2a2d 2026-10-16
+[audio] startup callbacks=5
+[save] preferences loaded generation=12 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[input] 1 controllers detected
+[input] index=0 instance=251 name=Original Xbox Controller #1 open=1
+[input] controller setup=initial defaults
+[save] preferences committed generation=13 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[save] preferences committed generation=14 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+---------------- shutdown ----------------

@@ -1,0 +1,44 @@
+{
+  "source_commit": "f80db802e19e777220836ddf9dfe7703b8667649",
+  "xbe_sha256": "6ca873e0baea6843a31db81b6436f89ed82800840f29902a50652bc403b3d6d3",
+  "scope": "Three warm title-screen starts on upgraded Stellar Xbox; v3 DMA-restart experiment enabled, schema-8 load with schema-7 import. No menu input, game match, new save write or listening.",
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "dma_restart_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "bff8336ccf9a2a54007113dc7ad3622afc3a2af5c76dc2b3549ae173029ee975",
+      "loaded_generation": 21
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "dma_restart_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "83cf69c9afc451bd00bfb95aca2ba16b43824c9ac118e07cdd56aa15a7bae1bc",
+      "loaded_generation": 21
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "dma_restart_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "6cdb2c4e6fb7008952a0b8e761ee6f67e1f2debdf5740eaf2dcfd7003f1394e7",
+      "loaded_generation": 21
+    }
+  ],
+  "dma_restart_protocol_exercised": false,
+  "startup_issue_resolved": false,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "full_evidence": "workspace logs/hardware/audio-dma-restart-v3-first including build provenance",
+  "limitations": [
+    "All three starts were healthy; no actual v3 recovery trial occurred.",
+    "Native save write/reload in schema 8 and four physical port ordering remain untested."
+  ]
+}

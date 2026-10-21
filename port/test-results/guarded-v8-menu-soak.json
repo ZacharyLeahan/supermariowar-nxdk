@@ -1,0 +1,43 @@
+{
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "startup_callbacks": 5,
+  "last_callbacks": 19342,
+  "observed_decoder_loop_count": 2,
+  "recorded_underruns": [
+    0
+  ],
+  "stderr_bytes": 0,
+  "minimum_available_kib": 21256,
+  "last_20_memory_samples_kib": [
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588,
+    21588
+  ],
+  "observed_menu_interval_seconds": 363.246,
+  "normal_exit_returned_to_dashboard": true,
+  "watchdog_fired": false,
+  "log_sha256": "f87cbe461436871f0cef017cebca702a9788705a333e424ccd4c6b43ce773dc6",
+  "scope": "Six-minute static main-menu interval followed by normal Exit; no listening or long gameplay claim. Decoder loop counters do not establish audible seam quality. Startup reliability remains unresolved.",
+  "evidence": "workspace logs/hardware/guarded-v8-menu-soak"
+}

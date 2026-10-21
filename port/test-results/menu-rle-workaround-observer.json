@@ -1,0 +1,24 @@
+{
+  "xbe_sha256": "822c7005fb5d8117506f72b0b22dcafca4a33940502dd78933c0b1c4474bd778",
+  "source_commit": "4074bd9b55d9116ede3e378046062d9c8a8f1915",
+  "hardware_tested": true,
+  "fixture": "30-second Time Limit, forced spin, 0smw, one virtual human plus three CPU; Player4Wins",
+  "raw_before_after_identical": true,
+  "frame_bytes_each": 921654,
+  "both_frame_sha256": "d8c7d851c0d0ce432f40afb2dd55d11c72266f1a29f3dfbbf13f3d15f5cfc7b3",
+  "camera_offsets_before_after": [
+    0,
+    0
+  ],
+  "clip_before_after": [
+    0,
+    0,
+    640,
+    480
+  ],
+  "normal_exit": true,
+  "stderr_bytes": 0,
+  "failure_markers": [],
+  "log_sha256": "70e27dae406ba81ba0204d236f91333a168251f1c88bc04869500c2e2c450b16",
+  "conclusion": "Disabling RLE for unkeyed RGB565 surfaces removes stale black-border pixels and restores shading. Native observer passed; production XBE must be qualified separately."
+}

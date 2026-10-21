@@ -1,0 +1,26 @@
+{
+  "kind": "both-bad-crc",
+  "fixture_slots": [
+    0,
+    1
+  ],
+  "loaded_defaults": true,
+  "original_slots_restored": true,
+  "recovery_verified": true,
+  "stderr_bytes": 0,
+  "original_sha256": [
+    "88795ea6955e70e2f924eec5c7ba925125011ba99d76a5d9d201751b05b2e2f3",
+    "4317ff408a71cb5cc1593e76638ae1405efd3bc1d7ede9e22fcdda236594ea2f"
+  ],
+  "fixture_sha256": "46a5c1a9078564df4f223832ee1eae9a1844ac98dd4131c4797f08e8afbabe48",
+  "runner_sha256": "79a7e083eb8fd3526e6e8df071a7ec5b1de2d3ea5b6997aa50a1b4077d85bf76",
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "startup_callbacks": 5,
+  "log_sha256": "ef1dde32b36b30babd6a8420059cd4f2d6d78c433fb27d76317b651fff4eb840",
+  "scope": "Two deliberately CRC-invalid slots caused default preferences to load, with no valid generation loaded. Both original slots restored byte-for-byte. No physical power-loss/write-interruption test.",
+  "evidence": "workspace logs/hardware/save-v8-both-bad-crc"
+}

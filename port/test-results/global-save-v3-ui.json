@@ -1,0 +1,57 @@
+{
+  "source_commit": "89ccc01a2a2d7a1cc52f318713386414964f4fb2",
+  "source_dirty": false,
+  "xbe_sha256": "057c8de21cdbc5d9c99e9d1fc0cb08b6f9bb5020c93dfc54e1de9ac5ac82be4d",
+  "build_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "EXIT_WATCHDOG_MS=0"
+  ],
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox; prior 64 MB application-budget probe passed",
+  "audible_quality_confirmed": false,
+  "ui_roundtrip_verified": true,
+  "ui_fields": {
+    "respawn": {
+      "before": 2,
+      "saved": 3,
+      "reloaded_label": "1.5 Seconds",
+      "restored": 2
+    },
+    "teamcollision": {
+      "before": 0,
+      "saved": 1,
+      "reloaded_label": "Assist",
+      "restored": 0
+    }
+  },
+  "record_crc_verified": true,
+  "first_loaded_generation": 11,
+  "saved_generation": 12,
+  "reboot_loaded_generation": 12,
+  "restored_generations": [
+    13,
+    14
+  ],
+  "normal_exit_clean": true,
+  "exit_watchdog_compiled": false,
+  "controller_counts": [
+    1,
+    1
+  ],
+  "delayed_zero_controller_fix_native_verified": false,
+  "physical_four_controllers_tested": false,
+  "initialization_issue_resolved": false,
+  "phase1": {
+    "stderr_bytes": 0,
+    "startup_callbacks": 5,
+    "log_sha256": "0849178f14d3525c4b751695a180fa07698de2833723a2b5b07ca41ce6b12182"
+  },
+  "phase2": {
+    "stderr_bytes": 0,
+    "startup_callbacks": 5,
+    "log_sha256": "dba35b6e15a3c68aea8f6901142a4f1afca5bed147a637583c5a58682ff62eb0"
+  }
+}

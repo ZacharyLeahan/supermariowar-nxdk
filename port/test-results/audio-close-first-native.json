@@ -1,0 +1,45 @@
+{
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_output_confirmed": false,
+  "xbe_sha256": "6d283fa3cdbe1f1e2f820cec8da8bbf39d550d50234f60f2aa215166209c1541",
+  "source_commit": "fcdf13763e75bbe25ecee25847fd5e614a1ea6eb",
+  "records": [
+    {
+      "evidence": "../../logs/hardware/audio-close-legacy-first/after-normal-exit",
+      "log_sha256": "825d01e53a87bdbfbe6925994bff095c5e4300792a7e5f2772226390532edab4",
+      "error_bytes": 0,
+      "markers": {
+        "startup-watchdog.log": false,
+        "exit-watchdog.log": false,
+        "audio-close-failure.log": false
+      },
+      "observations": [
+        "[audio-close] configuration=valid mode=legacy experimental=1",
+        "[audio] startup callbacks=4",
+        "[audio-close] startup init_calls=1 connected_before=0 connected_after=1 connect_return=1",
+        "[audio-close] legacy reinitialize init_calls=1 connected_before=1",
+        "[audio-close] legacy complete init_calls=2 connected_after=0 connect_return=0"
+      ]
+    },
+    {
+      "evidence": "../../logs/hardware/audio-close-clean-first/after-normal-exit",
+      "log_sha256": "ebc9aa4a5739753a5675738ef6a5466efb046804a889822d4f8bfe54c492c55b",
+      "error_bytes": 0,
+      "markers": {
+        "startup-watchdog.log": false,
+        "exit-watchdog.log": false,
+        "audio-close-failure.log": false
+      },
+      "observations": [
+        "[audio-close] configuration=valid mode=clean experimental=1",
+        "[audio] startup callbacks=4",
+        "[audio-close] startup init_calls=1 connected_before=0 connected_after=1 connect_return=1",
+        "[audio-close] clean begin init_calls=1 connected=1 entry_irql=0",
+        "[audio-close] clean complete irq_was_connected=1 disconnected=1 dpc_removed=0 locks_released=1 codec_reset=0 analog_control=0 digital_control=0"
+      ]
+    }
+  ],
+  "conclusion": "Legacy reconnect rejected; one clean shutdown completed. No startup-prevention conclusion yet."
+}

@@ -1,0 +1,25 @@
+--- a/src/audio/xbox/SDL_xboxaudio.c
++++ b/src/audio/xbox/SDL_xboxaudio.c
+@@ -124,10 +124,18 @@
+ static void
+ XBOXAUDIO_WaitDevice(_THIS)
+ {
+-    /* Wait for an audio buffer to be free */
+-    SDL_SemWait(_this->hidden->playsem);
+-
+-    return;
++    /* Port experiment: a missing DMA notification must not prevent shutdown.
++       A timeout is not a completion; keep waiting unless closing the device. */
++    for (;;) {
++        const int result = SDL_SemWaitTimeout(_this->hidden->playsem, 100);
++        if (result == 0 || SDL_AtomicGet(&_this->shutdown)) {
++            return;
++        }
++        if (result != SDL_MUTEX_TIMEDOUT) {
++            SDL_OpenedAudioDeviceDisconnected(_this);
++            return;
++        }
++    }
+ }
+ 
+ static Uint8 *

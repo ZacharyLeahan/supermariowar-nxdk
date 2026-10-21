@@ -1,0 +1,37 @@
+{
+  "kind": "both-bad-crc",
+  "runner_sha256": "4524a525cafa87f9ba38f35cc084d461357cc4409a0bfc2a747c07b3d394a4a7",
+  "generations": [
+    57,
+    58
+  ],
+  "payload_schemas": [
+    8,
+    8
+  ],
+  "fixture_slot": 1,
+  "fixture_slots": [
+    0,
+    1
+  ],
+  "expected_loaded_generation": null,
+  "original_slots_restored": true,
+  "recovery_verified": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "original_sha256": [
+    "69cbed88b606fac1959a818237fdef08b0e5123d1e49e2516eb18a39a063141f",
+    "184c6f50320f409786999630bc176116b9818d042d26bfe1937cb2d109f56828"
+  ],
+  "fixture_sha256": "a5e49d0b3b459bbceb248ad7c31461a59392beeb4102961ca2072084e3665599",
+  "startup_runner_exit_code": 0,
+  "loaded_defaults": true,
+  "loaded_expected_state": true,
+  "stderr_bytes": 0,
+  "xbe_sha256": "88385a1084f486518f1bc8e9116d026cab742be801efd154b66008626a535108",
+  "source_commit": "801645fad54566a7879a09cf08e7d9f860f4741d",
+  "compiled": true,
+  "hardware_tested": true,
+  "evidence": "logs/hardware/render-fixed-both-bad-crc",
+  "startup_callbacks": 5
+}

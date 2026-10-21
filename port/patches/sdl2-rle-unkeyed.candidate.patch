@@ -1,0 +1,18 @@
+--- a/src/video/SDL_RLEaccel.c
++++ b/src/video/SDL_RLEaccel.c
+@@ -1422,9 +1422,13 @@
+         return -1;
+     }
+ 
+-    /* If we don't have colorkey or blending, nothing to do... */
+     flags = surface->map->info.flags;
+-    if (!(flags & (SDL_COPY_COLORKEY | SDL_COPY_BLEND))) {
++    if (flags & SDL_COPY_COLORKEY) {
++        /* ok */
++    } else if ((flags & SDL_COPY_BLEND) && surface->format->Amask) {
++        /* ok */
++    } else {
++        /* Without a color key or pixel alpha there is nothing to encode. */
+         return -1;
+     }
+ 

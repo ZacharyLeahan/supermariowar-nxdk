@@ -1,0 +1,22 @@
+{
+  "source_commit": "06c2fa780e2647b078394d086ed2ee2bc0a39ea5",
+  "xbe_sha256": "9b2ebcec1b78de57323c9c372f1f3c7caade9494eca9ddca6c776184acb95a7a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "upper_bound_right_presses": 25,
+  "lower_bound_left_presses": 30,
+  "upper_bound_visual": "Extra Time knob stayed at maximum",
+  "lower_bound_saved_value": 0,
+  "schema": 8,
+  "save_generation": 4,
+  "normal_exit_returned_to_dashboard": true,
+  "startup_callbacks": 0,
+  "last_callbacks": 0,
+  "stderr_bytes": 73,
+  "slider_fix_verified": true,
+  "audio_startup_resolved": false,
+  "scope": "Native slider boundary persistence passed. This separate startup had no audio callbacks and cannot validate sound or gameplay performance. No long match started.",
+  "log_sha256": "394c74ce0eba187357bfdc94959755c4877df41a55454a42d4baa188f5f67d8b",
+  "evidence": "workspace logs/hardware/slider-bounds-fixed-first"
+}

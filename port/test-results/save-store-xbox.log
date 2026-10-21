@@ -1,0 +1,33 @@
+RUN run-01
+Xbox two-slot save probe; writes only probe-owned files in this folder
+previous_record=absent-or-invalid generation=0 matches_final=0
+PASS missing slots recover to defaults
+PASS first durable slot + readback
+PASS alternate durable slot + readback
+PASS newest slot selected
+PASS created flushed truncated newer slot
+PASS older valid slot survives torn write
+PASS replace damaged alternate slot
+PASS commit final reboot-check record
+PASS final record readback
+PASS unwritable path reports failure
+write_error=0 flush_status=0 failures=0
+result=passed
+Run again after reboot: previous_record must be valid, generation=3, matches_final=1
+
+RUN run-02
+Xbox two-slot save probe; writes only probe-owned files in this folder
+previous_record=valid generation=3 matches_final=1
+PASS missing slots recover to defaults
+PASS first durable slot + readback
+PASS alternate durable slot + readback
+PASS newest slot selected
+PASS created flushed truncated newer slot
+PASS older valid slot survives torn write
+PASS replace damaged alternate slot
+PASS commit final reboot-check record
+PASS final record readback
+PASS unwritable path reports failure
+write_error=0 flush_status=0 failures=0
+result=passed
+Run again after reboot: previous_record must be valid, generation=3, matches_final=1

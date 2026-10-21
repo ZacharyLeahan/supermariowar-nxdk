@@ -1,0 +1,19 @@
+[memory] startup: total=131072 KiB available=60744 KiB image=3660 KiB
+[memory] resource lists: total=131072 KiB available=60616 KiB image=3660 KiB
+[audio] SDL driver=xbox rate=48000 channels=2 format=32784 samples=1024
+[audio] startup callbacks=5
+[save] preferences loaded generation=5 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2
+[input] 1 controllers detected
+[input] index=0 instance=252 name=Original Xbox Controller #1 open=1
+[memory] running: total=131072 KiB available=29744 KiB image=3660 KiB
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=283 update_us=27278 present_us=6116 state=0
+[memory] running: total=131072 KiB available=29744 KiB image=3660 KiB
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=623 update_us=8001 present_us=6051 state=0
+[memory] running: total=131072 KiB available=29744 KiB image=3660 KiB
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=623 update_us=8001 present_us=6051 state=0

@@ -1,0 +1,39 @@
+{
+  "source_commit": "bb45ea120c9e51e5841396f138bdf64e099ed6e7",
+  "xbe_sha256": "4611e86eabfa4b5f9398e1f1c42d77848039cc5efaecf814e2d27f38a03667af",
+  "scope": "Three warm title-screen starts immediately after a failed start of current controller-save XBE. No listening or match test.",
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "warm_reset_exercised": true,
+      "stderr_bytes": 73,
+      "log_sha256": "11114ea964a3f80f05b3a27716e6eaf56e0310069a6c7fc011a409f6b79c4713"
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "83a0a21c22740980f94b9264693545c35e0b89f609fb4d021601e0a7a47afd54"
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "cf9b4c9cd8aec100ca8b053b72df401ba3b069e15d0dc044842ff7295d8cbfae"
+    }
+  ],
+  "warm_reset_protocol_exercised": true,
+  "actual_recovery_trials": 1,
+  "recovered_trials": 0,
+  "startup_issue_resolved": false,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "full_evidence": "workspace logs/hardware/audio-link-v2-after-real-stall with BUILD-INFO.json and source diffs"
+}

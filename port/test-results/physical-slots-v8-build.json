@@ -1,0 +1,19 @@
+{
+  "source_commit": "36286bcc6c4d86b75f4ed8448bf57dfbb809ae19",
+  "xbe_sha256": "c989431d19fe5a4f41cb5302be54a741d532965c3fba4d85b18ab852346b50e6",
+  "compiled": true,
+  "source_dirty": false,
+  "save_payload_schema": 8,
+  "host_save_asan_ubsan": "passed, including schema-7 device-index migration and schema-8 stable-slot reload",
+  "host_four_virtual_controllers_asan_ubsan": "passed, including reordered enumeration, removal/dense compaction and reconnect",
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "four_physical_controllers_tested": false,
+  "limitations": [
+    "Native schema-7 to 8 migration and one-pad regression remain pending.",
+    "SDL topology fallback cannot establish physical stability when the port number is unavailable.",
+    "The audio startup failure remains unresolved; this build has no recovery experiment enabled."
+  ],
+  "full_build_provenance": "workspace artifacts/physical-slots-v8/BUILD-INFO.json and provenance/"
+}

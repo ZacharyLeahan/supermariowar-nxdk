@@ -1,0 +1,28 @@
+{
+  "xbe_sha256": "aa61cfba03e9882ee13cd02d3293a532a68f7d9d5b36ef9de8cfb6f8f8604fd0",
+  "source_commit": "b25fb8e6",
+  "startup_callbacks": 5,
+  "startup_dma": {
+    "analog": {
+      "civ": 5,
+      "lvi": 6,
+      "status": 0,
+      "control": 29
+    },
+    "digital": {
+      "civ": 5,
+      "lvi": 6,
+      "status": 0,
+      "control": 29
+    }
+  },
+  "restart_experiment_exercised": false,
+  "callbacks_last_sample": 2507,
+  "nonzero_buffers_last_sample": 1049,
+  "music_samples_last_sample": 2052096,
+  "underruns": 0,
+  "stderr_bytes": 0,
+  "hardware_scope": "128 MB Stellar Xbox, menu only; not a startup-reliability claim",
+  "audible_quality_confirmed": false,
+  "emulator_tested": false
+}

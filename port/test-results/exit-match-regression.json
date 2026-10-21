@@ -1,0 +1,50 @@
+{
+  "xbe_sha256": "a98b65496c1581ec50853f65458bec2e5bb48961102a4ed05c9ecd791bf2e3f0",
+  "source_commit": "487be8e336b10c4697069923f441f16633e1e69b",
+  "build_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "EXIT_WATCHDOG_MS=15000"
+  ],
+  "installed_as": "F:\\SMW-nxdk-test\\regression-guarded.xbe",
+  "original_default_preserved": true,
+  "compiled": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox, prior 64 MB application-budget probe passed",
+  "back_at_main_does_not_quit": true,
+  "offline_menu_unavailable": true,
+  "match_completed": true,
+  "mode": "Time Limit, 30 game seconds",
+  "map": "0smw",
+  "human_controllers": 1,
+  "cpu_players": 3,
+  "physical_four_controllers_tested": false,
+  "audio_callbacks": 10510,
+  "nonzero_buffers": 7287,
+  "music_samples": 14019304,
+  "underruns": 0,
+  "all_state5_fps_samples": [
+    46.3,
+    55.9,
+    53.9,
+    52.4,
+    54.1,
+    57.6
+  ],
+  "steady_gameplay_samples": [
+    55.9,
+    53.9,
+    52.4
+  ],
+  "performance_scope": "Single match; first interval includes transition, later state5 intervals include results. No demonstrated gain from cached mixing.",
+  "minimum_available_memory_kib": 17592,
+  "normal_exit_clean": true,
+  "exit_watchdog_armed": true,
+  "exit_watchdog_fired": false,
+  "stderr_bytes": 0,
+  "preferences_loaded_generation": 3,
+  "preferences_committed_on_match_and_exit": true,
+  "audible_quality_confirmed": false,
+  "stock_64mb_hardware_tested": false,
+  "initialization_issue_resolved": false
+}

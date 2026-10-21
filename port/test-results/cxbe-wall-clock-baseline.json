@@ -1,0 +1,17 @@
+{
+  "scope": "Two cxbe conversions of the exact same existing PE, different wall-clock seconds; no game/SDK rebuild or hardware test.",
+  "pe_sha256": "a3d8e95bbeaa2b91cfdb8a1fa6fc23ad6b0e1e44a5af41e78b4274b19e82d8db",
+  "cxbe_sha256": "8538533da25e1f802f049c1db1f99f6cd53d22d4133328ac79867459123bb27c",
+  "xbe_sha256": [
+    "a135c94c7986696165a4cabacd09066d9325022012c69f8355fd82313245ad19",
+    "76743ddc2db573c092309216a8a8efe28e5a251e7f41fdb963cef655afdd1462"
+  ],
+  "header_timestamp": [
+    1792136173,
+    1792136175
+  ],
+  "certificate_timestamp_offset": 380,
+  "differing_bytes": 2,
+  "equal_after_timestamp_normalization": true,
+  "bit_identical": false
+}

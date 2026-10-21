@@ -1,0 +1,46 @@
+{
+  "runs": [
+    {
+      "probe": "save-store",
+      "xbe_sha256": "7f12e9ac6eda26b82e10ca4d13a873f26ee6753eb9cc5c6bdb2b3c90be87d9cb",
+      "source_commit": "4f425bcca29cd43043ba0e41db055978e136d47e",
+      "source_dirty": false,
+      "probe_source_sha256": "d67606b5137f273bdb5e3f9eb84d0d82f916a6d53c0002c1bf788e6eea8c369b",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "nxdk_sdl_tracked_changes": "",
+      "silent_probe": true,
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 1,
+      "retrieved_at": "2026-10-16T04:05:09.301491+00:00",
+      "log_retrieved": true,
+      "log_sha256": "a5ea6713d747ccaa7964a6a4a585f66d451851812cc3d06fb4ff4d49c4f8bf97",
+      "all_probe_checks_passed": true,
+      "previous_reboot_record_verified": false,
+      "scope": "Xbox write-through/NtFlush, readback, truncated newer-slot recovery and ordinary reboot persistence; no sudden power cut or game-settings claim"
+    },
+    {
+      "probe": "save-store",
+      "xbe_sha256": "7f12e9ac6eda26b82e10ca4d13a873f26ee6753eb9cc5c6bdb2b3c90be87d9cb",
+      "source_commit": "4f425bcca29cd43043ba0e41db055978e136d47e",
+      "source_dirty": false,
+      "probe_source_sha256": "d67606b5137f273bdb5e3f9eb84d0d82f916a6d53c0002c1bf788e6eea8c369b",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "nxdk_sdl_tracked_changes": "",
+      "silent_probe": true,
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 2,
+      "retrieved_at": "2026-10-16T04:06:14.457803+00:00",
+      "log_retrieved": true,
+      "log_sha256": "2b68572bed49dd2d50bcf9607175764f9f76a1de043e0bee3e3946581fe4618f",
+      "all_probe_checks_passed": true,
+      "previous_reboot_record_verified": true,
+      "scope": "Xbox write-through/NtFlush, readback, truncated newer-slot recovery and ordinary reboot persistence; no sudden power cut or game-settings claim"
+    }
+  ],
+  "sudden_power_loss_tested": false,
+  "game_settings_integration_tested": false
+}

@@ -1,0 +1,37 @@
+{
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "archive_sha256": "78c1dff55740969c1f86ef240fe988f16b8c5a523f298ac1c37cb62f0c46b44b",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "remote_directory": "/F/SMW-nxdk-v8-test",
+  "all_packaged_files_readback_verified": 1513,
+  "fresh_install_default_preferences": true,
+  "startup_callbacks": 5,
+  "last_callbacks": 19289,
+  "recorded_underruns": [
+    0
+  ],
+  "stderr_bytes": 0,
+  "normal_exit_returned_to_dashboard": true,
+  "watchdog_fired": false,
+  "match": "Default Classic ten lives, 0smw, one KVM human and one CPU; Player 2 wins",
+  "state5_fps_x10_samples": [
+    463,
+    612,
+    613,
+    619,
+    610,
+    613,
+    612,
+    609,
+    623,
+    623,
+    623
+  ],
+  "minimum_available_kib": 20764,
+  "log_sha256": "8b29270b0b41d67e69510366f408086a7169a45a1414bc30fa04f341c5c7dfe6",
+  "scope": "Fresh-folder package upload/readback plus one default local match and normal Exit. Previous title folders untouched. No cold-power, four-physical-controller or listening acceptance. Intermittent startup failure remains unresolved.",
+  "evidence": "workspace logs/hardware/v8-fresh-install"
+}

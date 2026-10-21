@@ -1,0 +1,14 @@
+{
+  "xbe_sha256": "a016fdb367a090914d9c4dae23341f27640d028c735b95443ae34aca8aacaec5",
+  "source_commit": "286c4c6775366316edb4c14e6d228cbcf76b0d3f",
+  "hardware_tested": true,
+  "normal_exit": true,
+  "stderr_bytes": 0,
+  "screen_capture_results": [0, 0],
+  "before_and_after": {"x_shake": 0, "y_shake": 0, "screen": [640,480], "clip": [0,0,640,480], "background": [640,480], "alpha": 255, "blend": 1, "destination_is_screen": true},
+  "raw_frame_different_pixels": 7532,
+  "all_different_pixels_initially_black": true,
+  "diff_bounds": [30,24,607,457],
+  "finding": "Real rendered stale pixels, not solely KVM capture. Pinned SDL2 RLEColorkeySurface uses colorkey on unkeyed RGB565 blended surfaces; targeted workaround pending native comparison.",
+  "log_sha256": "640ece49c3d3cca0ff385ba689575cec71a6f92447571094d78700a0fc95854c"
+}

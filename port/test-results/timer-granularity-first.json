@@ -1,0 +1,18 @@
+{
+  "source_commit": "5c3e50e98c5e7370355f277f5e811e4e82691cb3",
+  "xbe_sha256": "63f49abd0998c04432db9b617e159807684eb341f09be335fe3441369428a3cf",
+  "scope": "One native kernel-wait measurement on upgraded Stellar Xbox; 1000 samples per case, no SDL/audio initialization or AC97 access.",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "counter_frequency_hz": 3375000,
+  "thread_delay_1us_min_ticks": 819,
+  "thread_delay_1us_min_us": 242.66666666666666,
+  "thread_delay_1us_median_ticks": 3371,
+  "definite_under_target_all_cases": 0,
+  "watchdog_marker_present": false,
+  "hypothesis_supported": false,
+  "interpretation": "Observed calls did not undershoot their requested durations. No measured basis to replace the HAL cold-reset delay as a startup fix. This did not measure the actual reset pulse or establish an audio root cause.",
+  "log_sha256": "5f0bfef10551c3d738dcae1c614520a6fe7fcdf725dfe28985d30375b06b6ee9",
+  "full_evidence": "workspace logs/hardware/timer-granularity-first with BUILD-INFO.json and provenance/"
+}

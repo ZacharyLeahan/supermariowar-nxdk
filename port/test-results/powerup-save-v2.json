@@ -1,0 +1,36 @@
+{
+  "source_commit": "986c403b466ec6a47c2376b946a114588ff758d5",
+  "source_dirty": false,
+  "xbe_sha256": "0f289a93ba7a0d47ace757d4d335355e0c7aa12c9287ee7917e31ab4cb34253a",
+  "build_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "EXIT_WATCHDOG_MS=0"
+  ],
+  "sdk_build": "clean O2 DNDEBUG libraries",
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "host_preference_sanitizers_passed": true,
+  "legacy_generation_loaded": 7,
+  "schema2_generation_written": 8,
+  "preset_index": 1,
+  "powerup_override": 1,
+  "custom_set2_1up_weight": 9,
+  "record_crc_verified": true,
+  "stderr_bytes": 0,
+  "reboot_reload_verified": true,
+  "controller_reconnect_verified": false,
+  "controller_note": "KVM reattach API returned OK and choices stayed visible, but no SDL device-change log occurred, so the preservation branch was not exercised.",
+  "audible_quality_confirmed": false,
+  "reboot_reload_scope": "Same-XBE relaunch loaded generation 8; UI shows Game Only, Custom Set 2 and 1up weight 9. Restoring defaults committed generations 9 and 10; normal Exit returned to dashboard with zero stderr.",
+  "reboot_loaded_generation": 8,
+  "restored_default_generations": [
+    9,
+    10
+  ],
+  "normal_exit_clean": true,
+  "second_run_stderr_bytes": 0,
+  "all_442_weights_match_expected_source_defaults_except_ui_edit": true,
+  "all_442_weights_restored_to_defaults": true
+}

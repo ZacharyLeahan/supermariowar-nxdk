@@ -1,0 +1,18 @@
+{
+  "fix_commit": "06c2fa780e2647b078394d086ed2ee2bc0a39ea5",
+  "host_asan_ubsan": "passed after fix",
+  "baseline_reproduced": true,
+  "baseline_failure": "Repeated below-minimum move changed currentValue while the output value remained zero.",
+  "test_source_sha256": "9540be8af1c01eac5703a89d0f1da59791464cf42dc172108acfe34ddc25a3be",
+  "runner_sha256": "14c8e149cf32587f25987cc3276cf0d4cd179bed22cd1cf13e5d29eb7ec7e860",
+  "before_log_sha256": "107d1ab5b834ebc04c5b6c41b3465ca8cad1ad823a02206878611f8e342685b8",
+  "after_log_sha256": "020169aee93c004a9000540e349992a39c6f61e92618a9033d53570bb8581022",
+  "coverage": [
+    "repeated minimum/maximum presses",
+    "hidden edge/interior/all-hidden choices",
+    "empty and single-item lists",
+    "wrap-enabled selection",
+    "production MI_SliderField fast-scroll and held Left/Right input"
+  ],
+  "scope": "Host execution of production selection/input code with graphics excluded. Native validation pending; no audio or rendering acceptance."
+}

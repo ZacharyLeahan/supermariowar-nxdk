@@ -1,0 +1,29 @@
+ Super Mario War 6e52e21bb653 2026-10-16
+[audio] startup callbacks=0
+[audio-dma-failure] sample=0 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-descriptors] sample=0 next=2 expected_analog_base=003ef368 expected_digital_base=003ef268
+[audio-dma-buffer] sample=0 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=0 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=1 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-descriptors] sample=1 next=2 expected_analog_base=003ef368 expected_digital_base=003ef268
+[audio-dma-buffer] sample=1 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=1 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=2 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-descriptors] sample=2 next=2 expected_analog_base=003ef368 expected_digital_base=003ef268
+[audio-dma-buffer] sample=2 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=2 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=3 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300100 analog base=003ef368 remaining=1984 prefetched=0 digital base=003ef268 remaining=2016 prefetched=0
+[audio-dma-descriptors] sample=3 next=2 expected_analog_base=003ef368 expected_digital_base=003ef268
+[audio-dma-buffer] sample=3 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=3 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-link-experiment] progress_window before=0 after=0
+[audio-link-experiment] skipped callbacks=0 control=00000002 status=00300100
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+STDERR:
+[audio] Output callback stalled at startup; DMA failure samples recorded

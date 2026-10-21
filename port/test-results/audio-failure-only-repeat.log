@@ -1,0 +1,12 @@
+RUN run-01-smw
+[audio] startup callbacks=5
+[audio] callbacks=625 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=1095 nonzero_buffers=48 effect_starts=1 completed=1
+RUN run-02-smw
+[audio] startup callbacks=5
+[audio] callbacks=625 nonzero_buffers=1 effect_starts=1 completed=0
+[audio] callbacks=1095 nonzero_buffers=48 effect_starts=1 completed=1
+RUN run-03-smw
+[audio] startup callbacks=5
+[audio] callbacks=576 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=1047 nonzero_buffers=48 effect_starts=1 completed=1

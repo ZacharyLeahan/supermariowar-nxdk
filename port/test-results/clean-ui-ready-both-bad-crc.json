@@ -1,0 +1,36 @@
+{
+  "kind": "both-bad-crc",
+  "runner_sha256": "4524a525cafa87f9ba38f35cc084d461357cc4409a0bfc2a747c07b3d394a4a7",
+  "generations": [
+    51,
+    50
+  ],
+  "payload_schemas": [
+    8,
+    8
+  ],
+  "fixture_slot": 0,
+  "fixture_slots": [
+    0,
+    1
+  ],
+  "expected_loaded_generation": null,
+  "original_slots_restored": true,
+  "recovery_verified": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "original_sha256": [
+    "e9fb3294bac0342883d792ee42489c2f540e2ceaac04ee07e315d739b381f951",
+    "470caeddb740354d8554e05111c8511ec5c850bc2a7dc054cf96b790520d261c"
+  ],
+  "fixture_sha256": "cc49f9fc0cfb3765060dcceef8aedb39e5db98262d0b7558927d419479ec9083",
+  "startup_runner_exit_code": 0,
+  "loaded_defaults": true,
+  "loaded_expected_state": true,
+  "stderr_bytes": 0,
+  "xbe_sha256": "ec21c4f7cfce68b3f2f22d76836a782f1f258bc28e8162f7067a7521f118d671",
+  "compiled": true,
+  "hardware_tested": true,
+  "startup_callbacks": 5,
+  "evidence": "../../logs/hardware/clean-ui-ready-both-bad-crc"
+}

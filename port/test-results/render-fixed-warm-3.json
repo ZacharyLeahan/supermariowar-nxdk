@@ -1,0 +1,59 @@
+{
+  "xbe_sha256": "88385a1084f486518f1bc8e9116d026cab742be801efd154b66008626a535108",
+  "source_commit": "801645fad54566a7879a09cf08e7d9f860f4741d",
+  "host": "192.168.1.254",
+  "directory": "/F/SMW-nxdk-test",
+  "started_at": "2026-10-16T15:01:19.975392+00:00",
+  "runner_sha256": "180b994a5c08b7369ea771b442ae967758d3f38c3b799a381305c0ec4bbb0e54",
+  "child_sha256": {
+    "launch-game.py": "5e5759dec65ddfbff6d5ea6f2bbf9ec45deebd004bb91f0b27b01dc37e845b10",
+    "collect-game-logs.py": "d62ffa0ee942a06a6e44e3186dbca3bc042af66ee02e33e75db8c374c1d2713c"
+  },
+  "button_helper_sha256": "e1c93c1073bf898f4ca7abfab88b79c64ead73e26272f4e0d4913bcf7dabe071",
+  "count_requested": 3,
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 943,
+      "log_sha256": "ada0ed30188d13b45ac4bc4442317b5294f9548bf0cb6d9240786821eb2ac0e2",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 1006,
+      "log_sha256": "c2f51c50b4eba133ad4311b82f6239bfdfee9ae008914df5e1e96158846f750b",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 943,
+      "log_sha256": "dce0de95cedc40bdcb0f7831e7f55e4c47119d684b421c8481be1a3daab5f156",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    }
+  ],
+  "audible_quality_confirmed": false,
+  "emulator_tested": false,
+  "complete": true,
+  "scope": "Same-XBE startup/menu/normal Exit observations; no match, listening, cold power or four-pad acceptance."
+}

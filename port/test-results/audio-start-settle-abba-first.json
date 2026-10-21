@@ -1,0 +1,76 @@
+{
+  "xbe_sha256": "2fdd64317ad11c5d652315fdaa4b39dbda8edbc76d80494b6de927e196171e08",
+  "source_commit": "5eca1f6884c7ae1b2ee3730127e3b52fb69f162f",
+  "runner_sha256": "2ee45afd711f5c49a68b7b7b827caae12fc1b19617f5bedb5fc012c8f5df434d",
+  "started_at": "2026-10-16T09:57:28.949971+00:00",
+  "order_us": [
+    0,
+    1000,
+    1000,
+    0
+  ],
+  "original_sidecar_present": false,
+  "sidecar_restored": true,
+  "runs": [
+    {
+      "run": 1,
+      "requested_us": 0,
+      "elapsed_ticks": 4,
+      "frequency_hz": 3375000,
+      "delay_undershot_with_one_tick_uncertainty": false,
+      "startup_callbacks": 5,
+      "last_callbacks": 1406,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "sidecar_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "log_sha256": "aa40ed640203194d315666239764c89685ceafaa5d0c62f0ed00e3cfb8ffbd42"
+    },
+    {
+      "run": 2,
+      "requested_us": 1000,
+      "elapsed_ticks": 3400,
+      "frequency_hz": 3375000,
+      "delay_undershot_with_one_tick_uncertainty": false,
+      "startup_callbacks": 4,
+      "last_callbacks": 1404,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "sidecar_sha256": "83c02ac2d48c863dab2ccf6870455aadfc2cec073b8db269b517c879d76aa6d9",
+      "log_sha256": "2f3654368f619b9fd7314158ecaa204e182ee85d3a720df83c1f28f3a30161a8"
+    },
+    {
+      "run": 3,
+      "requested_us": 1000,
+      "elapsed_ticks": 3400,
+      "frequency_hz": 3375000,
+      "delay_undershot_with_one_tick_uncertainty": false,
+      "startup_callbacks": 4,
+      "last_callbacks": 935,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "sidecar_sha256": "83c02ac2d48c863dab2ccf6870455aadfc2cec073b8db269b517c879d76aa6d9",
+      "log_sha256": "5db2fd2a0312a3e6775fb195f7c9e76b009834d5e1fc7ae52f1722778e850072"
+    },
+    {
+      "run": 4,
+      "requested_us": 0,
+      "elapsed_ticks": 4,
+      "frequency_hz": 3375000,
+      "delay_undershot_with_one_tick_uncertainty": false,
+      "startup_callbacks": 5,
+      "last_callbacks": 1406,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "sidecar_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "log_sha256": "4c8e4059bcd5b4438af2a40579b3050484c76cebcdf72a21685e5d6152bc7a3b"
+    }
+  ],
+  "audible_quality_confirmed": false,
+  "emulator_tested": false,
+  "audio_startup_resolved": false,
+  "scope": "Paired diagnostic only; initialization logging and wrappers affect timing. Require failures in zero-delay control before judging prevention.",
+  "hardware_tested": true,
+  "prevention_demonstrated": false,
+  "conclusion": "Inconclusive: zero-delay controls did not reproduce the startup stall. Both measured 1000-us waits met target and all four runs progressed. Keep experiment disabled in packaged game.",
+  "evidence": "workspace logs/hardware/audio-start-settle-abba-first"
+}

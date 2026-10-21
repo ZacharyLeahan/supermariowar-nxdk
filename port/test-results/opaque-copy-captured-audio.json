@@ -1,0 +1,546 @@
+{
+  "date": "2026-10-17",
+  "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+  "source_commit": "0476190f5a1827a49befacb5dd6b777ddff94005",
+  "sdk_commit": "c5c574c6ba5778595b782064044ff56b407e835b",
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "capture_endpoint": "http://192.168.1.169/audio.pcm",
+  "format": "48000 Hz s16le stereo",
+  "raw_evidence_directory": "/Users/zach/Developer/projects/smw xbe refresh/logs/hardware/captured-audio-20261017",
+  "checks": {
+    "menu_music": "Captured both channels; source correlation 0.904/0.927",
+    "music_half_volume": "Source matched gains 0.476/0.474; no full-scale samples",
+    "music_mute": "Six seconds exactly digital silence",
+    "music_unmute": "Output resumed after restoring maximum volume",
+    "match": "Classic five lives, 0smw, one virtual human and three CPU; Player3 won with two lives",
+    "pause_resume": "Pause screenshot, music captured while paused, resumed gameplay screenshot and audio",
+    "match_music": "Paused output matches SMB3_Overground.ogg, correlation 0.929; runner-up 0.162",
+    "effects": "Jump correlation 0.816 and death 0.786 in mixed gameplay recording; pause effect 0.499 in transition capture, weaker mixed evidence",
+    "return_to_menu": "Screenshot and long captured output"
+  },
+  "subjective_listening_pass": false,
+  "all_audio_accepted": false,
+  "limitations": [
+    "Waveform/source comparisons are not subjective listening acceptance or proof of analog quality.",
+    "Full-scale samples exist in source menu Ogg (388/380 at ffmpeg 48k stereo); mixed gameplay also reaches full scale, so distortion remains a listening check.",
+    "No separate sound-effects-volume/mute, all effects, all sound packs, four physical controllers or stock64 hardware acceptance in this run.",
+    "No diagnosis of early transport termination: requested24s transition capture received16.8177s while video/control were also used.",
+    "An overlapping paused capture got HTTP409; zero-byte recording is excluded from acceptance."
+  ],
+  "source_comparison": {
+    "menu": [
+      {
+        "channel": 0,
+        "correlation": 0.9041586372302891,
+        "gain": 0.9041704831237138,
+        "residual_rms": 1089.0525062365057,
+        "signal_rms": 2549.2989383801005,
+        "reference_offset_seconds": 4.382583333333334
+      },
+      {
+        "channel": 1,
+        "correlation": 0.9274762802510043,
+        "gain": 0.9275413659430098,
+        "residual_rms": 977.7156697321541,
+        "signal_rms": 2615.038089461253,
+        "reference_offset_seconds": 311.06016666666665
+      }
+    ],
+    "music-half": [
+      {
+        "channel": 0,
+        "correlation": 0.9528412585437177,
+        "gain": 0.4762424934219151,
+        "residual_rms": 894.0780784157673,
+        "signal_rms": 2946.190823501308,
+        "reference_offset_seconds": 207.08791666666667
+      },
+      {
+        "channel": 1,
+        "correlation": 0.9486071628686661,
+        "gain": 0.47435378744864154,
+        "residual_rms": 933.277173837319,
+        "signal_rms": 2949.152292810827,
+        "reference_offset_seconds": 360.4268333333333
+      }
+    ]
+  },
+  "effects_comparison": {
+    "gameplay-effects": {
+      "jump": {
+        "correlation": 0.8155794217258849,
+        "seconds": 2.8052916666666667
+      },
+      "pause": {
+        "correlation": 0.1712983908312243,
+        "seconds": 13.600333333333333
+      },
+      "death": {
+        "correlation": 0.7864393267404122,
+        "seconds": 2.421291666666667
+      },
+      "coin": {
+        "correlation": 0.11248192156021446,
+        "seconds": 3.8284583333333333
+      }
+    },
+    "match-transition": {
+      "jump": {
+        "correlation": 0.14885750595089814,
+        "seconds": 11.793416666666667
+      },
+      "pause": {
+        "correlation": 0.4988106060365286,
+        "seconds": 7.767125
+      },
+      "death": {
+        "correlation": 0.17172843405675758,
+        "seconds": 4.91075
+      },
+      "coin": {
+        "correlation": 0.11827114015681664,
+        "seconds": 6.529
+      }
+    }
+  },
+  "paused_track_top_matches": [
+    {
+      "file": "artifacts/smw-nxdk-copy-candidate/data/music/game/Standard/SMB3_Overground.ogg",
+      "correlation": 0.928691749036572,
+      "reference_offset_seconds": 15.868125
+    },
+    {
+      "file": "artifacts/smw-nxdk-copy-candidate/data/music/game/Standard/SMB_Desert.ogg",
+      "correlation": 0.16183064574879988,
+      "reference_offset_seconds": 0.984
+    },
+    {
+      "file": "artifacts/smw-nxdk-copy-candidate/data/music/game/Standard/SMB2_Underground.ogg",
+      "correlation": 0.10092342656357017,
+      "reference_offset_seconds": 10.1955
+    }
+  ],
+  "loop_comparison": {
+    "reference_duration_seconds": 153.33879166666668,
+    "captured_seconds": 165.0,
+    "channels": [
+      {
+        "correlation_between_laps": 0.08264475026441526,
+        "measured_period_seconds": 153.01020833333334
+      },
+      {
+        "correlation_between_laps": 0.10860326671126473,
+        "measured_period_seconds": 153.01054166666665
+      }
+    ],
+    "digital_silence_runs_at_least_10ms": []
+  },
+  "recordings": {
+    "boot.wav": {
+      "sha256": "46ea71da247c66a543a722efb94bc0008c5448bc6b03da650b8d818627c196ac",
+      "captured_seconds": 8.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "clipped": 0,
+          "active_samples": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "clipped": 0,
+          "active_samples": 0
+        }
+      ],
+      "overruns_after": 0
+    },
+    "gameplay-effects.wav": {
+      "sha256": "cdbb1dbf98a00a513a8ad46920ab946e86664963cac7b7a8d133fb719298ef60",
+      "captured_seconds": 20.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 4233.16893802779,
+          "clipped": 803,
+          "active_samples": 691682
+        },
+        {
+          "peak": 32768,
+          "rms": 3932.5900265765267,
+          "clipped": 348,
+          "active_samples": 691299
+        }
+      ],
+      "overruns_after": 0
+    },
+    "match-transition.wav": {
+      "sha256": "e5005ccc5a2375ee1c92fdbcf9544b6babc188aac980a6497e5e2b5650ee1088",
+      "captured_seconds": 16.817666666666668,
+      "error": null,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 3711.9936226201457,
+          "clipped": 26,
+          "active_samples": 650090
+        },
+        {
+          "peak": 32768,
+          "rms": 3770.039367426759,
+          "clipped": 6,
+          "active_samples": 650362
+        }
+      ],
+      "overruns_after": 0
+    },
+    "menu-restored.wav": {
+      "sha256": "0737c4edb4a3ec77cfa53cd7e1d1d12530194eb6e3d140c23656a3d4ffef9cbb",
+      "captured_seconds": 6.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 6262.0413381803755,
+          "clipped": 10,
+          "active_samples": 284212
+        },
+        {
+          "peak": 32768,
+          "rms": 6496.042038973242,
+          "clipped": 20,
+          "active_samples": 284313
+        }
+      ],
+      "overruns_after": 0
+    },
+    "menu.wav": {
+      "sha256": "e024f9b32260e85a8c3c68fa134978a52131e39aeea61342d7cfb4e2540049b3",
+      "captured_seconds": 12.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 32453,
+          "rms": 3649.061135480938,
+          "clipped": 0,
+          "active_samples": 562936
+        },
+        {
+          "peak": 32768,
+          "rms": 3754.1763702503617,
+          "clipped": 3,
+          "active_samples": 561244
+        }
+      ],
+      "overruns_after": 0
+    },
+    "music-half.wav": {
+      "sha256": "4283a42eec0c3e6c74609fab2e035a3134a5b67c9886ea346caeb4822d01011c",
+      "captured_seconds": 8.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 16384,
+          "rms": 2929.9794975982945,
+          "clipped": 0,
+          "active_samples": 370199
+        },
+        {
+          "peak": 16384,
+          "rms": 2937.699372524481,
+          "clipped": 0,
+          "active_samples": 371406
+        }
+      ],
+      "overruns_after": 0
+    },
+    "music-muted.wav": {
+      "sha256": "2af484fce354d1fb7b8c63f29faf3ee48e0ca262d06ae49ba4f21479c0f1864a",
+      "captured_seconds": 6.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "clipped": 0,
+          "active_samples": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "clipped": 0,
+          "active_samples": 0
+        }
+      ],
+      "overruns_after": 0
+    },
+    "paused-confirmed.wav": {
+      "sha256": "9d2063847d8bf00ea37fbd35972635c3e6883641828073cbd9e78f79f0c0163a",
+      "captured_seconds": 8.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 11099,
+          "rms": 1160.4013491590779,
+          "clipped": 0,
+          "active_samples": 322607
+        },
+        {
+          "peak": 9421,
+          "rms": 1240.75062712914,
+          "clipped": 0,
+          "active_samples": 327704
+        }
+      ],
+      "overruns_after": 0
+    },
+    "paused.wav": {
+      "sha256": "4872b61c768dff943f9e021453d816f06e35adc8edd88ef183301f03e31b94a5",
+      "captured_seconds": 0.0,
+      "error": "<HTTPError 409: 'Conflict'>",
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "clipped": 0,
+          "active_samples": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "clipped": 0,
+          "active_samples": 0
+        }
+      ],
+      "overruns_after": 0
+    },
+    "resumed-match.wav": {
+      "sha256": "6eb0167e0d810cf6c48cf8d0cd6c92f080a22d1d5690ff69a205bfa2769de856",
+      "captured_seconds": 10.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 3767.4669086215386,
+          "clipped": 15,
+          "active_samples": 463363
+        },
+        {
+          "peak": 29493,
+          "rms": 3245.496601200526,
+          "clipped": 0,
+          "active_samples": 462264
+        }
+      ],
+      "overruns_after": 0
+    },
+    "returned-menu-loop.wav": {
+      "sha256": "5c79590bda82f6ad949812ae5ad47ca6524e3e86688fc493c632a92668404d2d",
+      "captured_seconds": 165.0,
+      "error": null,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 5577.522512735117,
+          "clipped": 234,
+          "active_samples": 7769416
+        },
+        {
+          "peak": 32768,
+          "rms": 5692.262387066477,
+          "clipped": 251,
+          "active_samples": 7762192
+        }
+      ],
+      "overruns_after": 0
+    }
+  },
+  "game_logs": {
+    "host": "192.168.1.254",
+    "directory": "/F/SMW-nxdk-final-test",
+    "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+    "program": "default.xbe",
+    "collector_sha256": "d62ffa0ee942a06a6e44e3186dbca3bc042af66ee02e33e75db8c374c1d2713c",
+    "retrieved_at": "2026-10-17T19:37:59.173879+00:00",
+    "remote_files_modified": false,
+    "acceptance_inferred": false,
+    "files": {
+      "smw.log": {
+        "present": true,
+        "bytes": 48675,
+        "sha256": "e4cf23f1788b512788971debcf341a7deb95aa3acd07f60b1ff8c436a25e2a40"
+      },
+      "smw-error.log": {
+        "present": true,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "startup-watchdog.log": {
+        "present": false
+      },
+      "exit-watchdog.log": {
+        "present": false
+      },
+      "audio-close-failure.log": {
+        "present": false
+      },
+      "smw-pref0.bin": {
+        "present": true,
+        "bytes": 3285,
+        "sha256": "63e5071cec54d3f891d10e7be7c7f18007e68d3f3daa2c73e476992602db13c1"
+      },
+      "smw-pref1.bin": {
+        "present": true,
+        "bytes": 3285,
+        "sha256": "27f6aa39c23f654da3541deba81869a9cafd20a585991940b4344fc5f74b4920"
+      }
+    }
+  },
+  "game_log_summary": {
+    "stderr_bytes": 0,
+    "maximum_underruns": 0,
+    "maximum_music_loops": 4,
+    "maximum_callbacks": 27273,
+    "clean_close": true
+  },
+  "loop_investigation": {
+    "repeat_candidates": [
+      {
+        "period_seconds": 152.50583333333333,
+        "correlation": 0.9897371063615085
+      },
+      {
+        "period_seconds": 95.52616666666667,
+        "correlation": 0.4144801505560757
+      },
+      {
+        "period_seconds": 90.19558333333333,
+        "correlation": 0.27432688365343233
+      },
+      {
+        "period_seconds": 122.19516666666667,
+        "correlation": 0.23797879125283541
+      },
+      {
+        "period_seconds": 78.39266666666667,
+        "correlation": 0.23603023231395298
+      },
+      {
+        "period_seconds": 123.51258333333334,
+        "correlation": 0.2226156531193656
+      },
+      {
+        "period_seconds": 79.72558333333333,
+        "correlation": 0.2147116818361869
+      },
+      {
+        "period_seconds": 112.873,
+        "correlation": 0.21291613921162572
+      },
+      {
+        "period_seconds": 62.3965,
+        "correlation": 0.2108482997209857
+      },
+      {
+        "period_seconds": 53.07366666666667,
+        "correlation": 0.2072693093452998
+      }
+    ],
+    "source_matches": [
+      {
+        "file": "artifacts/smw-nxdk-copy-candidate/data/music/game/Standard/Menu/tournamentmenu.ogg",
+        "correlation": 0.06481612421716995,
+        "offset_seconds": 15.619666666666667
+      },
+      {
+        "file": "artifacts/smw-nxdk-copy-candidate/data/music/game/Standard/Menu/menu.ogg",
+        "correlation": 0.9803071266270516,
+        "offset_seconds": 18.848
+      }
+    ]
+  },
+  "capture_transport": {
+    "kvm_log_sha256": "891001cdb410da09fc263dac243d20e73fe3f0d774efa7cb87fdf97d6e580b7f",
+    "retained_audio_stream_lines": [
+      "I (6430589) audio_stream: progress sent=5743440 gaps=22560 max_ok_send_us=142620",
+      "I (6460689) audio_stream: progress sent=7175280 gaps=25440 max_ok_send_us=169259",
+      "I (6476589) audio_stream: end=pcm_send sent=7921920 read=7922160",
+      "I (6476589) audio_stream: queue_drop=49680 gaps=39600 epochs=0",
+      "I (6476589) audio_stream: startup_us=5665 max_send_us=253037 slow_sends=43 max_age_us=45745",
+      "I (6476589) audio_stream: max_ok_send_us=169259",
+      "I (6489049) audio_stream: end=pcm_send sent=97920 read=98160",
+      "I (6489049) audio_stream: queue_drop=10080 gaps=0 epochs=0",
+      "I (6489049) audio_stream: startup_us=5648 max_send_us=252910 slow_sends=1 max_age_us=9280",
+      "I (6489049) audio_stream: max_ok_send_us=2191"
+    ],
+    "long_stream_gap_frames": 39600,
+    "long_stream_gap_seconds": 0.825,
+    "long_stream_queue_drop_frames": 49680,
+    "loop_acceptance": "Music repeats strongly (correlation0.990), but capture has missing samples; gapless playback and subjective quality remain unqualified. Zero I2S overruns does not imply zero subscriber queue drops."
+  },
+  "capture_tool_smoke_test": {
+    "started_utc": "2026-10-17T19:37:23.914956+00:00",
+    "url": "http://192.168.1.169",
+    "before": {
+      "available": true,
+      "enabled": true,
+      "streaming": false,
+      "rate": 48000,
+      "channels": 2,
+      "frames": 7974000,
+      "overruns": 0,
+      "peak": 0.521332,
+      "rms": 0.230919,
+      "sample_age_ms": 10135,
+      "active_frames": 7939440,
+      "peak_max": 1.0
+    },
+    "requested_seconds": 2,
+    "subjective_listening_pass": false,
+    "headers": {
+      "Content-Type": "application/octet-stream",
+      "Cache-Control": "no-store",
+      "Connection": "close",
+      "X-Audio-Rate": "48000",
+      "X-Audio-Format": "s16le-stereo"
+    },
+    "elapsed_seconds": 2.016757875,
+    "after": {
+      "available": true,
+      "enabled": true,
+      "streaming": true,
+      "rate": 48000,
+      "channels": 2,
+      "frames": 96720,
+      "overruns": 0,
+      "peak": 0.901428,
+      "rms": 0.634027,
+      "sample_age_ms": 4,
+      "active_frames": 96653,
+      "peak_max": 1.0
+    },
+    "received_bytes": 384000,
+    "discarded_partial_frame_bytes": 0,
+    "captured_seconds": 2.0,
+    "complete": true,
+    "channels": [
+      {
+        "peak": 32768,
+        "rms": 6370.424202989252,
+        "full_scale_samples": 15,
+        "active_samples_over_32": 94860
+      },
+      {
+        "peak": 32733,
+        "rms": 6413.072324778799,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 94644
+      }
+    ],
+    "wav_sha256": "4d1bd914f344117f4a8095d8c33f98d0a3d04d4088f43e1c8bcdf6c11cdec4c0"
+  }
+}

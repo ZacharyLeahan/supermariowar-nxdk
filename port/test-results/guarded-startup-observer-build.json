@@ -1,0 +1,22 @@
+{
+  "source_commit": "1704d8f9d3b6cd6e037c94f8dc7f63313455b80e",
+  "xbe_sha256": "d5b7bf9a032e300e49f50cb3321a9d57d351f0cb5b9534ed5bedb4388a802167",
+  "compiled": true,
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "watchdog_ms": 45000,
+  "fault_injection": false,
+  "pci_diagnostic": false,
+  "audio_recovery_experiment": false,
+  "host_save_asan_ubsan": "passed",
+  "host_controller_asan_ubsan": "passed",
+  "host_audio_asan_ubsan": "passed including production loop continuity",
+  "host_recovery_archive_integration": "passed fake FTP, no remote writes",
+  "limitations": [
+    "New startup watchdog remains hardware-unqualified.",
+    "Old failed-startup logs must be archived after physical recovery before any launch.",
+    "Audio startup remains unresolved."
+  ],
+  "full_build_provenance": "workspace artifacts/guarded-startup-observer/BUILD-INFO.json and provenance/"
+}

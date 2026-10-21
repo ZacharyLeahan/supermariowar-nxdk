@@ -1,0 +1,20 @@
+{
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "startup_callbacks": 5,
+  "last_callbacks": 1881,
+  "audio_underruns": 0,
+  "stderr_bytes": 0,
+  "normal_exit_returned_to_dashboard": true,
+  "startup_watchdog_fired": false,
+  "schema8_save_generations": [
+    22,
+    23
+  ],
+  "host_preflight_of_native_records": "passed truncation/corruption/schema/length/asset bounds",
+  "scope": "One title/menu/options/normal-exit session. No match or four-controller qualification. Intermittent audio remains unresolved.",
+  "evidence": "workspace logs/hardware/guarded-observer-fixed-first"
+}

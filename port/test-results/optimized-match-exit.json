@@ -1,0 +1,56 @@
+{
+  "xbe_sha256": "b8bd8726703910bfe91e4a238c9c2ac7b84b2f8da1fe0bc825fb60497ac1817f",
+  "source_commit": "fe295fd68ae3791664f0482a7630c4d6c35574af",
+  "build_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "EXIT_WATCHDOG_MS=0"
+  ],
+  "sdk_build": "clean -O2 -DNDEBUG",
+  "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "installed_as": "F:\\SMW-nxdk-test\\optimized-regression.xbe",
+  "original_default_preserved": true,
+  "compiled": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox; prior 64 MB application-budget allocation probe passed",
+  "match_completed": true,
+  "mode": "Time Limit, 30 game seconds",
+  "map": "0smw",
+  "human_controllers": 1,
+  "cpu_players": 3,
+  "physical_four_controllers_tested": false,
+  "startup_callbacks": 5,
+  "last_callbacks": 6113,
+  "nonzero_buffers": 5025,
+  "effect_starts": 164,
+  "maximum_recorded_underruns": 0,
+  "all_state5_fps_samples": [
+    58.0,
+    61.2,
+    61.2,
+    60.9
+  ],
+  "steady_gameplay_samples": [
+    61.2,
+    61.2,
+    60.9
+  ],
+  "performance_scope": "Single match; first state5 sample includes transition. Earlier unoptimized SDK run used same map/mode/player count but different AI/input timing; not a deterministic benchmark.",
+  "minimum_available_memory_kib": 20484,
+  "normal_exit_clean": true,
+  "exit_watchdog_compiled": false,
+  "stderr_bytes": 0,
+  "preferences_loaded_generation": 5,
+  "preferences_committed_generations": [
+    6,
+    7
+  ],
+  "audible_quality_confirmed": false,
+  "stock_64mb_hardware_tested": false,
+  "initialization_issue_resolved": false,
+  "logs_sha256": {
+    "smw.log": "7099aeb8cbfd13c840311210f16653daf77a5ce47e0aa881970a59d1b97b4782",
+    "smw-error.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

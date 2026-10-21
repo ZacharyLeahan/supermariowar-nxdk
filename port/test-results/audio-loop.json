@@ -1,0 +1,15 @@
+{
+  "xbe_sha256": "fc5cd6f7fd071e9e62b5d62f141a3762509aa86a3366d26ecd6d103e8df891a1",
+  "source_commit": "964bb665",
+  "test": "repeat launch, main-menu Ogg loop",
+  "startup_callbacks": 5,
+  "callbacks": 9652,
+  "nonzero_buffers": 8456,
+  "music_samples_consumed": 17219584,
+  "music_loops_observed": 1,
+  "underruns": 0,
+  "stderr_bytes": 0,
+  "audible_quality_confirmed": false,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox, previously verified 64 MB application budget"
+}

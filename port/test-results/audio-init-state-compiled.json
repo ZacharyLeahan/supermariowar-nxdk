@@ -1,0 +1,14 @@
+{
+  "source_commit": "8635eef3d5e4c4f3fb9eeaadc9a01eac9755d440",
+  "xbe_sha256": "b7ba82698fbcaa1407648cf6d27e207f7aecb77d8b5ddb638b7d6e4d50e1f2b6",
+  "compiled": true,
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "AUDIO_INIT_STATE_LOG=1",
+    "STARTUP_WATCHDOG_MS=45000"
+  ],
+  "scope": "Read-only AC97 MMIO snapshots before SDL audio init, after device open and after startup callback window. PCI scanning and recovery experiments disabled. Startup watchdog 45000 ms; no fault injection. Audio startup unresolved."
+}

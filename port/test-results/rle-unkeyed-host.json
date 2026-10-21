@@ -1,0 +1,34 @@
+{
+  "scope": "Host-only public SDL surface API regression, Apple Silicon. Not emulator testing or native acceptance of an SDK patch. Xbox game continues application workaround.",
+  "sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "test_source_sha256": "3456464a300b04433b0dbcbaa37b188fe488bc982bb51fb326edbc66cbab8041",
+  "patch_sha256": "9b9fbcbdeb89e84eedc3573869d010be8655d4b1fd6fe9c71c6e320ad66b1486",
+  "patch_apply_check": true,
+  "sdk_working_tree_patch_applied": false,
+  "upstream_fix": "https://github.com/libsdl-org/SDL/commit/c93e3b36074ddb2ed986cbacc5e9d4f3a60db343",
+  "host_fixture_adjustments": [
+    "disable dynamic API in temporary source copy to match Xbox static API selection",
+    "disable unavailable subsystems",
+    "disable old declaration-after-statement warning-as-error"
+  ],
+  "results": [
+    {
+      "library": "pinned SDL2.0.9 baseline",
+      "exit_code": 1,
+      "stdout": "SDL 2.0.9\nrle=0 expected_black=0 actual=0 opaque=1\nrle=1 expected_black=0 actual=31 opaque=0\n",
+      "executable_sha256": "98c59b1d20105ab1339cd1cce4195b7188b3409e611e93e98921b15ff45ddd41"
+    },
+    {
+      "library": "pinned SDL2.0.9 plus candidate RLE guard",
+      "exit_code": 0,
+      "stdout": "SDL 2.0.9\nrle=0 expected_black=0 actual=0 opaque=1\nrle=1 expected_black=0 actual=0 opaque=1\n",
+      "executable_sha256": "0109f9ba42b8b8ad9eb20927e95860423164ad0ce6f7636e0d7f2bb15f3aa91d"
+    },
+    {
+      "library": "Homebrew SDL2.32.74",
+      "exit_code": 0,
+      "stdout": "SDL 2.32.74\nrle=0 expected_black=0 actual=0 opaque=1\nrle=1 expected_black=0 actual=0 opaque=1\n",
+      "executable_sha256": "d2082279d5cc151990049140ee670bedaae3dd25064c478ef8d9ccc65e7c1595"
+    }
+  ]
+}

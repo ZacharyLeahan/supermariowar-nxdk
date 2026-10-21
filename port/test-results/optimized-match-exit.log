@@ -1,0 +1,62 @@
+[memory] startup: total=131072 KiB available=60744 KiB image=3660 KiB
+[memory] resource lists: total=131072 KiB available=60616 KiB image=3660 KiB
+[audio] SDL driver=xbox rate=48000 channels=2 format=32784 samples=1024
+[audio] startup callbacks=5
+[save] preferences loaded generation=5 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2
+[input] 1 controllers detected
+[input] index=0 instance=251 name=Original Xbox Controller #1 open=1
+[memory] running: total=131072 KiB available=29744 KiB image=3660 KiB
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=283 update_us=27274 present_us=6123 state=0
+[memory] running: total=131072 KiB available=21296 KiB image=3660 KiB
+[audio] callbacks=938 nonzero_buffers=230 effect_starts=1 completed=1
+[audio] music_samples=372736 decoded_frames=212992 underruns=0 loops=0 buffered_samples=89780 active=1 paused=0
+[perf] fps_x10=466 update_us=14244 present_us=6963 state=1
+[memory] running: total=131072 KiB available=21296 KiB image=3660 KiB
+[audio] callbacks=1408 nonzero_buffers=700 effect_starts=1 completed=1
+[audio] music_samples=1337344 decoded_frames=655360 underruns=0 loops=0 buffered_samples=88100 active=1 paused=0
+[perf] fps_x10=532 update_us=11702 present_us=7056 state=1
+[memory] running: total=131072 KiB available=21628 KiB image=3660 KiB
+[audio] callbacks=1878 nonzero_buffers=1170 effect_starts=1 completed=1
+[audio] music_samples=2299904 decoded_frames=1097728 underruns=0 loops=0 buffered_samples=88468 active=1 paused=0
+[perf] fps_x10=488 update_us=13443 present_us=7022 state=1
+[memory] running: total=131072 KiB available=21628 KiB image=3660 KiB
+[audio] callbacks=2349 nonzero_buffers=1641 effect_starts=1 completed=1
+[audio] music_samples=3262464 decoded_frames=1540096 underruns=0 loops=0 buffered_samples=88836 active=1 paused=0
+[perf] fps_x10=419 update_us=16930 present_us=6926 state=1
+[memory] running: total=131072 KiB available=21628 KiB image=3660 KiB
+[audio] callbacks=2820 nonzero_buffers=2112 effect_starts=1 completed=1
+[audio] music_samples=4227072 decoded_frames=1986560 underruns=0 loops=0 buffered_samples=96000 active=1 paused=0
+[save] preferences committed generation=6 music_volume=128 sound_volume=128 cpu=2
+[perf] fps_x10=393 update_us=18628 present_us=6814 state=2
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=3290 nonzero_buffers=2564 effect_starts=30 completed=21
+[audio] music_samples=5066752 decoded_frames=2412544 underruns=0 loops=0 buffered_samples=89468 active=1 paused=0
+[perf] fps_x10=580 update_us=4285 present_us=6426 state=5
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=3760 nonzero_buffers=3025 effect_starts=77 completed=53
+[audio] music_samples=5732352 decoded_frames=2764800 underruns=0 loops=0 buffered_samples=95304 active=1 paused=0
+[perf] fps_x10=612 update_us=3153 present_us=6331 state=5
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=4231 nonzero_buffers=3496 effect_starts=140 completed=102
+[audio] music_samples=6696960 decoded_frames=3207168 underruns=0 loops=0 buffered_samples=93624 active=1 paused=0
+[perf] fps_x10=612 update_us=3244 present_us=6334 state=5
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=4701 nonzero_buffers=3966 effect_starts=164 completed=120
+[audio] music_samples=7649280 decoded_frames=3686400 underruns=0 loops=0 buffered_samples=94496 active=1 paused=0
+[perf] fps_x10=609 update_us=3739 present_us=6339 state=5
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=5171 nonzero_buffers=4083 effect_starts=164 completed=120
+[audio] music_samples=7887592 decoded_frames=3796480 underruns=0 loops=0 buffered_samples=94684 active=1 paused=0
+[perf] fps_x10=571 update_us=6365 present_us=6377 state=1
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=5643 nonzero_buffers=4555 effect_starts=164 completed=120
+[audio] music_samples=8852200 decoded_frames=4238848 underruns=0 loops=0 buffered_samples=93004 active=1 paused=0
+[perf] fps_x10=538 update_us=11513 present_us=7053 state=1
+[memory] running: total=131072 KiB available=20484 KiB image=3660 KiB
+[audio] callbacks=6113 nonzero_buffers=5025 effect_starts=164 completed=120
+[audio] music_samples=9814760 decoded_frames=4681216 underruns=0 loops=0 buffered_samples=93372 active=1 paused=0
+[perf] fps_x10=534 update_us=11642 present_us=7057 state=1
+[save] preferences committed generation=7 music_volume=128 sound_volume=128 cpu=2
+---------------- shutdown ----------------

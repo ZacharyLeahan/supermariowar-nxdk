@@ -1,0 +1,79 @@
+[audio] startup callbacks=0
+[audio-dma-failure] sample=0 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=0 global_control=00000002 global_status=00300100 analog base=003f2728 remaining=2048 prefetched=0 digital base=003f2628 remaining=2048 prefetched=0
+[audio-dma-descriptors] sample=0 next=2 expected_analog_base=003f2728 expected_digital_base=003f2628
+[audio-dma-buffer] sample=0 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=0 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=1 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=1 global_control=00000002 global_status=00300100 analog base=003f2728 remaining=2048 prefetched=0 digital base=003f2628 remaining=2048 prefetched=0
+[audio-dma-descriptors] sample=1 next=2 expected_analog_base=003f2728 expected_digital_base=003f2628
+[audio-dma-buffer] sample=1 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=1 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=2 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=2 global_control=00000002 global_status=00300100 analog base=003f2728 remaining=2048 prefetched=0 digital base=003f2628 remaining=2048 prefetched=0
+[audio-dma-descriptors] sample=2 next=2 expected_analog_base=003f2728 expected_digital_base=003f2628
+[audio-dma-buffer] sample=2 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=2 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[audio-dma-failure] sample=3 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-registers] sample=3 global_control=00000002 global_status=00300100 analog base=003f2728 remaining=2048 prefetched=0 digital base=003f2628 remaining=2048 prefetched=0
+[audio-dma-descriptors] sample=3 next=2 expected_analog_base=003f2728 expected_digital_base=003f2628
+[audio-dma-buffer] sample=3 index=0 analog address=03f48000 samples=2048 control=32768 digital address=03f48000 samples=2048 control=32768
+[audio-dma-buffer] sample=3 index=1 analog address=03f49000 samples=2048 control=32768 digital address=03f49000 samples=2048 control=32768
+[save] controls loaded profiles=1,1,1,1 players=1,2,2,2
+[save] asset slot=0 name=None.txt fallback=0
+[save] asset slot=1 name=Standard fallback=0
+[save] asset slot=2 name=Standard fallback=0
+[save] asset slot=3 name=Classic fallback=0
+[save] asset slot=4 name=Classic fallback=0
+[save] asset slot=5 name=Classic fallback=0
+[save] asset slot=6 name=Classic fallback=0
+[save] asset slot=7 name=Sgraff_AntiGuy.png fallback=0
+[save] asset slot=8 name=0smw.png fallback=0
+[save] asset slot=9 name=0smw.png fallback=0
+[save] asset slot=10 name=0smw.png fallback=0
+[save] goals loaded classic=10 time=30
+[save] preferences loaded generation=19 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[save] goals committed classic=5 time=30
+[save] preferences committed generation=20 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=19 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=22 completed=0
+[save] goals committed classic=5 time=30
+[save] preferences committed generation=21 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0

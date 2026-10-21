@@ -1,0 +1,32 @@
+{
+  "xbe_sha256": "b8bd8726703910bfe91e4a238c9c2ac7b84b2f8da1fe0bc825fb60497ac1817f",
+  "source_commit": "fe295fd68ae3791664f0482a7630c4d6c35574af",
+  "source_dirty": false,
+  "reference_build_result": null,
+  "diagnostic_variant": "failure-only-register-log",
+  "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+  "audible_quality_tested": false,
+  "emulator_tested": false,
+  "run": 1,
+  "retrieved_at": "2026-10-16T04:44:02.617002+00:00",
+  "logs_retrieved": true,
+  "build_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "EXIT_WATCHDOG_MS=0"
+  ],
+  "sdk_build": "clean -O2 -DNDEBUG",
+  "startup_callbacks": 5,
+  "last_callbacks": 1408,
+  "nonzero_buffers": 48,
+  "effect_starts": 1,
+  "effects_completed": 1,
+  "stderr_bytes": 0,
+  "preferences_loaded_generation": 5,
+  "match_tested": false,
+  "music_tested": false,
+  "normal_exit_tested": false,
+  "initialization_issue_resolved": false
+}

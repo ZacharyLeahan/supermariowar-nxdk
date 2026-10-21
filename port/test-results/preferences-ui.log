@@ -1,0 +1,17 @@
+PHASE1
+[audio] startup callbacks=5
+[save] defaults: no valid supported preference slot
+[save] preferences committed generation=1 music_volume=64 sound_volume=64 cpu=2
+PHASE2
+[audio] startup callbacks=5
+[save] preferences loaded generation=1 music=1 music_volume=64 sound=1 sound_volume=64 cpu=2
+[save] preferences committed generation=2 music_volume=128 sound_volume=128 cpu=2
+[save] preferences committed generation=3 music_volume=128 sound_volume=128 cpu=2
+---------------- shutdown ----------------
+STDERR
+WARN: 
+
+Assertion failure at SDL_DestroyTexture (/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL2/src/render/SDL_render.c:3092), triggered 1 time:
+  'texture && texture->magic == &texture_magic'
+
+Abort/Break/Retry/Ignore/AlwaysIgnore? [abriA] : 

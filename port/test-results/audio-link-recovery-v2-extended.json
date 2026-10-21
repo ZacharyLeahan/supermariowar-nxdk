@@ -1,0 +1,93 @@
+{
+  "scope": "Ten additional warm title-screen starts on upgraded 128 MB Stellar Xbox; no listening, match or cold-boot test.",
+  "source_commit": "bb45ea120c9e51e5841396f138bdf64e099ed6e7",
+  "xbe_sha256": "4611e86eabfa4b5f9398e1f1c42d77848039cc5efaecf814e2d27f38a03667af",
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "cbece6a910a955f2c25b897c25a0994a345899de1016ddaffefb9a467bd774ed"
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "b4fc340b91d99d27a337a16183fdd96eef01141b12424bfe2ccf36e9b69216e6"
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "b1dde8d463158524ef27415264b2c3bcea9481341f8b41721a8e1f6ebbf0390d"
+    },
+    {
+      "run": 4,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "c6c390d460aa3aaf5fbb4ecdd77950ec82b0851d51aa923525531182e1e27f6f"
+    },
+    {
+      "run": 5,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "78935fd24d06578f124d188d27c48fa6232df412a85da14b827eb87ab88119e1"
+    },
+    {
+      "run": 6,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "03b71ab7c3c4cd74b3b2544f1e8c867de30406bba57af99c50e707cad0870073"
+    },
+    {
+      "run": 7,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "1011f0db1ed1e5c08844c4d77d4a140d4ea2f6ee2cbfbef362c1450cb0ee75bb"
+    },
+    {
+      "run": 8,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "9f0b079425f1e4a4e9ecca91c82ecbc3b9b0725f61837493f8cfaa4abea28c03"
+    },
+    {
+      "run": 9,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "473d4e75804b063114d99a7e684fd71a15b9f5cbe8bf3edc2f1c725c308f7228"
+    },
+    {
+      "run": 10,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "f58b8aea21c5e7e14dc32c8536662dbdbe2eafed87d5eb6ef3d61758b162b1e5"
+    }
+  ],
+  "warm_reset_protocol_exercised": false,
+  "startup_issue_resolved": false,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "full_build_provenance": "workspace logs/hardware/audio-link-recovery-v2-extended/BUILD-INFO.json and provenance/"
+}

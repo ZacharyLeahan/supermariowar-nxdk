@@ -1,0 +1,36 @@
+{
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "loaded_generation": 23,
+  "loaded_schema": 8,
+  "mode": "Classic 5 lives, 0smw map",
+  "players": "One KVM human plus three CPU; four physical controllers untested",
+  "saved_skin_visually_restored": "AntiGuy",
+  "match_finished": "Player 4 wins",
+  "normal_exit_returned_to_dashboard": true,
+  "startup_watchdog_fired": false,
+  "stderr_bytes": 0,
+  "last_callbacks": 9424,
+  "last_effect_starts": 195,
+  "recorded_underruns": [
+    0
+  ],
+  "minimum_available_kib": 18020,
+  "state5_fps_x10_samples": [
+    375,
+    606,
+    613,
+    612,
+    612,
+    610,
+    609,
+    620,
+    624
+  ],
+  "performance_scope": "State 5 includes match introduction and results; not every sample is steady gameplay.",
+  "scope": "One complete current-schema reload/match/exit session, not repeated-launch or audible acceptance.",
+  "evidence": "workspace logs/hardware/guarded-observer-fixed-reload"
+}

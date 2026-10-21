@@ -1,0 +1,7 @@
+{
+  "scope": "Host SDL2.0.9 static surface API test; RLE disabled, keyed and unkeyed RGB565 alpha255 BLEND versus NONE. Not emulator or native testing. Uses same isolated host build described in RLE-RENDERING.md; candidate RLE guard applied only in that temporary host copy, irrelevant to these non-RLE cases.",
+  "test_source_sha256": "cc7522d13a01f9eedb9c0065d6d22bced41cf185148d012168f3bb16775c77dd",
+  "exit_code": 0,
+  "stdout": "SDL 2.0.9\nkeyed=0 opaque_blend_equals_copy=1 expected_pixels=1\nkeyed=1 opaque_blend_equals_copy=1 expected_pixels=1\n",
+  "executable_sha256": "aa45e60ba9d89eefe5d29d0a78571566e8c48a9168027b1d00176b70d98427d6"
+}

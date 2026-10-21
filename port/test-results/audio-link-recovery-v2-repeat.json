@@ -1,0 +1,53 @@
+{
+  "scope": "Five warm title-screen starts on upgraded 128 MB Stellar Xbox; no listening, match or cold-boot test.",
+  "source_commit": "bb45ea120c9e51e5841396f138bdf64e099ed6e7",
+  "xbe_sha256": "4611e86eabfa4b5f9398e1f1c42d77848039cc5efaecf814e2d27f38a03667af",
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "7bd81c9136ffa46fd21be2667ce86bfdef7f7a93844603083a1243952e7c5de4"
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "9bc6ab781cf725c5bb1798a63dfddaae37cb71e7c5aa18464e4deb5e8fc34847"
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "f83985670ecb399f7d4da8de7c155598e9af3f011571c7835e2958531a1c944e"
+    },
+    {
+      "run": 4,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "6c97c89a1f2837577274599740694e5890cadee79e35e917c5ea288b4a8a660a"
+    },
+    {
+      "run": 5,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "35b2c50752945544858fd13fa572ca317bc58824e494a39c446357c5cb90ab52"
+    }
+  ],
+  "warm_reset_protocol_exercised": false,
+  "startup_issue_resolved": false,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "full_build_provenance": "workspace logs/hardware/audio-link-recovery-v2-repeat/BUILD-INFO.json and provenance/"
+}

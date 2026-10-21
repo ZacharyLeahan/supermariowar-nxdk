@@ -1,0 +1,20 @@
+{
+  "source_commit": "bdbd33491a0f4c66a3eea7222ba023d1c071724f",
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "startup_callbacks": 0,
+  "last_callbacks": 0,
+  "stderr_bytes": 73,
+  "normal_exit_returned_to_dashboard": true,
+  "watchdog_fired": false,
+  "failure_registers": "CIV0/LVI1/status0/control29 both; remaining analog1984/digital2016 at all four samples; global_control=2 global_status=00300100; descriptor bases match HAL, paired2048-word IRQ-enabled buffers",
+  "long_match_started": false,
+  "slider_repeated_left_saved_extra_time": 15,
+  "save_generation": 3,
+  "audio_startup_resolved": false,
+  "scope": "Warm setup-only launch; audio failed before menu activity. Repeated Left also revealed nonwrapping slider index corruption. This run cannot validate audio or gameplay performance.",
+  "log_sha256": "a99f5bf09b59a8ae787df77da15b017e0196a828249586b9bbd06d1cf8e1ffd7",
+  "evidence": "workspace logs/hardware/v8-long-match/setup-before-fix"
+}

@@ -1,0 +1,47 @@
+{
+  "xbe_sha256": "9653a4473a4f8ccfe4350169ad186805375d1071859f4a60d926387430eb6e58",
+  "repositories": [
+    {
+      "repository": "modern",
+      "exported_ref": "port/nxdk-xbox",
+      "exported_head": "9a245040d21a86e04b6773bacf4b1ea3762060a1",
+      "public_base": "c7056790ccb485b7309137251167b75fed1482e4",
+      "tested_revision": "5a4ff11d909538da88649be16bf74e53c73f9dd4",
+      "bundle": "modern.bundle",
+      "bytes": 370952,
+      "sha256": "e6bfc97c83801502c0a1028cd4d7c82d7b8ebe5753eaf3d3bc9e2232fdb9f718"
+    },
+    {
+      "repository": "nxdk",
+      "exported_ref": "smw/ac97-ready-link",
+      "exported_head": "c5c574c6ba5778595b782064044ff56b407e835b",
+      "public_base": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "tested_revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+      "bundle": "nxdk.bundle",
+      "bytes": 932,
+      "sha256": "03792fa7ee40919f779614b67e3ed0c5821066307387522a8759fc62eac1b951"
+    }
+  ],
+  "scope": "Source preservation/restoration only. Separate full-clean compiler result and native game results join by XBE hash.",
+  "restoration_verification": {
+    "repositories": [
+      {
+        "repository": "modern",
+        "private_commit_absent_before_import": true,
+        "tested_revision": "5a4ff11d909538da88649be16bf74e53c73f9dd4",
+        "tree_sha": "73ce5e6e1e6d326886f0f29407490b9f368a8a1d",
+        "checkout_complete": true
+      },
+      {
+        "repository": "nxdk",
+        "private_commit_absent_before_import": true,
+        "tested_revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+        "tree_sha": "ab018b31790b1e92c691b1a1a5a238672d2bd171",
+        "checkout_complete": true
+      }
+    ],
+    "scope": "Fresh object databases imported only public baseline history, then private bundles; exact tested source trees checked out. Recursive dependency initialization and compilation not performed by this check."
+  },
+  "hardware_tested": false,
+  "emulator_tested": false
+}

@@ -1,0 +1,50 @@
+{
+  "source_commit": "8635eef3d5e4c4f3fb9eeaadc9a01eac9755d440",
+  "xbe_sha256": "b7ba82698fbcaa1407648cf6d27e207f7aecb77d8b5ddb638b7d6e4d50e1f2b6",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "audio_startup_resolved": false,
+  "scope": "Three warm title-screen starts only. Healthy observations do not reproduce or explain prior intermittent failure. No PCI scan or recovery protocol enabled.",
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 1406,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "states": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 analog base=035a7000 civ=0 lvi=0 status=1 control=0 remaining=0 digital base=035a6000 civ=0 lvi=0 status=1 control=0 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 analog base=003f3730 civ=0 lvi=0 status=0 control=29 remaining=1984 digital base=003f3630 civ=0 lvi=0 status=0 control=29 remaining=2016",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 analog base=003f3730 civ=6 lvi=7 status=0 control=29 remaining=1120 digital base=003f3630 civ=6 lvi=7 status=0 control=29 remaining=1152"
+      ],
+      "log_sha256": "8bdb0a9bd1b7024f2ccd038aaeedf8ac1894ae46f6ff2fce298e92a8bea4f18f"
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 1406,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "states": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 analog base=035a7000 civ=0 lvi=0 status=1 control=0 remaining=0 digital base=035a6000 civ=0 lvi=0 status=1 control=0 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 analog base=003f3730 civ=0 lvi=0 status=0 control=29 remaining=1984 digital base=003f3630 civ=0 lvi=0 status=0 control=29 remaining=2016",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 analog base=003f3730 civ=6 lvi=7 status=0 control=29 remaining=1120 digital base=003f3630 civ=6 lvi=7 status=0 control=29 remaining=1152"
+      ],
+      "log_sha256": "978207017bb89dba792be9689aefd28636863e65900d77a2a3a1cbf1ca326745"
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 1406,
+      "stderr_bytes": 0,
+      "watchdog_fired": false,
+      "states": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 analog base=035a7000 civ=0 lvi=0 status=1 control=0 remaining=0 digital base=035a6000 civ=0 lvi=0 status=1 control=0 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 analog base=003f3730 civ=0 lvi=0 status=0 control=29 remaining=1984 digital base=003f3630 civ=0 lvi=0 status=0 control=29 remaining=2016",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 analog base=003f3730 civ=6 lvi=7 status=0 control=29 remaining=1120 digital base=003f3630 civ=6 lvi=7 status=0 control=29 remaining=1152"
+      ],
+      "log_sha256": "7b5c0ca724ead7b586066adab5a2f729279ec5de19efed7e00ebe1568740fdb8"
+    }
+  ]
+}

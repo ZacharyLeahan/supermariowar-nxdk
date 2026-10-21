@@ -1,0 +1,78 @@
+{
+  "xbe_sha256": "ec21c4f7cfce68b3f2f22d76836a782f1f258bc28e8162f7067a7521f118d671",
+  "source_commit": "8d6fcf899177a324b8773ef2b96b3ace18f18e53",
+  "host": "192.168.1.254",
+  "directory": "/F/SMW-nxdk-test",
+  "started_at": "2026-10-16T12:00:47.476697+00:00",
+  "runner_sha256": "180b994a5c08b7369ea771b442ae967758d3f38c3b799a381305c0ec4bbb0e54",
+  "child_sha256": {
+    "launch-game.py": "5e5759dec65ddfbff6d5ea6f2bbf9ec45deebd004bb91f0b27b01dc37e845b10",
+    "collect-game-logs.py": "d62ffa0ee942a06a6e44e3186dbca3bc042af66ee02e33e75db8c374c1d2713c"
+  },
+  "button_helper_sha256": "e1c93c1073bf898f4ca7abfab88b79c64ead73e26272f4e0d4913bcf7dabe071",
+  "count_requested": 4,
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "log_sha256": "3e7626d31680f347f351e3cb0790d06345119186f671009c07e616717e577b73",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "log_sha256": "4ee234699b6511d59565137ae2da094eca3b716bf5dee23c30dcaaa140b16b83",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "log_sha256": "a3d902eef1b7d2aa12afc77d21d62b2136af44ca956f91882ed888c97f295b61",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    },
+    {
+      "run": 4,
+      "startup_callbacks": 5,
+      "last_callbacks": 939,
+      "log_sha256": "6b7d9c44afb428781ca1d5ad426044e28e44becf6b8651b30ff6d49649f5b19e",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    }
+  ],
+  "audible_quality_confirmed": false,
+  "emulator_tested": false,
+  "complete": true,
+  "scope": "Same-XBE startup/menu/normal Exit observations; no match, listening, cold power or four-pad acceptance.",
+  "compiled": true,
+  "hardware_tested": true,
+  "sdk_revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+  "separate_seed_passed": true,
+  "total_starts_with_seed": 5,
+  "evidence": "workspace logs/hardware/clean-ui-ready-warm-4"
+}

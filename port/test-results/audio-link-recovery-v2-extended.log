@@ -1,0 +1,66 @@
+=== run 1 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 2 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 3 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 4 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 5 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 6 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 7 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=467 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 8 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 9 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=1408 nonzero_buffers=48 effect_starts=1 completed=1
+
+=== run 10 ===
+[audio] startup callbacks=5
+[audio-link-experiment] progress_window before=5 after=9
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1

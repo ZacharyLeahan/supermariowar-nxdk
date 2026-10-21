@@ -1,0 +1,18 @@
+{
+  "probe": "audio-hal-drain",
+  "xbe_sha256": "95a3ea50dad0b226b1879eabae84f46eff6a6bcda96a7c7b65580aad95906918",
+  "source_commit": "4d442c3420b15b00afe9fb8d28e41e053983b188",
+  "source_dirty": false,
+  "probe_source_sha256": "b378bf28f7a4f7797167575d94b5fdc915c461d7abac4ed16327797083d2369e",
+  "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "nxdk_sdl_tracked_changes": "",
+  "silent_probe": true,
+  "audible_quality_tested": false,
+  "emulator_tested": false,
+  "run": 1,
+  "retrieved_at": "2026-10-16T03:43:39.810443+00:00",
+  "log_retrieved": true,
+  "log_sha256": "4385886a6578480270b82d967147fee9a8d63ff73a449721efc1a5a6db696746",
+  "result": "8 completion callbacks for 8 drained/resubmitted buffers; simple drain-stall hypothesis not reproduced"
+}

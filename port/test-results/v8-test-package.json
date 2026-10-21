@@ -1,0 +1,11 @@
+{
+  "xbe_sha256": "998842773b72fc786f3812e8677b3df9d673d6d8b67faf60490f58f434843c8a",
+  "archive_sha256": "78c1dff55740969c1f86ef240fe988f16b8c5a523f298ac1c37cb62f0c46b44b",
+  "package_files": 1513,
+  "all_file_checksums_verified": true,
+  "all_zip_entries_read_back_equal": true,
+  "evidence_files": 5,
+  "status": "Experimental test package; not a final release.",
+  "scope": "Local artifact checks only. Fresh-folder Xbox installation of this package is pending.",
+  "archive": "workspace artifacts/smw-nxdk-v8-test.zip"
+}

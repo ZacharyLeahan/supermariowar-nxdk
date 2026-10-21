@@ -1,0 +1,16 @@
+ Super Mario War 89ccc01a2a2d 2026-10-16
+[audio] startup callbacks=0
+[audio-dma-failure] sample=0 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-failure] sample=1 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-failure] sample=2 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[audio-dma-failure] sample=3 sdl_status=1 analog civ=0 lvi=1 status=0 control=29 digital civ=0 lvi=1 status=0 control=29
+[save] preferences loaded generation=13 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[input] 1 controllers detected
+[input] index=0 instance=297 name=Original Xbox Controller #1 open=1
+[input] controller setup=initial defaults
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+
+STDERR:
+[audio] Output callback stalled at startup; DMA failure samples recorded

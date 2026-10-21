@@ -1,0 +1,248 @@
+{
+  "xbe_sha256": "ea938e363665c508e5deb095f40a4ea619dd206d2277626c302b80000c020730",
+  "source_commit": "6e52e21bb653736c4da196b6e6307b6d0acdde25",
+  "source_dirty": false,
+  "reference_build_result": {
+    "format_version": 1,
+    "kind": "game",
+    "recorded_at": "2026-10-16T05:38:25.023912+00:00",
+    "source_commit": "6e52e21bb653736c4da196b6e6307b6d0acdde25",
+    "source_dirty": false,
+    "xbe_sha256": "ea938e363665c508e5deb095f40a4ea619dd206d2277626c302b80000c020730",
+    "xbe_bytes": 3563520,
+    "wrapper_arguments": [
+      "PREFERENCES=1",
+      "AUDIO_FAILURE_DMA_LOG=1",
+      "AUDIO_LINK_RECOVERY=1"
+    ],
+    "effective_game_config": "-O2 -DNDEBUG -I/tmp/smw-xbe-workspace/repos/nxdk/lib/winapi/winmm -I/tmp/smw-xbe-workspace/repos/nxdk/lib/usb/libusbohci/inc -I/tmp/smw-xbe-workspace/repos/nxdk/lib/usb/libusbohci_xbox/ -DUSBH_USE_EXTERNAL_CONFIG=\\\"usbh_config_xbox.h\\\" -I /tmp/smw-xbe-workspace/repos/nxdk/lib/zlib/zlib -DZ_SOLO -I/tmp/smw-xbe-workspace/repos/nxdk/lib/libpng/libpng -I/tmp/smw-xbe-workspace/repos/nxdk/lib/libpng -isystem /tmp/smw-xbe-workspace/repos/nxdk/lib/libjpeg/libjpeg-turbo -I/tmp/smw-xbe-workspace/repos/nxdk/lib/libjpeg -I/tmp/smw-xbe-workspace/repos/nxdk/lib/net/lwip/src/include -I/tmp/smw-xbe-workspace/repos/nxdk/lib/net/nforceif/include -I/tmp/smw-xbe-workspace/repos/nxdk/lib/net/nvnetdrv -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL2/include -DXBOX -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL_ttf -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL_ttf/external/freetype-2.4.12/include -DXBOX -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL2_image -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DLOAD_XXX\n-std=c++20 -O2 -DNDEBUG -DNETWORK_DISABLED -DFMT_HEADER_ONLY -DFMT_EXCEPTIONS=0 -DFMT_USE_LOCALE=0 -DFMT_USE_NONTYPE_TEMPLATE_ARGS=0 -DFMT_CONSTEVAL= -DGIT_REVISION=\\\"6e52e21bb653\\\" -DGIT_DATE=\\\"2026-10-16\\\" -I/tmp/smw-xbe-workspace/repos/modern/ports/nxdk/../../src/common -I/tmp/smw-xbe-workspace/repos/modern/ports/nxdk/../../src/common_netplay -I/tmp/smw-xbe-workspace/repos/modern/ports/nxdk/../../src/smw -I/tmp/smw-xbe-workspace/repos/modern/ports/nxdk -I/tmp/smw-xbe-workspace/repos/modern/ports/nxdk/vendor/fmt/include -Wno-c++11-narrowing -Wno-switch -Wno-unknown-pragmas -DNXDK_AUDIO_FAILURE_DMA_LOG -DNXDK_AUDIO_LINK_RECOVERY -DNXDK_PREFERENCES -I/tmp/smw-xbe-workspace/repos/nxdk/lib/winapi/winmm -I/tmp/smw-xbe-workspace/repos/nxdk/lib/usb/libusbohci/inc -I/tmp/smw-xbe-workspace/repos/nxdk/lib/usb/libusbohci_xbox/ -DUSBH_USE_EXTERNAL_CONFIG=\\\"usbh_config_xbox.h\\\" -I /tmp/smw-xbe-workspace/repos/nxdk/lib/zlib/zlib -DZ_SOLO -isystem /tmp/smw-xbe-workspace/repos/nxdk/lib/libjpeg/libjpeg-turbo -I/tmp/smw-xbe-workspace/repos/nxdk/lib/libjpeg -I/tmp/smw-xbe-workspace/repos/nxdk/lib/net/lwip/src/include -I/tmp/smw-xbe-workspace/repos/nxdk/lib/net/nforceif/include -I/tmp/smw-xbe-workspace/repos/nxdk/lib/net/nvnetdrv -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL2/include -DXBOX -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL_ttf -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL_ttf/external/freetype-2.4.12/include -DXBOX -I/tmp/smw-xbe-workspace/repos/nxdk/lib/sdl/SDL2_image -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DLOAD_XXX\n",
+    "repositories": {
+      "repos/modern": {
+        "revision": "6e52e21bb653736c4da196b6e6307b6d0acdde25",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-c5a84006802c6ca0.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/modern/data": {
+        "revision": "1139d89ef7e38368536317afd7db54cea2488d5b",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-8c2b8dd42aa85b36.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/modern/ports/nxdk/vendor/fmt": {
+        "revision": "e69e5f977d458f2650bb346dadf2ad30c5320281",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-32c30c0adf32b6b9.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/modern/ports/nxdk/vendor/stb": {
+        "revision": "2c980bb59875b0d32144a71867fbdebb2f77cd20",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-0288beb826974e57.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk": {
+        "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+        "tracked_status": " M lib/sdl/SDL2\n",
+        "diff_file": "provenance/repo-a0e1cb16859e222b.diff",
+        "diff_sha256": "042b72887be6c4313cfa0507d8f9f8208f04ed305e5cc310d7811cac426625f6",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/tools/extract-xiso": {
+        "revision": "b72e5b60d598ec6df80534cda19cdcd4361aa18c",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-078ef971b043c768.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/net/lwip": {
+        "revision": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-ba6b78ec64314969.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/sdl/SDL2": {
+        "revision": "2554902f7bbf469449216ee25f88016421271cd8",
+        "tracked_status": " M src/audio/xbox/SDL_xboxaudio.c\n",
+        "diff_file": "provenance/repo-2d9743f72ab682ce.diff",
+        "diff_sha256": "3c9a94e566443877324ab0eae4a83bff98d67d7675b2e91091e73c48071edd9e",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/pdclib": {
+        "revision": "9d257524e20e3e1ac90163b37f07702053e36321",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-ae8b312149bbe104.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/libcxx": {
+        "revision": "3111bbf75a5f89d382c7f3366a166b662d43048a",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-617a45ad0b2164b8.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/zlib/zlib": {
+        "revision": "51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-ad059f6d1afa6a79.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/libpng/libpng": {
+        "revision": "a40189cf881e9f0db80511c382292a5604c3c3d1",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-557d46d11f7701ea.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/libjpeg/libjpeg-turbo": {
+        "revision": "166e34213e4f4e2363ce058a7bcc69fd03e38b76",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-c282375a3aa8859d.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/sdl/SDL_ttf": {
+        "revision": "200901a8f55bcf7aa031157f53a575c942d2b7aa",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-93159d6b88c1fda6.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/sdl/SDL2_image": {
+        "revision": "ab2a9c602623193d61827ccd395302d92d90fc38",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-087371078438f2ab.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/nxdk/lib/usb/libusbohci": {
+        "revision": "6a0c5fefbcd9db53f4a27ee10df99f93d5bce745",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-140f1fbbe1eec476.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      },
+      "repos/historical": {
+        "revision": "025c347f5c133c5706a224038ece32e68c114ce2",
+        "tracked_status": "",
+        "diff_file": "provenance/repo-8ffaa15c89aeb00a.diff",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "untracked_source_sha256": {}
+      }
+    },
+    "sdk_archive_catalog": {
+      "SDL2_test.lib": {
+        "sha256": "fa70c47b9bb28181f44b896e830a33528c7d5dc28e62bb0d7224a0239fd97aa3",
+        "bytes": 314096
+      },
+      "libSDL2.lib": {
+        "sha256": "888faa1d629ca16c4eb0eb137a6a215b60a78604a25811da44d8fbda0532fb74",
+        "bytes": 1114592
+      },
+      "libSDL2_image.lib": {
+        "sha256": "e0816d4d80a58a7274b5f25e003d52934e22a13d88cfdd9f4dbc9f40aca26105",
+        "bytes": 218862
+      },
+      "libSDL_ttf.lib": {
+        "sha256": "4e71a4b419aa1a408e9463960bd0f785769678c4af2be94690d8135d7f66ca70",
+        "bytes": 30342
+      },
+      "libc++.lib": {
+        "sha256": "dab116a9a884ba4672f792a763e8263d51641116dc8514c7c7119c421198ff77",
+        "bytes": 1195806
+      },
+      "libfreetype.lib": {
+        "sha256": "4a25d41abb194de3e79a362346f9eaf2f35e772f76584414134de45563240962",
+        "bytes": 263722
+      },
+      "libjpeg.lib": {
+        "sha256": "61666c8a85b620f1dcaad8584ebf36542caf35ecd9617eac430532a56ce072fb",
+        "bytes": 563240
+      },
+      "libnxdk.lib": {
+        "sha256": "7808c4fe0718439a1eaaf9f72e819a4bab4837d691b02a21260a65818275f9d1",
+        "bytes": 13200
+      },
+      "libnxdk_automount_d.lib": {
+        "sha256": "f6da3c7e6ab8730c1d21d478e67f25567a88b486516362d9b57eba58f84ad7fa",
+        "bytes": 1478
+      },
+      "libnxdk_hal.lib": {
+        "sha256": "c6005e8ab6b73bdb2f1895bbd0c0710ac9a800fd544abaa0815e37dbb4764d25",
+        "bytes": 28366
+      },
+      "libnxdk_net.lib": {
+        "sha256": "d2e3afa32484c718edd2f4aac4f719400cccfe1cf0f06cfcbd4a492fe6b8e5a7",
+        "bytes": 508418
+      },
+      "libpbkit.lib": {
+        "sha256": "a9fe4f8a1a4657f7175ed205aafa584f4f72ee3e15db16f9b020ab505e8c5925",
+        "bytes": 65804
+      },
+      "libpdclib.lib": {
+        "sha256": "08e2817ed4b7a1eff8d494da9a581b4d0e55bea54121b9f545b77ae5257cad05",
+        "bytes": 360558
+      },
+      "libpng.lib": {
+        "sha256": "c9a053f498b2b1b463b291907644deb71bd4e4cd87730676b071ff916a567cdf",
+        "bytes": 324172
+      },
+      "libwinapi.lib": {
+        "sha256": "a0424a712f2582ec6064d69f71633979af92eb66a17cc20ff7edba5588df13f5",
+        "bytes": 50700
+      },
+      "libxboxrt.lib": {
+        "sha256": "ebc99828f78f9aaf078452e1d2fa053f31de993b123f2135c02ca67362a452b9",
+        "bytes": 36602
+      },
+      "libzlib.lib": {
+        "sha256": "d89b168f1328c8c7d2d1c7c68d9736a4e42e40f022f739bba96f00be7862c6c7",
+        "bytes": 87630
+      },
+      "nxdk_usb.lib": {
+        "sha256": "aa67e25faa438679abbd7a2728fd577351f01be3d3c73cbbe3b07a7a96ebd361",
+        "bytes": 54336
+      },
+      "winmm.lib": {
+        "sha256": "b44f833bba4693ebfb861b566e92c3040a1f0c607767a5446ba7bc5264a5706f",
+        "bytes": 1176
+      }
+    },
+    "toolchain": {
+      "clang": {
+        "path": "/opt/homebrew/opt/llvm/bin/clang",
+        "version": "Homebrew clang version 23.1.2\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /opt/homebrew/Cellar/llvm/23.1.2/bin\nConfiguration file: /opt/homebrew/Cellar/llvm/23.1.2/etc/clang/arm64-apple-darwin25.cfg"
+      },
+      "lld-link": {
+        "path": "/opt/homebrew/bin/lld-link",
+        "version": "Homebrew LLD 23.1.2"
+      }
+    },
+    "compiled": true,
+    "runtime_validation": "Not performed by this build command; join separate results by XBE SHA256.",
+    "scope": "Post-make source/SDK snapshot. SDK archive catalog includes unused libraries. Untracked source bytes are not archived; commit them before a release."
+  },
+  "diagnostic_variant": "experimental-link-recovery",
+  "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "reset_helper_sha256": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
+  "audible_quality_tested": false,
+  "emulator_tested": false,
+  "run": 2,
+  "retrieved_at": "2026-10-16T05:42:27.293379+00:00",
+  "logs_retrieved": true,
+  "hardware_tested": true,
+  "startup_passed": false,
+  "warm_reset_exercised": false,
+  "ready_mask_present": true,
+  "callbacks_remained_zero": true,
+  "stderr_bytes": 73,
+  "root_cause_confirmed": false
+}

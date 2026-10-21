@@ -1,0 +1,17 @@
+{
+  "source_commit": "373066d1b481dad10c3dd8431543115f7e2e1e48",
+  "xbe_sha256": "5ffd0ecf21df27a82d4a53806616cab2dbbb68e11b9e58ae79eb61fb31bad67e",
+  "compiled": true,
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "AUDIO_INIT_STATE_LOG=1",
+    "AUDIO_HAL_INIT_TRACE=1",
+    "STARTUP_WATCHDOG_MS=45000"
+  ],
+  "sdk_hal_archive_sha256": "c6005e8ab6b73bdb2f1895bbd0c0710ac9a800fd544abaa0815e37dbb4764d25",
+  "scope": "Locally compiles selected pinned hal/audio.c with wrappers around existing KeDelayExecutionThread and KeConnectInterrupt calls. No driver recovery added and no SDK HAL source/archive mutation. Logging changes timing. First connection result belongs to startup; a later XAudioInit during close is a separate invocation. Native log qualification pending."
+}

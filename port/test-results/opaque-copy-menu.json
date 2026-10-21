@@ -1,0 +1,22 @@
+{
+  "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+  "source_commit": "0476190f5a1827a49befacb5dd6b777ddff94005",
+  "hardware_tested": true,
+  "menu_fps_x10_samples": [
+    185,
+    602,
+    601,
+    601,
+    602,
+    602
+  ],
+  "startup_callbacks": 5,
+  "last_callbacks": 2824,
+  "max_underruns": 0,
+  "normal_exit": true,
+  "clean_audio_close": true,
+  "stderr_bytes": 0,
+  "log_sha256": "64084af0972a6a52a195c73304c9841fff2f7a9d81958b266a28cd018cb4f672",
+  "visual": "Correct black border and background shading",
+  "scope": "Menu seed only, not match or listening acceptance"
+}

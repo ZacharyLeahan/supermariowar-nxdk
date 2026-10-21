@@ -1,0 +1,40 @@
+{
+  "xbe_sha256": "ec21c4f7cfce68b3f2f22d76836a782f1f258bc28e8162f7067a7521f118d671",
+  "source_commit": "8d6fcf899177a324b8773ef2b96b3ace18f18e53",
+  "host": "192.168.1.254",
+  "directory": "/F/SMW-nxdk-test",
+  "started_at": "2026-10-16T11:59:20.361911+00:00",
+  "runner_sha256": "180b994a5c08b7369ea771b442ae967758d3f38c3b799a381305c0ec4bbb0e54",
+  "child_sha256": {
+    "launch-game.py": "5e5759dec65ddfbff6d5ea6f2bbf9ec45deebd004bb91f0b27b01dc37e845b10",
+    "collect-game-logs.py": "d62ffa0ee942a06a6e44e3186dbca3bc042af66ee02e33e75db8c374c1d2713c"
+  },
+  "button_helper_sha256": "e1c93c1073bf898f4ca7abfab88b79c64ead73e26272f4e0d4913bcf7dabe071",
+  "count_requested": 1,
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "log_sha256": "98610f5787a520e241231d6921e3fe6f93195ac6205067c049fa5c5f898517c3",
+      "stderr_bytes": 0,
+      "failure_markers": [],
+      "clean_close_observed": true,
+      "startup_interrupt_connected": true,
+      "compiled_clean_mode_logged": true,
+      "menu_music_loaded": true,
+      "pass": true
+    }
+  ],
+  "audible_quality_confirmed": false,
+  "emulator_tested": false,
+  "complete": true,
+  "scope": "Same-XBE startup/menu/normal Exit observations; no match, listening, cold power or four-pad acceptance.",
+  "compiled": true,
+  "hardware_tested": true,
+  "sdk_revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+  "on_screen_diagnostic_hud": false,
+  "read_only_initialization_snapshots": false,
+  "limit64MB_header_flag": true,
+  "evidence": "workspace logs/hardware/clean-ui-ready-warm-qualification"
+}

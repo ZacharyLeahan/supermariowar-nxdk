@@ -1,0 +1,227 @@
+[memory] startup: total=131072 KiB available=60704 KiB image=3700 KiB
+[memory] resource lists: total=131072 KiB available=60576 KiB image=3700 KiB
+[audio] startup callbacks=5
+[save] controls loaded profiles=1,1,1,1 players=1,2,0,0
+[save] asset slot=0 name=None.txt fallback=0
+[save] asset slot=1 name=Standard fallback=0
+[save] asset slot=2 name=Standard fallback=0
+[save] asset slot=3 name=Classic fallback=0
+[save] asset slot=4 name=Classic fallback=0
+[save] asset slot=5 name=Classic fallback=0
+[save] asset slot=6 name=Classic fallback=0
+[save] asset slot=7 name=0smw.png fallback=0
+[save] asset slot=8 name=0smw.png fallback=0
+[save] asset slot=9 name=0smw.png fallback=0
+[save] asset slot=10 name=0smw.png fallback=0
+[save] goals loaded classic=10 time=60
+[save] preferences loaded generation=16 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[memory] running: total=131072 KiB available=29704 KiB image=3700 KiB
+[audio] callbacks=468 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=283 update_us=27271 present_us=6123 state=0
+[memory] running: total=131072 KiB available=29704 KiB image=3700 KiB
+[audio] callbacks=938 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=623 update_us=8001 present_us=6051 state=0
+[memory] running: total=131072 KiB available=22512 KiB image=3700 KiB
+[audio] callbacks=1435 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=1 paused=0
+[perf] fps_x10=523 update_us=11070 present_us=6255 state=1
+[memory] running: total=131072 KiB available=21256 KiB image=3700 KiB
+[audio] callbacks=1907 nonzero_buffers=466 effect_starts=1 completed=1
+[audio] music_samples=856064 decoded_frames=434176 underruns=0 loops=0 buffered_samples=87916 active=1 paused=0
+[perf] fps_x10=533 update_us=11702 present_us=7024 state=1
+[memory] running: total=131072 KiB available=21256 KiB image=3700 KiB
+[audio] callbacks=2377 nonzero_buffers=936 effect_starts=1 completed=1
+[audio] music_samples=1818624 decoded_frames=876544 underruns=0 loops=0 buffered_samples=88284 active=1 paused=0
+[perf] fps_x10=533 update_us=11650 present_us=7076 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=2847 nonzero_buffers=1406 effect_starts=1 completed=1
+[audio] music_samples=2781184 decoded_frames=1318912 underruns=0 loops=0 buffered_samples=88652 active=1 paused=0
+[perf] fps_x10=490 update_us=13105 present_us=6959 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=3318 nonzero_buffers=1877 effect_starts=1 completed=1
+[audio] music_samples=3747840 decoded_frames=1765376 underruns=0 loops=0 buffered_samples=93840 active=1 paused=0
+[perf] fps_x10=471 update_us=14135 present_us=7082 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=3788 nonzero_buffers=2347 effect_starts=1 completed=1
+[audio] music_samples=4710400 decoded_frames=2207744 underruns=0 loops=0 buffered_samples=94208 active=1 paused=0
+[perf] fps_x10=471 update_us=14133 present_us=7069 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=4258 nonzero_buffers=2817 effect_starts=1 completed=1
+[audio] music_samples=5672960 decoded_frames=2650112 underruns=0 loops=0 buffered_samples=94576 active=1 paused=0
+[perf] fps_x10=471 update_us=14177 present_us=7044 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=4728 nonzero_buffers=3287 effect_starts=1 completed=1
+[audio] music_samples=6635520 decoded_frames=3092480 underruns=0 loops=0 buffered_samples=94944 active=1 paused=0
+[perf] fps_x10=471 update_us=14099 present_us=7120 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=5199 nonzero_buffers=3758 effect_starts=1 completed=1
+[audio] music_samples=7600128 decoded_frames=3534848 underruns=0 loops=0 buffered_samples=93264 active=1 paused=0
+[perf] fps_x10=478 update_us=13791 present_us=7079 state=1
+[save] goals committed classic=10 time=60
+[save] preferences committed generation=17 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=5670 nonzero_buffers=4229 effect_starts=1 completed=1
+[audio] music_samples=8562688 decoded_frames=3977216 underruns=0 loops=0 buffered_samples=93632 active=1 paused=0
+[perf] fps_x10=513 update_us=12274 present_us=6949 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=6140 nonzero_buffers=4699 effect_starts=1 completed=1
+[audio] music_samples=9527296 decoded_frames=4419584 underruns=0 loops=0 buffered_samples=91952 active=1 paused=0
+[perf] fps_x10=532 update_us=11677 present_us=7084 state=1
+[memory] running: total=131072 KiB available=21000 KiB image=3700 KiB
+[audio] callbacks=6610 nonzero_buffers=5169 effect_starts=1 completed=1
+[audio] music_samples=10489856 decoded_frames=4861952 underruns=0 loops=0 buffered_samples=92320 active=1 paused=0
+[perf] fps_x10=534 update_us=11697 present_us=7014 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=7080 nonzero_buffers=5639 effect_starts=1 completed=1
+[audio] music_samples=11452416 decoded_frames=5304320 underruns=0 loops=0 buffered_samples=92688 active=1 paused=0
+[perf] fps_x10=537 update_us=11447 present_us=7152 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=7550 nonzero_buffers=6109 effect_starts=1 completed=1
+[audio] music_samples=12412928 decoded_frames=5746688 underruns=0 loops=0 buffered_samples=95104 active=1 paused=0
+[perf] fps_x10=561 update_us=10718 present_us=7081 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=8020 nonzero_buffers=6579 effect_starts=1 completed=1
+[audio] music_samples=13377536 decoded_frames=6189056 underruns=0 loops=0 buffered_samples=93424 active=1 paused=0
+[perf] fps_x10=561 update_us=10738 present_us=7074 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=8491 nonzero_buffers=7050 effect_starts=1 completed=1
+[audio] music_samples=14340096 decoded_frames=6631424 underruns=0 loops=0 buffered_samples=93792 active=1 paused=0
+[perf] fps_x10=561 update_us=10775 present_us=7039 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=8961 nonzero_buffers=7520 effect_starts=1 completed=1
+[audio] music_samples=15304704 decoded_frames=7073536 underruns=0 loops=1 buffered_samples=91554 active=1 paused=0
+[perf] fps_x10=546 update_us=11380 present_us=6919 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=9432 nonzero_buffers=7991 effect_starts=1 completed=1
+[audio] music_samples=16267264 decoded_frames=7515904 underruns=0 loops=1 buffered_samples=91922 active=1 paused=0
+[perf] fps_x10=541 update_us=11671 present_us=6784 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=9902 nonzero_buffers=8461 effect_starts=1 completed=1
+[audio] music_samples=17229824 decoded_frames=7958272 underruns=0 loops=1 buffered_samples=92290 active=1 paused=0
+[perf] fps_x10=539 update_us=11774 present_us=6750 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=10372 nonzero_buffers=8931 effect_starts=1 completed=1
+[audio] music_samples=18192384 decoded_frames=8400640 underruns=0 loops=1 buffered_samples=92658 active=1 paused=0
+[perf] fps_x10=539 update_us=11705 present_us=6835 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=10842 nonzero_buffers=9401 effect_starts=1 completed=1
+[audio] music_samples=19154944 decoded_frames=8843008 underruns=0 loops=1 buffered_samples=93026 active=1 paused=0
+[perf] fps_x10=475 update_us=14203 present_us=6844 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=11312 nonzero_buffers=9871 effect_starts=1 completed=1
+[audio] music_samples=20117504 decoded_frames=9285376 underruns=0 loops=1 buffered_samples=93394 active=1 paused=0
+[perf] fps_x10=419 update_us=16916 present_us=6935 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=11783 nonzero_buffers=10342 effect_starts=1 completed=1
+[audio] music_samples=21082112 decoded_frames=9727744 underruns=0 loops=1 buffered_samples=91714 active=1 paused=0
+[perf] fps_x10=418 update_us=16961 present_us=6918 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=12253 nonzero_buffers=10812 effect_starts=1 completed=1
+[audio] music_samples=22044672 decoded_frames=10170112 underruns=0 loops=1 buffered_samples=92082 active=1 paused=0
+[perf] fps_x10=417 update_us=17066 present_us=6877 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=12723 nonzero_buffers=11282 effect_starts=1 completed=1
+[audio] music_samples=23007232 decoded_frames=10612480 underruns=0 loops=1 buffered_samples=92450 active=1 paused=0
+[perf] fps_x10=417 update_us=17160 present_us=6763 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=13193 nonzero_buffers=11752 effect_starts=1 completed=1
+[audio] music_samples=23969792 decoded_frames=11054848 underruns=0 loops=1 buffered_samples=92818 active=1 paused=0
+[perf] fps_x10=493 update_us=12734 present_us=6487 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=13663 nonzero_buffers=12222 effect_starts=1 completed=1
+[audio] music_samples=24932352 decoded_frames=11497216 underruns=0 loops=1 buffered_samples=93186 active=1 paused=0
+[perf] fps_x10=584 update_us=9039 present_us=6111 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=14133 nonzero_buffers=12692 effect_starts=1 completed=1
+[audio] music_samples=25894912 decoded_frames=11939584 underruns=0 loops=1 buffered_samples=93554 active=1 paused=0
+[perf] fps_x10=584 update_us=9029 present_us=6102 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=14603 nonzero_buffers=13162 effect_starts=1 completed=1
+[audio] music_samples=26857472 decoded_frames=12381952 underruns=0 loops=1 buffered_samples=93922 active=1 paused=0
+[perf] fps_x10=584 update_us=9018 present_us=6133 state=1
+[memory] running: total=131072 KiB available=21588 KiB image=3700 KiB
+[audio] callbacks=15073 nonzero_buffers=13632 effect_starts=1 completed=1
+[audio] music_samples=27820032 decoded_frames=12824320 underruns=0 loops=1 buffered_samples=94290 active=1 paused=0
+[perf] fps_x10=584 update_us=9035 present_us=6097 state=1
+[save] goals committed classic=10 time=30
+[save] preferences committed generation=18 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[memory] running: total=131072 KiB available=20572 KiB image=3700 KiB
+[audio] callbacks=15543 nonzero_buffers=14087 effect_starts=2 completed=2
+[audio] music_samples=28661760 decoded_frames=13254400 underruns=0 loops=1 buffered_samples=93712 active=1 paused=0
+[perf] fps_x10=452 update_us=13567 present_us=6494 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=16013 nonzero_buffers=14557 effect_starts=38 completed=27
+[audio] music_samples=29624320 decoded_frames=13696768 underruns=0 loops=1 buffered_samples=94080 active=1 paused=0
+[perf] fps_x10=611 update_us=3313 present_us=6318 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=16484 nonzero_buffers=15028 effect_starts=43 completed=32
+[audio] music_samples=30586880 decoded_frames=14139136 underruns=0 loops=1 buffered_samples=94448 active=1 paused=0
+[perf] fps_x10=614 update_us=1048 present_us=6087 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=16954 nonzero_buffers=15487 effect_starts=43 completed=32
+[audio] music_samples=31549440 decoded_frames=14578442 underruns=0 loops=2 buffered_samples=88150 active=1 paused=0
+[perf] fps_x10=612 update_us=1009 present_us=6122 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=17424 nonzero_buffers=15947 effect_starts=73 completed=49
+[audio] music_samples=32215040 decoded_frames=14926602 underruns=0 loops=2 buffered_samples=93504 active=1 paused=0
+[perf] fps_x10=611 update_us=2632 present_us=6299 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=17894 nonzero_buffers=16409 effect_starts=105 completed=73
+[audio] music_samples=33177600 decoded_frames=15368970 underruns=0 loops=2 buffered_samples=93872 active=1 paused=0
+[perf] fps_x10=610 update_us=3152 present_us=6397 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=18364 nonzero_buffers=16873 effect_starts=119 completed=84
+[audio] music_samples=34129920 decoded_frames=15847690 underruns=0 loops=2 buffered_samples=88808 active=1 paused=0
+[perf] fps_x10=609 update_us=3409 present_us=6563 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=18834 nonzero_buffers=16918 effect_starts=119 completed=84
+[audio] music_samples=34218728 decoded_frames=15847690 underruns=0 loops=2 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=624 update_us=3225 present_us=6830 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=19304 nonzero_buffers=16918 effect_starts=119 completed=84
+[audio] music_samples=34218728 decoded_frames=15847690 underruns=0 loops=2 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=624 update_us=3235 present_us=6818 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=19774 nonzero_buffers=16918 effect_starts=119 completed=84
+[audio] music_samples=34218728 decoded_frames=15847690 underruns=0 loops=2 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=624 update_us=3275 present_us=6780 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=20244 nonzero_buffers=16918 effect_starts=119 completed=84
+[audio] music_samples=34218728 decoded_frames=15847690 underruns=0 loops=2 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=624 update_us=3288 present_us=6766 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=20714 nonzero_buffers=16918 effect_starts=119 completed=84
+[audio] music_samples=34218728 decoded_frames=15847690 underruns=0 loops=2 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=624 update_us=3221 present_us=6833 state=5
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=21185 nonzero_buffers=17196 effect_starts=119 completed=84
+[audio] music_samples=34788072 decoded_frames=16150794 underruns=0 loops=2 buffered_samples=89324 active=1 paused=0
+[perf] fps_x10=469 update_us=11976 present_us=6889 state=1
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=21655 nonzero_buffers=17666 effect_starts=119 completed=84
+[audio] music_samples=35752680 decoded_frames=16597258 underruns=0 loops=2 buffered_samples=96000 active=1 paused=0
+[perf] fps_x10=418 update_us=17083 present_us=6828 state=1
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=22125 nonzero_buffers=18136 effect_starts=119 completed=84
+[audio] music_samples=36715240 decoded_frames=17035530 underruns=0 loops=2 buffered_samples=88012 active=1 paused=0
+[perf] fps_x10=417 update_us=16978 present_us=6942 state=1
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=22596 nonzero_buffers=18607 effect_starts=119 completed=84
+[audio] music_samples=37679848 decoded_frames=17481994 underruns=0 loops=2 buffered_samples=95248 active=1 paused=0
+[perf] fps_x10=531 update_us=11635 present_us=7178 state=1
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=23067 nonzero_buffers=19078 effect_starts=119 completed=84
+[audio] music_samples=38642408 decoded_frames=17924362 underruns=0 loops=2 buffered_samples=95616 active=1 paused=0
+[perf] fps_x10=533 update_us=11614 present_us=7127 state=1
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=23537 nonzero_buffers=19548 effect_starts=119 completed=84
+[audio] music_samples=39607016 decoded_frames=18366730 underruns=0 loops=2 buffered_samples=93936 active=1 paused=0
+[perf] fps_x10=533 update_us=11659 present_us=7086 state=1
+[memory] running: total=131072 KiB available=20444 KiB image=3700 KiB
+[audio] callbacks=24008 nonzero_buffers=20019 effect_starts=119 completed=84
+[audio] music_samples=40571624 decoded_frames=18809098 underruns=0 loops=2 buffered_samples=92256 active=1 paused=0
+[perf] fps_x10=533 update_us=11676 present_us=7069 state=1
+[save] goals committed classic=10 time=30
+[save] preferences committed generation=19 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0

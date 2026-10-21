@@ -1,0 +1,142 @@
+# Xbox release acceptance
+
+Target: modern SDL2 Super Mario War using nxdk, a stock 64 MB application
+budget, four local players, networking disabled, `default.xbe` plus pinned data.
+“Shipped” means a reproducible, installable package with hash-bound results and
+release notes. A build or callback counter alone is not full game acceptance.
+
+## Open blockers
+
+- [ ] Qualify cold boots and broader firmware behavior. The preserve-ready AC97
+  probe passed200 cycles and current guarded game starts have advanced callbacks;
+  this does not establish every cold-start path. Preserve failures by XBE hash.
+- [ ] Hear/capture menu music, effects, match music, results and loop boundaries
+  on the Xbox. KVM video and PCM counters do not perform this check.
+- [ ] Qualify the complete current save format: non-default mode settings,
+  goals, skins/pack choices and native malformed-record recovery on the final
+  executable. Bounded records, alternating slots, controller persistence and
+  host corruption/interruption checks are implemented.
+- [ ] Complete repeated local-match/performance/memory regression with audio
+  working throughout. Silent failed-audio runs cannot validate performance.
+- [ ] Verify four actual controllers, ports, simultaneous input, reconnect and
+  sensible behavior when a controller is missing. One virtual pad + bots has
+  been tested; four physical pads are currently unavailable.
+- [ ] Publish final package/checksums/revision manifest and verify the installed
+  executable matches the tested release. Choose the release destination when
+  the candidate and notes are concrete; no public release has been created.
+
+## Existing evidence (scope matters)
+
+- [x] Pinned nxdk SDL2 example compiled before porting the game.
+- [x] Historical Xbox and desktop baselines audited; modern SDL2 base pinned.
+- [x] Separate game port branch; no proprietary Microsoft XDK required.
+- [x] Menu, input, one human + three CPU local matches and match results have
+  run on a 128 MB Stellar Xbox. See per-executable `test-results` and workspace
+  `logs/hardware`; these are milestones, not acceptance of every later XBE.
+- [x] 64 MB **application budget** allocation probe passed on that upgraded
+  console. Physical retail 64 MB hardware remains untested.
+- [x] Schema-7 controller bindings survived save/reboot/load on XBE `0146f93a...`.
+  Keyboard-prompt cancellation and absent saved-device menu recovery also
+  passed with one virtual pad. See `test-results/controller-save-v7-*`.
+  Four physical controller/device-port behavior remains unverified.
+- [x] Initial volume preferences survived an actual in-game save/reboot/load
+  round trip. The Xbox file-store probe also recovered a deliberately truncated
+  newer slot. Non-default mode/goal/pack qualification remains open.
+- [x] A guarded four-player match/normal-exit regression passed with active audio,
+  zero recorded underruns, zero stderr and no watchdog recovery. The final
+  packaged XBE must repeat that check. The subsequent clean optimized
+  candidate also completed one match and normal Exit with zero stderr;
+  its steady gameplay samples were 61.2, 61.2 and 60.9 FPS. See
+  `test-results/optimized-match-exit.*`; broader release regression remains open.
+- [x] Host sanitizer checks cover effects mixing, callback buffer boundaries,
+  Ogg decode equivalence for 42 tracks and playback lifecycle.
+- [x] Two audio-enabled game starts passed output-counter checks, including
+  a menu-song loop. Later runs failed startup; that issue is still open.
+
+- [x] Corrected startup watchdog completed a native stage-3 injected wait,
+  wrote its fresh marker and returned to XBMC without controller reset. This
+  proves a schedulable wait, not arbitrary kernel-hang recovery.
+- [x] XBE `99884277...` loaded schema-8 generation 23, restored the AntiGuy skin,
+  completed Classic five-life play with one virtual human + three CPU players,
+  and exited normally with advancing audio, zero underruns and empty stderr.
+  Five native malformed-newer-slot fixtures then loaded the older valid slot;
+  every original save was restored byte-for-byte. See `guarded-v8-match-exit`
+  and `save-v8-recovery-progress` results. Final-build broader save acceptance
+  remains open.
+
+## Final regression matrix
+
+For one exact release XBE/hash and pinned dependency/assets revisions, record:
+
+1. Repeated launches, menu navigation, player/team/character selection, map
+   preview and options. Capture error logs and available memory.
+2. Classic and timed local matches on multiple standard maps, including one
+   human + three CPU matches, repeated returns/results and track changes.
+3. Movement/jump, run/grab, stored items, pause/resume and recovery. Record
+   which controls were exercised physically and which through virtual input.
+4. Sustained gameplay/audio, full music loops, volume/mute combinations, no
+   unbounded memory growth, callback stalls or unexplained underruns.
+5. Settings/save round trips and failure recovery, followed by a reboot and
+   another match. Preserve evidence of corrupt/truncated-file handling.
+6. Four-controller hardware session and audible output review. Do not silently
+   replace those checks with CPU players or host/emulator execution.
+7. Clean rebuild, install into a separate FATX-safe folder, verify all package
+   hashes and reproduce launch from the documented commands.
+
+Report compiler, emulator and real-hardware outcomes separately. Emulator
+coverage is useful but is not currently performed and cannot substitute for
+hardware-specific acceptance. Physical stock-64-MB testing should be recorded
+when available; the upgraded-console memory-budget probe is a narrower claim.
+
+
+Recovery policy for the next candidate: retain the 45-second startup and
+10-second exit watchdogs, remove on-screen diagnostic counters, and preserve
+failure-only logs. Bounded recovery is useful release behavior; a watchdog
+activation is still a failed test. Qualify the exact resulting XBE rather than
+requiring recovery guards to be removed. Hearing and four actual controllers
+remain independent acceptance checks.
+
+## Clean-screen candidate ec21c4f7
+
+Exact source8d6fcf89 and SDKc5c574c6 passed five observed warm starts, a full
+600-second Time Limit match with one virtual human and three CPU players,
+pause/resume, results and normal Exit. Recorded zero underruns, empty stderr,
+18 decoder loops and 20424 KiB minimum available memory. Invalid-controller
+newer-slot fallback and both-bad-CRC defaults recovery passed; originals were
+restored exactly. A full SDK/game clean rebuild reproduced the exact XBE.
+See the hash-bound `test-results/clean-ui-ready-*` records.
+
+The packaged candidate and refreshed source bundles have complete local
+checksum/archive readback verification. Fresh-folder Xbox installation remains
+pending. The separate raw-frame observer6141 froze at initial Main; its result
+is failed/unqualified, with logs pending physical recovery. It does not change
+ec21 acceptance. Menu-border investigation remains open. Hearing, four physical
+controllers, cold boots/other firmware and physical stock64MB remain unverified.
+
+## Opaque-copy candidate8df74f38
+
+Source0476190f, SDKc5c574c6, five production flags (preferences, failure-only
+DMA logging, compiled clean audio teardown,45s startup/10s exit guards).
+Capture, forced spin, HUD and initialization-state dumps are off.
+
+- [x] Rendering defect reproduced independently in pinned SDL2.0.9; unkeyed
+  RGB565 RLE bypass removes skipped black pixels. Forced-spin observer frames
+  match exactly after returning to Main. That observer is a separate hash.
+- [x] Opaque no-pixel-alpha sprites use NONE at alpha255. Host pixel comparison
+  passes both keyed/unkeyed cases; exact8df74 records60.1-60.2FPS menus.
+- [x] Full SDK/game clean rebuild reproduces exact8df74; named branch restored.
+- [x] Exact8df74 invalid-controller fallback and both-corrupt-slot defaults
+  recovery pass on hardware, original saves restored byte-for-byte.
+- [x] Fresh/F/SMW-nxdk-final-test installation verifies every1512 files by
+  readback before launching. Classic5 on0smw reached Player2Wins with2 lives.
+- [x] Completed600s Time1-3 match and normal Exit, exact logs archived:0
+  underruns,7 decoder loops, empty stderr, clean audio close. Final8 memory
+  samples stable15940KiB; steady returned menu60.2FPS.
+- [x] Reloaded goals5/600, extra time0 and onehuman/3CPU slots; completed
+  another Classic5 match, normal Exit,0 underruns and empty stderr. See
+  opaque-copy-classic-and-ten-minute and opaque-copy-reload-and-match results.
+
+Human listening, four physical controllers, physical stock64MB and broader
+cold/firmware coverage remain unverified. No emulator run or public release
+has been performed. Candidate88385's10-minute run passed audio/gameplay but
+had slow menus; its acceptance must not be silently transferred to8df74.

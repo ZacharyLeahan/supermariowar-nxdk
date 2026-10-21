@@ -1,0 +1,21 @@
+{
+  "source_commit": "788e88b3806a05da4f159e39e3620bc67a9bd520",
+  "xbe_sha256": "ed8f8a9d0a05a1f7e129f0c720725903a0e90f1f2b3d86a9bc0553a0c78bccf3",
+  "compiled": true,
+  "source_dirty": false,
+  "save_payload_schema": 7,
+  "host_save_asan_ubsan": "passed",
+  "host_four_virtual_controllers_asan_ubsan": "passed",
+  "host_package_checksum_zip_reproducibility_rejection_checks": "passed",
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "native_save_reload_tested": false,
+  "notes": [
+    "Compiled with PREFERENCES=1 AUDIO_FAILURE_DMA_LOG=1; startup warm-reset experiment disabled.",
+    "Pinned SDL shutdown patch is linked; exact source diff is in archived build provenance.",
+    "Host virtual devices do not qualify four physical Xbox pads.",
+    "Installed console default.xbe remains preserved; this executable has not been promoted."
+  ],
+  "full_build_provenance": "workspace artifacts/controller-preferences-v7-recorded/BUILD-INFO.json and provenance/"
+}

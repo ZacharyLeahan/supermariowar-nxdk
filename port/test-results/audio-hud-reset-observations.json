@@ -1,0 +1,89 @@
+{
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_output_confirmed": false,
+  "observations": [
+    {
+      "evidence": "../../logs/hardware/audio-status-hud-first/after",
+      "previous_reset_method": "not controlled",
+      "end_method": "normal Exit",
+      "directory": "/F/SMW-nxdk-v8-test",
+      "xbe_sha256": "b2e502008ff1dc1cee364599769db166d7b359977f9bb356bd882cff706eeda4",
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "stderr_bytes": 73,
+      "log_sha256": "22698a49417757fcec9091e256565e0cf4f5360c31c205dde97cc1f1d4c01d85",
+      "init_snapshots": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f2730 civ=0 lvi=0 status=1 control=28 remaining=0 digital base=003f2630 civ=0 lvi=0 status=1 control=28 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=1 status=0 control=29 remaining=2048 digital base=003f3630 civ=0 lvi=1 status=0 control=29 remaining=2048",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=1 status=0 control=29 remaining=2048 digital base=003f3630 civ=0 lvi=1 status=0 control=29 remaining=2048"
+      ],
+      "failure_markers": {
+        "startup-watchdog.log": false,
+        "exit-watchdog.log": false
+      }
+    },
+    {
+      "evidence": "../../logs/hardware/audio-status-hud-original-folder/after-hard-reset",
+      "previous_reset_method": "normal Exit",
+      "end_method": "Back+Start",
+      "directory": "/F/SMW-nxdk-test",
+      "xbe_sha256": "b2e502008ff1dc1cee364599769db166d7b359977f9bb356bd882cff706eeda4",
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "stderr_bytes": 73,
+      "log_sha256": "a6bce7af137855c427e682308563f2ecbd62daac9f714f281a1e9b3627f8827a",
+      "init_snapshots": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=0 status=1 control=28 remaining=0 digital base=003f3630 civ=0 lvi=0 status=1 control=28 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=1 status=0 control=29 remaining=2048 digital base=003f3630 civ=0 lvi=1 status=0 control=29 remaining=2048",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=1 status=0 control=29 remaining=2048 digital base=003f3630 civ=0 lvi=1 status=0 control=29 remaining=2048"
+      ],
+      "failure_markers": {
+        "startup-watchdog.log": false,
+        "exit-watchdog.log": false
+      }
+    },
+    {
+      "evidence": "../../logs/hardware/audio-status-hud-after-hard-reset/after-normal-exit",
+      "previous_reset_method": "Back+Start",
+      "end_method": "normal Exit",
+      "directory": "/F/SMW-nxdk-test",
+      "xbe_sha256": "b2e502008ff1dc1cee364599769db166d7b359977f9bb356bd882cff706eeda4",
+      "startup_callbacks": 4,
+      "last_callbacks": 4697,
+      "stderr_bytes": 0,
+      "log_sha256": "5f9d281c9ee928e84bc2cf598f2fd6b874add6bba92e4dec63546f1f65e4c28b",
+      "init_snapshots": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=035a7000 civ=0 lvi=0 status=1 control=0 remaining=0 digital base=035a6000 civ=0 lvi=0 status=1 control=0 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=1 status=0 control=29 remaining=1360 digital base=003f3630 civ=0 lvi=1 status=0 control=29 remaining=1392",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=7 lvi=8 status=0 control=29 remaining=1568 digital base=003f3630 civ=7 lvi=8 status=0 control=29 remaining=1600"
+      ],
+      "failure_markers": {
+        "startup-watchdog.log": false,
+        "exit-watchdog.log": false
+      }
+    },
+    {
+      "evidence": "../../logs/hardware/audio-status-hud-after-quick-exit/after-normal-exit",
+      "previous_reset_method": "normal Exit",
+      "end_method": "normal Exit",
+      "directory": "/F/SMW-nxdk-test",
+      "xbe_sha256": "b2e502008ff1dc1cee364599769db166d7b359977f9bb356bd882cff706eeda4",
+      "startup_callbacks": 4,
+      "last_callbacks": 18351,
+      "stderr_bytes": 0,
+      "log_sha256": "eee383a30de913a38427f12811d04b41bfd69b31c5c677af86e773568fa7beb0",
+      "init_snapshots": [
+        "[audio-init-state] phase=before-sdl-audio global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=035a7000 civ=0 lvi=0 status=1 control=0 remaining=0 digital base=035a6000 civ=0 lvi=0 status=1 control=0 remaining=0",
+        "[audio-init-state] phase=after-open global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=0 lvi=1 status=0 control=29 remaining=1360 digital base=003f3630 civ=0 lvi=1 status=0 control=29 remaining=1392",
+        "[audio-init-state] phase=after-startup-window global_control=00000002 global_status=00300100 platform_17c=02000000 analog base=003f3730 civ=7 lvi=8 status=0 control=29 remaining=1568 digital base=003f3630 civ=7 lvi=8 status=0 control=29 remaining=1600"
+      ],
+      "failure_markers": {
+        "startup-watchdog.log": false,
+        "exit-watchdog.log": false
+      }
+    }
+  ],
+  "conclusion": "Two stalls, then healthy launches after Back+Start and normal Exit respectively. Different title directory did not remove the stall. Reset-path causality not established. Read-only register 0x17c was 0x02000000 in both healthy and failed snapshots."
+}

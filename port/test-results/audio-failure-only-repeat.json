@@ -1,0 +1,80 @@
+{
+  "runs": [
+    {
+      "xbe_sha256": "b8a048b21cb6218b10ef304abf06b51a94bef897e933321c9c5e8b6f6b0321c3",
+      "source_commit": "7f6b5b7ba52220e79fb1a43a5c298f543ce5a135",
+      "source_dirty": false,
+      "reference_build_result": null,
+      "diagnostic_variant": "failure-only-register-log",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 1,
+      "retrieved_at": "2026-10-16T04:00:12.536060+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "callback_samples": [
+        625,
+        1095
+      ],
+      "dma_failure_samples": [],
+      "error_bytes": 0,
+      "scope": "Failure-only DMA logger, title screen startup; no callback replacement or attempted recovery"
+    },
+    {
+      "xbe_sha256": "b8a048b21cb6218b10ef304abf06b51a94bef897e933321c9c5e8b6f6b0321c3",
+      "source_commit": "7f6b5b7ba52220e79fb1a43a5c298f543ce5a135",
+      "source_dirty": false,
+      "reference_build_result": null,
+      "diagnostic_variant": "failure-only-register-log",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 2,
+      "retrieved_at": "2026-10-16T04:01:49.202975+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "callback_samples": [
+        625,
+        1095
+      ],
+      "dma_failure_samples": [],
+      "error_bytes": 0,
+      "scope": "Failure-only DMA logger, title screen startup; no callback replacement or attempted recovery"
+    },
+    {
+      "xbe_sha256": "b8a048b21cb6218b10ef304abf06b51a94bef897e933321c9c5e8b6f6b0321c3",
+      "source_commit": "7f6b5b7ba52220e79fb1a43a5c298f543ce5a135",
+      "source_dirty": false,
+      "reference_build_result": null,
+      "diagnostic_variant": "failure-only-register-log",
+      "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+      "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "reset_helper_sha256": "5b0277b140c80af0e64b59c52e5a6b3326ff61a25648330c73e4f19d6c1712cf",
+      "audible_quality_tested": false,
+      "emulator_tested": false,
+      "run": 3,
+      "retrieved_at": "2026-10-16T04:03:26.037425+00:00",
+      "logs_retrieved": true,
+      "startup_callbacks": [
+        5
+      ],
+      "callback_samples": [
+        576,
+        1047
+      ],
+      "dma_failure_samples": [],
+      "error_bytes": 0,
+      "scope": "Failure-only DMA logger, title screen startup; no callback replacement or attempted recovery"
+    }
+  ],
+  "root_cause_identified": false
+}

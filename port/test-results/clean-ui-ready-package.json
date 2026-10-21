@@ -1,0 +1,16 @@
+{
+  "xbe_sha256": "ec21c4f7cfce68b3f2f22d76836a782f1f258bc28e8162f7067a7521f118d671",
+  "package": "artifacts/smw-nxdk-ready-candidate.zip",
+  "package_sha256": "aa345f7de63b79976c742247dbfb217bacba0b926ecba75444f689c2565c6b98",
+  "inventory_entries_verified": 1512,
+  "zip_all_members_readback_verified": true,
+  "source_archive": "artifacts/clean-ui-ready-source-v2.zip",
+  "source_archive_sha256": "0c4bb9edf5547df19a689b36e716d55623bbacc26321df40420a83a56b716d4d",
+  "source_trees_restored_verified": true,
+  "fresh_install_tested": false,
+  "emulator_tested": false,
+  "physical_64mb_tested": false,
+  "four_physical_controllers_tested": false,
+  "audible_output_confirmed": false,
+  "status": "Test candidate; full release acceptance open. Observer6141 stalled; retrieval pending physical restart. Candidateec21 not changed."
+}

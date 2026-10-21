@@ -1,0 +1,18 @@
+ Super Mario War 986c403b466e 2026-10-16
+[audio] startup callbacks=5
+[save] preferences loaded generation=7 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[input] 1 controllers detected
+[input] index=0 instance=252 name=Original Xbox Controller #1 open=1
+[input] controller setup=initial defaults
+[save] preferences committed generation=8 music_volume=128 sound_volume=128 cpu=2 preset=1 powerup_override=1
+
+--- rebooted second run ---
+ Super Mario War 986c403b466e 2026-10-16
+[audio] startup callbacks=5
+[save] preferences loaded generation=8 music=1 music_volume=128 sound=1 sound_volume=128 cpu=2 preset=1 powerup_override=1
+[input] 1 controllers detected
+[input] index=0 instance=252 name=Original Xbox Controller #1 open=1
+[input] controller setup=initial defaults
+[save] preferences committed generation=9 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+[save] preferences committed generation=10 music_volume=128 sound_volume=128 cpu=2 preset=0 powerup_override=0
+---------------- shutdown ----------------

@@ -1,0 +1,419 @@
+{
+  "scope": "Host codec-reported memory sizes; excludes allocator overhead, SDL resampler allocations, thread stacks, effects and game graphics. Not Xbox peak memory measurements.",
+  "tracks": [
+    {
+      "compressed_bytes": 1282580,
+      "decoder_setup_bytes": 176200,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/Menu/menu.ogg"
+    },
+    {
+      "compressed_bytes": 191314,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/Menu/tournamentmenu.ogg"
+    },
+    {
+      "compressed_bytes": 444456,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB2_Boss.ogg"
+    },
+    {
+      "compressed_bytes": 1936623,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB2_Overground.ogg"
+    },
+    {
+      "compressed_bytes": 414664,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB2_Underground.ogg"
+    },
+    {
+      "compressed_bytes": 845548,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Airship.ogg"
+    },
+    {
+      "compressed_bytes": 1143575,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Athletic.ogg"
+    },
+    {
+      "compressed_bytes": 537221,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Battle.ogg"
+    },
+    {
+      "compressed_bytes": 714948,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Boss.ogg"
+    },
+    {
+      "compressed_bytes": 709244,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Castle.ogg"
+    },
+    {
+      "compressed_bytes": 1106050,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Ghost.ogg"
+    },
+    {
+      "compressed_bytes": 1053347,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Overground.ogg"
+    },
+    {
+      "compressed_bytes": 345829,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Sky.ogg"
+    },
+    {
+      "compressed_bytes": 705629,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Snow.ogg"
+    },
+    {
+      "compressed_bytes": 900964,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB3_Underwater.ogg"
+    },
+    {
+      "compressed_bytes": 378318,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Airship.ogg"
+    },
+    {
+      "compressed_bytes": 858719,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Athletic.ogg"
+    },
+    {
+      "compressed_bytes": 312095,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Battle.ogg"
+    },
+    {
+      "compressed_bytes": 548844,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Bonus.ogg"
+    },
+    {
+      "compressed_bytes": 408479,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Castle.ogg"
+    },
+    {
+      "compressed_bytes": 649631,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Desert.ogg"
+    },
+    {
+      "compressed_bytes": 626838,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Forest.ogg"
+    },
+    {
+      "compressed_bytes": 497344,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Ghost.ogg"
+    },
+    {
+      "compressed_bytes": 3766228,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Overground.ogg"
+    },
+    {
+      "compressed_bytes": 812937,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Snow.ogg"
+    },
+    {
+      "compressed_bytes": 802845,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Underground.ogg"
+    },
+    {
+      "compressed_bytes": 1002895,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/SMB_Underwater.ogg"
+    },
+    {
+      "compressed_bytes": 91171,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/Special/stageclear.ogg"
+    },
+    {
+      "compressed_bytes": 127845,
+      "decoder_setup_bytes": 193680,
+      "decoder_setup_temp_bytes": 7209,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/game/Standard/Special/tournamentover.ogg"
+    },
+    {
+      "compressed_bytes": 103805,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/BonusGame.ogg"
+    },
+    {
+      "compressed_bytes": 313608,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/BowserCastle.ogg"
+    },
+    {
+      "compressed_bytes": 191172,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/DesertHill.ogg"
+    },
+    {
+      "compressed_bytes": 529714,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/GiantIsland.ogg"
+    },
+    {
+      "compressed_bytes": 595741,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/GrassLand.ogg"
+    },
+    {
+      "compressed_bytes": 234730,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/IceLand.ogg"
+    },
+    {
+      "compressed_bytes": 758257,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/MusicBox.ogg"
+    },
+    {
+      "compressed_bytes": 352060,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/PipeMaze.ogg"
+    },
+    {
+      "compressed_bytes": 547149,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/SeaSide.ogg"
+    },
+    {
+      "compressed_bytes": 446625,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/StarWorld.ogg"
+    },
+    {
+      "compressed_bytes": 281591,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/TheSky.ogg"
+    },
+    {
+      "compressed_bytes": 345829,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/TheSky2.ogg"
+    },
+    {
+      "compressed_bytes": 398543,
+      "decoder_setup_bytes": 218648,
+      "decoder_setup_temp_bytes": 625,
+      "decoder_temp_bytes": 4096,
+      "sample_rate": 44100,
+      "channels": 2,
+      "path": "data/music/world/Standard/ToadHouse.ogg"
+    }
+  ],
+  "largest_compressed": {
+    "compressed_bytes": 3766228,
+    "decoder_setup_bytes": 218648,
+    "decoder_setup_temp_bytes": 625,
+    "decoder_temp_bytes": 4096,
+    "sample_rate": 44100,
+    "channels": 2,
+    "path": "data/music/game/Standard/SMB_Overground.ogg"
+  },
+  "largest_decoder_setup": {
+    "compressed_bytes": 444456,
+    "decoder_setup_bytes": 218648,
+    "decoder_setup_temp_bytes": 625,
+    "decoder_temp_bytes": 4096,
+    "sample_rate": 44100,
+    "channels": 2,
+    "path": "data/music/game/Standard/SMB2_Boss.ogg"
+  },
+  "largest_decoder_temporary": {
+    "compressed_bytes": 1282580,
+    "decoder_setup_bytes": 176200,
+    "decoder_setup_temp_bytes": 7209,
+    "decoder_temp_bytes": 4096,
+    "sample_rate": 44100,
+    "channels": 2,
+    "path": "data/music/game/Standard/Menu/menu.ogg"
+  },
+  "largest_decoder_setup_temporary": {
+    "compressed_bytes": 1282580,
+    "decoder_setup_bytes": 176200,
+    "decoder_setup_temp_bytes": 7209,
+    "decoder_temp_bytes": 4096,
+    "sample_rate": 44100,
+    "channels": 2,
+    "path": "data/music/game/Standard/Menu/menu.ogg"
+  }
+}

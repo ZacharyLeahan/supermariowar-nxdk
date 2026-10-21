@@ -1,0 +1,27 @@
+RUN run-01-smw
+[audio] startup callbacks=5
+[audio-dma] startup backend_callbacks=5 callback_entries=5 semaphore=0 sdl_status=1 analog civ=5 lvi=6 status=0 control=29 digital civ=5 lvi=6 status=0 control=29
+[audio] callbacks=576 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio-dma] running backend_callbacks=577 callback_entries=577 semaphore=0 sdl_status=1 analog civ=1 lvi=2 status=0 control=29 digital civ=1 lvi=2 status=0 control=29
+[audio] callbacks=1047 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio-dma] running backend_callbacks=1048 callback_entries=1048 semaphore=0 sdl_status=1 analog civ=24 lvi=25 status=0 control=29 digital civ=24 lvi=25 status=0 control=29
+RUN run-02-smw
+[audio] startup callbacks=5
+[audio-dma] startup backend_callbacks=5 callback_entries=5 semaphore=0 sdl_status=1 analog civ=5 lvi=6 status=0 control=29 digital civ=5 lvi=6 status=0 control=29
+[audio] callbacks=576 nonzero_buffers=1 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio-dma] running backend_callbacks=577 callback_entries=577 semaphore=0 sdl_status=1 analog civ=1 lvi=2 status=0 control=29 digital civ=1 lvi=2 status=0 control=29
+[audio] callbacks=1046 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio-dma] running backend_callbacks=1047 callback_entries=1047 semaphore=0 sdl_status=1 analog civ=23 lvi=24 status=0 control=29 digital civ=23 lvi=24 status=0 control=29
+RUN run-03-smw
+[audio] startup callbacks=5
+[audio-dma] startup backend_callbacks=5 callback_entries=5 semaphore=0 sdl_status=1 analog civ=5 lvi=6 status=0 control=29 digital civ=5 lvi=6 status=0 control=29
+[audio] callbacks=576 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio-dma] running backend_callbacks=577 callback_entries=577 semaphore=0 sdl_status=1 analog civ=1 lvi=2 status=0 control=29 digital civ=1 lvi=2 status=0 control=29
+[audio] callbacks=1047 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio-dma] running backend_callbacks=1048 callback_entries=1048 semaphore=0 sdl_status=1 analog civ=24 lvi=25 status=0 control=29 digital civ=24 lvi=25 status=0 control=29

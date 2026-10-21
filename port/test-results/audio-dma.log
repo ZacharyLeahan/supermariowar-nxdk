@@ -1,0 +1,12 @@
+[audio] startup callbacks=5
+[audio-dma] startup analog civ=5 lvi=6 status=0 control=29 digital civ=5 lvi=6 status=0 control=29
+[audio] callbacks=625 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio] callbacks=1096 nonzero_buffers=48 effect_starts=1 completed=1
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[audio] callbacks=1567 nonzero_buffers=109 effect_starts=1 completed=1
+[audio] music_samples=124928 decoded_frames=98304 underruns=0 loops=0 buffered_samples=87940 active=1 paused=0
+[audio] callbacks=2037 nonzero_buffers=579 effect_starts=1 completed=1
+[audio] music_samples=1087488 decoded_frames=540672 underruns=0 loops=0 buffered_samples=88308 active=1 paused=0
+[audio] callbacks=2507 nonzero_buffers=1049 effect_starts=1 completed=1
+[audio] music_samples=2052096 decoded_frames=987136 underruns=0 loops=0 buffered_samples=95544 active=1 paused=0

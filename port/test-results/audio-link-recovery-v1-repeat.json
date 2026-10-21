@@ -1,0 +1,104 @@
+{
+  "scope": "Ten warm title-screen starts on 128 MB Stellar Xbox; no listening, match or cold-boot test.",
+  "source_commit": "6e52e21bb653736c4da196b6e6307b6d0acdde25",
+  "xbe_sha256": "ea938e363665c508e5deb095f40a4ea619dd206d2277626c302b80000c020730",
+  "build_arguments": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "AUDIO_LINK_RECOVERY=1"
+  ],
+  "sdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "sdl_diff_sha256": "3c9a94e566443877324ab0eae4a83bff98d67d7675b2e91091e73c48071edd9e",
+  "full_build_provenance": "workspace logs/hardware/audio-link-recovery-repeat/BUILD-INFO.json and provenance/",
+  "runs": [
+    {
+      "run": 1,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "5678f81984027e044ae2493b150ee769f4212cfa14b54c87690fa88c91b63471"
+    },
+    {
+      "run": 2,
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 73,
+      "log_sha256": "0842a62d437927fc8f7a02f0c944e64bde1de27faab74afb1df23d0700ebdec6"
+    },
+    {
+      "run": 3,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "6e50403de85b6b35a09d296e90c8ad545075e4976847d23c1be654a229450098"
+    },
+    {
+      "run": 4,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "4398a0c31c66fbfa4580136093524da2fc243d3877deedebe25c5feb2eee2dc9"
+    },
+    {
+      "run": 5,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "b0caaebfbd301c4423a4250455be73a7a6b747eb8e131524c09a6491df009a5b"
+    },
+    {
+      "run": 6,
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 73,
+      "log_sha256": "5e3b3ddffb074b1dceb93e66012a640efa57654beb6fba27a0231cec6772b48b"
+    },
+    {
+      "run": 7,
+      "startup_callbacks": 5,
+      "last_callbacks": 1408,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "f68da6247d057b308093a0b9979254cb750059b4964a4c62429596c57c74f722"
+    },
+    {
+      "run": 8,
+      "startup_callbacks": 5,
+      "last_callbacks": 938,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 0,
+      "log_sha256": "ac14fa7691c869f3e8cd5d8d197426e03fa7fe1998276ba50a180dce6a8a181a"
+    },
+    {
+      "run": 9,
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 73,
+      "log_sha256": "4a60b5f4f2d178a73645315356a58ce118cbd596c8fdce4fc88c8271fe06b16a"
+    },
+    {
+      "run": 10,
+      "startup_callbacks": 0,
+      "last_callbacks": 0,
+      "warm_reset_exercised": false,
+      "stderr_bytes": 73,
+      "log_sha256": "e3937c1aa00878d0784bb7627a8afb1bd803dc1a0ac3d54158386a7fec13d1f8"
+    }
+  ],
+  "progressed_launches": 6,
+  "stalled_launches": 4,
+  "warm_reset_protocol_exercised": false,
+  "entry_condition_insufficient": true,
+  "startup_issue_resolved": false,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false
+}

@@ -1,0 +1,16 @@
+{
+  "xbe_sha256": "be2c582ac2f3f27b27ed81c60c1dba3388a666f4088c29767839ceca4a911b18",
+  "source_commit": "c430b700",
+  "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+  "nxdk_sdl_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+  "hardware": "128 MB Stellar Xbox, warm launch from XBMC",
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "callbacks_at_10_seconds": 476,
+  "analog_and_digital_dma_progress": true,
+  "silent_probe": true,
+  "audible_quality_tested": false,
+  "intermittent_failure_reproduced": false,
+  "scope": "One successful standalone run; does not establish reliability or attribute the game failure to nxdk."
+}

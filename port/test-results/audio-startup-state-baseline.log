@@ -1,0 +1,27 @@
+Silent nxdk SDL2 startup probe; no audibility test
+phase=before-sdl global_control=00000002 global_status=00300100 analog_base=035a7000 remaining=0 prefetched=0 digital_base=035a6000 remaining=0 prefetched=0
+driver=xbox frequency=48000 channels=2 samples=1024
+phase=opened global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1408 prefetched=0 digital_base=000f28a8 remaining=1440 prefetched=0
+elapsed_ms=0 callbacks=0 analog_civ=1 lvi=2 status=0 control=29 digital_civ=1 lvi=2 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=560 prefetched=1 digital_base=000f28a8 remaining=592 prefetched=1
+elapsed_ms=1000 callbacks=48 analog_civ=17 lvi=18 status=0 control=29 digital_civ=17 lvi=18 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1520 prefetched=18 digital_base=000f28a8 remaining=1552 prefetched=18
+elapsed_ms=2000 callbacks=97 analog_civ=2 lvi=3 status=0 control=29 digital_civ=2 lvi=3 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=416 prefetched=2 digital_base=000f28a8 remaining=448 prefetched=2
+elapsed_ms=3000 callbacks=145 analog_civ=18 lvi=19 status=0 control=29 digital_civ=18 lvi=19 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1360 prefetched=19 digital_base=000f28a8 remaining=1392 prefetched=19
+elapsed_ms=4000 callbacks=194 analog_civ=3 lvi=4 status=0 control=29 digital_civ=3 lvi=4 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=240 prefetched=3 digital_base=000f28a8 remaining=272 prefetched=3
+elapsed_ms=5000 callbacks=242 analog_civ=19 lvi=20 status=0 control=29 digital_civ=19 lvi=20 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1184 prefetched=20 digital_base=000f28a8 remaining=1216 prefetched=20
+elapsed_ms=6000 callbacks=291 analog_civ=4 lvi=5 status=0 control=29 digital_civ=4 lvi=5 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=80 prefetched=4 digital_base=000f28a8 remaining=112 prefetched=4
+elapsed_ms=7000 callbacks=339 analog_civ=20 lvi=21 status=0 control=29 digital_civ=20 lvi=21 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1024 prefetched=21 digital_base=000f28a8 remaining=1056 prefetched=21
+elapsed_ms=8000 callbacks=388 analog_civ=5 lvi=6 status=0 control=29 digital_civ=5 lvi=6 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1968 prefetched=6 digital_base=000f28a8 remaining=2000 prefetched=6
+elapsed_ms=9000 callbacks=436 analog_civ=21 lvi=22 status=0 control=29 digital_civ=21 lvi=22 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=864 prefetched=22 digital_base=000f28a8 remaining=896 prefetched=22
+elapsed_ms=10000 callbacks=485 analog_civ=6 lvi=7 status=0 control=29 digital_civ=6 lvi=7 status=0 control=29
+phase=running global_control=00000002 global_status=00300100 analog_base=000f29a8 remaining=1808 prefetched=7 digital_base=000f28a8 remaining=1840 prefetched=7
+result=progress (callback progress only)

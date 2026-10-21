@@ -1,0 +1,28 @@
+{
+  "source_commit": "bfac4a335f77eced3f6e18a2324654b9a10c52b6",
+  "xbe_sha256": "0146f93a1c5848c9141f576c246fe93063711f471a9f62f02e6dbc87b963edb0",
+  "scope": "One virtual pad: keyboard-profile menu navigation and B cancellation of binding prompt; disconnected controller-4 binding exits without hang; save generation 16 selecting device index 3, reboot and navigate back to see that assignment.",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "saved_generation": 16,
+  "saved_schema": 7,
+  "save_crc_verified": true,
+  "keyboard_menu_navigation": true,
+  "keyboard_capture_cancel": true,
+  "missing_device_capture_return": true,
+  "missing_device_reboot_menu_recovery": true,
+  "reloaded_ui_device": "Controller 4 (disconnected)",
+  "second_session_stderr_bytes": 0,
+  "second_session_last_callbacks": 14108,
+  "second_session_music_loops": 1,
+  "second_session_recorded_underruns": [
+    0
+  ],
+  "full_evidence": "workspace logs/hardware/controller-autosave-v7-reload and controller-autosave-v7-missing-reload",
+  "limitations": [
+    "Restored device assignment is being saved/tested separately.",
+    "No four physical controllers, physical-port ordering, listening or cold-boot qualification.",
+    "Third-session logs still await normal-exit retrieval at this checkpoint."
+  ]
+}

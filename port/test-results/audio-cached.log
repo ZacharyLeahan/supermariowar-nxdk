@@ -1,0 +1,80 @@
+[memory] startup: total=131072 KiB available=60284 KiB image=4116 KiB
+[memory] resource lists: total=131072 KiB available=60156 KiB image=4116 KiB
+[audio] startup callbacks=0
+[memory] running: total=131072 KiB available=29288 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=1 update_us=5235500 present_us=23500 state=0
+[memory] running: total=131072 KiB available=29288 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=415 update_us=14266 present_us=9772 state=0
+[memory] running: total=131072 KiB available=29288 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=0 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=415 update_us=14304 present_us=9743 state=0
+[audio] Ogg memory stream D:\data\music\game\Standard\Menu\menu.ogg rate=44100 channels=2 generation=1 compressed_bytes=1282580
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=266 update_us=27483 present_us=10082 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=361 update_us=18049 present_us=9592 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=357 update_us=18364 present_us=9559 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=370 update_us=17274 present_us=9738 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=362 update_us=17785 present_us=9766 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=358 update_us=18181 present_us=9743 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=359 update_us=18069 present_us=9766 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=359 update_us=18097 present_us=9744 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=307 update_us=22775 present_us=9785 state=1
+[memory] running: total=131072 KiB available=21172 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=1 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=275 update_us=26534 present_us=9696 state=1
+[memory] running: total=131072 KiB available=19888 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=2 completed=0
+[audio] music_samples=0 decoded_frames=40960 underruns=0 loops=0 buffered_samples=0 active=0 paused=0
+[perf] fps_x10=250 update_us=30386 present_us=9601 state=2
+[audio] Ogg memory stream D:\data\music\game\Standard\SMB3_Overground.ogg rate=44100 channels=2 generation=3 compressed_bytes=1053347
+[memory] running: total=131072 KiB available=19900 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=19 completed=0
+[audio] music_samples=0 decoded_frames=81920 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=551 update_us=6913 present_us=9493 state=5
+[audio] Ogg memory stream D:\data\music\game\Standard\SMB3_Overground.ogg rate=44100 channels=2 generation=5 compressed_bytes=1053347
+[memory] running: total=131072 KiB available=19900 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=19 completed=0
+[audio] music_samples=0 decoded_frames=122880 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=614 update_us=5149 present_us=9496 state=5
+[memory] running: total=131072 KiB available=19900 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=19 completed=0
+[audio] music_samples=0 decoded_frames=122880 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=623 update_us=5169 present_us=9325 state=5
+[audio] Ogg memory stream D:\data\music\game\Standard\Special\stageclear.ogg rate=44100 channels=2 generation=6 compressed_bytes=91171
+[memory] running: total=131072 KiB available=19900 KiB image=4116 KiB
+[audio] callbacks=0 nonzero_buffers=0 effect_starts=19 completed=0
+[audio] music_samples=0 decoded_frames=163840 underruns=0 loops=0 buffered_samples=88044 active=1 paused=0
+[perf] fps_x10=615 update_us=5235 present_us=9636 state=5
+[audio] Ogg memory stream D:\data\music\game\Standard\Menu\menu.ogg rate=44100 channels=2 generation=7 compressed_bytes=1282580

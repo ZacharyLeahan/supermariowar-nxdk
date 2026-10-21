@@ -1,0 +1,44 @@
+{
+  "source_commit": "bfac4a335f77eced3f6e18a2324654b9a10c52b6",
+  "xbe_sha256": "0146f93a1c5848c9141f576c246fe93063711f471a9f62f02e6dbc87b963edb0",
+  "scope": "Relaunch generation 19: visually restored AntiGuy, four-player choices, Time goal 30 and Extra Time 0; Classic 5 lives on 1-3 finished with Player 3 winning; unguarded normal Exit returned to XBMC. Audio startup failed, so this session is not accepted for audio/performance.",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_quality_confirmed": false,
+  "settings_reload_verified": true,
+  "loaded_generation": 19,
+  "skin": "Sgraff_AntiGuy.png",
+  "time_goal": 30,
+  "time_extra_chance": 0,
+  "players": [
+    1,
+    2,
+    2,
+    2
+  ],
+  "classic_map": "1-3",
+  "classic_lives": 5,
+  "winner": "Player 3",
+  "normal_exit_dashboard_retrieval": true,
+  "watchdog_marker_present": false,
+  "startup_callbacks": 0,
+  "last_callbacks": 0,
+  "stderr_bytes": 73,
+  "audio_acceptance": false,
+  "performance_acceptance": false,
+  "log_sha256": "82c4672066b7b432377c82fb75ef2af2c5c535e365ad14a872fa7d46002748bc",
+  "failure_state": {
+    "global_control": "00000002",
+    "global_status": "00300100",
+    "analog_remaining": 2048,
+    "digital_remaining": 2048,
+    "civ": 0,
+    "lvi": 1,
+    "dma_control": 29
+  },
+  "full_evidence": "workspace logs/hardware/controller-v7-preference-reload including BUILD-INFO.json, provenance, images and after-classic-exit/",
+  "limitations": [
+    "No audibility or performance pass from this failed-audio run.",
+    "No physical four-controller or physical stock-64-MB qualification."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "audible_output_confirmed": false,
+  "trials": [
+    {
+      "trial": "reset-01",
+      "xbe_sha256": "2d9e3a9c3e345332625645fabd17ab65b72621eaf8a15ab33547565c21560eec",
+      "source_commit": "13de4326bb4cd9445385b6f51279a328b90987df",
+      "expected_cycles": 200,
+      "pass": false,
+      "callback_cycles_recorded": 8,
+      "last_callbacks": [
+        8,
+        1,
+        1
+      ],
+      "closes_returned": 8,
+      "last_protocol": "[audio-init-protocol] requested=reset cold_resets=8 preserved_links=0 before_control=00000002 before_status=00300100 after_control=00000002 after_status=00300100",
+      "available_pages_range": [
+        15931,
+        15931
+      ],
+      "stderr_bytes": 0,
+      "extra_logs_present": [
+        "audio-reopen-error.log"
+      ],
+      "log_sha256": "b52bdf113019a42cec82c072ed059f75e680acafef76e8ecf53962efb5672e46",
+      "analysis_sha256": "961a9b8d6b6e673bcf255a72cebbc95f44f66354d42ca8592f5c08cff7ce6738",
+      "evidence": "../../logs/hardware/audio-init-protocol-200-reset-01"
+    },
+    {
+      "trial": "preserve-01",
+      "xbe_sha256": "2d9e3a9c3e345332625645fabd17ab65b72621eaf8a15ab33547565c21560eec",
+      "source_commit": "13de4326bb4cd9445385b6f51279a328b90987df",
+      "expected_cycles": 200,
+      "pass": true,
+      "callback_cycles_recorded": 200,
+      "last_callbacks": [
+        200,
+        10,
+        19
+      ],
+      "closes_returned": 200,
+      "last_protocol": "[audio-init-protocol] requested=preserve-ready cold_resets=0 preserved_links=200 before_control=00000002 before_status=00300100 after_control=00000002 after_status=00300100",
+      "available_pages_range": [
+        15931,
+        15931
+      ],
+      "stderr_bytes": 0,
+      "extra_logs_present": [
+        "audio-reopen-error.log"
+      ],
+      "log_sha256": "12e91a2428d633fa1c7693a8e9d3fb142e8f47571030b21efae5866fa7c07891",
+      "analysis_sha256": "2998fe59b7b1274f592a3586b9c3411e15a86d4c03a4b3fa08e42245a0955a7f",
+      "evidence": "../../logs/hardware/audio-init-protocol-200-preserve-01"
+    }
+  ],
+  "conclusion": "Same-XBE cold-reset control stalled in cycle eight; preserving arm passed 200 cycles with zero actual cold resets and constant available pages. Supports testing the uninstrumented conditional-reset patch in the game, not final cross-application/cold-power/hardware acceptance."
+}
