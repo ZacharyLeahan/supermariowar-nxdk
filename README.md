@@ -23,6 +23,22 @@ download does not grant rights to the assets.
 - `upstream-lock.json` records exact dependency revisions and SHA-256 hashes of
   every overlay file and applied patch. The scripts reject mismatched inputs.
 
+## SDL2 pin policy
+
+The game base is the **last commit before upstream converted to SDL3**:
+`c7056790ccb485b7309137251167b75fed1482e4`. It is the direct parent of
+`cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397` ("Port to SDL3"). We pin the
+immutable commit, not `master`, a release archive or the moving `sdl2` branch.
+The latter currently points to an older SDL2 commit, not this final baseline.
+Future maintenance on a separate SDL2 branch does not silently change our base.
+
+The SDK library is pinned independently: nxdk's Xbox **SDL2 2.0.9** fork at
+`2554902f7bbf469449216ee25f88016421271cd8`, plus the shutdown patch in this kit.
+This is not a claim that 2.0.9 is the latest desktop SDL2 release. Replacing it
+with a newer desktop release requires porting and testing the Xbox backend.
+Upgrading either pin requires explicit patch/reconstruction and runtime review;
+SDL3 is outside the current port scope.
+
 ## Prepare, build and run locally
 
 Prerequisites: Git, Python 3, GNU make, clang/LLVM including lld/llvm-ar, CMake,

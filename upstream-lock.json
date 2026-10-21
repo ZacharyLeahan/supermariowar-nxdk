@@ -2,7 +2,9 @@
   "format_version": 1,
   "upstream": {
     "url": "https://github.com/mmatyas/supermariowar",
-    "revision": "c7056790ccb485b7309137251167b75fed1482e4"
+    "revision": "c7056790ccb485b7309137251167b75fed1482e4",
+    "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
+    "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
   "port_source_revision": "96f30fcc60aa0a4a67d3d9cdf972e8e632b0a01e",
   "nxdk": {
@@ -381,5 +383,7 @@
     "src/smw/ui/MI_InputControlContainer.cpp": "0c2ab8f048341176388f2610bc2420dab167ab4ad34470e7fe166111e0df2bde",
     "src/smw/ui/MI_InputControlContainer.h": "883b8f786e9b3c3223f9168e37969bf1359a01f0d0f4dc9408d84660adc454b3",
     "src/smw/world.cpp": "eefaec223f5371e557945f238d8e307df0ce5c3ff816f135b169a84af95e3172"
-  }
+  },
+  "sdl2_version": "2.0.9",
+  "sdl2_pin_policy": "nxdk Xbox SDL2 fork at exact submodule revision plus recorded shutdown patch; not desktop SDL2 latest"
 }
