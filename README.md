@@ -1,4 +1,4 @@
-# Super Mario War nxdk port kit
+# Super Mario War — nxdk
 
 A lean, source-only port kit for the original Xbox using the open-source nxdk.
 This independent repository contains Xbox platform code, text patches, build
