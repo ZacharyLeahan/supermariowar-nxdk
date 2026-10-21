@@ -10,6 +10,7 @@ p.add_argument('--source-cache',type=pathlib.Path,help='Optional existing modern
 p.add_argument('--sdk-cache',type=pathlib.Path,help='Optional existing nxdk checkout to clone locally')
 p.add_argument('--skip-dependencies',action='store_true',help='Source/patch verification only; not a buildable workspace')
 a=p.parse_args();w=a.workspace.expanduser().resolve()
+if a.with_data and a.skip_dependencies:p.error('--with-data requires dependency initialization')
 if w.exists():p.error('Use a new workspace; existing directories are never overwritten')
 if root==w or root in w.parents:p.error('Full checkouts and data must stay outside the lean repository')
 if any(c.isspace() for c in str(w)):p.error('Use a workspace path without whitespace for nxdk Makefiles')
@@ -44,8 +45,7 @@ git(modern,'apply','--check',root/'patches/game.patch');git(modern,'apply','--in
 shutil.copytree(root/'port',modern/'ports/nxdk',dirs_exist_ok=True)
 for link in lock['library_submodules']:(modern/link['path']).mkdir(parents=True,exist_ok=True)
 git(modern,'add','ports/nxdk')
-# Deterministic local integration commit; upstream commits remain in this external checkout only.
-env=None
+# Local integration commit; upstream commits remain in this external checkout only.
 run('git','-C',modern,'-c','user.name=nxdk port recipe','-c','user.email=recipe@localhost.invalid','commit','-m','Apply pinned nxdk port overlay and integration patches')
 clone(lock['nxdk'],sdk,a.sdk_cache)
 for name in ['nxdk-audio-ready.patch','nxdk-cxbe-epoch.patch']:
