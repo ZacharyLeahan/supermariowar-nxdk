@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-21",
+  "source_reconstruction": {
+    "original_source_files_compared": 820,
+    "result": "All reconstructed src/, ports/nxdk/, .gitignore and .gitmodules matched the original committed port snapshot; library gitlink revisions matched.",
+    "locked_integration_and_overlay_files_checked": 345
+  },
+  "sdk_source_comparison": {
+    "files": [
+      "lib/hal/audio.c",
+      "tools/cxbe/Xbe.cpp",
+      "lib/sdl/SDL2/src/audio/xbox/SDL_xboxaudio.c"
+    ],
+    "result": "All three match the original tested SDK/SDL source bytes"
+  },
+  "clean_build": {
+    "recorded_utc": "2026-10-21T14:01:00.695000+00:00",
+    "compiled": true,
+    "emulator_tested": false,
+    "hardware_tested": false,
+    "xbe_sha256": "e2bb810deb6f424a1c22191a8c0d0e21a053ba0740b62716484858dddc8bf48b",
+    "xbe_bytes": 3465216,
+    "recipe_revision": "1699b08594a228acbac983f7da6891df3f13510a",
+    "recipe_status": "",
+    "recipe_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source_revision": "786e8022b7d9e8c74dfe9abd234956cc8680676b",
+    "source_status": "",
+    "sdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+    "sdk_diff_sha256": "f2282835297bc3fd26cb914c78dc857c8e1baea99a82cf1a6e2bb3522ee3a68d",
+    "sdl2_revision": "2554902f7bbf469449216ee25f88016421271cd8",
+    "sdl2_diff_sha256": "3c9a94e566443877324ab0eae4a83bff98d67d7675b2e91091e73c48071edd9e",
+    "flags": [
+      "PREFERENCES=1",
+      "AUDIO_FAILURE_DMA_LOG=1",
+      "AUDIO_CLEAN_SHUTDOWN=1",
+      "STARTUP_WATCHDOG_MS=45000",
+      "EXIT_WATCHDOG_MS=10000"
+    ],
+    "source_date_epoch": "1792148400",
+    "data_initialized": false,
+    "compiler": "Homebrew clang version 23.1.2"
+  },
+  "incremental_build_same_xbe": true,
+  "no_game_data_initialized": true,
+  "xbe_structural_check": {
+    "magic": "XBEH",
+    "sections": 5,
+    "limit64mb": true,
+    "header_and_section_bounds": "pass",
+    "timestamps": [
+      1792148400,
+      1792148400
+    ]
+  },
+  "clean_build_log_sha256": "e81c3b7800d9cf88382101062882c2ccf8296b95407bc2b07ab877c16439a3b7",
+  "audit_negative_fixtures": [
+    "media-extension",
+    "binary-content",
+    "asset-patch",
+    "deleted-history"
+  ],
+  "emulator_tested": false,
+  "hardware_tested": false,
+  "game_data_or_build_artifacts_in_kit": false
+}

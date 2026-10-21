@@ -39,7 +39,7 @@ python3 tools/build.py --workspace /tmp/smw-nxdk-dev --clean
 ```
 
 The output is `/tmp/smw-nxdk-dev/repos/modern/ports/nxdk/bin/default.xbe`.
-Build logs and dependency/patch provenance stay in that external workspace.
+Build logs and `KIT-BUILD-INFO.json` provenance stay in that external workspace.
 The build does not create an uploadable release or automatically deploy anything.
 
 To run the game, obtain matching assets separately for local use. Either start
