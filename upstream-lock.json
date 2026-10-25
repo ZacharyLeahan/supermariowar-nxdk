@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "485ca42001376ad44c52fd1680992cfb54b01cf7",
+  "port_source_revision": "e1bfc83d53b587c3b7743b0452ed9e6bbaf50024",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -52,7 +52,7 @@
     "port/Preferences.h": "fff06861dad25a7fff6c1cd984c07ce2ec3654b1ef25cc82a49716a1fd7f9541",
     "port/PreferencesCodec.h": "40b99d3e878c1e646a8bab30330f32bcfcea3170f751d7bd0caa5bf5ce6b266d",
     "port/README.md": "830a534fe89f1079b22401725f81ef985d05ce4553774a5fa005576590169eec",
-    "port/RELEASE-CHECKLIST.md": "38a6db5cdb8615da1d58e290f910fb11e30523308950445385f89557c2ca614e",
+    "port/RELEASE-CHECKLIST.md": "8666e9e33233eab754f330dd446d6f74a89f3b93635213c15c7618a2b8504f09",
     "port/REPRODUCIBLE-CXBE.md": "281622c84e0407405d38cf32255f3f516f9609607b044f67cfe795f1c313b832",
     "port/RLE-RENDERING.md": "9ba45d6b30046623df509911b2732b6c1419b9e364484d3a09800af233fc97ea",
     "port/SAVES.md": "83fffe0b2072987e9cff689f8761806a6e6584635fab4b7d585923cc0a9a008e",
@@ -298,10 +298,11 @@
     "port/test-results/four-player-runtime-120s-20261025.json": "7ea8a4c28094e3622a6f1f65e4f1d858c59341ba7a1194c8dddd10fd12442605",
     "port/tools/kvm-four-player.mjs": "0e62e1cbf633a9bab0d00277d4ca175f0248076c6e977605d1a8b8cdae6c50b8",
     "port/test-results/four-player-runtime-600s-and-teams-20261025.json": "f11e2155c5e6a2e812a6b73cf329587ac4bc4d4949603bf6024659bc5e806d18",
-    "port/THUMBNAILS.md": "4e0fc52a53f90db75ffe16bd886d5f236778e8272f722cd22582a36076ba4afa",
+    "port/THUMBNAILS.md": "a1170ed26843adde4ac08b770f416848879ccc3684f4218da41f85f0dec080ff",
     "port/test-results/thumbs-and-mode-smokes-20261025.json": "e6b6d0427ed670948c8f9294e7417991e788342d08e4a024a0f2945cee736fdd",
     "port/test-results/thumbs-invalid-cache-and-classic-20261025.json": "3eb3065029d21129d123f28320293a19ed210810098e548a9e42747805af23e0",
-    "port/test-results/thumbs-missing-cache-repro-20261025.json": "1756f42b6b307885877d2df7e03f126d4173bfa9ef4243426f3f20fc8057373c"
+    "port/test-results/thumbs-missing-cache-repro-20261025.json": "1756f42b6b307885877d2df7e03f126d4173bfa9ef4243426f3f20fc8057373c",
+    "port/test-results/default-launch-health-options-20261025.json": "7d5b8632ab3aa8337a65708fc57da3e435d4db3a902f3bdbd43a202b88f4f9cb"
   },
   "patches_sha256": {
     "game.patch": "f6f5c0397a1ada7bec5a90385661ca711c36e7b29634097f985ee23ef9cca3dc",

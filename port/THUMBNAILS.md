@@ -86,3 +86,33 @@ Start does not advance it; A does. Source checks the menu select/cancel/random
 bindings there. This is recorded as a prompt/usability issue, not a failed
 controller route. Health's dedicated options panel, batch thumbnail generation,
 all remaining game modes and longer full-match coverage remain unqualified.
+
+## User-confirmed KVM maintenance
+
+After the audit, the user confirmed that they restarted the KVM firmware while
+other work was in progress and that this work is now finished. This provides
+external context for the observed firmware/version and uptime changes. Those
+interruptions are not evidence of a Super Mario War crash or a demonstrated
+KVM firmware defect. The earlier original-candidate timer-372 incident remains
+unresolved; this confirmation does not establish why its game logging stopped.
+
+## Follow-up after maintenance ended
+
+The current `10910209...` executable booted through the installed `default.xbe`
+path. Four players readied and Health's dedicated options panel opened; focus
+moved to the next field and Back returned to game settings. No option value was
+intentionally edited. This closes the earlier panel-navigation gap, not broader
+Health gameplay/powerup acceptance.
+
+A new KVM restart occurred during this launch even after the user reported
+maintenance complete: unchanged `g118eac1` firmware, uptime 786 seconds before
+launch and 31 seconds afterward. The game was at its title after reconnect.
+The reset's cause remains unknown; not every drop can be attributed to the
+confirmed earlier maintenance. Private evidence: `logs/hardware/stable-kvm-ui-20261025/`.
+
+The panel displayed Start Life 6 and Max Life 2. The pinned upstream constructor
+sets `health.startlife=6` and `health.maxlife=1`, although its comment describes
+five hearts; the max-life selector only offers 2–10. Its change handlers enforce
+start <= max only after edits. Extra-heart collection also compares against
+maxlife, so this inherited inconsistency needs a separate defaults/save-migration
+fix and gameplay verification. No nxdk capability gap is established by it.
