@@ -1,6 +1,6 @@
 # Xbox testing approach and current results
 
-Updated 2026-10-17. This is a private, playable test candidate, not a fully
+Updated 2026-10-25. This is a private, playable test candidate, not a fully
 accepted release. We distinguish compilation, host checks, captured output,
 emulator tests and physical Xbox tests rather than treating them as equivalent.
 
@@ -99,12 +99,34 @@ WAVs, screenshots, comparison scripts/results, KVM stream diagnostics and
 hash-verified logs collected after exit. No game/SDK code was changed for this
 session; the existing package remains unchanged.
 
+## Four-player hardware session, 2026-10-25
+
+Four separate S3 XID controller routes opened on physical ports 1–4, despite
+SDL enumeration order 3,4,1,2. All four humans readied, moved independently,
+and reached a five-life Classic result on `0smw`. Each route paused/resumed
+the subsequent timed match; some short presses needed retries. Routes 1 and 2
+currently control game players 2 and 1; the user has not confirmed cabling.
+Disconnecting the KVM control session neutralized all four S3 reports within
+150 ms, but physical USB unplug/replug and game-side release remain unqualified.
+
+The 600-second four-human match is **inconclusive**. Capture stopped changing
+at timer 372; the user later saw the dashboard while capture retained the game
+frame. This proves stale KVM capture. However, recovered game logging ends near
+the repeated-frame interval without a clean-exit record, so a concurrent game
+stall remains possible. The final log reports about 61 FPS, 17,404 KiB available
+memory and zero music underruns. These values do not establish match completion.
+
+[Result record](test-results/four-player-20261025.json) binds this session to the
+original executable. [Runtime investigation](RUNTIME-STALL.md) describes the
+separate, optional watchdog candidate; its results must remain separate.
+
 ## What remains unverified
 
 - Human listening review, seamless-loop acceptance through a reliable capture
   path, separate effects-volume/mute checks, and coverage of all effects/packs.
-- Four physical controllers, simultaneous input, port ordering and reconnect;
-  not every individual action is qualified by the virtual-pad sessions.
+- Complete four-human timed/team matches, confirmed physical cabling, conventional
+  gamepads and USB reconnect. The four-S3 session establishes partial simultaneous
+  coverage, with an unresolved possible runtime stall.
 - A physical stock-64-MB Xbox. The 64 MB application-budget allocation probe and
   XBE `LIMIT64MB` flag are useful evidence, but do not replace stock-hardware tests.
 - Broader cold-start and firmware reliability. Six heterogeneous healthy starts

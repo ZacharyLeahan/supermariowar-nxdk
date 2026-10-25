@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-25",
+  "xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+  "source_commit": "0476190f5a1827a49befacb5dd6b777ddff94005",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox; four independently routed S3 XID devices through IP KVM",
+  "physical_64mb_tested": false,
+  "four_conventional_gamepads_tested": false,
+  "release_accepted": false,
+  "classic": {
+    "map": "0smw",
+    "lives": 5,
+    "four_human_result_observed": true,
+    "winner": 3,
+    "remaining_lives": 1
+  },
+  "routing": {
+    "route_to_game_player": {
+      "1": 2,
+      "2": 1,
+      "3": 3,
+      "4": 4
+    },
+    "physical_cabling_confirmed": false,
+    "startup_physical_ports": [
+      3,
+      4,
+      1,
+      2
+    ],
+    "startup_instances": [
+      256,
+      287,
+      317,
+      348
+    ],
+    "independent_direction_observed": true,
+    "all_four_ready_observed": true,
+    "pause_resume_each_route_observed": true,
+    "short_press_retries_required": true
+  },
+  "timed_match": {
+    "configured_seconds": 600,
+    "extra_time_percent": 0,
+    "map": "0smw",
+    "completed": false,
+    "last_distinct_capture_timer": 372,
+    "result": "inconclusive possible game stall with confirmed stale KVM capture",
+    "subsequent_inputs_inconclusive": true
+  },
+  "recovery": {
+    "tv_dashboard_while_capture_showed_game": true,
+    "user_manual_restart": true,
+    "logs_preserved_before_relaunch": true,
+    "clean_exit_observed": false,
+    "reset_combo_failure_proven": false
+  },
+  "log": {
+    "sha256": "e65ff1b0b10622fda848cff60b3ed277f5216db8a4ed87ad0033a3ed525fbeef",
+    "perf_report_count": 64,
+    "last_fps_x10": 609,
+    "last_callbacks": 30100,
+    "last_music_underruns": 0,
+    "last_available_kib": 17404,
+    "stderr_bytes": 0
+  },
+  "disconnect": {
+    "transport_session_only": true,
+    "s3_all_four_neutral_after_ms": 150,
+    "game_consumed_release_proven": false,
+    "physical_usb_replug_tested": false
+  },
+  "host_controller_tests": "ASan/UBSan controller routing, reorder, disconnect/reconnect and menu recovery PASS; host only",
+  "evidence_manifest_sha256": "424ced779d6e016cc74949257d6339bd7242c8684e5614af8aab456c69a0b9c2"
+}

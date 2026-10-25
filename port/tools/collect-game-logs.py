@@ -12,7 +12,7 @@ import time
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--host',default='192.168.1.254')
 p.add_argument('--directory',required=True)
-p.add_argument('--program',choices=['default.xbe','hardware-session.xbe','audio-observer.xbe'],default='default.xbe')
+p.add_argument('--program',choices=['default.xbe','hardware-session.xbe','audio-observer.xbe','runtime-watchdog.xbe'],default='default.xbe')
 p.add_argument('--reference-manifest',required=True,type=Path)
 p.add_argument('--output',required=True,type=Path)
 p.add_argument('--wait-seconds',type=int,default=180)
@@ -44,7 +44,7 @@ try:
             'retrieved_at':datetime.now(timezone.utc).isoformat(),'remote_files_modified':False,
             'acceptance_inferred':False,'files':{}}
     names=f.nlst()
-    for name in ['smw.log','smw-error.log','startup-watchdog.log','exit-watchdog.log','audio-close-failure.log','smw-pref0.bin','smw-pref1.bin']:
+    for name in ['smw.log','smw-error.log','startup-watchdog.log','exit-watchdog.log','runtime-watchdog.log','audio-close-failure.log','smw-pref0.bin','smw-pref1.bin']:
         if name not in names:
             record['files'][name]={'present':False};continue
         digest=hashlib.sha256()

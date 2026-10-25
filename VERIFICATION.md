@@ -48,3 +48,19 @@ and apply to their exact original XBE hash, not automatically to this build.
 The original working game checkout, installed candidate, assets and development
 history were not replaced. Full historical source and asset-bearing upstream
 objects are confined to external development checkouts, not this kit's history.
+
+## Four-controller update, 2026-10-25
+
+The current recipe adds a bounded four-route KVM harness, exact-hash diagnostic
+log collection, optional main-loop watchdog instrumentation (off by default),
+and separate records for partial original-candidate coverage and a completed
+120-second four-human diagnostic match. See [testing](port/TESTING.md) and
+[runtime investigation](port/RUNTIME-STALL.md). The longer original-candidate
+incident remains unresolved; no game fix or complete release acceptance is claimed.
+
+A fresh source-only reconstruction applied the updated integration patch and
+verified all 351 locked files plus the fmt/stb gitlink revisions. The asset-audit
+negative fixtures passed. This update has not undergone a new clean recipe
+build; the earlier clean-build hash above belongs to the earlier recipe.
+The diagnostic executable was built in the development workspace and hardware
+tested separately, with its own source revision and hash in the result record.

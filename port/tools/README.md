@@ -155,3 +155,32 @@ per-launch backups retain both slots.
 
 Host-only protocol check: `python3 ports/nxdk/tests/run-game-warm-runner.py`.
 The runner itself still requires native qualification before relying on a batch.
+
+## Four-player S3 KVM session
+
+`kvm-four-player.mjs EVIDENCE_DIRECTORY [http://KVM_ORIGIN]` uses the new 22-byte
+`[0x08, player, ...XID]` transport. Requires Node 22+ and a KVM with four configured
+S3 routes. It deliberately takes the control lease. It does not change firmware,
+pairing or saved device settings. Keep the evidence directory outside a sharing
+repository because screenshots can contain game artwork.
+
+Send JSON lines on interactive stdin, for example:
+
+```json
+{"players":[1],"buttons":["right","a"],"ms":600,"capture":"route1-jump-right"}
+{"states":[{"player":1,"buttons":["left"]},{"player":2,"buttons":["right"]}],"ms":600}
+{"snap":"neutral-after-input","wait":600}
+{"quit":true}
+```
+
+Holds are refreshed every 100 ms, released in `finally`, and limited to 5 seconds
+per command. The session ends after 20 minutes and release-all is sent on normal
+quit. Each route also has the KVM's independent input timeout. Capture requests
+can extend actual hold duration while waiting for the JPEG (up to its request
+timeout), so requested milliseconds are not a latency measurement. The script
+keeps a live video viewer for current snapshots; confirm frames and device logs,
+not just sent commands. A `plan` JSONL basename in the evidence directory can
+queue at most 200 commands; nested plans are rejected. Avoid pause/reset inputs
+in blind stress plans. Player labels describe KVM routes, not proven physical
+port wiring or game assignments. A WebSocket reconnect is not a physical USB
+unplug/replug test. Hardware evidence is recorded separately by exact XBE hash.
