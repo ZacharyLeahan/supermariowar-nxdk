@@ -60,3 +60,20 @@ See [bound result](test-results/four-player-runtime-120s-20261025.json).
 This does not reproduce or resolve the earlier long-run incident. Watchdog arming
 was logged, but its failure path has not been exercised. No game code changed
 between the compiled candidate and this hardware test.
+
+## Longer repeat and teams
+
+The same diagnostic XBE completed a full 600-second four-human Time Limit match
+on `0smw` (Player 2 won; player scores 9,12,11,5), including 185 mixed four-route
+commands and the earlier 80-command fast pattern. A subsequent 2v2 Classic
+match also completed: players 1–2 versus 3–4, with Team 1 winning on one life.
+Normal exit committed preferences and completed clean audio shutdown. All logs
+were preserved and hash-verified before further launches; no watchdog marker
+or stderr output appeared. The Xbox was left at the dashboard with neutral input.
+[Bound results](test-results/four-player-runtime-600s-and-teams-20261025.json).
+
+This is a successful longer repeat on the diagnostic executable, not a diagnosis
+or repair of the original incident. The watchdog's failure path remains
+unqualified, and conventional-pad USB unplug/replug and stock 64 MB hardware
+are still untested. The original `default.xbe` was retained unchanged; the
+separate tested diagnostic executable is `runtime-watchdog.xbe`.

@@ -53,8 +53,8 @@ objects are confined to external development checkouts, not this kit's history.
 
 The current recipe adds a bounded four-route KVM harness, exact-hash diagnostic
 log collection, optional main-loop watchdog instrumentation (off by default),
-and separate records for partial original-candidate coverage and a completed
-120-second four-human diagnostic match. See [testing](port/TESTING.md) and
+and separate records for partial original-candidate coverage, completed
+120/600-second four-human diagnostic matches, and a 2v2 Classic match. See [testing](port/TESTING.md) and
 [runtime investigation](port/RUNTIME-STALL.md). The longer original-candidate
 incident remains unresolved; no game fix or complete release acceptance is claimed.
 

@@ -4,6 +4,8 @@ Target: modern SDL2 Super Mario War using nxdk, a stock 64 MB application
 budget, four local players, networking disabled, `default.xbe` plus pinned data.
 “Shipped” means a reproducible, installable package with hash-bound results and
 release notes. A build or callback counter alone is not full game acceptance.
+The sharing plan is an asset-free source recipe; game assets stay external and
+no public game binary/data release is planned. Private test installs remain useful.
 
 ## Open blockers
 
@@ -19,11 +21,15 @@ release notes. A build or callback counter alone is not full game acceptance.
 - [ ] Complete repeated local-match/performance/memory regression with audio
   working throughout. Silent failed-audio runs cannot validate performance.
 - [ ] Verify four actual controllers, ports, simultaneous input, reconnect and
-  sensible behavior when a controller is missing. One virtual pad + bots has
-  been tested; four physical pads are currently unavailable.
-- [ ] Publish final package/checksums/revision manifest and verify the installed
-  executable matches the tested release. Choose the release destination when
-  the candidate and notes are concrete; no public release has been created.
+  sensible behavior when a controller is missing. Four routed S3 XID devices
+  now provide partial native coverage: Classic results on `8df74f38...`, and a
+  completed 120-second four-human match/normal exit on diagnostic `c1dd5ced...`.
+  Conventional pads, USB reconnect and the earlier possible long-run stall
+  remain unqualified. See [current investigation](RUNTIME-STALL.md).
+- [ ] Finalize the asset-free build recipe and dependency/checksum manifest,
+  and verify the privately installed executable matches the accepted candidate.
+  Do not include upstream media, upstream asset history or release binaries in
+  the sharing repository.
 
 ## Existing evidence (scope matters)
 

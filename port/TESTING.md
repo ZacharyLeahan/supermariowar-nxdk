@@ -120,13 +120,28 @@ memory and zero music underruns. These values do not establish match completion.
 original executable. [Runtime investigation](RUNTIME-STALL.md) describes the
 separate, optional watchdog candidate; its results must remain separate.
 
+The separate diagnostic executable `c1dd5ced...` subsequently completed both a
+120-second and a full 600-second four-human Time Limit match on `0smw`, plus a
+2v2 five-life Classic match. The long session included 185 mixed-input commands
+across all four routes, followed by a neutral interval at the end. Normal exit
+committed saves and completed clean audio shutdown. The minimum available
+memory was 17,336 KiB; music underruns stayed zero and stderr was empty.
+Steady game-state samples were about 60.5–62.3 FPS; two reporting windows
+immediately following match initialization were 45.9 and 48.1 FPS.
+An eight-second stereo capture completed with nonzero output and zero reported
+KVM overruns; listening and gapless-capture acceptance remain separate.
+See [long match and teams](test-results/four-player-runtime-600s-and-teams-20261025.json).
+These successful runs do not establish the cause of the original incident or
+transfer acceptance to the original executable or a future release build.
+
 ## What remains unverified
 
 - Human listening review, seamless-loop acceptance through a reliable capture
   path, separate effects-volume/mute checks, and coverage of all effects/packs.
-- Complete four-human timed/team matches, confirmed physical cabling, conventional
-  gamepads and USB reconnect. The four-S3 session establishes partial simultaneous
-  coverage, with an unresolved possible runtime stall.
+- Repeat four-human timed/team qualification on the final executable, confirm
+  physical cabling, conventional gamepads and USB reconnect. The diagnostic
+  candidate completed timed/team matches; the original possible stall remains
+  unresolved, and watchdog failure recovery has not been exercised.
 - A physical stock-64-MB Xbox. The 64 MB application-budget allocation probe and
   XBE `LIMIT64MB` flag are useful evidence, but do not replace stock-hardware tests.
 - Broader cold-start and firmware reliability. Six heterogeneous healthy starts

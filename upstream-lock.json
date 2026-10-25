@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "42c8ab7c945ca6eb4d545af6748c68c4c61abc1b",
+  "port_source_revision": "9ed1899e89b4b22d04d26c5b4a55aaad9345ad97",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -52,14 +52,14 @@
     "port/Preferences.h": "fff06861dad25a7fff6c1cd984c07ce2ec3654b1ef25cc82a49716a1fd7f9541",
     "port/PreferencesCodec.h": "40b99d3e878c1e646a8bab30330f32bcfcea3170f751d7bd0caa5bf5ce6b266d",
     "port/README.md": "830a534fe89f1079b22401725f81ef985d05ce4553774a5fa005576590169eec",
-    "port/RELEASE-CHECKLIST.md": "d92c21e730d69e7c68259670135303cef5ed31cf7a0e1b05036bdd3fe4ac9734",
+    "port/RELEASE-CHECKLIST.md": "38a6db5cdb8615da1d58e290f910fb11e30523308950445385f89557c2ca614e",
     "port/REPRODUCIBLE-CXBE.md": "281622c84e0407405d38cf32255f3f516f9609607b044f67cfe795f1c313b832",
     "port/RLE-RENDERING.md": "9ba45d6b30046623df509911b2732b6c1419b9e364484d3a09800af233fc97ea",
     "port/SAVES.md": "83fffe0b2072987e9cff689f8761806a6e6584635fab4b7d585923cc0a9a008e",
     "port/SaveFileSlots.h": "3f3b8b3e07bb6722eab7d85cd1458331cdb5b0ad9b0854d034685643be91a2a7",
     "port/SaveRecord.h": "66108d19fecef50c3375fbda4bf3f259ebde2b32dfa6e190275b9916071cda74",
     "port/SaveStore.h": "4030f2c352765a1bfbfe53eaea56c3614fb883ad53b5988bed8ab45fd0bc384f",
-    "port/TESTING.md": "c9f567e2854888c56a35c89d259285c4f40a716a32b543a37d2a9a2f9faf8f82",
+    "port/TESTING.md": "129ced5225821b1947540e1f2a0ff6ed8a283efba4cc8fbf8925c02f06591ba3",
     "port/Vorbis.c": "3640a9382ae0db121c19533de1eba23ca30c2a1785d98e6e25a35855dd916d2b",
     "port/patches/README.md": "df172c12d280ae7f46d3f3b275a90d1fdac83c00e9c3dc5bd6a1f3be5ab38141",
     "port/patches/ac97-preserve-ready-link.candidate.patch": "affe5bd7e1577bfa7c120b443995d89ecfe2ce2964ccc7d90962bdf33cecc80b",
@@ -291,12 +291,13 @@
     "port/tools/run-game-warm-launches.py": "180b994a5c08b7369ea771b442ae967758d3f38c3b799a381305c0ec4bbb0e54",
     "port/tools/run-save-recovery.py": "4524a525cafa87f9ba38f35cc084d461357cc4409a0bfc2a747c07b3d394a4a7",
     "port/tools/save_preflight.py": "1447c3f7ce8b63e660fd68873195000b5181fefcd566e3fe1350290cfad208e5",
-    "port/RUNTIME-STALL.md": "85a4a566d3fdcfe415f510f7e4678c4172171c8bb899088b7ebb048f863029b0",
+    "port/RUNTIME-STALL.md": "de45ea6e362862cf6fcb35f069945f42cee0773bed0fc43c71d30e1e7a179318",
     "port/RuntimeDiagnostics.cpp": "ba89f2a8bc82cb06716bbf55203913d1f95ba75d878c7188334f462df5907e49",
     "port/RuntimeDiagnostics.h": "d0043f77f85568ae08edd12750960b0f655d40029d7c70b6bdcbcecac035a5f9",
     "port/test-results/four-player-20261025.json": "c7b37e4961bf8e08e5b9f71e0a6792b6a85da68b1e5ac86ffe29370858bc3969",
     "port/test-results/four-player-runtime-120s-20261025.json": "7ea8a4c28094e3622a6f1f65e4f1d858c59341ba7a1194c8dddd10fd12442605",
-    "port/tools/kvm-four-player.mjs": "0e62e1cbf633a9bab0d00277d4ca175f0248076c6e977605d1a8b8cdae6c50b8"
+    "port/tools/kvm-four-player.mjs": "0e62e1cbf633a9bab0d00277d4ca175f0248076c6e977605d1a8b8cdae6c50b8",
+    "port/test-results/four-player-runtime-600s-and-teams-20261025.json": "f11e2155c5e6a2e812a6b73cf329587ac4bc4d4949603bf6024659bc5e806d18"
   },
   "patches_sha256": {
     "game.patch": "58c2d8f2da98cdbca09104a477df3ce20bfeb5ea3250e58875a626e124149d97",
