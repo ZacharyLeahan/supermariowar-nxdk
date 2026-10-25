@@ -1,5 +1,6 @@
 #pragma once
 void nxdk_startup();
+bool nxdk_create_directory(const char* path);
 void nxdk_configure_controllers(bool installDefaults = false);
 void nxdk_log_memory(const char* stage);
 void nxdk_poll_recovery();

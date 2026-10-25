@@ -64,3 +64,19 @@ negative fixtures passed. This update has not undergone a new clean recipe
 build; the earlier clean-build hash above belongs to the earlier recipe.
 The diagnostic executable was built in the development workspace and hardware
 tested separately, with its own source revision and hash in the result record.
+
+## Thumbnail-cache fix and mode audit, 2026-10-25
+
+The missing thumbnail-cache directory reproduced a fatal error on the Xbox.
+The port now creates that directory and can render previews in memory when a
+cached PNG is missing, invalid or has incorrect dimensions. Two thumbnail pages,
+map selection/reopen/cancel and 18 generated PNG files were verified on the
+first fix candidate. Six additional modes received short gameplay/exit checks.
+The newer candidate passed a deliberate empty-PNG test and a completed Classic
+round followed by normal exit. It is installed as the current private test
+`default.xbe`, with the previous binary preserved for rollback. See
+[exact hashes and scope](port/THUMBNAILS.md). No public binary or media was added.
+
+These are development-workspace builds and native tests with separate hashes.
+The updated recipe is source-reconstructed and hash-checked; the earlier clean
+recipe build above does not qualify this updated recipe as a new clean build.

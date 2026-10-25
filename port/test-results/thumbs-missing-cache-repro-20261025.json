@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-25",
+  "xbe_sha256": "c1dd5ced6a9e370d7c1b62628d758179dcc15fbc4995d31ce63d09bb6d22d196",
+  "source_commit": "20da2dee5cbee6c0c988d10d1fddd057fec523b4",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "reproduction": "Open Single Game Menu > Thumbs with no data/maps/cache directory",
+  "result": "fatal error opening missing 0smw.png",
+  "stderr_sha256": "a85306301003f0e5c9fd0e5b2daf22971bebf1751433b60eeafb3ed2ad50c314",
+  "log_sha256": "38046ae7f843bca12880d3661ea1f55f2a3b033c574967659297b01044b1b8a5",
+  "runtime_watchdog": {
+    "marker": "runtime watchdog timeout elapsed_ms=45041 serial=19077 frame=3816 phase=2 appstate=1 context=-1",
+    "marker_sha256": "44dd429c01197e52ad764a77ba16a23abd5661af984e183c51bd81f82ac97d38",
+    "dashboard_recovered": true,
+    "verified_scope": "Blocked fatal-error UI path; not arbitrary kernel hangs"
+  },
+  "evidence_manifest_sha256": "20f037b2a6371dbff783ec94b9bb8c825b6de4ab52ca7dde7327c956aafecd8e"
+}

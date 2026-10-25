@@ -12,7 +12,7 @@ import time
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--host',default='192.168.1.254')
 p.add_argument('--directory',required=True)
-p.add_argument('--program',choices=['default.xbe','hardware-session.xbe','audio-observer.xbe','runtime-watchdog.xbe'],default='default.xbe')
+p.add_argument('--program',choices=['default.xbe','hardware-session.xbe','audio-observer.xbe','runtime-watchdog.xbe','ui-audit.xbe'],default='default.xbe')
 p.add_argument('--reference-manifest',required=True,type=Path)
 p.add_argument('--output',required=True,type=Path)
 p.add_argument('--wait-seconds',type=int,default=180)

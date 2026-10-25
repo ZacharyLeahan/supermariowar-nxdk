@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-25",
+  "xbe_sha256": "10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c",
+  "source_commit": "d82d9af1789cb2da9e9db4b580a1542a118078ae",
+  "compiled": true,
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Stellar Xbox with four S3 XID routes",
+  "physical_64mb_tested": false,
+  "invalid_cache": {
+    "fixture_bytes": 0,
+    "map": "0smw",
+    "browser_rendered_correct_preview": true,
+    "fixture_still_zero_bytes_after_test": true,
+    "original_restored": true,
+    "original_restored_sha256": "266e4a9285489adc6a5f90b5bfececb42c5799d4d94b72cd07722ffc80dcdba2"
+  },
+  "classic_regression": {
+    "humans": 4,
+    "map": "0smw",
+    "lives": 5,
+    "completed": true,
+    "result": "tie",
+    "remaining_lives": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "mixed_input_commands": 6,
+    "idle_finish": true
+  },
+  "normal_exit": true,
+  "clean_audio_close": true,
+  "minimum_available_kib": 16952,
+  "maximum_music_underruns": 0,
+  "stderr_bytes": 0,
+  "failure_markers": [],
+  "log_sha256": "403a184c6b1375ef2b5277cd99303bd9155ff915e18705bac07bc4a7b813782b",
+  "evidence_manifest_sha256": "6a7df902ebd33a7c1d6e3bec33259fcc98e6546dc7b4fd0d3e61f9205d6d2062",
+  "current_install": {
+    "promoted_at": "2026-10-25T16:07:35.715030+00:00",
+    "program": "/F/SMW-nxdk-final-test/default.xbe",
+    "xbe_sha256": "10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c",
+    "source_commit": "d82d9af1789cb2da9e9db4b580a1542a118078ae",
+    "previous_program": "default-before-thumbs-fix.xbe",
+    "previous_xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
+    "readback_verified": true,
+    "hardware_tested_under_basename": "ui-audit.xbe",
+    "full_release_accepted": false
+  },
+  "full_release_accepted": false
+}

@@ -1437,16 +1437,19 @@ index d33009894c91f6c855a92a276339e81c3e0f0850..e34ace7086d58f53bc100faa0d56ebb8
  
  #endif // INPUT_H
 diff --git a/src/common/map.cpp b/src/common/map.cpp
-index e2d6b7056afe02a21506e4f0a2196fd7851ff182..7744ccb11c07b9303302f1b8672eb8bd9da8f55a 100644
+index e2d6b7056afe02a21506e4f0a2196fd7851ff182..87beed81407808c6e39cdd35b33ff6bf0708f998 100644
 --- a/src/common/map.cpp
 +++ b/src/common/map.cpp
-@@ -1,3 +1,5 @@
+@@ -1,3 +1,8 @@
 +#include "util/Log.h"
++#ifdef NXDK
++#include "Platform.h"
++#endif
 +#include "util/Error.h"
  #include "map.h"
  
  #include "IO_Block.h"
-@@ -18,8 +20,8 @@
+@@ -18,8 +23,8 @@
  
  #include <cmath>
  #include <iostream>
@@ -1457,7 +1460,7 @@ index e2d6b7056afe02a21506e4f0a2196fd7851ff182..7744ccb11c07b9303302f1b8672eb8bd
  
  #if defined(__APPLE__)
  #include <sys/stat.h>
-@@ -93,7 +95,7 @@ int GetScreenWidth(int iSize) {
+@@ -93,7 +98,7 @@ int GetScreenWidth(int iSize) {
          case 0: return App::screenWidth;
          case 1: return App::screenWidth / 2;
          case 2: return App::screenWidth / 4;
@@ -1466,7 +1469,7 @@ index e2d6b7056afe02a21506e4f0a2196fd7851ff182..7744ccb11c07b9303302f1b8672eb8bd
      }
  }
  
-@@ -102,7 +104,7 @@ int GetScreenHeight(int iSize) {
+@@ -102,7 +107,7 @@ int GetScreenHeight(int iSize) {
          case 0: return App::screenHeight;
          case 1: return App::screenHeight / 2;
          case 2: return App::screenHeight / 4;
@@ -1475,7 +1478,7 @@ index e2d6b7056afe02a21506e4f0a2196fd7851ff182..7744ccb11c07b9303302f1b8672eb8bd
      }
  }
  } // namespace
-@@ -969,18 +971,18 @@ void CMap::saveMap(const std::string& file)
+@@ -969,18 +974,18 @@ void CMap::saveMap(const std::string& file)
          short iPathType = static_cast<short>(platform->pPath->typeId());
          mapfile.write_i32(iPathType);
  
@@ -1497,7 +1500,27 @@ index e2d6b7056afe02a21506e4f0a2196fd7851ff182..7744ccb11c07b9303302f1b8672eb8bd
              mapfile.write_float(path->radius().x);
              mapfile.write_float(path->radius().y);
              mapfile.write_float(path->centerPos().x);
-@@ -1678,11 +1680,11 @@ void CMap::drawThumbnailPlatforms(gfxSprite& targetSurface)
+@@ -1341,10 +1346,18 @@ gfxSprite CMap::createThumbnailSurface(bool fUseClassicPack)
+ //Save thumbnail image
+ void CMap::saveThumbnail(const std::string &sFile, bool fUseClassicPack)
+ {
++#ifdef NXDK
++    const auto separator=sFile.find_last_of("/\\");
++    if(separator!=std::string::npos && !nxdk_create_directory(sFile.substr(0,separator).c_str())) {
++        fprintf(stderr,"[thumb] Cannot create cache directory for %s\n",sFile.c_str());
++        return;
++    }
++#endif
+     gfxSprite sThumbnail = createThumbnailSurface(fUseClassicPack);
+ 
+     //Save the screenshot with the same name as the map file
+-    IMG_SavePNG(sThumbnail.getSurface(), sFile.c_str());
++    if(IMG_SavePNG(sThumbnail.getSurface(), sFile.c_str())!=0)
++        fprintf(stderr,"[thumb] Cannot save %s: %s\n",sFile.c_str(),IMG_GetError());
+ }
+ 
+ void CMap::calculatespawnareas(short iType, bool fUseTempBlocks, bool fIgnoreDeath)
+@@ -1678,11 +1691,11 @@ void CMap::drawThumbnailPlatforms(gfxSprite& targetSurface)
      for (MovingPlatform* platform : platforms) {
          MovingPlatformPath * basepath = platform->pPath;
  
@@ -3544,6 +3567,36 @@ index 28208a0f0e73e81f3a0250328b66ec223619b854..786174046c7b27caa9d4df48de1cfca2
  
  		short iPlayerID;
  		short iDevice;
+diff --git a/src/smw/ui/MI_MapBrowser.cpp b/src/smw/ui/MI_MapBrowser.cpp
+index d37471f5a365c58be7056c4c9c7bae74648e1d49..1037a76f3bf76dfa590d0dece9bdb7b308ce1691 100644
+--- a/src/smw/ui/MI_MapBrowser.cpp
++++ b/src/smw/ui/MI_MapBrowser.cpp
+@@ -1,4 +1,7 @@
+ #include "MI_MapBrowser.h"
++#ifdef NXDK
++#include "SDL_image.h"
++#endif
+ 
+ #include "Game.h"
+ #include "GameValues.h"
+@@ -266,6 +269,17 @@ void MI_MapBrowser::LoadPage(short page, bool fUseFilters)
+             smallDelay();
+         }
+ 
++#ifdef NXDK
++        // Caches are optional. A read-only/full drive must not turn map browsing
++        // into a fatal attempt to load a PNG that was never written.
++        SDL_Surface* cached=IMG_Load(sConvertedPath.c_str());
++        const bool usable=cached && cached->w==160 && cached->h==120;
++        SDL_FreeSurface(cached);
++        if(!usable) {
++            g_map->loadMap((*itr).second.filename, read_type_preview);
++            mapSurfaces[iMap] = g_map->createThumbnailSurface(false);
++        } else
++#endif
+         mapSurfaces[iMap] = ImageLoader(sConvertedPath.c_str()).withoutColorKey().create();
+         mapListNodes[iMap] = &(*itr).second;
+         mapNames[iMap] = (*itr).first.c_str();
 diff --git a/src/smw/world.cpp b/src/smw/world.cpp
 index 7640d8e9bc1e89e8e4b1af13d0999db07c3cae34..5e57da069848da45d0d25b49fefd47670ac018d4 100644
 --- a/src/smw/world.cpp

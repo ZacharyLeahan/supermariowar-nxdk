@@ -95,6 +95,13 @@ void nxdk_startup_checkpoint(NxdkStartupStage stage)
 #endif
 }
 #endif
+bool nxdk_create_directory(const char* path) {
+    const DWORD flags=GetFileAttributesA(path);
+    if(flags!=INVALID_FILE_ATTRIBUTES) return (flags & FILE_ATTRIBUTE_DIRECTORY)!=0;
+    if(CreateDirectoryA(path,nullptr)) return true;
+    const DWORD after=GetFileAttributesA(path);
+    return after!=INVALID_FILE_ATTRIBUTES && (after & FILE_ATTRIBUTE_DIRECTORY)!=0;
+}
 void nxdk_startup() {
 #ifdef NXDK_STARTUP_WATCHDOG_MS
     HANDLE startupGuard = CreateThread(nullptr, 65536, startupWatchdog, nullptr, 0, nullptr);

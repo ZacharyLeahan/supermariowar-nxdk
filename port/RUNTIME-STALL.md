@@ -31,7 +31,10 @@ file/kernel calls, not SDL, stdout or the save system. An existing marker is
 not overwritten. A marker is a failure, never a successful-exit result.
 
 The thread cannot recover a total kernel/interrupt failure, and successful
-recovery is not yet hardware-verified. Scalar stage snapshots can straddle a
+recovery was initially unqualified. A later missing-thumbnail fatal UI test
+verified marker creation and dashboard recovery after 45,041 ms; see
+[thumbnail investigation](THUMBNAILS.md). This does not qualify kernel hangs.
+Scalar stage snapshots can straddle a
 checkpoint and are localization hints, not a crash stack. Long loading work
 can also exceed the timeout; every firing needs review. This guard is diagnostic
 instrumentation, not a repair for the observed freeze or a production release
@@ -75,5 +78,16 @@ or stderr output appeared. The Xbox was left at the dashboard with neutral input
 This is a successful longer repeat on the diagnostic executable, not a diagnosis
 or repair of the original incident. The watchdog's failure path remains
 unqualified, and conventional-pad USB unplug/replug and stock 64 MB hardware
-are still untested. The original `default.xbe` was retained unchanged; the
-separate tested diagnostic executable is `runtime-watchdog.xbe`.
+are still untested. The original executable was retained during that session; the
+separate tested diagnostic executable was `runtime-watchdog.xbe`. The later
+[thumbnail audit](THUMBNAILS.md) promoted its separately tested fix and preserved
+the original binary under a rollback filename.
+
+## Later verified fatal-UI recovery
+
+The thumbnail audit independently reproduced a missing-cache fatal error on
+`c1dd5ced...`. The runtime guard wrote a phase-2 marker and returned the Xbox to
+the dashboard after 45,041 ms. This qualifies that blocked fatal-UI path only;
+it does not establish the cause of the original timer-372 incident or guarantee
+recovery from kernel/interrupt failures. See
+[bound reproduction](test-results/thumbs-missing-cache-repro-20261025.json).

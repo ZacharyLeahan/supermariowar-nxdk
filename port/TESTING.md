@@ -4,6 +4,18 @@ Updated 2026-10-25. This is a private, playable test candidate, not a fully
 accepted release. We distinguish compilation, host checks, captured output,
 emulator tests and physical Xbox tests rather than treating them as equivalent.
 
+## Current UI test build, 2026-10-25
+
+The current private Xbox install is `10910209...`, source `d82d9af1`, with the
+thumbnail-cache fix and optional runtime monitor enabled. It was hardware tested
+under `ui-audit.xbe` and then installed as the identical `default.xbe`; the prior
+binary is retained as `default-before-thumbs-fix.xbe`. See
+[thumbnail investigation](THUMBNAILS.md) and its exact-hash result records.
+It passed the deliberately invalid-cache browser test and a Classic result/
+normal-exit regression. The six additional mode smokes used the earlier
+`4b895c87...` directory-fix candidate. Neither run is complete release acceptance.
+The older tables below continue to describe their original `8df74f38...` artifact.
+
 ## Exact candidate tested
 
 - Game source: `0476190f5a1827a49befacb5dd6b777ddff94005` on `port/nxdk-xbox`.

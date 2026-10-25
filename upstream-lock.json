@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "9ed1899e89b4b22d04d26c5b4a55aaad9345ad97",
+  "port_source_revision": "485ca42001376ad44c52fd1680992cfb54b01cf7",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -43,8 +43,8 @@
     "port/Makefile": "8730cacc91bb66848b23f59b102f6e36e32274216da9a22a4891a7de950725ae",
     "port/OfflineNetwork.cpp": "fb9961eb1e74d1f265a33ce28c4b3a6be92f04ec4e55bfd59389a7123ffc2820",
     "port/PciAudioState.h": "72533a28917061b80b61c8f1302f4f0675f4d0eec5e64706733208829843a4df",
-    "port/Platform.cpp": "63cb526505a011e5e74aebc247f5a69a7b3cd984db31d3e47bdb4457881e183f",
-    "port/Platform.h": "7a88a50a4cdb239ff26d0f704f0d905d872dc2215e8466ef167cc42e73674644",
+    "port/Platform.cpp": "306913e79f7e62d3fccadf787f6424ae503847a4aaed43a5ae305f3b01aadcc5",
+    "port/Platform.h": "2f0c7fe884c0b9318ce466c4d210bf805db02c03456da8053ac3d258aeba3052",
     "port/PreferenceAssets.h": "7377a36d189a58ccb6360b0006ace6e60b095c176a5278b96302f36ebb830fe6",
     "port/PreferenceGameplayFields.inc": "59b92d96761819df3c1371b700d15da0c3d1d37bd329d3a4fa207cc085188eda",
     "port/PreferenceModeFields.inc": "b6cba352fa8b092edf5567eead488263ef7ac7dd16f61e2ed9d2b5046cb328e0",
@@ -59,7 +59,7 @@
     "port/SaveFileSlots.h": "3f3b8b3e07bb6722eab7d85cd1458331cdb5b0ad9b0854d034685643be91a2a7",
     "port/SaveRecord.h": "66108d19fecef50c3375fbda4bf3f259ebde2b32dfa6e190275b9916071cda74",
     "port/SaveStore.h": "4030f2c352765a1bfbfe53eaea56c3614fb883ad53b5988bed8ab45fd0bc384f",
-    "port/TESTING.md": "129ced5225821b1947540e1f2a0ff6ed8a283efba4cc8fbf8925c02f06591ba3",
+    "port/TESTING.md": "6da1a647a700b0f083183b0fa269f85d75739eb7c1f52c97cc728b0517ce43cc",
     "port/Vorbis.c": "3640a9382ae0db121c19533de1eba23ca30c2a1785d98e6e25a35855dd916d2b",
     "port/patches/README.md": "df172c12d280ae7f46d3f3b275a90d1fdac83c00e9c3dc5bd6a1f3be5ab38141",
     "port/patches/ac97-preserve-ready-link.candidate.patch": "affe5bd7e1577bfa7c120b443995d89ecfe2ce2964ccc7d90962bdf33cecc80b",
@@ -276,7 +276,7 @@
     "port/tools/build-game.sh": "a784af1a676c5c8b10f22e88e0202a8d16f34a4a4c05252cc2a7e23fb05bc637",
     "port/tools/build-probe.sh": "9e0214237452ced7cc52d6e142a6ded014af07af2abb59a48d7ca2b03a82939c",
     "port/tools/capture-kvm-audio.py": "8407a42c67789d44e7b02410f5c74fb47b84a8840e831cdc1694be1c4c69b402",
-    "port/tools/collect-game-logs.py": "bc7ea1f7f200f918b004be0846e9ff22ae7c35f6c63f9a9f9d79db684d3c079f",
+    "port/tools/collect-game-logs.py": "f3ec8e38252aaca971b491028a2862121aa144329cf488270e32123ab952b1dc",
     "port/tools/hardware_recovery.py": "91a2f9efe5ebe05c9b28b1253110c110e39aeb868bd485470a8c3ae690fd2a6d",
     "port/tools/install-package.py": "67ea6b634c2f06080626797a6f7ec1db1060fdbd52409b9eb9f484d2e011a8bb",
     "port/tools/kvm-button.mjs": "e1c93c1073bf898f4ca7abfab88b79c64ead73e26272f4e0d4913bcf7dabe071",
@@ -291,16 +291,20 @@
     "port/tools/run-game-warm-launches.py": "180b994a5c08b7369ea771b442ae967758d3f38c3b799a381305c0ec4bbb0e54",
     "port/tools/run-save-recovery.py": "4524a525cafa87f9ba38f35cc084d461357cc4409a0bfc2a747c07b3d394a4a7",
     "port/tools/save_preflight.py": "1447c3f7ce8b63e660fd68873195000b5181fefcd566e3fe1350290cfad208e5",
-    "port/RUNTIME-STALL.md": "de45ea6e362862cf6fcb35f069945f42cee0773bed0fc43c71d30e1e7a179318",
+    "port/RUNTIME-STALL.md": "646a0f0853bd9e45f7c6008c3281e3dfdc0e2eab1e7814c75dea689def576dce",
     "port/RuntimeDiagnostics.cpp": "ba89f2a8bc82cb06716bbf55203913d1f95ba75d878c7188334f462df5907e49",
     "port/RuntimeDiagnostics.h": "d0043f77f85568ae08edd12750960b0f655d40029d7c70b6bdcbcecac035a5f9",
     "port/test-results/four-player-20261025.json": "c7b37e4961bf8e08e5b9f71e0a6792b6a85da68b1e5ac86ffe29370858bc3969",
     "port/test-results/four-player-runtime-120s-20261025.json": "7ea8a4c28094e3622a6f1f65e4f1d858c59341ba7a1194c8dddd10fd12442605",
     "port/tools/kvm-four-player.mjs": "0e62e1cbf633a9bab0d00277d4ca175f0248076c6e977605d1a8b8cdae6c50b8",
-    "port/test-results/four-player-runtime-600s-and-teams-20261025.json": "f11e2155c5e6a2e812a6b73cf329587ac4bc4d4949603bf6024659bc5e806d18"
+    "port/test-results/four-player-runtime-600s-and-teams-20261025.json": "f11e2155c5e6a2e812a6b73cf329587ac4bc4d4949603bf6024659bc5e806d18",
+    "port/THUMBNAILS.md": "4e0fc52a53f90db75ffe16bd886d5f236778e8272f722cd22582a36076ba4afa",
+    "port/test-results/thumbs-and-mode-smokes-20261025.json": "e6b6d0427ed670948c8f9294e7417991e788342d08e4a024a0f2945cee736fdd",
+    "port/test-results/thumbs-invalid-cache-and-classic-20261025.json": "3eb3065029d21129d123f28320293a19ed210810098e548a9e42747805af23e0",
+    "port/test-results/thumbs-missing-cache-repro-20261025.json": "1756f42b6b307885877d2df7e03f126d4173bfa9ef4243426f3f20fc8057373c"
   },
   "patches_sha256": {
-    "game.patch": "58c2d8f2da98cdbca09104a477df3ce20bfeb5ea3250e58875a626e124149d97",
+    "game.patch": "f6f5c0397a1ada7bec5a90385661ca711c36e7b29634097f985ee23ef9cca3dc",
     "nxdk-audio-ready.patch": "303a595d2b88e3afba2bf6b71a6e23390d2bc5dc52ea38dbbe238d90243b04e7",
     "nxdk-cxbe-epoch.patch": "438fc6a535c89a5a298e06167dab79f2f971f15bb73ed6fa293e94b0d4a28049",
     "sdl2-audio-close.patch": "cb4e0f8649968d3246e7457ad28c3458e06d08211f88d72dcdcb284ed6d23525"
@@ -335,7 +339,7 @@
     "src/common/gfx/gfxSprite.h": "0ee98511c5737f9409dfe97bd6a0972a50e0ea37fbe61d365fff1b923222206e",
     "src/common/input.cpp": "cc51ef3dbbb2748b53dd796371ee3850aa2fadff3531f6be5c35bb0fbc757c45",
     "src/common/input.h": "e4c989d12ce8117153bac6b98b534c2e07af3e8d69160205fdd46c0cd2fb381d",
-    "src/common/map.cpp": "b13fb16767003ac307b0f67cbfb7d76f7766257195941dfa982e94e338b4e2ad",
+    "src/common/map.cpp": "34d0d7931c35d0a23455c2cbded5baf8515f223c1ffedb50acdcf13f347a5cbe",
     "src/common/map/MapReader16xx.cpp": "4f92c2c3253a57f9fd93f15ecbc2f072069d02a75cc795d3ea962e3e5342a003",
     "src/common/map/MapReader17xx.cpp": "8eb69c205f4182ee1057e39e678b7e667878aa00f1891e15d87c47f42475511c",
     "src/common/map/MapReader18xx.cpp": "932b2d612d993888505262c944ad971b5392f76bb0f670cdb7ca52e17838bb0b",
@@ -389,8 +393,11 @@
     "src/smw/player.cpp": "f7d0c71646455712843772f7cbbc41eb6b17f0e2a76ba39736da8ea10ec7e058",
     "src/smw/ui/MI_InputControlContainer.cpp": "0c2ab8f048341176388f2610bc2420dab167ab4ad34470e7fe166111e0df2bde",
     "src/smw/ui/MI_InputControlContainer.h": "883b8f786e9b3c3223f9168e37969bf1359a01f0d0f4dc9408d84660adc454b3",
-    "src/smw/world.cpp": "eefaec223f5371e557945f238d8e307df0ce5c3ff816f135b169a84af95e3172"
+    "src/smw/world.cpp": "eefaec223f5371e557945f238d8e307df0ce5c3ff816f135b169a84af95e3172",
+    "src/smw/ui/MI_MapBrowser.cpp": "d2e0fa0f150d55fccee3e32c3e59a4aebd5810a9e6f65fab4c1a06d08be4ef3f"
   },
   "sdl2_version": "2.0.9",
-  "sdl2_pin_policy": "nxdk Xbox SDL2 fork at exact submodule revision plus recorded shutdown patch; not desktop SDL2 latest"
+  "sdl2_pin_policy": "nxdk Xbox SDL2 fork at exact submodule revision plus recorded shutdown patch; not desktop SDL2 latest",
+  "current_hardware_tested_xbe_sha256": "10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c",
+  "current_hardware_test_source_revision": "d82d9af1789cb2da9e9db4b580a1542a118078ae"
 }
