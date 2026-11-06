@@ -1,0 +1,95 @@
+{
+  "xbe_sha256": "84a132cdd1f16613dcefb6e3fddff415bee31d8c8ddb9398ca651ad9d32b1855",
+  "status": "native full timed match, clean exit and preserved logs verified",
+  "mode": "Time Limit",
+  "goal_seconds": 120,
+  "map": "1986",
+  "human_players": 4,
+  "transport": [
+    "P1 direct USB",
+    "P2\u2013P4 Wi-Fi S3"
+  ],
+  "winner_player": 2,
+  "final_scores_by_player": [
+    1,
+    6,
+    5,
+    1
+  ],
+  "timer_checkpoints": [
+    119,
+    67,
+    39,
+    11
+  ],
+  "input_batches_completed": 48,
+  "input_scope": "48 four-route alternating batches, 1.6s held and 0.7s released; match began before the input plan, and some final batches occurred on the results screen. No full-duration continuous-input or frame-accurate timing claim.",
+  "first_logged_release_utc": "2026-11-06T14:53:08.168Z",
+  "last_logged_release_utc": "2026-11-06T14:54:57.753Z",
+  "audio": {
+    "captured_seconds": 8.0,
+    "host_elapsed_seconds": 8.025466957999999,
+    "reported_overruns": 0,
+    "stereo_nonzero": true,
+    "full_scale_samples": [
+      0,
+      0
+    ],
+    "wav_sha256": "1890be4e0ddf953fd086de2c075e0257c235923d09933d686405a59a3afbbbcb",
+    "subjective_listening_pass": false,
+    "gapless_acceptance": false
+  },
+  "images_sha256": {
+    "000-checkpoint-12.jpg": "9a5277265f92407969ef8726146d2de3ac2bcec480a20c5e31039a137cb2b2f7",
+    "004-returned-to-settings.jpg": "c1e2aa88413beeeb6ae55ef165cb882bac3d6509dfcc498192ec89d089445adc",
+    "003-final-result.jpg": "eca0bd77d0cd17310759c7fd76b454b695c4def6c42c9481758d128c03a039b0",
+    "002-checkpoint-36.jpg": "78eca93babf4b1b2ca60c1c786dbbd9fb819630be6237319a00fad4fe434ea41",
+    "001-checkpoint-24.jpg": "5b92ef1c41f96ba9687233293e96cfee51093b5d2ee006aac181a396855be8a6"
+  },
+  "performance_acceptance": {
+    "scope": "First ten complete ten-second windows after the initial mixed transition window of the final match; 100 seconds, not all maps/modes",
+    "initial_transition_fps": 47.5,
+    "steady_fps_samples": [
+      61.0,
+      61.0,
+      61.1,
+      61.1,
+      61.2,
+      61.2,
+      61.0,
+      60.8,
+      60.9,
+      60.9
+    ],
+    "steady_fps_min": 60.8,
+    "steady_fps_median": 61.0,
+    "steady_fps_max": 61.2,
+    "reported_available_kib_samples": [
+      16392
+    ]
+  },
+  "normal_return_to_settings_observed": true,
+  "native_log_sha256": "96e9f259fc7bbdb3a9d77078990b9f91115d193e677b7508e5e9317c7ea15990",
+  "native_audio_music_underruns_max": 0,
+  "stderr_bytes": 0,
+  "watchdog_markers_present": [],
+  "clean_shutdown": true,
+  "saved_slots": [
+    {
+      "file": "smw-pref0.bin",
+      "generation": 69,
+      "health_startlife": 6,
+      "health_maxlife": 10,
+      "health_extra_life_percent": 20,
+      "time_goal_seconds": 120
+    },
+    {
+      "file": "smw-pref1.bin",
+      "generation": 68,
+      "health_startlife": 6,
+      "health_maxlife": 10,
+      "health_extra_life_percent": 20,
+      "time_goal_seconds": 120
+    }
+  ]
+}

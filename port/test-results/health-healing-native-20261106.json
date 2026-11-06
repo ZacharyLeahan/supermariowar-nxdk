@@ -1,0 +1,60 @@
+{
+  "xbe_sha256": "84a132cdd1f16613dcefb6e3fddff415bee31d8c8ddb9398ca651ad9d32b1855",
+  "status": "native heart spawning, pickup, increased health and five-heart HUD observed",
+  "mode": "Health",
+  "map": "Bonus Paradise",
+  "human_players": 4,
+  "settings": {
+    "startlife_half_hearts": 6,
+    "maxlife_half_hearts": 10,
+    "extra_heart_percent": 100
+  },
+  "observations": [
+    "Initial HUDs show three full hearts each",
+    "Heart powerups visibly spawned from question blocks",
+    "P2 HUD shows four full hearts after pickups; exceeds starting three",
+    "Damage and life loss also occurred during the four-human scenario",
+    "P3 HUD reached five full hearts in 007-heart-check-12.jpg",
+    "HUDs remained at no more than five heart slots across later captured checkpoints"
+  ],
+  "cap_acceptance": false,
+  "test_setting_restore_pending": false,
+  "images_sha256": {
+    "008-heart-check-16.jpg": "ee39e99fa4bf3f96b92e5ce4adca46ed34544766afc6c3bc74ce9fe15d17ee73",
+    "006-heart-check-8.jpg": "dc674944349d3e46bd17dd693c37d4174ea408791c42d2fdf69ddaf8868c4b5e",
+    "004-heart-check-20.jpg": "9df6dc2d3b18534ede41afd3f32f6f1898a9117db49140faf12687d73f2fe5b6",
+    "009-heart-check-20.jpg": "7458c653ea56f8296ebfd26e35e6376cf120236872b411c65f4ac4fa00bcceb2",
+    "001-heart-check-8.jpg": "fdab2da6692c8923e01ad7af5b702d18f73add48bbdff9e51ed05c7fb61938ff",
+    "003-heart-check-16.jpg": "4e771d82137f2643eb9b7dec19f83bc82f0a8a32aa02b5c5abc053a3c4922d65",
+    "002-heart-check-12.jpg": "fda74fb2f3c13e033f0d35bf481d4b9e51c18c642e912925aca8493421259cab",
+    "005-heart-check-4.jpg": "9b592c8c6538aa2cdada5ec7798a96d8f540d00318b680ebc53fbb93f6f2c229",
+    "000-heart-check-4.jpg": "21e631152e230a9c50029e6df98955467a7e52ddb27b78bfd1aa37b06b8fc414",
+    "007-heart-check-12.jpg": "060368b028d4623224d1323b728b6bb18554295174da9235936db9d44c9c9d4a",
+    "010-exit-dialog.jpg": "c1d1ea94261e6b93c0727362e3256eed6cfbe8b169e964c65423223fb7d87f3a"
+  },
+  "initial_hud_image_sha256": "4e5a15868113385edb3ee68fa81b12659f2ec1183577198a31808fa982597941",
+  "cap_acceptance_scope": "Five-heart maximum reached and no HUD overflow observed; a deliberate additional pickup at full health was not isolated",
+  "input_batches_completed": 40,
+  "native_saved_slots": [
+    {
+      "slot": "smw-pref0.bin",
+      "generation": 71,
+      "health_maxlife": 10,
+      "health_rate": 100,
+      "health_startlife": 6
+    },
+    {
+      "slot": "smw-pref1.bin",
+      "generation": 72,
+      "health_maxlife": 10,
+      "health_rate": 20,
+      "health_startlife": 6
+    }
+  ],
+  "stderr_bytes": 0,
+  "music_underruns_max": 0,
+  "clean_shutdown": true,
+  "minimum_reported_available_kib": 11424,
+  "native_log_sha256": "8be7262c21c960782a00380e464936f1eadec15aa914f72ba8d631a9fddfe5d1",
+  "restoration_scope": "Newest valid generation 72 stores rate 20%; older alternate generation 71 retains prior rate 100%, expected alternating-save history."
+}

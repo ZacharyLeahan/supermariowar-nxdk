@@ -153,3 +153,13 @@ Human listening, four physical controllers, physical stock64MB and broader
 cold/firmware coverage remain unverified. No emulator run or public release
 has been performed. Candidate88385's10-minute run passed audio/gameplay but
 had slow menus; its acceptance must not be silently transferred to8df74.
+
+## November 6 save fallback follow-up
+
+Candidate `84a132cd...` rejected a deliberately bad CRC in newest save generation
+72 and loaded valid generation 71 on the real Xbox. Normal menu exit completed
+with empty stderr; both original save slots were restored and readback verified.
+This covers one-slot CRC recovery, not both-invalid or semantic corruption. See
+[test result](test-results/save-bad-crc-native-20261106.json). A clean rebuild with
+explicit original display stamp and watchdog flags reproduced the candidate XBE
+SHA-256 exactly; independent recipe reconstruction remains to be qualified.

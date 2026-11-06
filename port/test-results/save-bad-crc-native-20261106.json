@@ -1,0 +1,27 @@
+{
+  "kind": "bad-crc",
+  "xbe_sha256": "84a132cdd1f16613dcefb6e3fddff415bee31d8c8ddb9398ca651ad9d32b1855",
+  "directory": "/F/SMW-nxdk-final-test",
+  "fixture_slot": 1,
+  "original_generations": [
+    71,
+    72
+  ],
+  "expected_loaded_generation": 71,
+  "original_sha256": [
+    "30c7ab2a69f61aeb5e7a9b5d498381274e6f64fc81e1c5ecc49445ad4a075776",
+    "916d2bb43153cf755baec38950654f84fa9052a9ed62f8bae9cfacd3229b79dd"
+  ],
+  "original_slots_restored": true,
+  "game_acceptance": true,
+  "created_utc": "2026-11-06T15:12:38.650486+00:00",
+  "observed_loaded_generation": 71,
+  "restored_utc": "2026-11-06T15:16:26.511219+00:00",
+  "result": "PASS_BOUNDED_NATIVE_FALLBACK",
+  "scope": "Newest slot CRC invalid; valid older slot loaded; clean UI exit; both original slots restored. Does not qualify both-slots-invalid or semantic corruption.",
+  "native_log_sha256": "68ada4a092984b05bd08c0034ab317915d9a999d7a4a2530832c6c4474e74cbd",
+  "stderr_bytes": 0,
+  "clean_shutdown": true,
+  "emulator_tested": false,
+  "hardware": "128 MB Xbox with LIMIT64MB application restriction; not physical stock 64 MB"
+}

@@ -56,6 +56,13 @@ python3 tools/build.py --workspace /tmp/smw-nxdk-dev --clean
 
 The output is `/tmp/smw-nxdk-dev/repos/modern/ports/nxdk/bin/default.xbe`.
 Build logs and `KIT-BUILD-INFO.json` provenance stay in that external workspace.
+The lock also pins the embedded display revision/date and the complete make
+configuration, including the 45-second runtime watchdog used by candidate
+`84a132cd...`. The display revision identifies the runtime source; reconstructed
+Git commits are synthetic and are recorded separately in the build manifest.
+A clean rebuild in the original development workspace reproduced that candidate
+byte-for-byte. Independent reconstruction/build verification is still in progress;
+do not treat matching source hashes as a compiled or hardware-tested result.
 The build does not create an uploadable release or automatically deploy anything.
 
 To run the game, obtain matching assets separately for local use. Either start

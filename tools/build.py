@@ -9,9 +9,10 @@ if not 1<=a.jobs<=64:p.error('jobs must be 1..64')
 prepared=json.loads((w/'PREPARED.json').read_text())
 if not prepared['dependencies_initialized']:p.error('Dependencies were skipped; prepare a full workspace first')
 modern=w/'repos/modern';sdk=w/'repos/nxdk';port=modern/'ports/nxdk'
-env=os.environ.copy();env['NXDK_DIR']=str(sdk);env['SOURCE_DATE_EPOCH']=json.loads((root/'upstream-lock.json').read_text())['source_date_epoch']
+lock=json.loads((root/'upstream-lock.json').read_text());build_config=lock['game_build']
+env=os.environ.copy();env['NXDK_DIR']=str(sdk);env['SOURCE_DATE_EPOCH']=lock['source_date_epoch']
 env['PATH']=os.pathsep.join([str(sdk/'bin'),'/opt/homebrew/opt/llvm/bin','/usr/local/opt/llvm/bin','/opt/homebrew/opt/bison/bin','/opt/homebrew/opt/flex/bin',env.get('PATH','')])
-flags=['PREFERENCES=1','AUDIO_FAILURE_DMA_LOG=1','AUDIO_CLEAN_SHUTDOWN=1','STARTUP_WATCHDOG_MS=45000','EXIT_WATCHDOG_MS=10000']
+flags=build_config['make_flags']+['SMW_GIT_REVISION='+build_config['embedded_revision'],'SMW_GIT_DATE='+build_config['embedded_date']]
 base=['make','-C',str(port),'CURDIR='+str(port),'-j'+str(a.jobs)]
 (w/'logs').mkdir(exist_ok=True)
 with (w/'logs/build.log').open('w') as log:
