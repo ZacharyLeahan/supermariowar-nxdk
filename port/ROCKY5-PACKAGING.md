@@ -84,3 +84,31 @@ No data directory is included. This is not a standalone downloader install and
 was not uploaded publicly; artwork, final qualification and maintainer-compatible
 external asset acquisition remain open. See
 [package verification](test-results/clean-binary-package-20261106.json).
+
+## Pinned example metadata and dimensions
+
+Official example inspected at Rocky5/XBMC4Gamers revision
+`f99d9de56e861adc1c1eaec77f4bbb076b110e95`:
+
+| Example file | Pixels |
+| --- | --- |
+| poster.jpg | 200 × 283 |
+| poster_small.jpg | 64 × 91 |
+| thumb.jpg | 227 × 129 |
+| fanart.jpg | 640 × 360 |
+| icon.png | 149 × 263 |
+
+These are observed example dimensions, not normative artwork/catalogue rules.
+The unusually tall example icon must not be assumed to require every icon to be
+that shape. Only image headers were inspected; no example artwork was saved in
+this repository. File/blob identities are in
+[dimension evidence](test-results/rocky5-example-artwork-20261106.json).
+
+A text-only [draft synopsis](packaging/xbmc4gamers/default.xml) uses the official
+example's XML field names with our own description. Before private installation,
+set `foldername` to the final folder name and copy it to `_resources/default.xml`
+beside `default.xbe`. Empty release/rating/publisher/title-ID fields intentionally
+assert no official metadata. The draft still says qualification is in progress;
+update only after acceptance. XML parsing passed on the host; dashboard display
+and unknown/empty-field handling remain untested. No template is automatically
+included in the existing candidate archive.

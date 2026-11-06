@@ -5,7 +5,8 @@ budget, four local players, networking disabled, `default.xbe` plus pinned data.
 “Shipped” means a reproducible, installable package with hash-bound results and
 release notes. A build or callback counter alone is not full game acceptance.
 The sharing plan is an asset-free source recipe; game assets stay external and
-no public game binary/data release is planned. Private test installs remain useful.
+game media stays outside the public tree. Executable-only publication and the
+external-data downloader workflow remain unresolved; no public upload has occurred.
 
 ## Open blockers
 
@@ -31,12 +32,30 @@ no public game binary/data release is planned. Private test installs remain usef
   Do not include upstream media, upstream asset history or release binaries in
   the sharing repository.
 
-- [ ] Qualify the Health life-limit fix on hardware. Constructor defaults and
-  legacy migration now pass sanitizer host tests (source `3c441985`); native
-  options now show start 6/max 10 on candidate `84a132cd`; native reload of limits and a non-default rate passed; healing remains pending. Normalize inherited Health defaults and inconsistent legacy start/max-life
-  pairs without discarding otherwise valid saves. Native options showed start 6,
-  max 2; pinned upstream constructor uses max 1. Verify extra-heart healing and
-  save/reload after the correction. See [follow-up](THUMBNAILS.md).
+- [ ] Finish exact-clean-candidate Health qualification. Native healing from three
+  to five hearts and saved 6/10 limits passed on `84a132cd`; a deliberate pickup
+  while already at full health remains unisolated. Clean `4addeb4e` retains the
+  same runtime source but still needs its targeted Health regression. See
+  [healing result](test-results/health-healing-native-20261106.json).
+
+## Latest clean candidate (supersedes older executable status)
+
+Candidate `4addeb4e...` is reconstructed byte-for-byte on the same host/toolchain.
+Its installed-session XBE has passed boot, isolated P1–P4 readiness, a completed
+four-human Classic match, two bounded simultaneous-input batches, non-silent
+8-second PCM capture, empty stderr, zero logged music underruns, normal shutdown,
+and corrupt/missing thumbnail-entry recovery. These are bounded results; they
+are not all-mode, endurance, reconnect or listening acceptance. See
+[match/audio/logs](test-results/clean-candidate-native-session-20261106.json),
+[cache recovery](test-results/clean-candidate-cache-recovery-20261106.json) and
+[exact build](test-results/clean-reconstruction-exact-20261106.json).
+
+The broader 22-mode smokes, completed 120-second Time match, healing and malformed
+save tests from November 6 belong to `84a132cd`, not this executable. Keep their
+hashes separate when assessing regression. On the current mode-test launch the
+KVM restarted, P1 lost USB enumeration and P2 stopped USB completions; software
+reattach did not recover P1. That is an unqualified rig interruption, not proof of
+a game freeze. Preserve that session until log collection is possible.
 
 ## Existing evidence (scope matters)
 

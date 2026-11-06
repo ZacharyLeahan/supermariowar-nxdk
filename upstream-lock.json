@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "719a45407046d677f9b48bf74dde2a01b65ccfba",
+  "port_source_revision": "9fa595c0309afc6a9dc82fad402fa691c6c7009f",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -52,10 +52,10 @@
     "port/Preferences.h": "fff06861dad25a7fff6c1cd984c07ce2ec3654b1ef25cc82a49716a1fd7f9541",
     "port/PreferencesCodec.h": "7ac6c2adad7a88e2c3da51a8bf0c71f3ccab7a9c107ac24f86b3b7911ff309ed",
     "port/README.md": "830a534fe89f1079b22401725f81ef985d05ce4553774a5fa005576590169eec",
-    "port/RELEASE-CHECKLIST.md": "b3324f981167543d290f791d24c640cf6ed69d1c0c5b06eb0ccf94601562b201",
+    "port/RELEASE-CHECKLIST.md": "228d6437c49e6201d5e5e1cba831566d1c3163cb6d8c331c7bf5778ea016fdb5",
     "port/REPRODUCIBLE-CXBE.md": "281622c84e0407405d38cf32255f3f516f9609607b044f67cfe795f1c313b832",
     "port/RLE-RENDERING.md": "9ba45d6b30046623df509911b2732b6c1419b9e364484d3a09800af233fc97ea",
-    "port/ROCKY5-PACKAGING.md": "8778990d2a0f4f5c503179031ad41a6e6383628644fae280387430dd0ac09173",
+    "port/ROCKY5-PACKAGING.md": "c59dc7201f511c5ed9544089a884bf16c0e9e4a54864fc96414ac9f5480bc010",
     "port/RUNTIME-STALL.md": "646a0f0853bd9e45f7c6008c3281e3dfdc0e2eab1e7814c75dea689def576dce",
     "port/RuntimeDiagnostics.cpp": "ba89f2a8bc82cb06716bbf55203913d1f95ba75d878c7188334f462df5907e49",
     "port/RuntimeDiagnostics.h": "d0043f77f85568ae08edd12750960b0f655d40029d7c70b6bdcbcecac035a5f9",
@@ -67,6 +67,7 @@
     "port/TESTING.md": "a5894401b2c7b02ebb8f491b943cc9c2a262887bb1ea330a079a48f0b3e78e8d",
     "port/THUMBNAILS.md": "aac631bfcb1dbcaf8413268cfc729c7b109ea5b0d40a349e6810c7e6335e3ad3",
     "port/Vorbis.c": "3640a9382ae0db121c19533de1eba23ca30c2a1785d98e6e25a35855dd916d2b",
+    "port/packaging/xbmc4gamers/default.xml": "6e7856d63b93257204144ef6903aed36b2f9a7d7639985587ab6f0640ba0a46c",
     "port/patches/README.md": "df172c12d280ae7f46d3f3b275a90d1fdac83c00e9c3dc5bd6a1f3be5ab38141",
     "port/patches/ac97-preserve-ready-link.candidate.patch": "affe5bd7e1577bfa7c120b443995d89ecfe2ce2964ccc7d90962bdf33cecc80b",
     "port/patches/cxbe-source-date-epoch.patch": "def364450ab2adc9b094bac943bd14256962d5ac0df1380631b957f39e05ddc1",
@@ -268,6 +269,7 @@
     "port/test-results/render-fixed-warm-3.json": "b1deabee12bf011d2ff39658c6884ca9e50c2666e930d20545ba2fcab59e09f7",
     "port/test-results/reproducible-game-build.json": "de576338e7eefbaada416d224002600d7d53bdc6643dbd3ee06c9320216bfb2b",
     "port/test-results/rle-unkeyed-host.json": "f3e92dd15cda8364b4a3bb9da9271d1ec6f76ae850e4b15324d366959fb9ae7e",
+    "port/test-results/rocky5-example-artwork-20261106.json": "0592d903a7b85729f945d54abd8195af39c27c77091c3608dc6b7ba87fc9fca2",
     "port/test-results/save-bad-crc-native-20261106.json": "6074bf6afb10558169c4f2eab55dfb517fcc988efb89d5589c71ad2768f37b40",
     "port/test-results/save-both-bad-crc-native-20261106.json": "05fee27ee8c902d442783ba4b5f40d14cb9a89d99c83b30b8b274f59e08866ca",
     "port/test-results/save-recovery-bad-crc.json": "55cec65c64e99ba6df8c711e4bd7f9f73ec3debaec85a72b13e7660d08ff4a09",

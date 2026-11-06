@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Draft synopsis: set foldername to the final installed folder before use.
+     No official publisher, rating, release date or title ID is asserted. -->
+<synopsis>
+  <sourcename>Super Mario War nxdk</sourcename>
+  <foldername>Super Mario War nxdk</foldername>
+  <title>Super Mario War (nxdk)</title>
+  <developer>Super Mario War contributors; nxdk port contributors</developer>
+  <publisher></publisher>
+  <features_general>1-4 local players; 480p output tested</features_general>
+  <features_online>Networking disabled in this port</features_online>
+  <esrb></esrb>
+  <esrb_descriptors></esrb_descriptors>
+  <genre>Local multiplayer, Platform arena</genre>
+  <release_date></release_date>
+  <year></year>
+  <rating></rating>
+  <platform>Original Xbox (nxdk)</platform>
+  <exclusive>No</exclusive>
+  <titleid></titleid>
+  <overview>A community SDL2 port of Super Mario War for the original Xbox using nxdk. Compete locally with up to four players across arena maps and game modes. Game data must be obtained separately. This candidate is still undergoing hardware qualification.</overview>
+</synopsis>

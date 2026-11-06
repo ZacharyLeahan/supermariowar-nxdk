@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/Rocky5/XBMC4Gamers",
+  "revision": "f99d9de56e861adc1c1eaec77f4bbb076b110e95",
+  "scope": "Dimensions of shipped synopsis example, not a normative submission specification; only headers inspected, no image files saved",
+  "artwork": [
+    {
+      "path": "Synopsis Example/Star Wars - Battlefront 2/_resources/artwork/fanart.jpg",
+      "git_blob": "7acc1b2231bb728a868922081e3c5209879745af",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "path": "Synopsis Example/Star Wars - Battlefront 2/_resources/artwork/icon.png",
+      "git_blob": "7bdd265a97c34df7fb0efbaa9e335bc70c342e5d",
+      "width": 149,
+      "height": 263
+    },
+    {
+      "path": "Synopsis Example/Star Wars - Battlefront 2/_resources/artwork/poster.jpg",
+      "git_blob": "8e6ea825079f82daf6da27e02a23d122d97ac539",
+      "width": 200,
+      "height": 283
+    },
+    {
+      "path": "Synopsis Example/Star Wars - Battlefront 2/_resources/artwork/poster_small.jpg",
+      "git_blob": "e057177aa988a491722e71c978ad857e543694cb",
+      "width": 64,
+      "height": 91
+    },
+    {
+      "path": "Synopsis Example/Star Wars - Battlefront 2/_resources/artwork/thumb.jpg",
+      "git_blob": "ef9f71b46881fb3b54e71861e3d552dca4f07f83",
+      "width": 227,
+      "height": 129
+    }
+  ]
+}
