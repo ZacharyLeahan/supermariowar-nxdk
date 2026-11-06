@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "1b3c6d9f66788afdbaa0a13edc0526212df7c813",
+  "port_source_revision": "3052d1b984c3100b87e3910d90bffc65fb533836",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -325,7 +325,7 @@
     "port/tools/kvm-button.mjs": "e1c93c1073bf898f4ca7abfab88b79c64ead73e26272f4e0d4913bcf7dabe071",
     "port/tools/kvm-four-player.mjs": "0e62e1cbf633a9bab0d00277d4ca175f0248076c6e977605d1a8b8cdae6c50b8",
     "port/tools/kvm-reset.mjs": "6d6f8a49bb5972eefc294ec6f0e548e9d4c5a277051adfe66f04ddec95baa5eb",
-    "port/tools/launch-game.py": "5e5759dec65ddfbff6d5ea6f2bbf9ec45deebd004bb91f0b27b01dc37e845b10",
+    "port/tools/launch-game.py": "62ad3053866b57b707aec0ac62658d5fdb101641ea29c87ed4d9800b4d892cb3",
     "port/tools/package-game.py": "4780652266a6a0971b9d3b96b3ae40fbe0cd7987565f079773b806dd733c7053",
     "port/tools/record-build.py": "af5592317c221972cac28a2522209062ff4e4fdf2dc1e15639de42b5ae851e6c",
     "port/tools/recover-game-logs.py": "5f7baaf8181760f02bf207662c8db0ebfdea5f28af160ab434636434611ebce0",

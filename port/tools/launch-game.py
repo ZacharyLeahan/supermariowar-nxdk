@@ -54,7 +54,7 @@ try:
         raise RuntimeError('Existing game data directory missing; will not launch')
     prior = a.output/'prior'
     prior.mkdir()
-    for name in ['smw.log','smw-error.log','exit-watchdog.log','startup-watchdog.log','audio-close-failure.log','smw-pref0.bin','smw-pref1.bin']:
+    for name in ['smw.log','smw-error.log','exit-watchdog.log','startup-watchdog.log','runtime-watchdog.log','audio-close-failure.log','smw-pref0.bin','smw-pref1.bin']:
         if name not in names:
             continue
         raw = read(f, name)
@@ -68,7 +68,7 @@ try:
     if hashlib.sha256(read(f,'hardware-session.xbe')).hexdigest() != sha:
         raise RuntimeError('XBE readback mismatch; will not launch')
     record['executable_readback_verified'] = True
-    for name in ['smw.log','smw-error.log','exit-watchdog.log','startup-watchdog.log','audio-close-failure.log']:
+    for name in ['smw.log','smw-error.log','exit-watchdog.log','startup-watchdog.log','runtime-watchdog.log','audio-close-failure.log']:
         if name in names:
             f.delete(name)
     path = a.directory.lstrip('/').replace('/','\\')
