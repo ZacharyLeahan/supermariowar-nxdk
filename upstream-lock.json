@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "707cfb53be9023472b23af85382f3eacb582872d",
+  "port_source_revision": "719a45407046d677f9b48bf74dde2a01b65ccfba",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -55,7 +55,7 @@
     "port/RELEASE-CHECKLIST.md": "b3324f981167543d290f791d24c640cf6ed69d1c0c5b06eb0ccf94601562b201",
     "port/REPRODUCIBLE-CXBE.md": "281622c84e0407405d38cf32255f3f516f9609607b044f67cfe795f1c313b832",
     "port/RLE-RENDERING.md": "9ba45d6b30046623df509911b2732b6c1419b9e364484d3a09800af233fc97ea",
-    "port/ROCKY5-PACKAGING.md": "65e53d030486f4c2bc895861df340be99adc71779b204fe6621325887ea0d07a",
+    "port/ROCKY5-PACKAGING.md": "8778990d2a0f4f5c503179031ad41a6e6383628644fae280387430dd0ac09173",
     "port/RUNTIME-STALL.md": "646a0f0853bd9e45f7c6008c3281e3dfdc0e2eab1e7814c75dea689def576dce",
     "port/RuntimeDiagnostics.cpp": "ba89f2a8bc82cb06716bbf55203913d1f95ba75d878c7188334f462df5907e49",
     "port/RuntimeDiagnostics.h": "d0043f77f85568ae08edd12750960b0f655d40029d7c70b6bdcbcecac035a5f9",
@@ -186,6 +186,7 @@
     "port/test-results/audio-startup-state-baseline.json": "a236f8ff0158053531bcaa6316dd3bc10f8350e0d2cde047082a8e5d13e70ad3",
     "port/test-results/audio-startup-state-baseline.log": "8fb5be9178d90a0b8dc256cb24f9a84190a825dc7e60b6a8d8d18924d3693ded",
     "port/test-results/audio-user-confirmation-20261025.json": "9cd8bcfe160e9a2c4d8d208b3282e53e521813082ee1f35d6553f72c0464669b",
+    "port/test-results/clean-binary-package-20261106.json": "e1c6d25093f84e6115065049cba22e9dbcfbb556ce1c68d4f94aa3cf5291ec2b",
     "port/test-results/clean-candidate-boot-20261106.json": "c68d59224dacedf106b2048e3aae57dd1fd0d7f4f9f90d0bf4cb25dc6e092ec8",
     "port/test-results/clean-candidate-cache-recovery-20261106.json": "eb4b8efd231c295f48936e783a05669851d001d70745534269aa6dc3964f44cb",
     "port/test-results/clean-candidate-native-session-20261106.json": "b7ac476311517e6b57aaac9f2c6bc1d61d2079821da1daca37d024c1e37ba47c",

@@ -1,0 +1,13 @@
+{
+  "format": "private experimental executable/provenance archive",
+  "archive_sha256": "273ad243357f052bec46f25a80fd9934b3f13e1f608bd2fe3be9c9ccf89da922",
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "files": 25,
+  "listed_checksums_verified": 24,
+  "all_zip_members_match_unpacked_files": true,
+  "zip_integrity_verified": true,
+  "game_data_included": false,
+  "standalone_bootable": false,
+  "publicly_uploaded": false,
+  "full_release_acceptance": false
+}

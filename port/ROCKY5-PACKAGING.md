@@ -72,3 +72,15 @@ python3 ports/nxdk/tools/package-game.py \
 No public archive has been uploaded. Packaging absence of the data directory
 is not a substitute for reviewing executable resources and redistribution
 notices before publication.
+
+## Reproducible clean candidate package, November 6
+
+A private binary-only archive now contains candidate `4addeb4e...`, provenance
+and three exact-XBE native result files (boot, Classic/input/audio and cache
+recovery). It has 25 files; all 24 listed checksums, all ZIP members against the
+unpacked tree, and ZIP integrity passed. Archive SHA-256:
+`273ad243357f052bec46f25a80fd9934b3f13e1f608bd2fe3be9c9ccf89da922`.
+No data directory is included. This is not a standalone downloader install and
+was not uploaded publicly; artwork, final qualification and maintainer-compatible
+external asset acquisition remain open. See
+[package verification](test-results/clean-binary-package-20261106.json).
