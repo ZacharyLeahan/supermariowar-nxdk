@@ -63,9 +63,10 @@ Git commits are synthetic and are recorded separately in the build manifest.
 The independent reconstruction compiled successfully, but differs from the
 hardware-tested candidate. Investigation found nxdk's clean rule left stale JPEG
 objects; this recipe fixes that rule. Earlier byte-identical rebuilds reused
-those objects and do not establish clean reproducibility. Workspace-dependent
-fmt assertion paths also remain. A genuinely clean reproducible candidate and
-hardware regression are still required before release.
+those objects and do not establish clean reproducibility. The build script maps compiler-generated source paths to the established
+`/tmp/smw-xbe-workspace` prefix so fmt assertion strings do not expose the local
+checkout location. Its exact-XBE comparison is in progress. A genuinely clean
+reproducible candidate and hardware regression are still required before release.
 The build does not create an uploadable release or automatically deploy anything.
 
 To run the game, obtain matching assets separately for local use. Either start

@@ -446,6 +446,7 @@
       "EXIT_WATCHDOG_MS=10000",
       "RUNTIME_WATCHDOG_MS=45000"
     ],
-    "scope": "Explicit configuration of hardware-qualified candidate 84a132cd; display stamp is independent of the synthetic reconstruction commit. Runtime source/provenance must still be verified."
+    "scope": "Explicit configuration of hardware-qualified candidate 84a132cd; display stamp is independent of the synthetic reconstruction commit. Runtime source/provenance must still be verified.",
+    "source_path_prefix": "/tmp/smw-xbe-workspace"
   }
 }

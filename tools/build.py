@@ -11,6 +11,10 @@ if not prepared['dependencies_initialized']:p.error('Dependencies were skipped; 
 modern=w/'repos/modern';sdk=w/'repos/nxdk';port=modern/'ports/nxdk'
 lock=json.loads((root/'upstream-lock.json').read_text());build_config=lock['game_build']
 env=os.environ.copy();env['NXDK_DIR']=str(sdk);env['SOURCE_DATE_EPOCH']=lock['source_date_epoch']
+# Keep __FILE__ assertion strings independent of the reconstructed checkout path.
+# Use the established development build prefix for comparison with native candidates.
+prefix_map='-ffile-prefix-map='+str(w)+'='+build_config['source_path_prefix']
+for key in ('CFLAGS','CXXFLAGS'):env[key]=(env.get(key,'')+' '+prefix_map).strip()
 env['PATH']=os.pathsep.join([str(sdk/'bin'),'/opt/homebrew/opt/llvm/bin','/usr/local/opt/llvm/bin','/opt/homebrew/opt/bison/bin','/opt/homebrew/opt/flex/bin',env.get('PATH','')])
 flags=build_config['make_flags']+['SMW_GIT_REVISION='+build_config['embedded_revision'],'SMW_GIT_DATE='+build_config['embedded_date']]
 base=['make','-C',str(port),'CURDIR='+str(port),'-j'+str(a.jobs)]
@@ -23,7 +27,7 @@ with (w/'logs/build.log').open('w') as log:
 xbe=port/'bin/default.xbe'
 if xbe.read_bytes()[:4]!=b'XBEH':raise SystemExit('Output is not an XBE')
 def git(repo,*args):return subprocess.check_output(['git','-C',str(repo),*args],text=True).strip()
-record={'recorded_utc':datetime.now(timezone.utc).isoformat(),'compiled':True,'emulator_tested':False,'hardware_tested':False,'xbe_sha256':hashlib.sha256(xbe.read_bytes()).hexdigest(),'xbe_bytes':xbe.stat().st_size,'recipe_revision':git(root,'rev-parse','HEAD'),'recipe_status':git(root,'status','--porcelain'),'recipe_diff_sha256':hashlib.sha256(subprocess.check_output(['git','-C',str(root),'diff','HEAD','--'])).hexdigest(),'source_revision':git(modern,'rev-parse','HEAD'),'source_status':git(modern,'status','--porcelain','--untracked-files=no'),'sdk_revision':git(sdk,'rev-parse','HEAD'),'sdk_diff_sha256':hashlib.sha256(subprocess.check_output(['git','-C',str(sdk),'diff','HEAD','--'])).hexdigest(),'sdl2_revision':git(sdk/'lib/sdl/SDL2','rev-parse','HEAD'),'sdl2_diff_sha256':hashlib.sha256(subprocess.check_output(['git','-C',str(sdk/'lib/sdl/SDL2'),'diff','HEAD','--'])).hexdigest(),'flags':flags,'source_date_epoch':env['SOURCE_DATE_EPOCH'],'data_initialized':(modern/'data/.git').exists(),'compiler':subprocess.check_output(['clang','--version'],env=env,text=True).splitlines()[0]}
+record={'recorded_utc':datetime.now(timezone.utc).isoformat(),'compiled':True,'emulator_tested':False,'hardware_tested':False,'xbe_sha256':hashlib.sha256(xbe.read_bytes()).hexdigest(),'xbe_bytes':xbe.stat().st_size,'recipe_revision':git(root,'rev-parse','HEAD'),'recipe_status':git(root,'status','--porcelain'),'recipe_diff_sha256':hashlib.sha256(subprocess.check_output(['git','-C',str(root),'diff','HEAD','--'])).hexdigest(),'source_revision':git(modern,'rev-parse','HEAD'),'source_status':git(modern,'status','--porcelain','--untracked-files=no'),'sdk_revision':git(sdk,'rev-parse','HEAD'),'sdk_diff_sha256':hashlib.sha256(subprocess.check_output(['git','-C',str(sdk),'diff','HEAD','--'])).hexdigest(),'sdl2_revision':git(sdk/'lib/sdl/SDL2','rev-parse','HEAD'),'sdl2_diff_sha256':hashlib.sha256(subprocess.check_output(['git','-C',str(sdk/'lib/sdl/SDL2'),'diff','HEAD','--'])).hexdigest(),'flags':flags,'source_path_prefix_map':prefix_map,'source_date_epoch':env['SOURCE_DATE_EPOCH'],'data_initialized':(modern/'data/.git').exists(),'compiler':subprocess.check_output(['clang','--version'],env=env,text=True).splitlines()[0]}
 (port/'bin/KIT-BUILD-INFO.json').write_text(json.dumps(record,indent=2)+'\n')
 # Legacy package tools require the data revision; code-only compilation does not.
 if (modern/'data/.git').exists():
