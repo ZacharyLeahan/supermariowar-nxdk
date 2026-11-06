@@ -116,3 +116,14 @@ five hearts; the max-life selector only offers 2–10. Its change handlers enfor
 start <= max only after edits. Extra-heart collection also compares against
 maxlife, so this inherited inconsistency needs a separate defaults/save-migration
 fix and gameplay verification. No nxdk capability gap is established by it.
+
+## Clean candidate regression, November 6
+
+Reproducible candidate `4addeb4e...` passed a native empty-cache-entry fallback
+and missing-entry regeneration test. All nine previews displayed; `0smw.png`
+remained zero bytes while its preview rendered, establishing the in-memory
+fallback. Missing `Xijar_1986.png` regenerated as a 160×120 PNG with the exact
+original hash. Both original cache files were restored and readback verified.
+Normal shutdown completed with empty stderr and zero logged music underruns.
+This did not repeat missing-directory, read-only/full disk or wrong-size PNG
+cases. See [bound result](test-results/clean-candidate-cache-recovery-20261106.json).

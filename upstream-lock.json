@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "55bf2ce5ec4dbcd063e2d97a7549871a60eabce1",
+  "port_source_revision": "707cfb53be9023472b23af85382f3eacb582872d",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -65,7 +65,7 @@
     "port/SaveRecord.h": "66108d19fecef50c3375fbda4bf3f259ebde2b32dfa6e190275b9916071cda74",
     "port/SaveStore.h": "4030f2c352765a1bfbfe53eaea56c3614fb883ad53b5988bed8ab45fd0bc384f",
     "port/TESTING.md": "a5894401b2c7b02ebb8f491b943cc9c2a262887bb1ea330a079a48f0b3e78e8d",
-    "port/THUMBNAILS.md": "a1170ed26843adde4ac08b770f416848879ccc3684f4218da41f85f0dec080ff",
+    "port/THUMBNAILS.md": "aac631bfcb1dbcaf8413268cfc729c7b109ea5b0d40a349e6810c7e6335e3ad3",
     "port/Vorbis.c": "3640a9382ae0db121c19533de1eba23ca30c2a1785d98e6e25a35855dd916d2b",
     "port/patches/README.md": "df172c12d280ae7f46d3f3b275a90d1fdac83c00e9c3dc5bd6a1f3be5ab38141",
     "port/patches/ac97-preserve-ready-link.candidate.patch": "affe5bd7e1577bfa7c120b443995d89ecfe2ce2964ccc7d90962bdf33cecc80b",
@@ -187,6 +187,7 @@
     "port/test-results/audio-startup-state-baseline.log": "8fb5be9178d90a0b8dc256cb24f9a84190a825dc7e60b6a8d8d18924d3693ded",
     "port/test-results/audio-user-confirmation-20261025.json": "9cd8bcfe160e9a2c4d8d208b3282e53e521813082ee1f35d6553f72c0464669b",
     "port/test-results/clean-candidate-boot-20261106.json": "c68d59224dacedf106b2048e3aae57dd1fd0d7f4f9f90d0bf4cb25dc6e092ec8",
+    "port/test-results/clean-candidate-cache-recovery-20261106.json": "eb4b8efd231c295f48936e783a05669851d001d70745534269aa6dc3964f44cb",
     "port/test-results/clean-candidate-native-session-20261106.json": "b7ac476311517e6b57aaac9f2c6bc1d61d2079821da1daca37d024c1e37ba47c",
     "port/test-results/clean-candidate-ui-20261106.json": "fc0791fba31b72c6a6ed0a485f999b3b37722564fe3b0073cc15ae0a520732ce",
     "port/test-results/clean-close-ten-minute-match.json": "17587f9109ac20b5bb49faa9f04889a2fa1e88f485bcaffbdbd099dbd0ef765b",

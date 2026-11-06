@@ -1,0 +1,31 @@
+{
+  "original_sha256": {
+    "0smw.png": "266e4a9285489adc6a5f90b5bfececb42c5799d4d94b72cd07722ffc80dcdba2",
+    "Xijar_1986.png": "8c991c15e857fca75c97011c8c2022502d2d473e663ee9e192e043a98cde6478"
+  },
+  "restored": true,
+  "created_utc": "2026-11-06T15:30:04.993117+00:00",
+  "post_test": {
+    "0smw.png": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Xijar_1986.png": {
+      "bytes": 8748,
+      "sha256": "8c991c15e857fca75c97011c8c2022502d2d473e663ee9e192e043a98cde6478"
+    }
+  },
+  "empty_remained_empty": true,
+  "missing_regenerated_160x120_png": true,
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "result": "PASS_BOUNDED_NATIVE_CACHE_RECOVERY",
+  "scope": "Existing cache directory; zero-byte0smw fallback and absent1986 entry regeneration. Does not repeat missing-directory, full-disk/read-only, or wrong-dimension fixtures.",
+  "hardware": "128 MB Xbox with LIMIT64MB application restriction",
+  "emulator_tested": false,
+  "browser_visual_review": "All nine previews rendered, including0smw and1986",
+  "native_log_sha256": "3d511deb3e6faf19d87f660741154faf57ea1189125a0b1193cc21d5e054dd4d",
+  "stderr_bytes": 0,
+  "music_underruns_max": 0,
+  "clean_shutdown": true,
+  "image_sha256": "1a83ba3a4a2bdcb38f007765f1c980f30ede187b2c94f058c199ffb24b26ea15"
+}
