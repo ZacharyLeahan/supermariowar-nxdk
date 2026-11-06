@@ -1,5 +1,5 @@
 diff --git a/.gitignore b/.gitignore
-index a5309e6b906e70a1fc24bd8ec477aa4918ef403e..9a894a41fda72e9c5504db6f5f833131f9181d89 100644
+index a5309e6b..9a894a41 100644
 --- a/.gitignore
 +++ b/.gitignore
 @@ -1 +1,20 @@
@@ -24,7 +24,7 @@ index a5309e6b906e70a1fc24bd8ec477aa4918ef403e..9a894a41fda72e9c5504db6f5f833131
 +ports/nxdk/probes/*/main.lib
 +ports/nxdk/tools/__pycache__/
 diff --git a/.gitmodules b/.gitmodules
-index 1b4486b21d5f66304b0763c9be39ec7c35038ed2..f72b1782db5ccec5846167533aa97b111a1a0399 100644
+index 1b4486b2..f72b1782 100644
 --- a/.gitmodules
 +++ b/.gitmodules
 @@ -1,3 +1,9 @@
@@ -39,20 +39,20 @@ index 1b4486b21d5f66304b0763c9be39ec7c35038ed2..f72b1782db5ccec5846167533aa97b11
 +	url = https://github.com/nothings/stb.git
 diff --git a/ports/nxdk/vendor/fmt b/ports/nxdk/vendor/fmt
 new file mode 160000
-index 0000000000000000000000000000000000000000..e69e5f977d458f2650bb346dadf2ad30c5320281
+index 00000000..e69e5f97
 --- /dev/null
 +++ b/ports/nxdk/vendor/fmt
 @@ -0,0 +1 @@
 +Subproject commit e69e5f977d458f2650bb346dadf2ad30c5320281
 diff --git a/ports/nxdk/vendor/stb b/ports/nxdk/vendor/stb
 new file mode 160000
-index 0000000000000000000000000000000000000000..2c980bb59875b0d32144a71867fbdebb2f77cd20
+index 00000000..2c980bb5
 --- /dev/null
 +++ b/ports/nxdk/vendor/stb
 @@ -0,0 +1 @@
 +Subproject commit 2c980bb59875b0d32144a71867fbdebb2f77cd20
 diff --git a/src/common/CmdArgs.cpp b/src/common/CmdArgs.cpp
-index 29e275859413b7aa5bfa1905c555e7c0b5ed0773..ac7dd221c7f3be3d63680ec2bead57c73ba0c893 100644
+index 29e27585..ac7dd221 100644
 --- a/src/common/CmdArgs.cpp
 +++ b/src/common/CmdArgs.cpp
 @@ -1,6 +1,6 @@
@@ -73,7 +73,7 @@ index 29e275859413b7aa5bfa1905c555e7c0b5ed0773..ac7dd221c7f3be3d63680ec2bead57c7
      freopen("CONIN$", "r", stdin);
      freopen("CONOUT$", "w", stderr);
 diff --git a/src/common/FileIO.cpp b/src/common/FileIO.cpp
-index 99e2277dd689d9ab53fe0bfba67f165677865e53..4b73a2c121930b3fb728187feca09c8c575edfc2 100644
+index 99e2277d..4b73a2c1 100644
 --- a/src/common/FileIO.cpp
 +++ b/src/common/FileIO.cpp
 @@ -1,10 +1,11 @@
@@ -149,7 +149,7 @@ index 99e2277dd689d9ab53fe0bfba67f165677865e53..4b73a2c121930b3fb728187feca09c8c
  
      // NOTE: `size()` doesn't include the terminating null byte
 diff --git a/src/common/FileIO.h b/src/common/FileIO.h
-index 384450ce3b1e6afd6a963109430d30f8ba3556e9..86b01038c81af3cbec0e8058e59f56f34eacf208 100644
+index 384450ce..86b01038 100644
 --- a/src/common/FileIO.h
 +++ b/src/common/FileIO.h
 @@ -3,14 +3,14 @@
@@ -179,7 +179,7 @@ index 384450ce3b1e6afd6a963109430d30f8ba3556e9..86b01038c81af3cbec0e8058e59f56f3
  
      void fread_or_exception(void*, size_t, size_t);
 diff --git a/src/common/FileList.cpp b/src/common/FileList.cpp
-index ebb1415c59fa00261f9faa4a699acb86fb305b43..e14a1e019addd0d79ed90e73a0136d20445f0a3e 100644
+index ebb1415c..e14a1e01 100644
 --- a/src/common/FileList.cpp
 +++ b/src/common/FileList.cpp
 @@ -1,3 +1,4 @@
@@ -276,7 +276,7 @@ index ebb1415c59fa00261f9faa4a699acb86fb305b43..e14a1e019addd0d79ed90e73a0136d20
          printf("Error: Could not open: %s\n", file_path.generic_string().c_str());
          return {};
 diff --git a/src/common/FileList.h b/src/common/FileList.h
-index 6f60f831500fe566022aeb6defcf86d0975db303..c63fc6bd4465ee01ca372cb9724cf1285e2bfe7f 100644
+index 6f60f831..c63fc6bd 100644
 --- a/src/common/FileList.h
 +++ b/src/common/FileList.h
 @@ -1,6 +1,6 @@
@@ -445,7 +445,7 @@ index 6f60f831500fe566022aeb6defcf86d0975db303..c63fc6bd4465ee01ca372cb9724cf128
      }
      size_t count() const {
 diff --git a/src/common/GameMode.h b/src/common/GameMode.h
-index f745d18ab99e8ccf4037a28175ce7c4df9f0b83f..37ba89612ac14817a369dffea7f4f8e1561777b8 100644
+index f745d18a..37ba8961 100644
 --- a/src/common/GameMode.h
 +++ b/src/common/GameMode.h
 @@ -1,3 +1,4 @@
@@ -462,8 +462,21 @@ index f745d18ab99e8ccf4037a28175ce7c4df9f0b83f..37ba89612ac14817a369dffea7f4f8e1
  	public:
  
  		CGameMode();
+diff --git a/src/common/GameModeSettings.cpp b/src/common/GameModeSettings.cpp
+index 587476e6..f11b523b 100644
+--- a/src/common/GameModeSettings.cpp
++++ b/src/common/GameModeSettings.cpp
+@@ -127,7 +127,7 @@ GreedGameModeSettings::GreedGameModeSettings()
+ 
+ HealthGameModeSettings::HealthGameModeSettings()
+     : startlife(6)         	//Start with 3 whole hearts (each increment is a half heart)
+-    , maxlife(1)           	//Maximum of 5 hearts
++    , maxlife(10)          	//Maximum of 5 hearts
+     , percentextralife(20) 	//20% chance of a heart spawning
+ {}
+ 
 diff --git a/src/common/GameValues.cpp b/src/common/GameValues.cpp
-index 53025e03dad272ae41378e5bd90ab6faee61aec0..775649dceffe9b0b54971b965ac9a9d350cb552d 100644
+index 53025e03..775649dc 100644
 --- a/src/common/GameValues.cpp
 +++ b/src/common/GameValues.cpp
 @@ -1,4 +1,7 @@
@@ -500,7 +513,7 @@ index 53025e03dad272ae41378e5bd90ab6faee61aec0..775649dceffe9b0b54971b965ac9a9d3
 +}
 +#endif
 diff --git a/src/common/MapList.cpp b/src/common/MapList.cpp
-index 40f6bb562ae0eae7f8b2758d1266abbf9f61e1b0..99f14729cc5ab6a344f30a91f60ad31b9b33e1f8 100644
+index 40f6bb56..99f14729 100644
 --- a/src/common/MapList.cpp
 +++ b/src/common/MapList.cpp
 @@ -1,3 +1,4 @@
@@ -518,7 +531,7 @@ index 40f6bb562ae0eae7f8b2758d1266abbf9f61e1b0..99f14729cc5ab6a344f30a91f60ad31b
  
      current = maps.begin();
 diff --git a/src/common/MovingPlatformPaths.h b/src/common/MovingPlatformPaths.h
-index a86a6b7ffebeee1c7028475b0aa6200c59571ebe..606be1e21a38d76467a6bebd588d9d4f8230e794 100644
+index a86a6b7f..606be1e2 100644
 --- a/src/common/MovingPlatformPaths.h
 +++ b/src/common/MovingPlatformPaths.h
 @@ -1,3 +1,4 @@
@@ -563,7 +576,7 @@ index a86a6b7ffebeee1c7028475b0aa6200c59571ebe..606be1e21a38d76467a6bebd588d9d4f
      EllipsePath(float speed, float dAngle, Vec2f radius, Vec2f centerPos, bool preview);
  
 diff --git a/src/common/ObjectBase.h b/src/common/ObjectBase.h
-index c74ad947c8584715d44f17d8de10f2f973563646..d6497706e27b9eb0f9ceea9ffe47fc8d4412b12e 100644
+index c74ad947..d6497706 100644
 --- a/src/common/ObjectBase.h
 +++ b/src/common/ObjectBase.h
 @@ -1,3 +1,4 @@
@@ -581,7 +594,7 @@ index c74ad947c8584715d44f17d8de10f2f973563646..d6497706e27b9eb0f9ceea9ffe47fc8d
      CObject(gfxSprite* nspr, Vec2s pos);
      virtual ~CObject() = default;
 diff --git a/src/common/ResourceManager.cpp b/src/common/ResourceManager.cpp
-index 47b6138fd8d6bf6ccd1c21395a999b64591ce3d5..2d7fe10da5c66e0e3c99fb4e4963be702f2841d0 100644
+index 47b6138f..2d7fe10d 100644
 --- a/src/common/ResourceManager.cpp
 +++ b/src/common/ResourceManager.cpp
 @@ -1,3 +1,4 @@
@@ -624,7 +637,7 @@ index 47b6138fd8d6bf6ccd1c21395a999b64591ce3d5..2d7fe10da5c66e0e3c99fb4e4963be70
  
  SpriteStrip CResourceManager::LoadFullSkin(const fs::path& path, short colorID)
 diff --git a/src/common/ResourceManager.h b/src/common/ResourceManager.h
-index eff0ffcceb2149a83f36691a9a953051e5347d10..9640b6fab3897da7339a7ad7ef15e33de6c45e3c 100644
+index eff0ffcc..9640b6fa 100644
 --- a/src/common/ResourceManager.h
 +++ b/src/common/ResourceManager.h
 @@ -7,7 +7,7 @@
@@ -659,7 +672,7 @@ index eff0ffcceb2149a83f36691a9a953051e5347d10..9640b6fab3897da7339a7ad7ef15e33d
  
          bool operator==(const LoadedSpriteInfo&) const = default;
 diff --git a/src/common/TilesetManager.cpp b/src/common/TilesetManager.cpp
-index 1cc8b5f24e1d0313136f1c61dbfab6830ab451ba..4722a709573735265184f6b258282fc5a94ffe79 100644
+index 1cc8b5f2..4722a709 100644
 --- a/src/common/TilesetManager.cpp
 +++ b/src/common/TilesetManager.cpp
 @@ -1,3 +1,5 @@
@@ -730,7 +743,7 @@ index 1cc8b5f24e1d0313136f1c61dbfab6830ab451ba..4722a709573735265184f6b258282fc5
      , m_tileset_dir(std::move(dir))
  {}
 diff --git a/src/common/TilesetManager.h b/src/common/TilesetManager.h
-index 30b89bccf999f334df9b10bee4af556e67f2253a..5a405512649dd7ff05c8c55c2564b1e7528a770f 100644
+index 30b89bcc..5a405512 100644
 --- a/src/common/TilesetManager.h
 +++ b/src/common/TilesetManager.h
 @@ -4,7 +4,7 @@
@@ -770,7 +783,7 @@ index 30b89bccf999f334df9b10bee4af556e67f2253a..5a405512649dd7ff05c8c55c2564b1e7
      size_t indexFromName(const std::string& name) const;
      CTileset* tileset(size_t index);
 diff --git a/src/common/gfx.cpp b/src/common/gfx.cpp
-index 30683d778f0f604c83d7099b7ba3798ee5aacbcf..bc85ee29d02153a73a77f53b25afa28d793796bf 100644
+index 30683d77..bc85ee29 100644
 --- a/src/common/gfx.cpp
 +++ b/src/common/gfx.cpp
 @@ -1,3 +1,4 @@
@@ -835,7 +848,7 @@ index 30683d778f0f604c83d7099b7ba3798ee5aacbcf..bc85ee29d02153a73a77f53b25afa28d
      SpriteStrip strip;
  
 diff --git a/src/common/gfx.h b/src/common/gfx.h
-index 3f689120575cfa79b0b3f9684a49f48c45686648..299e07df0d6d9bed5304a1be6f5053e4b5c3e6ea 100644
+index 3f689120..299e07df 100644
 --- a/src/common/gfx.h
 +++ b/src/common/gfx.h
 @@ -27,7 +27,7 @@
@@ -868,7 +881,7 @@ index 3f689120575cfa79b0b3f9684a49f48c45686648..299e07df0d6d9bed5304a1be6f5053e4
  void gfx_setjoystickteamcolor(SDL_Joystick * joystick, short team, float brightness);
  
 diff --git a/src/common/gfx/gfxFont.cpp b/src/common/gfx/gfxFont.cpp
-index 0fa2c172f2a7bd73f06a9583cbc5a2ec0f2cac76..37e8b13315e0705183546d7ef8d070a1e73b0592 100644
+index 0fa2c172..37e8b133 100644
 --- a/src/common/gfx/gfxFont.cpp
 +++ b/src/common/gfx/gfxFont.cpp
 @@ -1,10 +1,12 @@
@@ -933,7 +946,7 @@ index 0fa2c172f2a7bd73f06a9583cbc5a2ec0f2cac76..37e8b13315e0705183546d7ef8d070a1
  
  void gfxFont::draw(int x, int y, std::string_view text, int dst_min_x, int dst_max_x) const
 diff --git a/src/common/gfx/gfxFont.h b/src/common/gfx/gfxFont.h
-index fc2937ddb3cb070788c436dcf8beb14bc092eabe..497fcd50b34ed92b976b62c55d3bbdd7a8e361fa 100644
+index fc2937dd..497fcd50 100644
 --- a/src/common/gfx/gfxFont.h
 +++ b/src/common/gfx/gfxFont.h
 @@ -2,7 +2,7 @@
@@ -955,7 +968,7 @@ index fc2937ddb3cb070788c436dcf8beb14bc092eabe..497fcd50b34ed92b976b62c55d3bbdd7
      void draw(int x, int y, std::string_view text,
          int dst_min_x = std::numeric_limits<int>::min(),
 diff --git a/src/common/gfx/gfxPalette.cpp b/src/common/gfx/gfxPalette.cpp
-index 66a3cb41ac1f596cbba1f7635f6333e78ffdaac9..38a4cd94335938d27fe5d53e986a8e1fcb717384 100644
+index 66a3cb41..38a4cd94 100644
 --- a/src/common/gfx/gfxPalette.cpp
 +++ b/src/common/gfx/gfxPalette.cpp
 @@ -6,7 +6,7 @@
@@ -968,7 +981,7 @@ index 66a3cb41ac1f596cbba1f7635f6333e78ffdaac9..38a4cd94335938d27fe5d53e986a8e1f
  
  std::optional<RGB> gfxPalette::replacementFor(RGB keyColor, size_t teamIndex, PlayerPalette playerState) const
 diff --git a/src/common/gfx/gfxPalette.h b/src/common/gfx/gfxPalette.h
-index 95aa24d7d050fb31bcb77a8a8df968b0e5800bf3..840671e34b1eecf0990b220cccdb4f0f9fa8b5c6 100644
+index 95aa24d7..840671e3 100644
 --- a/src/common/gfx/gfxPalette.h
 +++ b/src/common/gfx/gfxPalette.h
 @@ -1,10 +1,11 @@
@@ -994,7 +1007,7 @@ index 95aa24d7d050fb31bcb77a8a8df968b0e5800bf3..840671e34b1eecf0990b220cccdb4f0f
      const std::unordered_map<RGB, ColorSheet>& colorSheets() const { return m_colorsheets; }
      std::optional<RGB> replacementFor(RGB keyColor, size_t teamIndex, PlayerPalette playerState) const;
 diff --git a/src/common/gfx/gfxSDL.cpp b/src/common/gfx/gfxSDL.cpp
-index ba18f2f2b36ce8ff80a130135948589c19732ca7..090cd14f23748785a05bab7e34c461a0bfe80503 100644
+index ba18f2f2..090cd14f 100644
 --- a/src/common/gfx/gfxSDL.cpp
 +++ b/src/common/gfx/gfxSDL.cpp
 @@ -1,3 +1,8 @@
@@ -1147,7 +1160,7 @@ index ba18f2f2b36ce8ff80a130135948589c19732ca7..090cd14f23748785a05bab7e34c461a0
      if (fullscreen) {
          flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 diff --git a/src/common/gfx/gfxSprite.cpp b/src/common/gfx/gfxSprite.cpp
-index 4533b07c4137ee2070620b1f10945bbdac16c80c..64eb971d0fd3f5fc8f441b7e7d788d18aa0b0b73 100644
+index 4533b07c..64eb971d 100644
 --- a/src/common/gfx/gfxSprite.cpp
 +++ b/src/common/gfx/gfxSprite.cpp
 @@ -1,3 +1,5 @@
@@ -1270,7 +1283,7 @@ index 4533b07c4137ee2070620b1f10945bbdac16c80c..64eb971d0fd3f5fc8f441b7e7d788d18
          return;
      }
 diff --git a/src/common/gfx/gfxSprite.h b/src/common/gfx/gfxSprite.h
-index 0b635a8162f4e9bb0eafa973a02db9a7204f6ae2..2c86b5b426d676ed0f21edbfbe54fcfe35590439 100644
+index 0b635a81..2c86b5b4 100644
 --- a/src/common/gfx/gfxSprite.h
 +++ b/src/common/gfx/gfxSprite.h
 @@ -7,7 +7,7 @@
@@ -1301,7 +1314,7 @@ index 0b635a8162f4e9bb0eafa973a02db9a7204f6ae2..2c86b5b426d676ed0f21edbfbe54fcfe
      std::optional<RGB> m_color_key = colors::MAGENTA;
      std::optional<Uint8> m_alpha = std::nullopt;
 diff --git a/src/common/input.cpp b/src/common/input.cpp
-index c983716fb1c30bbb8ceb82a2ca08b367f6a023c7..1ce080c9b407b8020fe65635959d3fa6ec1ba5ef 100644
+index c983716f..1ce080c9 100644
 --- a/src/common/input.cpp
 +++ b/src/common/input.cpp
 @@ -4,6 +4,35 @@
@@ -1411,7 +1424,7 @@ index c983716fb1c30bbb8ceb82a2ca08b367f6a023c7..1ce080c9b407b8020fe65635959d3fa6
  
          if (iDeviceID == DEVICE_KEYBOARD) {
 diff --git a/src/common/input.h b/src/common/input.h
-index d33009894c91f6c855a92a276339e81c3e0f0850..e34ace7086d58f53bc100faa0d56ebb8403abc60 100644
+index d3300989..e34ace70 100644
 --- a/src/common/input.h
 +++ b/src/common/input.h
 @@ -43,6 +43,11 @@
@@ -1437,7 +1450,7 @@ index d33009894c91f6c855a92a276339e81c3e0f0850..e34ace7086d58f53bc100faa0d56ebb8
  
  #endif // INPUT_H
 diff --git a/src/common/map.cpp b/src/common/map.cpp
-index e2d6b7056afe02a21506e4f0a2196fd7851ff182..87beed81407808c6e39cdd35b33ff6bf0708f998 100644
+index e2d6b705..87beed81 100644
 --- a/src/common/map.cpp
 +++ b/src/common/map.cpp
 @@ -1,3 +1,8 @@
@@ -1536,7 +1549,7 @@ index e2d6b7056afe02a21506e4f0a2196fd7851ff182..87beed81407808c6e39cdd35b33ff6bf
          }
      }
 diff --git a/src/common/map/MapReader16xx.cpp b/src/common/map/MapReader16xx.cpp
-index 925ab12ba42acb41e0f2d5c616152de7e9fd1450..4d9b1b12f83bed240795aad340be60e667f54a64 100644
+index 925ab12b..4d9b1b12 100644
 --- a/src/common/map/MapReader16xx.cpp
 +++ b/src/common/map/MapReader16xx.cpp
 @@ -1,3 +1,4 @@
@@ -1569,7 +1582,7 @@ index 925ab12ba42acb41e0f2d5c616152de7e9fd1450..4d9b1b12f83bed240795aad340be60e6
      }
  
 diff --git a/src/common/map/MapReader17xx.cpp b/src/common/map/MapReader17xx.cpp
-index 56f0cf847a6c286879e607a976561cda59d903a6..ad0185b7157649ec55f2deddd4056d36c35aa88c 100644
+index 56f0cf84..ad0185b7 100644
 --- a/src/common/map/MapReader17xx.cpp
 +++ b/src/common/map/MapReader17xx.cpp
 @@ -1,3 +1,4 @@
@@ -1590,7 +1603,7 @@ index 56f0cf847a6c286879e607a976561cda59d903a6..ad0185b7157649ec55f2deddd4056d36
          }
  
 diff --git a/src/common/map/MapReader18xx.cpp b/src/common/map/MapReader18xx.cpp
-index f13c66c74c53a770f5f1f6f51807a9c73b3f540f..80d8ba571204ab3e93bf0bf1d272d781c5a9f004 100644
+index f13c66c7..80d8ba57 100644
 --- a/src/common/map/MapReader18xx.cpp
 +++ b/src/common/map/MapReader18xx.cpp
 @@ -1,3 +1,4 @@
@@ -1611,7 +1624,7 @@ index f13c66c74c53a770f5f1f6f51807a9c73b3f540f..80d8ba571204ab3e93bf0bf1d272d781
          }
  
 diff --git a/src/common/path.cpp b/src/common/path.cpp
-index 355892800ea0a412fba071c3aec622a172add77f..b963c200630942f3ee10481ffc6fbdbd1edcc12a 100644
+index 35589280..b963c200 100644
 --- a/src/common/path.cpp
 +++ b/src/common/path.cpp
 @@ -6,16 +6,18 @@
@@ -1708,7 +1721,7 @@ index 355892800ea0a412fba071c3aec622a172add77f..b963c200630942f3ee10481ffc6fbdbd
              chopHere = 0;
          else
 diff --git a/src/common/path.h b/src/common/path.h
-index a4ee118c41687da0e27b04ec86aa5aa0f68746c1..cc19bbaf1d7e1b1a598f22c520d09cade63155a4 100644
+index a4ee118c..cc19bbaf 100644
 --- a/src/common/path.h
 +++ b/src/common/path.h
 @@ -1,6 +1,6 @@
@@ -1729,7 +1742,7 @@ index a4ee118c41687da0e27b04ec86aa5aa0f68746c1..cc19bbaf1d7e1b1a598f22c520d09cad
  constexpr char dirSeparator() { return '/'; }
  
 diff --git a/src/common/sfx.cpp b/src/common/sfx.cpp
-index ef232b6772bbbbd3bca9657600944f5c2e0ba92a..176901f4f46d77337953533429865cc4c868430b 100644
+index ef232b67..176901f4 100644
 --- a/src/common/sfx.cpp
 +++ b/src/common/sfx.cpp
 @@ -1,12 +1,13 @@
@@ -1783,7 +1796,7 @@ index ef232b6772bbbbd3bca9657600944f5c2e0ba92a..176901f4f46d77337953533429865cc4
  
  void sfxMusic::play(bool fPlayonce, bool fResume)
 diff --git a/src/common/sfx.h b/src/common/sfx.h
-index ffa6d6a99c9f72518c0778f598c9f23d0ebe80d6..882a9eef7561626167a5c3732ce5c9d5ff6a4bd7 100644
+index ffa6d6a9..882a9eef 100644
 --- a/src/common/sfx.h
 +++ b/src/common/sfx.h
 @@ -1,10 +1,20 @@
@@ -1837,7 +1850,7 @@ index ffa6d6a99c9f72518c0778f598c9f23d0ebe80d6..882a9eef7561626167a5c3732ce5c9d5
      void play(bool fPlayonce, bool fResume);
      void stop();
 diff --git a/src/common/ui/MI_MapPreview.cpp b/src/common/ui/MI_MapPreview.cpp
-index 7f0a645a382af533b377fd100270c0c56c339080..327c1c8f73e9d20b2f60c77b5a653138aa2ad0c2 100644
+index 7f0a645a..327c1c8f 100644
 --- a/src/common/ui/MI_MapPreview.cpp
 +++ b/src/common/ui/MI_MapPreview.cpp
 @@ -88,15 +88,15 @@ void MI_MapPreview::Draw()
@@ -1862,7 +1875,7 @@ index 7f0a645a382af533b377fd100270c0c56c339080..327c1c8f73e9d20b2f60c77b5a653138
          }
      }
 diff --git a/src/common/ui/MI_SelectField.cpp b/src/common/ui/MI_SelectField.cpp
-index f4f43abd1ce7a0aa570e925f239c509b4c7a0a6e..4ed2072dec4d21e19f8a0a4ea02f768292736d6a 100644
+index f4f43abd..4ed2072d 100644
 --- a/src/common/ui/MI_SelectField.cpp
 +++ b/src/common/ui/MI_SelectField.cpp
 @@ -304,6 +304,8 @@ bool MI_SelectField<T>::moveNext()
@@ -1901,7 +1914,7 @@ index f4f43abd1ce7a0aa570e925f239c509b4c7a0a6e..4ed2072dec4d21e19f8a0a4ea02f7682
  
 diff --git a/src/common/util/CheckedCast.h b/src/common/util/CheckedCast.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..c0f3ebc3c3444c9ea2623c82323fdfadd6a2d952
+index 00000000..c0f3ebc3
 --- /dev/null
 +++ b/src/common/util/CheckedCast.h
 @@ -0,0 +1,24 @@
@@ -1930,7 +1943,7 @@ index 0000000000000000000000000000000000000000..c0f3ebc3c3444c9ea2623c82323fdfad
 +#define SMW_RTTI(Type, Base)
 +#endif
 diff --git a/src/common/util/DirIterator.cpp b/src/common/util/DirIterator.cpp
-index f446884fe38e6de9825f07916005f0afc39ec7ef..cb4191e1e9ea6cb59c003073129d6f1dcef51701 100644
+index f446884f..cb4191e1 100644
 --- a/src/common/util/DirIterator.cpp
 +++ b/src/common/util/DirIterator.cpp
 @@ -3,7 +3,7 @@
@@ -1976,7 +1989,7 @@ index f446884fe38e6de9825f07916005f0afc39ec7ef..cb4191e1e9ea6cb59c003073129d6f1d
  
  
 diff --git a/src/common/util/DirIterator.h b/src/common/util/DirIterator.h
-index b3f5aef187d65e63e4c4e7613d45ed89a9dc63b4..d94a58412818fc72346d4d82b48e7273d436bd59 100644
+index b3f5aef1..d94a5841 100644
 --- a/src/common/util/DirIterator.h
 +++ b/src/common/util/DirIterator.h
 @@ -1,42 +1,47 @@
@@ -2038,7 +2051,7 @@ index b3f5aef187d65e63e4c4e7613d45ed89a9dc63b4..d94a58412818fc72346d4d82b48e7273
  };
 diff --git a/src/common/util/Error.h b/src/common/util/Error.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..9772deb8b0c2ad506c673b109112e018df6dbd86
+index 00000000..9772deb8
 --- /dev/null
 +++ b/src/common/util/Error.h
 @@ -0,0 +1,13 @@
@@ -2057,7 +2070,7 @@ index 0000000000000000000000000000000000000000..9772deb8b0c2ad506c673b109112e018
 +#endif
 diff --git a/src/common/util/Filesystem.h b/src/common/util/Filesystem.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..d7e4ab828673499b7c957580cc6b0ec63cd7e19f
+index 00000000..d7e4ab82
 --- /dev/null
 +++ b/src/common/util/Filesystem.h
 @@ -0,0 +1,47 @@
@@ -2110,7 +2123,7 @@ index 0000000000000000000000000000000000000000..d7e4ab828673499b7c957580cc6b0ec6
 +#endif
 diff --git a/src/common/util/Format.h b/src/common/util/Format.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..5611577e582945fd0383817ffc3c5ad593f40c18
+index 00000000..5611577e
 --- /dev/null
 +++ b/src/common/util/Format.h
 @@ -0,0 +1,17 @@
@@ -2133,7 +2146,7 @@ index 0000000000000000000000000000000000000000..5611577e582945fd0383817ffc3c5ad5
 +#endif
 diff --git a/src/common/util/Log.h b/src/common/util/Log.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..05cab4e3d74229712c2a872a26e995e15bfbf13b
+index 00000000..05cab4e3
 --- /dev/null
 +++ b/src/common/util/Log.h
 @@ -0,0 +1,24 @@
@@ -2162,7 +2175,7 @@ index 0000000000000000000000000000000000000000..05cab4e3d74229712c2a872a26e995e1
 +namespace smw { using std::cout; using std::endl; }
 +#endif
 diff --git a/src/leveleditor/leveleditor.cpp b/src/leveleditor/leveleditor.cpp
-index 335e868fcf48f1ea17021b7036f0fe6a641aec4e..f57a562bb3101ce7518f7417aee40def52848ccb 100644
+index 335e868f..f57a562b 100644
 --- a/src/leveleditor/leveleditor.cpp
 +++ b/src/leveleditor/leveleditor.cpp
 @@ -4373,7 +4373,7 @@ void LoadBackgroundPage(std::array<gfxSprite, 16>& sBackgrounds, short iPage)
@@ -2175,7 +2188,7 @@ index 335e868fcf48f1ea17021b7036f0fe6a641aec4e..f57a562bb3101ce7518f7417aee40def
  			return;
  
 diff --git a/src/smw/FPSLimiter.cpp b/src/smw/FPSLimiter.cpp
-index 9b065afa710fdf7671bc40c81c90fbb70c290221..80d214ad67bc06db5fae9a4dad6a989e0808d540 100644
+index 9b065afa..80d214ad 100644
 --- a/src/smw/FPSLimiter.cpp
 +++ b/src/smw/FPSLimiter.cpp
 @@ -5,7 +5,11 @@
@@ -2233,7 +2246,7 @@ index 9b065afa710fdf7671bc40c81c90fbb70c290221..80d214ad67bc06db5fae9a4dad6a989e
  
      //Sleep for time just under what we need
 diff --git a/src/smw/GSGameplay.cpp b/src/smw/GSGameplay.cpp
-index 5413c8b2edd782b7093d777efa4f776bd0621959..33482293fd1be94dc9b0a00faafdc02e65599c8f 100644
+index 5413c8b2..33482293 100644
 --- a/src/smw/GSGameplay.cpp
 +++ b/src/smw/GSGameplay.cpp
 @@ -1,3 +1,9 @@
@@ -2428,7 +2441,7 @@ index 5413c8b2edd782b7093d777efa4f776bd0621959..33482293fd1be94dc9b0a00faafdc02e
      }
  
 diff --git a/src/smw/GSMenu.cpp b/src/smw/GSMenu.cpp
-index 0e3d6ef8937202ed05fec729d6744954ae25e70b..e11062c78332db6376bd3bf38b8c17b3e8674d9c 100644
+index 0e3d6ef8..e11062c7 100644
 --- a/src/smw/GSMenu.cpp
 +++ b/src/smw/GSMenu.cpp
 @@ -1,4 +1,7 @@
@@ -2594,7 +2607,7 @@ index 0e3d6ef8937202ed05fec729d6744954ae25e70b..e11062c78332db6376bd3bf38b8c17b3
      game_values.appstate = AppState::Quit;
      game_values.WriteConfig();
 diff --git a/src/smw/GSSplashScreen.cpp b/src/smw/GSSplashScreen.cpp
-index 611320268307258744e874402269d03ea5ccbe4e..65d0e7796c42d0eac05eace0538ae8e48a512b63 100644
+index 61132026..65d0e779 100644
 --- a/src/smw/GSSplashScreen.cpp
 +++ b/src/smw/GSSplashScreen.cpp
 @@ -1,4 +1,7 @@
@@ -2618,7 +2631,7 @@ index 611320268307258744e874402269d03ea5ccbe4e..65d0e7796c42d0eac05eace0538ae8e4
      }
  }
 diff --git a/src/smw/ObjectContainer.cpp b/src/smw/ObjectContainer.cpp
-index b2323a8cd698816445ad89543872730ead849d01..eda2521e3bba422be8ab35e6db1088bb8e686507 100644
+index b2323a8c..eda2521e 100644
 --- a/src/smw/ObjectContainer.cpp
 +++ b/src/smw/ObjectContainer.cpp
 @@ -75,7 +75,7 @@ float CObjectContainer::getClosestMovingObject(short ix, short iy, MovingObjectT
@@ -2640,7 +2653,7 @@ index b2323a8cd698816445ad89543872730ead849d01..eda2521e3bba422be8ab35e6db1088bb
              count++;
          }
 diff --git a/src/smw/ai.cpp b/src/smw/ai.cpp
-index e38cd5e15b52f8512575e1d31fea3d220ac1797e..dab76d89660c20ef3065416503c90ee5c0ba8032 100644
+index e38cd5e1..dab76d89 100644
 --- a/src/smw/ai.cpp
 +++ b/src/smw/ai.cpp
 @@ -109,14 +109,14 @@ void CPlayerAI::Init()
@@ -2720,7 +2733,7 @@ index e38cd5e15b52f8512575e1d31fea3d220ac1797e..dab76d89660c20ef3065416503c90ee5
      //Figure out where the other players are
      for (size_t iPlayer = 0; iPlayer < players.size(); iPlayer++) {
 diff --git a/src/smw/gamemodes/Chicken.h b/src/smw/gamemodes/Chicken.h
-index 8d7762a767ceea90b79f48d60c5352d8843aa0d7..dbebbb8141e1054cc1f4e1c949f07f530cb18bf5 100644
+index 8d7762a7..dbebbb81 100644
 --- a/src/smw/gamemodes/Chicken.h
 +++ b/src/smw/gamemodes/Chicken.h
 @@ -1,3 +1,4 @@
@@ -2738,7 +2751,7 @@ index 8d7762a767ceea90b79f48d60c5352d8843aa0d7..dbebbb8141e1054cc1f4e1c949f07f53
      CGM_Chicken();
  
 diff --git a/src/smw/gamemodes/Domination.cpp b/src/smw/gamemodes/Domination.cpp
-index 346f5c28b3dc0684921e28adaad57e5db7ea219c..a2e1b7f241409c4f0fe813a5356794ce752b5f6a 100644
+index 346f5c28..a2e1b7f2 100644
 --- a/src/smw/gamemodes/Domination.cpp
 +++ b/src/smw/gamemodes/Domination.cpp
 @@ -18,7 +18,7 @@ namespace {
@@ -2751,7 +2764,7 @@ index 346f5c28b3dc0684921e28adaad57e5db7ea219c..a2e1b7f241409c4f0fe813a5356794ce
              continue;
  
 diff --git a/src/smw/gamemodes/Race.cpp b/src/smw/gamemodes/Race.cpp
-index d2d56b71c1f5fca2328f7c1f58cb00441a638c04..f2eb2fec60ee33327a99f8aa992a83b081619985 100644
+index d2d56b71..f2eb2fec 100644
 --- a/src/smw/gamemodes/Race.cpp
 +++ b/src/smw/gamemodes/Race.cpp
 @@ -20,7 +20,7 @@ void removePlayerRaceGoals(CObjectContainer& container, short id, short iGoal)
@@ -2764,7 +2777,7 @@ index d2d56b71c1f5fca2328f7c1f58cb00441a638c04..f2eb2fec60ee33327a99f8aa992a83b0
              continue;
  
 diff --git a/src/smw/gamemodes/Tag.h b/src/smw/gamemodes/Tag.h
-index 523e76dc198ff78e4af3a07417fdb1f8ef6257cf..b200e288e36d2c8a4bdaa76373ecc63518333d26 100644
+index 523e76dc..b200e288 100644
 --- a/src/smw/gamemodes/Tag.h
 +++ b/src/smw/gamemodes/Tag.h
 @@ -1,9 +1,12 @@
@@ -2781,7 +2794,7 @@ index 523e76dc198ff78e4af3a07417fdb1f8ef6257cf..b200e288e36d2c8a4bdaa76373ecc635
      CGM_Tag();
  
 diff --git a/src/smw/main.cpp b/src/smw/main.cpp
-index bc7783b758d9ea187bb91c84e8c362704ee0af1e..019b26097c0db4adffe0d0294087efb496f422c8 100644
+index bc7783b7..019b2609 100644
 --- a/src/smw/main.cpp
 +++ b/src/smw/main.cpp
 @@ -1,3 +1,8 @@
@@ -3004,7 +3017,7 @@ index bc7783b758d9ea187bb91c84e8c362704ee0af1e..019b26097c0db4adffe0d0294087efb4
  
  
 diff --git a/src/smw/menu/MainMenu.cpp b/src/smw/menu/MainMenu.cpp
-index 8f4fc07a7fbdff6f82449a5752b3f5a959c8f147..e563a08ed6d9cb435d71e6e6a8c81ae96d8bed69 100644
+index 8f4fc07a..e563a08e 100644
 --- a/src/smw/menu/MainMenu.cpp
 +++ b/src/smw/menu/MainMenu.cpp
 @@ -29,9 +29,13 @@ UI_MainMenu::UI_MainMenu()
@@ -3054,7 +3067,7 @@ index 8f4fc07a7fbdff6f82449a5752b3f5a959c8f147..e563a08ed6d9cb435d71e6e6a8c81ae9
  
      AddNonControl(miSMWTitle);
 diff --git a/src/smw/net.cpp b/src/smw/net.cpp
-index 23cbfa3041c3cd6efd724f8c5c166ad9213538bc..a419434b5209ac7fec47c781529eb513f712a8ea 100644
+index 23cbfa30..a419434b 100644
 --- a/src/smw/net.cpp
 +++ b/src/smw/net.cpp
 @@ -1,3 +1,4 @@
@@ -3063,7 +3076,7 @@ index 23cbfa3041c3cd6efd724f8c5c166ad9213538bc..a419434b5209ac7fec47c781529eb513
  
  #include "GlobalConstants.h"
 diff --git a/src/smw/objects/IO_FlameCannon.h b/src/smw/objects/IO_FlameCannon.h
-index e1848cb71197410d01d108fb1ff55b5429afc5a3..acc403b09d56370a1edcf2632c2504503019d157 100644
+index e1848cb7..acc403b0 100644
 --- a/src/smw/objects/IO_FlameCannon.h
 +++ b/src/smw/objects/IO_FlameCannon.h
 @@ -1,9 +1,12 @@
@@ -3080,7 +3093,7 @@ index e1848cb71197410d01d108fb1ff55b5429afc5a3..acc403b09d56370a1edcf2632c250450
      IO_FlameCannon(Vec2s pos, short freq, short direction);
  
 diff --git a/src/smw/objects/blocks/IO_Block.cpp b/src/smw/objects/blocks/IO_Block.cpp
-index 575af4c2db6320a83cb8b54d2d7e32f2ed8eb31a..e4499b1356225d1205adfe4db1f0952fe1fd1886 100644
+index 575af4c2..e4499b13 100644
 --- a/src/smw/objects/blocks/IO_Block.cpp
 +++ b/src/smw/objects/blocks/IO_Block.cpp
 @@ -244,7 +244,7 @@ void IO_Block::KillPlayersAndObjectsInsideBlock(short playerID)
@@ -3093,7 +3106,7 @@ index 575af4c2db6320a83cb8b54d2d7e32f2ed8eb31a..e4499b1356225d1205adfe4db1f0952f
                  continue;
  
 diff --git a/src/smw/objects/blocks/WeaponBreakableBlock.h b/src/smw/objects/blocks/WeaponBreakableBlock.h
-index 1d5d31d6c6dc0132a6969883ef15c8628a9ba4f5..db6473cdc8aae5de697a415f0c6a77e963a8fbf7 100644
+index 1d5d31d6..db6473cd 100644
 --- a/src/smw/objects/blocks/WeaponBreakableBlock.h
 +++ b/src/smw/objects/blocks/WeaponBreakableBlock.h
 @@ -1,3 +1,4 @@
@@ -3111,7 +3124,7 @@ index 1d5d31d6c6dc0132a6969883ef15c8628a9ba4f5..db6473cdc8aae5de697a415f0c6a77e9
      B_WeaponBreakableBlock(gfxSprite *nspr, Vec2s pos, WeaponDamageType type);
  
 diff --git a/src/smw/objects/carriable/CO_Bomb.h b/src/smw/objects/carriable/CO_Bomb.h
-index 68311b65c58d2ad1347859c871a0ee98ebe581f8..3b75dcac12636002ac8fe96d45c653a20edb6b3c 100644
+index 68311b65..3b75dcac 100644
 --- a/src/smw/objects/carriable/CO_Bomb.h
 +++ b/src/smw/objects/carriable/CO_Bomb.h
 @@ -1,3 +1,4 @@
@@ -3129,7 +3142,7 @@ index 68311b65c58d2ad1347859c871a0ee98ebe581f8..3b75dcac12636002ac8fe96d45c653a2
      CO_Bomb(gfxSprite* nspr, Vec2s pos, Vec2f vel, short aniSpeed, short iGlobalID, short iTeamID, short iColorID, short timetolive);
  
 diff --git a/src/smw/objects/carriable/CO_Egg.h b/src/smw/objects/carriable/CO_Egg.h
-index 5185d254854c91d9d95f9b1bc31048eb6a3668dd..5692b6b4c8bca98017e929d414f5d937b95194c1 100644
+index 5185d254..5692b6b4 100644
 --- a/src/smw/objects/carriable/CO_Egg.h
 +++ b/src/smw/objects/carriable/CO_Egg.h
 @@ -1,3 +1,4 @@
@@ -3147,7 +3160,7 @@ index 5185d254854c91d9d95f9b1bc31048eb6a3668dd..5692b6b4c8bca98017e929d414f5d937
      CO_Egg(gfxSprite* nspr, short iColor);
  
 diff --git a/src/smw/objects/carriable/CO_Flag.h b/src/smw/objects/carriable/CO_Flag.h
-index 85347ed8f994a8632fc3ba3bb506627049d2d976..1e5d930879771b0de564a2b3f04cb0426d02097b 100644
+index 85347ed8..1e5d9308 100644
 --- a/src/smw/objects/carriable/CO_Flag.h
 +++ b/src/smw/objects/carriable/CO_Flag.h
 @@ -1,3 +1,4 @@
@@ -3165,7 +3178,7 @@ index 85347ed8f994a8632fc3ba3bb506627049d2d976..1e5d930879771b0de564a2b3f04cb042
      CO_Flag(gfxSprite* nspr, MO_FlagBase* base, short iTeamID, short iColorID);
  
 diff --git a/src/smw/objects/carriable/CO_Star.h b/src/smw/objects/carriable/CO_Star.h
-index c071dec68034c1a1782acaf5d38bc442e5f58643..6f97874bb138e9e401ee6dff28164d446e2a8691 100644
+index c071dec6..6f97874b 100644
 --- a/src/smw/objects/carriable/CO_Star.h
 +++ b/src/smw/objects/carriable/CO_Star.h
 @@ -1,3 +1,4 @@
@@ -3183,7 +3196,7 @@ index c071dec68034c1a1782acaf5d38bc442e5f58643..6f97874bb138e9e401ee6dff28164d44
      CO_Star(gfxSprite* nspr, short type, short id);
  
 diff --git a/src/smw/objects/moving/MO_BonusHouseChest.h b/src/smw/objects/moving/MO_BonusHouseChest.h
-index 21e68a7411304e8d81a20c9c25e3bf4b25e55e28..f2c026308ce2a3cdc035b311caba6f5b91aa6216 100644
+index 21e68a74..f2c02630 100644
 --- a/src/smw/objects/moving/MO_BonusHouseChest.h
 +++ b/src/smw/objects/moving/MO_BonusHouseChest.h
 @@ -1,9 +1,12 @@
@@ -3200,7 +3213,7 @@ index 21e68a7411304e8d81a20c9c25e3bf4b25e55e28..f2c026308ce2a3cdc035b311caba6f5b
      MO_BonusHouseChest(gfxSprite* nspr, Vec2s pos, short iBonusItem);
  
 diff --git a/src/smw/objects/moving/MO_Boomerang.cpp b/src/smw/objects/moving/MO_Boomerang.cpp
-index b3e68385dcedb11dbdc1ca27c2a82dc2a6615015..84d84242262927e7cf01fa8ea3863917043eceb2 100644
+index b3e68385..84d84242 100644
 --- a/src/smw/objects/moving/MO_Boomerang.cpp
 +++ b/src/smw/objects/moving/MO_Boomerang.cpp
 @@ -70,7 +70,7 @@ void MO_Boomerang::update()
@@ -3213,7 +3226,7 @@ index b3e68385dcedb11dbdc1ca27c2a82dc2a6615015..84d84242262927e7cf01fa8ea3863917
                  weaponbreakableblock->triggerBehavior(iPlayerID, iTeamID);
                  forcedead();
 diff --git a/src/smw/objects/moving/MO_BulletBill.h b/src/smw/objects/moving/MO_BulletBill.h
-index f19beefd74ab99b4e230449cd61f7c66d7e0bd15..03fb21da786d96653777ec7d4a9145dac7c4121b 100644
+index f19beefd..03fb21da 100644
 --- a/src/smw/objects/moving/MO_BulletBill.h
 +++ b/src/smw/objects/moving/MO_BulletBill.h
 @@ -1,9 +1,12 @@
@@ -3230,7 +3243,7 @@ index f19beefd74ab99b4e230449cd61f7c66d7e0bd15..03fb21da786d96653777ec7d4a9145da
      MO_BulletBill(gfxSprite* nspr, gfxSprite* nsprdead, Vec2s pos, float nspeed, short playerID, bool isspawned);
  
 diff --git a/src/smw/objects/moving/MO_Explosion.cpp b/src/smw/objects/moving/MO_Explosion.cpp
-index 57103c25e00c18c22232c0e5a36ebf4e664980bb..bb9405ce961f62d957a55846ee326568ed67ffa9 100644
+index 57103c25..bb9405ce 100644
 --- a/src/smw/objects/moving/MO_Explosion.cpp
 +++ b/src/smw/objects/moving/MO_Explosion.cpp
 @@ -56,7 +56,7 @@ void MO_Explosion::update()
@@ -3243,7 +3256,7 @@ index 57103c25e00c18c22232c0e5a36ebf4e664980bb..bb9405ce961f62d957a55846ee326568
                              weaponbreakableblock->triggerBehavior(iPlayerID, iTeamID);
                          }
 diff --git a/src/smw/objects/moving/MO_Hammer.cpp b/src/smw/objects/moving/MO_Hammer.cpp
-index 3b378780c7321d25fc58b05c9d0a22b8bb4d5762..00481cc668ef5d9996df38718a455206ef3e1e65 100644
+index 3b378780..00481cc6 100644
 --- a/src/smw/objects/moving/MO_Hammer.cpp
 +++ b/src/smw/objects/moving/MO_Hammer.cpp
 @@ -82,7 +82,7 @@ void MO_Hammer::update()
@@ -3256,7 +3269,7 @@ index 3b378780c7321d25fc58b05c9d0a22b8bb4d5762..00481cc668ef5d9996df38718a455206
                  weaponbreakableblock->triggerBehavior(iPlayerID, iTeamID);
                  removeifprojectile(this, false, false);
 diff --git a/src/smw/objects/moving/MO_PirhanaPlant.h b/src/smw/objects/moving/MO_PirhanaPlant.h
-index 2ce193cbf209ed6af1f105d7aad52c7ee1098962..0ee29ef6ac3fad11c31bf2908320f83a59d85927 100644
+index 2ce193cb..0ee29ef6 100644
 --- a/src/smw/objects/moving/MO_PirhanaPlant.h
 +++ b/src/smw/objects/moving/MO_PirhanaPlant.h
 @@ -1,9 +1,12 @@
@@ -3273,7 +3286,7 @@ index 2ce193cbf209ed6af1f105d7aad52c7ee1098962..0ee29ef6ac3fad11c31bf2908320f83a
      MO_PirhanaPlant(Vec2s pos, short type, short freq, short direction, bool preview);
  
 diff --git a/src/smw/objects/moving/MO_SledgeBrother.cpp b/src/smw/objects/moving/MO_SledgeBrother.cpp
-index 3731b566975dd34da85cfe18bce84a0bb6045645..30dc5c2022e301094cc8d8286e4208879957ad6c 100644
+index 3731b566..30dc5c20 100644
 --- a/src/smw/objects/moving/MO_SledgeBrother.cpp
 +++ b/src/smw/objects/moving/MO_SledgeBrother.cpp
 @@ -28,7 +28,7 @@ namespace {
@@ -3286,7 +3299,7 @@ index 3731b566975dd34da85cfe18bce84a0bb6045645..30dc5c2022e301094cc8d8286e420887
              continue;
  
 diff --git a/src/smw/objects/moving/MO_Yoshi.h b/src/smw/objects/moving/MO_Yoshi.h
-index dbf761318fa9d1c648a28d5ac09a2617c314828a..25711ffb2b9a2cea20768e396f0f93d67cc160fc 100644
+index dbf76131..25711ffb 100644
 --- a/src/smw/objects/moving/MO_Yoshi.h
 +++ b/src/smw/objects/moving/MO_Yoshi.h
 @@ -1,9 +1,12 @@
@@ -3303,7 +3316,7 @@ index dbf761318fa9d1c648a28d5ac09a2617c314828a..25711ffb2b9a2cea20768e396f0f93d6
      MO_Yoshi(gfxSprite* nspr, short iColor);
  
 diff --git a/src/smw/objects/moving/MovingObject.h b/src/smw/objects/moving/MovingObject.h
-index cc8c514fcf5c025914dfc7ca6ae73099fc6e9527..8cd246a51679edeb2f7976e7edb4807720ce24f2 100644
+index cc8c514f..8cd246a5 100644
 --- a/src/smw/objects/moving/MovingObject.h
 +++ b/src/smw/objects/moving/MovingObject.h
 @@ -1,3 +1,4 @@
@@ -3321,7 +3334,7 @@ index cc8c514fcf5c025914dfc7ca6ae73099fc6e9527..8cd246a51679edeb2f7976e7edb48077
      IO_MovingObject(gfxSprite* nspr, Vec2s pos, short iNumSpr, short aniSpeed, short iCollisionWidth = -1, short iCollisionHeight = -1, short iCollisionOffsetX = -1, short iCollisionOffsetY = -1, short iAnimationOffsetX = -1, short iAnimationOffsetY = -1, short iAnimationHeight = -1, short iAnimationWidth = -1);
  
 diff --git a/src/smw/objects/overmap/WO_Area.h b/src/smw/objects/overmap/WO_Area.h
-index 1b1deefdb461f959ee40f1b7240549650d64cf3d..4eef9a049a8241a1d9c032a53385f4e359ce0d78 100644
+index 1b1deefd..4eef9a04 100644
 --- a/src/smw/objects/overmap/WO_Area.h
 +++ b/src/smw/objects/overmap/WO_Area.h
 @@ -1,8 +1,11 @@
@@ -3337,7 +3350,7 @@ index 1b1deefdb461f959ee40f1b7240549650d64cf3d..4eef9a049a8241a1d9c032a53385f4e3
      OMO_Area(gfxSprite* nspr, short numAreas);
  
 diff --git a/src/smw/objects/overmap/WO_OrbitHazard.h b/src/smw/objects/overmap/WO_OrbitHazard.h
-index 6c6476cca05f51ecfaed99430bc6244ab3a72ff0..95744a006dad456ab52224ed75f67ba378ad6503 100644
+index 6c6476cc..95744a00 100644
 --- a/src/smw/objects/overmap/WO_OrbitHazard.h
 +++ b/src/smw/objects/overmap/WO_OrbitHazard.h
 @@ -1,9 +1,12 @@
@@ -3354,7 +3367,7 @@ index 6c6476cca05f51ecfaed99430bc6244ab3a72ff0..95744a006dad456ab52224ed75f67ba3
      OMO_OrbitHazard(gfxSprite* nspr, Vec2s pos, float radius, float vel, float angle, short iNumSpr, short aniSpeed, short iCollisionWidth, short iCollisionHeight, short iCollisionOffsetX, short iCollisionOffsetY, short iAnimationOffsetX, short iAnimationOffsetY, short iAnimationHeight, short iAnimationWidth);
  
 diff --git a/src/smw/objects/overmap/WO_RaceGoal.h b/src/smw/objects/overmap/WO_RaceGoal.h
-index 134012a83230b980c9f1029d5ad04948c25aa01d..5497d2cd191703b8ba05b0e6c9f604080a1d2ea6 100644
+index 134012a8..5497d2cd 100644
 --- a/src/smw/objects/overmap/WO_RaceGoal.h
 +++ b/src/smw/objects/overmap/WO_RaceGoal.h
 @@ -1,8 +1,11 @@
@@ -3370,7 +3383,7 @@ index 134012a83230b980c9f1029d5ad04948c25aa01d..5497d2cd191703b8ba05b0e6c9f60408
      OMO_RaceGoal(gfxSprite* nspr, short id);
  
 diff --git a/src/smw/objects/overmap/WO_StraightPathHazard.h b/src/smw/objects/overmap/WO_StraightPathHazard.h
-index bca4e86521a5510e67d9234f82d4a2726a6ee61a..725eb14e0a299ae410a7be351e0bbaf4ce3b9738 100644
+index bca4e865..725eb14e 100644
 --- a/src/smw/objects/overmap/WO_StraightPathHazard.h
 +++ b/src/smw/objects/overmap/WO_StraightPathHazard.h
 @@ -1,9 +1,12 @@
@@ -3387,7 +3400,7 @@ index bca4e86521a5510e67d9234f82d4a2726a6ee61a..725eb14e0a299ae410a7be351e0bbaf4
      OMO_StraightPathHazard(gfxSprite* nspr, Vec2s pos, float angle, float vel, short iNumSpr, short aniSpeed, short iCollisionWidth, short iCollisionHeight, short iCollisionOffsetX, short iCollisionOffsetY, short iAnimationOffsetX, short iAnimationOffsetY, short iAnimationHeight, short iAnimationWidth);
  
 diff --git a/src/smw/player.cpp b/src/smw/player.cpp
-index d80f1609a0c1d4f3dd4be544461968e3f5bcc6fc..480ca7ca0977b90b036ebbb9798b7b8096e6725b 100644
+index d80f1609..480ca7ca 100644
 --- a/src/smw/player.cpp
 +++ b/src/smw/player.cpp
 @@ -192,7 +192,7 @@ void CPlayer::accelerate(float direction)
@@ -3454,7 +3467,7 @@ index d80f1609a0c1d4f3dd4be544461968e3f5bcc6fc..480ca7ca0977b90b036ebbb9798b7b80
      }
  
 diff --git a/src/smw/ui/MI_InputControlContainer.cpp b/src/smw/ui/MI_InputControlContainer.cpp
-index debf67535f4d37d296e4c12538a42d12a66d17fc..f2fadde25ae8d3359ed11909f8f3a04640405058 100644
+index debf6753..f2fadde2 100644
 --- a/src/smw/ui/MI_InputControlContainer.cpp
 +++ b/src/smw/ui/MI_InputControlContainer.cpp
 @@ -9,6 +9,10 @@
@@ -3556,7 +3569,7 @@ index debf67535f4d37d296e4c12538a42d12a66d17fc..f2fadde25ae8d3359ed11909f8f3a046
              miDeviceSelectField->hideItem(game_values.playerInput.inputControls[iPlayer]->iDevice, true);
      }
 diff --git a/src/smw/ui/MI_InputControlContainer.h b/src/smw/ui/MI_InputControlContainer.h
-index 28208a0f0e73e81f3a0250328b66ec223619b854..786174046c7b27caa9d4df48de1cfca241e6d428 100644
+index 28208a0f..78617404 100644
 --- a/src/smw/ui/MI_InputControlContainer.h
 +++ b/src/smw/ui/MI_InputControlContainer.h
 @@ -74,6 +74,7 @@ class MI_InputControlContainer : public UI_Control
@@ -3568,7 +3581,7 @@ index 28208a0f0e73e81f3a0250328b66ec223619b854..786174046c7b27caa9d4df48de1cfca2
  		short iPlayerID;
  		short iDevice;
 diff --git a/src/smw/ui/MI_MapBrowser.cpp b/src/smw/ui/MI_MapBrowser.cpp
-index d37471f5a365c58be7056c4c9c7bae74648e1d49..1037a76f3bf76dfa590d0dece9bdb7b308ce1691 100644
+index d37471f5..1037a76f 100644
 --- a/src/smw/ui/MI_MapBrowser.cpp
 +++ b/src/smw/ui/MI_MapBrowser.cpp
 @@ -1,4 +1,7 @@
@@ -3598,7 +3611,7 @@ index d37471f5a365c58be7056c4c9c7bae74648e1d49..1037a76f3bf76dfa590d0dece9bdb7b3
          mapListNodes[iMap] = &(*itr).second;
          mapNames[iMap] = (*itr).first.c_str();
 diff --git a/src/smw/world.cpp b/src/smw/world.cpp
-index 7640d8e9bc1e89e8e4b1af13d0999db07c3cae34..5e57da069848da45d0d25b49fefd47670ac018d4 100644
+index 7640d8e9..5e57da06 100644
 --- a/src/smw/world.cpp
 +++ b/src/smw/world.cpp
 @@ -1,3 +1,4 @@

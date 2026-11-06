@@ -31,7 +31,9 @@ no public game binary/data release is planned. Private test installs remain usef
   Do not include upstream media, upstream asset history or release binaries in
   the sharing repository.
 
-- [ ] Normalize inherited Health defaults and inconsistent legacy start/max-life
+- [ ] Qualify the Health life-limit fix on hardware. Constructor defaults and
+  legacy migration now pass sanitizer host tests (source `3c441985`); native
+  healing and save/reload remain pending. Normalize inherited Health defaults and inconsistent legacy start/max-life
   pairs without discarding otherwise valid saves. Native options showed start 6,
   max 2; pinned upstream constructor uses max 1. Verify extra-heart healing and
   save/reload after the correction. See [follow-up](THUMBNAILS.md).

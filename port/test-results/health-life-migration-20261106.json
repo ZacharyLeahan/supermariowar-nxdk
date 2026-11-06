@@ -1,0 +1,33 @@
+{
+  "status": "host-tested; native validation pending",
+  "source_commit": "3c441985ee68d4d5d99c40c11304864fce767550",
+  "change": {
+    "default_start_half_hearts": 6,
+    "default_max_half_hearts": 10,
+    "legacy_max_1": "normalize to 10",
+    "legacy_max_below_start": "raise maximum to starting life",
+    "new_invalid_save": "refuse serialization"
+  },
+  "host_validation": {
+    "command": "python3 ports/nxdk/tests/run-save-record.py",
+    "result": "passed",
+    "sanitizers": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "covers": [
+      "constructor defaults",
+      "legacy maxima 1, 2, 6, 10 with start 6",
+      "other preferences retained",
+      "migrated record reload",
+      "new inconsistent pair rejected",
+      "existing corruption and slot-fallback cases"
+    ]
+  },
+  "hardware_pending": [
+    "Health options show consistent values after loading existing save",
+    "extra-heart healing below maximum",
+    "maximum remains bounded",
+    "save and reload on exact candidate"
+  ]
+}

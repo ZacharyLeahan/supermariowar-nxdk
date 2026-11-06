@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-25",
+  "candidate_xbe_sha256": "10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c",
+  "hardware": "128 MB Stellar Xbox with LIMIT64MB candidate",
+  "game_audio": {
+    "user_reports_audible": true,
+    "source": "User reports hearing game audio through normal Xbox speakers",
+    "scope": "Audibility only; no claim of correct mixing, complete effects coverage or seamless loops"
+  },
+  "kvm_capture": {
+    "firmware": "v.0.56.1-160-g118eac1-dirty",
+    "status": "blocked",
+    "http_status": 503,
+    "error": "No usable I2S samples",
+    "interpretation": "Capture unavailable; this is not evidence of silent Xbox output"
+  },
+  "host_checks": {
+    "mixer_and_decoder": "passed",
+    "save_records": "passed",
+    "controller_routing": "passed",
+    "qualification": "Host tests; not native audio or physical-controller acceptance"
+  }
+}

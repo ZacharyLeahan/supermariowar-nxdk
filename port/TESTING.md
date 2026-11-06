@@ -163,3 +163,13 @@ transfer acceptance to the original executable or a future release build.
 
 Use [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) to track acceptance work. A fully
 tested or shipped-game claim remains premature.
+
+## Current-build audio audibility, 25 October 2026
+
+The user confirms hearing game audio through the Xbox speakers on candidate
+`10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c`.
+The current KVM firmware returns HTTP 503, “No usable I2S samples”, for PCM
+capture. This establishes audibility only; mixing, all effects and seamless
+loops still require review. Host mixer/decoder, save-record and controller
+routing checks passed independently. See
+[audio confirmation](test-results/audio-user-confirmation-20261025.json).

@@ -92,6 +92,8 @@ int main()
     Config original;
     int marker;
     original.runtimeInput = &marker;
+    assert(original.gamemodemenusettings.health.startlife == 6);
+    assert(original.gamemodemenusettings.health.maxlife == 10);
     Config changed = original;
     changed.sound = false;
     changed.music = false;
@@ -147,6 +149,26 @@ int main()
     assert(nxdk_save::detail::read32(good, 2428 + 21 * 4) == 0xffffffffu);
     Config target = original;
     assert(nxdk_save::decodePreferences(good, version, target) && target == changed);
+    // Legacy Health values must not discard unrelated preferences or select an
+    // older save. Freeze independent wire offsets for the two migrated fields.
+    for (unsigned maximum : {1u, 2u, 6u, 10u}) {
+        auto oldHealth = good;
+        nxdk_save::detail::write32(oldHealth, 2272, maximum);
+        nxdk_save::detail::write32(oldHealth, 2280, 6);
+        target = original;
+        assert(nxdk_save::decodePreferences(oldHealth, version, target));
+        Config expectedHealth = changed;
+        expectedHealth.gamemodemenusettings.health.startlife = 6;
+        expectedHealth.gamemodemenusettings.health.maxlife = maximum == 1 ? 10 : std::max(6u, maximum);
+        assert(target == expectedHealth);
+        auto migrated = nxdk_save::encodePreferences(target, version);
+        Config reloaded = original;
+        assert(nxdk_save::decodePreferences(migrated, version, reloaded) && reloaded == target);
+    }
+    target = changed;
+    target.gamemodemenusettings.health.startlife = 6;
+    target.gamemodemenusettings.health.maxlife = 2;
+    assert(nxdk_save::encodePreferences(target, version).empty());
     for (size_t n = 0; n < good.size(); ++n) {
         target = original;
         assert(!nxdk_save::decodePreferences(std::span(good.data(), n), version, target) &&

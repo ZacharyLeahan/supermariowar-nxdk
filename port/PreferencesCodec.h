@@ -159,7 +159,8 @@ template <class Config> bool controllerPreferencesValid(const Config &c)
 template <class Config>
 std::vector<uint8_t> encodePreferences(const Config &config, uint32_t gameVersion)
 {
-    if (!gameplayPreferencesValid(config) || !modePreferencesValid(config) ||
+    if (config.gamemodemenusettings.health.maxlife < config.gamemodemenusettings.health.startlife ||
+        !gameplayPreferencesValid(config) || !modePreferencesValid(config) ||
         !goalPreferencesValid(config) || !assetPreferencesValid(config) || !controllerPreferencesValid(config)) return {};
     constexpr uint32_t count = PreferenceCount;
     std::vector<uint8_t> bytes(12 + count * 4);
@@ -231,6 +232,11 @@ bool decodePreferences(std::span<const uint8_t> bytes, uint32_t gameVersion, Con
             device = slot;
         }
     }
+    // Preserve all other fields from valid legacy records. The upstream default
+    // maxlife=1 was never a selectable maximum and meant five whole hearts.
+    auto &health = staged.gamemodemenusettings.health;
+    if (health.maxlife == 1) health.maxlife = 10;
+    else if (health.maxlife < health.startlife) health.maxlife = health.startlife;
     config = std::move(staged);
     return true;
 }

@@ -1,6 +1,6 @@
 // Payload schema 4: all GameModeSettings fields, explicit order and choices.
 // Audited against ModeOptionsMenu.cpp / MI_FrenzyModeOptions.cpp and constructors.
-// health.maxlife=1 is the upstream constructor default and remains readable.
+// Legacy health.maxlife=1 remains readable and migrates to 10 after validation.
 NXDK_MODE_PREF(boss.bosstype, 0, 2, 0, 1, 2)
 NXDK_MODE_PREF(boss.difficulty, 0, 4, 0, 1, 2, 3, 4)
 NXDK_MODE_PREF(boss.hitpoints, 1, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
