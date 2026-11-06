@@ -60,9 +60,12 @@ The lock also pins the embedded display revision/date and the complete make
 configuration, including the 45-second runtime watchdog used by candidate
 `84a132cd...`. The display revision identifies the runtime source; reconstructed
 Git commits are synthetic and are recorded separately in the build manifest.
-A clean rebuild in the original development workspace reproduced that candidate
-byte-for-byte. Independent reconstruction/build verification is still in progress;
-do not treat matching source hashes as a compiled or hardware-tested result.
+The independent reconstruction compiled successfully, but differs from the
+hardware-tested candidate. Investigation found nxdk's clean rule left stale JPEG
+objects; this recipe fixes that rule. Earlier byte-identical rebuilds reused
+those objects and do not establish clean reproducibility. Workspace-dependent
+fmt assertion paths also remain. A genuinely clean reproducible candidate and
+hardware regression are still required before release.
 The build does not create an uploadable release or automatically deploy anything.
 
 To run the game, obtain matching assets separately for local use. Either start
