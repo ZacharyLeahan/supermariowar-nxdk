@@ -1,0 +1,30 @@
+{
+  "method": "Original code-native SVG geometry and typography, rendered with sharp; not AI raster generation and no CLI image model/API used",
+  "source_images_used": false,
+  "game_assets_used": false,
+  "official_console_logos_used": false,
+  "host_visual_review": [
+    "200x283 poster",
+    "640x360 fanart",
+    "256x256 square icon",
+    "64x91 small poster"
+  ],
+  "dashboard_tested": false,
+  "release_artwork_accepted": false,
+  "notes": "Icon is a proposed square variant; official sample uses149x263, shape acceptance still needs dashboard review. Game title text identifies the port; no upstream game images are copied.",
+  "sha256": {
+    "icon.png": "b290a162d548321f4c24357e0f520a942170503fdd1b4cc44b1f61a21b042a17",
+    "landscape-master.svg": "aedc9fb5438309f741c2a64d8666c682fe0f03148fc925da26c9580f0874e0cc",
+    "default.tbn": "81a852413b5aa58744d00bb3168b49d08afe509d0f04c96b7b10a6d7f9df6ac9",
+    "icon-master.svg": "06b264de7421ddb693e58c80c0e6464b9f574f53afa97663e03721a1b48610c3",
+    "poster-master.svg": "4a5e848c621de052fe85d61901baf22b0eadd0a2c0dac644f8962162a18cf2d2",
+    "build-artwork.cjs": "fa3d0d9a15d1d37c368d1ed8bd763fdb9edde2390d9c56be5a81e037fbd5a1e2",
+    "fanart.jpg": "4b98b16c9ddfcb5dc72d63114279dd73b186e5acb33896daa4cc803f09e3549a",
+    "_resources/default.xml": "6e7856d63b93257204144ef6903aed36b2f9a7d7639985587ab6f0640ba0a46c",
+    "_resources/artwork/icon.png": "b290a162d548321f4c24357e0f520a942170503fdd1b4cc44b1f61a21b042a17",
+    "_resources/artwork/poster.jpg": "81a852413b5aa58744d00bb3168b49d08afe509d0f04c96b7b10a6d7f9df6ac9",
+    "_resources/artwork/poster_small.jpg": "ede89b3f66083c4c9ec3eaf2417da1b169bd7a15e0254151f675069b34187d7a",
+    "_resources/artwork/fanart.jpg": "4b98b16c9ddfcb5dc72d63114279dd73b186e5acb33896daa4cc803f09e3549a",
+    "_resources/artwork/thumb.jpg": "7fb5fb433e533344e98175d694ff714b6b373d6881dd152f601b0625989f9d2b"
+  }
+}

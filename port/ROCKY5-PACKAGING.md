@@ -128,3 +128,20 @@ inventories. A private no-data package with these notices now has 49 files;
 all 48 listed checksums and all ZIP members passed byte verification. Its archive
 SHA-256 is `52c64340bd53171652a4607ef68957188abea42b878dbb7de3f90419484a2e55`.
 See [package result](test-results/clean-notices-package-20261106.json).
+
+## Original vector artwork draft
+
+An original code-native SVG design now exists privately in
+`artifacts/artwork-geometric-v1-20261106/`. This is a new geometric/typographic
+design, not a retry through a fallback image API. The earlier raster generation
+failure remains historical; no image-model CLI/API was used. No upstream images
+or official console logos were copied. Editable SVG masters and a local sharp
+renderer produce poster 200×283, small poster 64×91, thumbnail 227×129, fanart
+640×360 and a proposed 256×256 square icon. Root `default.tbn`, `fanart.jpg` and
+`icon.png`, plus `_resources/default.xml`, are staged in that private folder.
+
+Host visual review confirmed the exported title and geometry at poster, fanart,
+icon and small-poster sizes. This is **not dashboard-tested or release-accepted**;
+confirm the icon shape, text legibility and actual view layouts on the Xbox.
+Only [hash-bound textual provenance](test-results/original-vector-artwork-20261106.json)
+is committed. Images, SVGs and renderer remain outside the code-only repository.
