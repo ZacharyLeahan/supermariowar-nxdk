@@ -12,6 +12,7 @@ p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--build-dir', type=Path, required=True, help='Preserved XBE, BUILD-INFO.json and provenance directory')
 p.add_argument('--output', type=Path, required=True, help='New package directory; never overwrites an earlier package')
 p.add_argument('--evidence', type=Path, action='append', default=[], help='Exact-XBE JSON results to include verbatim, without inferring acceptance')
+p.add_argument('--without-data', action='store_true', help='Build an executable/provenance archive; users obtain pinned game data separately')
 a = p.parse_args()
 modern = Path(__file__).resolve().parents[3]
 build = a.build_dir.resolve()
@@ -50,7 +51,7 @@ for source in a.evidence:
     evidence.append(source)
 assets = []
 omitted = []
-for source in sorted(data.rglob('*')):
+for source in ([] if a.without_data else sorted(data.rglob('*'))):
     rel = source.relative_to(data)
     if any(part.startswith('.') for part in rel.parts) or not source.is_file():
         continue
@@ -83,6 +84,8 @@ for i, source in enumerate(evidence):
     'source_commit': info['source_commit'], 'data_revision': data_info['revision'],
     'status': 'experimental candidate; full release acceptance remains open',
     'acceptance_inferred': False, 'evidence_files': len(evidence),
+    'assets_included': not a.without_data,
+    'external_data_url': 'https://github.com/mmatyas/supermariowar-data',
     'omitted_assets': omitted, 'omission_reason': 'Optional Contest world package contains a FATX-incompatible filename',
 }, indent=2) + '\n')
 (out / 'README.txt').write_text('''SUPER MARIO WAR / NXDK EXPERIMENTAL CANDIDATE
@@ -111,6 +114,18 @@ Logs are smw.log and smw-error.log beside the executable. Optional Contest world
 are omitted due to an incompatible asset filename. This package is a candidate,
 not a declaration that all modes, audio, saves or hardware combinations passed.
 ''')
+if a.without_data:
+    readme = out / 'README.txt'
+    text = readme.read_text()
+    text = text.replace('Copy this entire folder to a new writable directory on your homebrew Xbox HDD.\nKeep data beside default.xbe, then launch default.xbe from the dashboard.',
+        'This archive contains no game data and will not boot by itself.\nObtain the external data revision below and place its contents in a data folder\nbeside default.xbe. Copy the complete local install to a writable Xbox HDD folder.\nThen launch default.xbe from the dashboard.')
+    text += ('\nEXTERNAL DATA (NOT INCLUDED)\n'
+        'Repository: https://github.com/mmatyas/supermariowar-data\n'
+        'Revision: ' + data_info['revision'] + '\n'
+        'Keep upstream folder layout. No media is downloaded by this packager.\n'
+        'When preparing an Xbox install, omit the optional worlds/Contest folder\n'
+        'and worlds/Contest_* entries because of FATX-incompatible names.\n')
+    readme.write_text(text)
 files = sorted(path for path in out.rglob('*') if path.is_file())
 (out / 'SHA256SUMS.txt').write_text(''.join(digest(path)+'  '+path.relative_to(out).as_posix()+'\n' for path in files))
 # Fixed ZIP timestamps/permissions make identical explicit inputs produce the

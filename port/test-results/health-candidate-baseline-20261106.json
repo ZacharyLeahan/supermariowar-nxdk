@@ -1,0 +1,51 @@
+{
+  "xbe_sha256": "84a132cdd1f16613dcefb6e3fddff415bee31d8c8ddb9398ca651ad9d32b1855",
+  "status": "partial native qualification; not release accepted",
+  "source_commit": "5e5fc11a6dd8ca966e5403434cf760eeb9f93cce",
+  "embedded_git_revision": "3c441985ee68",
+  "native_observations": [
+    "Booted title",
+    "Direct physical P1 navigated menus",
+    "Configured P2\u2013P4 as CPU opponents for separate single-controller coverage",
+    "Entered settings and selected Health mode",
+    "Opened Health options: Start Life 6 and Max Life 10 after loading existing preferences",
+    "Launched Health on 0smw with P1 human and three CPUs; four HUDs each show three starting hearts",
+    "Bounded P1 movement/jump/run inputs accepted; later screenshot shows changed positions, damage and P1 life loss"
+  ],
+  "audio": {
+    "capture_seconds": 8,
+    "received_bytes": 1536000,
+    "host_elapsed_seconds": 20.028192959,
+    "reported_overruns": 0,
+    "stereo_nonzero": true,
+    "full_scale_samples": [
+      0,
+      0
+    ],
+    "wav_sha256": "b35ff293c047aff33e698c84f4058f1c83f3e758ee90a37b5ac2a3a587b69be6",
+    "subjective_listening_pass": false,
+    "gapless_pass": false
+  },
+  "inconclusive": [
+    "Healing remains unobserved; options and live CPU Health gameplay passed, but later exit attempt failed before controller acquisition",
+    "Wi-Fi P2\u2013P4 receivers configured but routing waiting; zero delivered reports at initial test",
+    "Capture/control interrupted as KVM active OTA slot changed and uptime reset; cause not attributed to game"
+  ],
+  "pending": [
+    "Native healing and maximum enforcement",
+    "Save/reload",
+    "All modes and map/performance qualification",
+    "Mixed four-human matches"
+  ],
+  "emulator_tested": false,
+  "physical_stock_64mb_tested": false,
+  "rig_followup": {
+    "receivers": "All three Wi-Fi receivers briefly reported active routing with advancing report counts",
+    "isolation_gameplay_pass": false,
+    "kvm_crash_dump_bytes": 2112,
+    "live_tests": "interrupted by another KVM restart; no game-failure attribution",
+    "log": "Route 2 failed: signed=1 bytes=-1 errno=12",
+    "interpretation": "ENOMEM is a KVM sender-resource error, not evidence of a game defect"
+  },
+  "full_health_match_completed": false
+}
