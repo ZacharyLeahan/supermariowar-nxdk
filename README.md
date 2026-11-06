@@ -60,13 +60,15 @@ The lock also pins the embedded display revision/date and the complete make
 configuration, including the 45-second runtime watchdog used by candidate
 `84a132cd...`. The display revision identifies the runtime source; reconstructed
 Git commits are synthetic and are recorded separately in the build manifest.
-The independent reconstruction compiled successfully, but differs from the
-hardware-tested candidate. Investigation found nxdk's clean rule left stale JPEG
-objects; this recipe fixes that rule. Earlier byte-identical rebuilds reused
-those objects and do not establish clean reproducibility. The build script maps compiler-generated source paths to the established
-`/tmp/smw-xbe-workspace` prefix so fmt assertion strings do not expose the local
-checkout location. Its exact-XBE comparison is in progress. A genuinely clean
-reproducible candidate and hardware regression are still required before release.
+The corrected independent reconstruction and original clean development build
+now produce identical XBE SHA-256
+`4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9`
+(3,473,408 bytes) on the same macOS/LLVM host. The recipe fixes nxdk's stale
+JPEG-object clean rule and maps compiler macro paths to the established
+`/tmp/smw-xbe-workspace` prefix with forward slashes. This establishes same-host
+reconstruction reproducibility, not cross-host reproducibility or full hardware
+acceptance. See [exact-build evidence](port/test-results/clean-reconstruction-exact-20261106.json).
+
 The build does not create an uploadable release or automatically deploy anything.
 
 To run the game, obtain matching assets separately for local use. Either start

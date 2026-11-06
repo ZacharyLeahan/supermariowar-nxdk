@@ -180,3 +180,14 @@ clean-rule fix is included in the lean recipe; clean reproducibility and native
 regression must be repeated before promotion. Embedded fmt assertion paths also
 differ between workspace locations. No byte-identical independent-build claim
 is made.
+
+### Exact clean reconstruction verified
+
+After fixing JPEG cleanup and normalizing compiler macro paths (with explicit
+forward-slash behavior), the original clean build and independent recipe build
+produce identical `default.xbe` SHA-256
+`4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9`.
+Both are 3,473,408 bytes. This is same-host/toolchain reproducibility, not
+cross-host qualification. The clean candidate has a real-Xbox title boot;
+prior detailed gameplay results belong to older executables. See
+[exact-build result](test-results/clean-reconstruction-exact-20261106.json).

@@ -1,0 +1,27 @@
+{
+  "result": "PASS_EXACT_XBE_RECONSTRUCTION",
+  "date": "2026-11-06",
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "xbe_bytes": 3473408,
+  "scope": "Original development workspace clean build after JPEG clean fix compared with independent reconstructed source/dependencies build; exact full-file XBE hash match. Same host toolchain; not cross-host reproducibility.",
+  "source_revision": "3052d1b984c3100b87e3910d90bffc65fb533836",
+  "recipe_revision": "4e8f55a950c32e5c598c5c36e92e01e9e56cd875",
+  "recipe_flags": [
+    "PREFERENCES=1",
+    "AUDIO_FAILURE_DMA_LOG=1",
+    "AUDIO_CLEAN_SHUTDOWN=1",
+    "STARTUP_WATCHDOG_MS=45000",
+    "EXIT_WATCHDOG_MS=10000",
+    "RUNTIME_WATCHDOG_MS=45000",
+    "SMW_GIT_REVISION=3c441985ee68",
+    "SMW_GIT_DATE=2026-11-06"
+  ],
+  "source_path_prefix_map": "-ffile-prefix-map=/private/tmp/smw-release-recipe-20261106=/tmp/smw-xbe-workspace -fno-file-reproducible",
+  "source_date_epoch": "1792148400",
+  "compiler": "Homebrew clang version 23.1.2",
+  "external_data_obtained_for_recipe_build": false,
+  "emulator_tested": false,
+  "hardware_acceptance_inferred": false,
+  "jpeg_clean_fix": "LIBJPEG_TURBO_OBJS replaces undefined LIBJPEG_OBJS; dry-run enumerated 52 objects plus library",
+  "private_manifest_sha256": "3a3c1f2372332b75bd362551bd4647d63e4da2fce62d852781a1bd4c1aedc4bb"
+}
