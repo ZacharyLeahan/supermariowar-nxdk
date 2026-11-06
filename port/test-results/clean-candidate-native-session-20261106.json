@@ -1,0 +1,86 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "hardware": "128 MB Xbox with LIMIT64MB restriction; not physical stock 64 MB",
+  "emulator_tested": false,
+  "full_release_acceptance": false,
+  "completed_match": {
+    "mode": "Classic",
+    "goal": 5,
+    "map": "1986",
+    "human_players": 4,
+    "winner": 4,
+    "remaining_lives": 2,
+    "scope": "Eight sequential movement/jump holds followed by idle gameplay. Initial simultaneous test reached results and is excluded from active input qualification."
+  },
+  "second_match": {
+    "simultaneous_batches": 2,
+    "held_ms_per_batch": 1600,
+    "release_gap_ms": 700,
+    "routes": "Wired P1, Wi-Fi P2\u2013P4",
+    "observed": "Changed positions, jumping and life loss; gameplay remained responsive; menu exit confirmed",
+    "completed": false
+  },
+  "native_log_sha256": "2592177dea5955c47ccb0c9a9ca0d1f67611b6e31c0c47ae86c143642b400fbf",
+  "stderr_bytes": 0,
+  "music_underruns_max": 0,
+  "clean_audio_shutdown": true,
+  "saved_health": {
+    "slot0_generation": 75,
+    "slot1_generation": 74,
+    "maxlife": 10,
+    "startlife": 6,
+    "rate": 20
+  },
+  "performance": {
+    "state5_ten_second_window_fps": [
+      47.3,
+      61.1,
+      61.1,
+      61.1,
+      61.3,
+      61.1,
+      60.8,
+      61.7,
+      62.4,
+      49.3,
+      61.3,
+      61.3,
+      61.4
+    ],
+    "median": 61.1,
+    "minimum": 47.3,
+    "scope": "Includes transitions and results; aggregate does not establish steady-play minimum or worst-case frame time."
+  },
+  "audio": {
+    "captured_seconds": 8.0,
+    "elapsed_seconds": 8.023731625,
+    "received_bytes": 1536000,
+    "complete": true,
+    "channels": [
+      {
+        "peak": 30913,
+        "rms": 2846.0791346765373,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 373263
+      },
+      {
+        "peak": 30772,
+        "rms": 2712.4783018592593,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 374165
+      }
+    ],
+    "wav_sha256": "b9e081680a59ab041e6ce0567614984417da47044a2c49ba69264c49c8f6c215"
+  },
+  "subjective_listening_pass": false,
+  "image_sha256": {
+    "000-four-held.jpg": "dcedff149738f10292652e09108eed11197fd3ea44dfac0d5a3a77cfc66c385d",
+    "001-released.jpg": "e89f5b392932bbac718cc4f36ddc6c37ebefcb7a852c95655177b37e7a04b4b0",
+    "006-exit-prompt.jpg": "634657467bb67218652fa14bf522873ed86828709005c5867d797c74bac2b877",
+    "007-second-returned-settings.jpg": "9dabdb6adfa07b66f9975c21cd020e0edf1c5854855bffe3af8dfbaa2d2f7099",
+    "002-returned-settings.jpg": "9dabdb6adfa07b66f9975c21cd020e0edf1c5854855bffe3af8dfbaa2d2f7099",
+    "004-second-match-held.jpg": "8d74cfe4b80bb471a08dec9219b7a32a28880a5b8cfbfb2d8992c893b411935b",
+    "003-second-match-start.jpg": "73a9249c0012cf81c7515ffd9f8b821a019fe551791a3b38ff6077b5c7fbab57",
+    "005-second-match-release.jpg": "93ef2e9d211ca61ffd2ab82e5289f256e46f07fcc9f9ee64b27b9883de6add9d"
+  }
+}

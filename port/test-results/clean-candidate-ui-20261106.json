@@ -25,5 +25,6 @@
     "smw-clean-thumbs-open-20261106/run-1-step-2.jpg": "1a83ba3a4a2bdcb38f007765f1c980f30ede187b2c94f058c199ffb24b26ea15",
     "smw-clean-thumbs-select-20261106/run-1-step-3.jpg": "78afd3a30022370a49477e23d699d6571a55d974eee35445b73b0e27f120c0af",
     "smw-clean-classic-start-20261106/run-1-step-3.jpg": "72737c6fc139420670ffaa4c836352689ed6800d7bdfc00334f82d25f00756a9"
-  }
+  },
+  "follow_up": "clean-candidate-native-session-20261106.json records subsequent completed Classic match, bounded simultaneous input, PCM and logs; initial not_yet_qualified list describes UI checkpoint only."
 }
