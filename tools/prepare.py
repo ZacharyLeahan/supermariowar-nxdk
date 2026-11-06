@@ -48,7 +48,7 @@ git(modern,'add','ports/nxdk')
 # Local integration commit; upstream commits remain in this external checkout only.
 run('git','-C',modern,'-c','user.name=nxdk port recipe','-c','user.email=recipe@localhost.invalid','commit','-m','Apply pinned nxdk port overlay and integration patches')
 clone(lock['nxdk'],sdk,a.sdk_cache)
-for name in ['nxdk-audio-ready.patch','nxdk-cxbe-epoch.patch']:
+for name in ['nxdk-audio-ready.patch','nxdk-cxbe-epoch.patch','nxdk-clean-libjpeg.patch']:
  git(sdk,'apply','--check',root/'patches'/name);git(sdk,'apply',root/'patches'/name)
 if not a.skip_dependencies:
  selected=[x['path'] for x in lock['library_submodules']]

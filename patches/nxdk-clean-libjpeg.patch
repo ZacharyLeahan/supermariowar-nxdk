@@ -1,0 +1,10 @@
+diff --git a/lib/libjpeg/Makefile b/lib/libjpeg/Makefile
+index b8bb726..1c4a500 100644
+--- a/lib/libjpeg/Makefile
++++ b/lib/libjpeg/Makefile
+@@ -68,4 +68,4 @@ CLEANRULES += clean-libjpeg
+ 
+ .PHONY: clean-libjpeg
+ clean-libjpeg:
+-	$(VE)rm -f $(LIBJPEG_OBJS) $(NXDK_DIR)/lib/libjpeg.lib
++	$(VE)rm -f $(LIBJPEG_TURBO_OBJS) $(NXDK_DIR)/lib/libjpeg.lib

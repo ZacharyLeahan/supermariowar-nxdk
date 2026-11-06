@@ -163,3 +163,20 @@ This covers one-slot CRC recovery, not both-invalid or semantic corruption. See
 [test result](test-results/save-bad-crc-native-20261106.json). A clean rebuild with
 explicit original display stamp and watchdog flags reproduced the candidate XBE
 SHA-256 exactly; independent recipe reconstruction remains to be qualified.
+
+Both-slot CRC rejection also passed on candidate `84a132cd...`: defaults loaded,
+normal exit committed generation 1, empty stderr, originals restored/readback.
+See [result](test-results/save-both-bad-crc-native-20261106.json).
+
+### Clean-build correction
+
+The original-workspace matching rebuild above retained stale JPEG objects: nxdk
+`lib/libjpeg/Makefile` used `LIBJPEG_OBJS` instead of `LIBJPEG_TURBO_OBJS` in its
+clean recipe. A fresh independent recipe build succeeded with XBE SHA-256
+`177753bb5d7d389d8d500b6bc8ee316f662007f7b9444e60263ef1ec199c938b`,
+3,473,408 bytes; it is **compiled only**, not hardware-qualified. The original
+3,584,000-byte candidate remains the source of recorded native results. The SDK
+clean-rule fix is included in the lean recipe; clean reproducibility and native
+regression must be repeated before promotion. Embedded fmt assertion paths also
+differ between workspace locations. No byte-identical independent-build claim
+is made.
