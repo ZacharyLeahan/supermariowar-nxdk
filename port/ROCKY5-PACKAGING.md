@@ -112,3 +112,19 @@ assert no official metadata. The draft still says qualification is in progress;
 update only after acceptance. XML parsing passed on the host; dashboard display
 and unknown/empty-field handling remain untested. No template is automatically
 included in the existing candidate archive.
+
+## Candidate notice bundle
+
+[notices/INVENTORY.json](notices/INVENTORY.json) binds 22 exported text notices
+to repository revisions in the `4addeb4e...` build manifest. Legacy CP1252 text
+was transcoded to UTF-8 with original/exported hashes retained. The bundle also
+contains its inventory and explanatory README; it is not a complete source archive
+or a declaration that redistribution review is finished.
+
+Use `--notices ports/nxdk/notices` when packaging this candidate. The packager
+checks its XBE binding, text hashes, flat-file inventory and FATX paths before
+creating output. Host tests reject tampered notice text and mismatched XBE
+inventories. A private no-data package with these notices now has 49 files;
+all 48 listed checksums and all ZIP members passed byte verification. Its archive
+SHA-256 is `52c64340bd53171652a4607ef68957188abea42b878dbb7de3f90419484a2e55`.
+See [package result](test-results/clean-notices-package-20261106.json).

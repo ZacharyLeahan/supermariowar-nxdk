@@ -17,3 +17,9 @@ The port's Vorbis integration uses the separately obtained stb_vorbis source.
 The kit contains no game artwork, audio or runtime asset bundle and grants no
 rights to such materials. Names and paths used for interoperability are retained.
 This technical asset exclusion is not a legal clearance of all project rights.
+
+The [candidate notice inventory](port/notices/INVENTORY.json) includes exported
+upstream notices and [GPL version 2 text](port/notices/GPL-2.0.txt). Source
+revisions and original/exported byte hashes are recorded. Its executable binding
+applies to the stated candidate only; packaging validates that binding. This
+bundle is not a substitute for the complete reconstructed corresponding source.

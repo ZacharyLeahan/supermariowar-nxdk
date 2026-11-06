@@ -13,6 +13,7 @@ p.add_argument('--build-dir', type=Path, required=True, help='Preserved XBE, BUI
 p.add_argument('--output', type=Path, required=True, help='New package directory; never overwrites an earlier package')
 p.add_argument('--evidence', type=Path, action='append', default=[], help='Exact-XBE JSON results to include verbatim, without inferring acceptance')
 p.add_argument('--without-data', action='store_true', help='Build an executable/provenance archive; users obtain pinned game data separately')
+p.add_argument('--notices', type=Path, help='Revision-bound text notice bundle with INVENTORY.json for this exact XBE')
 a = p.parse_args()
 modern = Path(__file__).resolve().parents[3]
 build = a.build_dir.resolve()
@@ -49,6 +50,31 @@ for source in a.evidence:
     if result.get('xbe_sha256') != info['xbe_sha256']:
         p.error('Every evidence file must explicitly identify this exact XBE hash')
     evidence.append(source)
+notices = []
+if a.notices:
+    notice_root = a.notices.resolve()
+    inventory = json.loads((notice_root / 'INVENTORY.json').read_text())
+    if inventory.get('reference_xbe_sha256') != info['xbe_sha256']:
+        p.error('Notice inventory must identify this exact XBE')
+    expected = {'INVENTORY.json', 'README.txt'}
+    for entry in inventory['files']:
+        name = entry['file']
+        if name != Path(name).name or name in expected or Path(name).suffix not in ('.txt', '.md'):
+            p.error('Invalid or duplicate notice filename')
+        expected.add(name)
+        if digest(notice_root / name) != entry['sha256']:
+            p.error('Notice file does not match inventory: ' + name)
+    if {f.name for f in notice_root.iterdir()} != expected:
+        p.error('Notice bundle must contain only inventoried text files and README')
+    for name in sorted(expected):
+        source = notice_root / name
+        if source.is_symlink() or not source.is_file():
+            p.error('Notice bundle must contain ordinary files')
+        raw = source.read_bytes()
+        if b'\0' in raw:
+            p.error('Binary content in notice bundle')
+        raw.decode('utf-8')
+        notices.append((source, Path('notices') / name))
 assets = []
 omitted = []
 for source in ([] if a.without_data else sorted(data.rglob('*'))):
@@ -61,7 +87,7 @@ for source in ([] if a.without_data else sorted(data.rglob('*'))):
     assets.append((source, Path('data') / rel))
 # Validate before creating the destination or copying anything.
 seen = set()
-for _, rel in assets + provenance:
+for _, rel in assets + provenance + notices:
     if any(not part.isascii() or len(part) > 42 or any(c in part for c in '\\/:*?"<>|') for part in rel.parts):
         p.error('FATX-incompatible package path: ' + str(rel))
     if len('E:\\Games\\' + out.name + '\\' + str(rel).replace('/', '\\')) >= 260:
@@ -70,7 +96,7 @@ for _, rel in assets + provenance:
         p.error('Case-insensitive path collision: ' + str(rel))
     seen.add(rel.as_posix().lower())
 out.mkdir(parents=True)
-for source, rel in [(build/'default.xbe', Path('default.xbe')), (build/'BUILD-INFO.json', Path('BUILD-INFO.json')), *assets, *provenance]:
+for source, rel in [(build/'default.xbe', Path('default.xbe')), (build/'BUILD-INFO.json', Path('BUILD-INFO.json')), *assets, *provenance, *notices]:
     target = out / rel
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(source, target)
@@ -84,7 +110,7 @@ for i, source in enumerate(evidence):
     'source_commit': info['source_commit'], 'data_revision': data_info['revision'],
     'status': 'experimental candidate; full release acceptance remains open',
     'acceptance_inferred': False, 'evidence_files': len(evidence),
-    'assets_included': not a.without_data,
+    'assets_included': not a.without_data, 'notice_files': len(notices),
     'external_data_url': 'https://github.com/mmatyas/supermariowar-data',
     'omitted_assets': omitted, 'omission_reason': 'Optional Contest world package contains a FATX-incompatible filename',
 }, indent=2) + '\n')

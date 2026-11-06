@@ -1,0 +1,18 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "archive_sha256": "52c64340bd53171652a4607ef68957188abea42b878dbb7de3f90419484a2e55",
+  "files": 49,
+  "notice_files": 24,
+  "revision_bound_source_notices": 22,
+  "checksums_verified": 48,
+  "all_zip_members_match_unpacked_files": true,
+  "zip_integrity_verified": true,
+  "game_data_included": false,
+  "publicly_uploaded": false,
+  "full_release_acceptance": false,
+  "scope": "Private executable/provenance archive with revision-bound text notices. Does not itself provide complete corresponding source or resolve every redistribution question.",
+  "host_negative_checks": [
+    "Modified notice text rejected before output creation",
+    "Notice inventory for another XBE rejected before output creation"
+  ]
+}

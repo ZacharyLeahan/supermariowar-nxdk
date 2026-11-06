@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify explicit-build packaging and rejection paths; requires current build provenance."""
 from pathlib import Path
-import hashlib,subprocess,tempfile,zipfile,json
+import hashlib,subprocess,tempfile,zipfile,json,shutil
 modern=Path(__file__).resolve().parents[3]
 script=modern/'ports/nxdk/tools/package-game.py'
 build=modern/'ports/nxdk/bin'
@@ -32,10 +32,26 @@ with tempfile.TemporaryDirectory(prefix='smw-package-qa-') as tmp:
  with zipfile.ZipFile(bare.with_suffix('.zip')) as z:
   assert z.testzip() is None
   assert all('/data/' not in n for n in z.namelist())
+ # A revision-bound notice bundle must be copied exactly, while changed text
+ # and a bundle for another executable must be rejected before output creation.
+ bundle=modern/'ports/nxdk/notices'
+ noted=root/'with-notices'
+ subprocess.run(['python3',str(script),'--build-dir',str(build),'--output',str(noted),'--without-data','--notices',str(bundle)],check=True,stdout=subprocess.DEVNULL)
+ assert json.loads((noted/'PACKAGE-INFO.json').read_text())['notice_files']==len(list(bundle.iterdir()))
+ for source in bundle.iterdir():assert (noted/'notices'/source.name).read_bytes()==source.read_bytes()
+ bad_notices=root/'bad-notices';shutil.copytree(bundle,bad_notices)
+ target_file=json.loads((bad_notices/'INVENTORY.json').read_text())['files'][0]['file']
+ original=(bad_notices/target_file).read_bytes();(bad_notices/target_file).write_bytes(original+b'changed')
+ rejected_notices=root/'rejected-notices'
+ command=['python3',str(script),'--build-dir',str(build),'--output',str(rejected_notices),'--without-data','--notices',str(bad_notices)]
+ assert subprocess.run(command,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode and not rejected_notices.exists()
+ (bad_notices/target_file).write_bytes(original)
+ record=json.loads((bad_notices/'INVENTORY.json').read_text());record['reference_xbe_sha256']='0'*64;(bad_notices/'INVENTORY.json').write_text(json.dumps(record))
+ assert subprocess.run(command,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode and not rejected_notices.exists()
  # A manifest/executable mismatch must fail before creating the output.
  broken=root/'bad-build'; broken.mkdir(); (broken/'default.xbe').write_bytes(b'bad')
  (broken/'BUILD-INFO.json').write_bytes((build/'BUILD-INFO.json').read_bytes())
  rejected=root/'rejected'
  result=subprocess.run(['python3',str(script),'--build-dir',str(broken),'--output',str(rejected)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
  assert result.returncode and not rejected.exists()
- print('PASS: complete checksum/ZIP readback, identical archives from identical inputs, overwrite and XBE mismatch rejection')
+ print('PASS: complete checksum/ZIP readback, identical archives from identical inputs, overwrite, XBE mismatch, changed notices and notice/XBE mismatch rejection')

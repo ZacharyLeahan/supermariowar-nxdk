@@ -1,0 +1,223 @@
+{
+  "reference_xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "scope": "Text notices exported from exact repository revisions in this candidate manifest. Includes SDK license catalog and dependencies; inventory is not a complete source archive or redistribution clearance.",
+  "files": [
+    {
+      "file": "game-credits.txt",
+      "source_sha256": "779756a81d537f8ac18f7818826ae0404edbb213d038e1503b536187b5dea367",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/modern/CREDITS",
+      "repository": "repos/modern",
+      "revision": "3052d1b984c3100b87e3910d90bffc65fb533836",
+      "sha256": "779756a81d537f8ac18f7818826ae0404edbb213d038e1503b536187b5dea367"
+    },
+    {
+      "file": "fmt.txt",
+      "source_sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/modern/ports/nxdk/vendor/fmt/LICENSE",
+      "repository": "repos/modern/ports/nxdk/vendor/fmt",
+      "revision": "e69e5f977d458f2650bb346dadf2ad30c5320281",
+      "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8"
+    },
+    {
+      "file": "stb.txt",
+      "source_sha256": "bebfe904b14301657e4e5d655c811d51fd31b97c455b9cc2d8600d6bac6cff63",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/modern/ports/nxdk/vendor/stb/LICENSE",
+      "repository": "repos/modern/ports/nxdk/vendor/stb",
+      "revision": "2c980bb59875b0d32144a71867fbdebb2f77cd20",
+      "sha256": "bebfe904b14301657e4e5d655c811d51fd31b97c455b9cc2d8600d6bac6cff63"
+    },
+    {
+      "file": "sdl2.txt",
+      "source_sha256": "a7c8d0b3167c502921192585a582eb8477ad9862330f4d8b9e4a8bb4c1a9d29e",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/sdl/SDL2/COPYING.txt",
+      "repository": "repos/nxdk/lib/sdl/SDL2",
+      "revision": "2554902f7bbf469449216ee25f88016421271cd8",
+      "sha256": "a7c8d0b3167c502921192585a582eb8477ad9862330f4d8b9e4a8bb4c1a9d29e"
+    },
+    {
+      "file": "sdl2-image.txt",
+      "source_sha256": "45079362e2230154205413a6940544ca94e3479ccf76205c71c4f542a6815d25",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/sdl/SDL2_image/COPYING.txt",
+      "repository": "repos/nxdk/lib/sdl/SDL2_image",
+      "revision": "ab2a9c602623193d61827ccd395302d92d90fc38",
+      "sha256": "45079362e2230154205413a6940544ca94e3479ccf76205c71c4f542a6815d25"
+    },
+    {
+      "file": "sdl2-ttf.txt",
+      "source_sha256": "8d15afc2f598daeb35509393ef341236c73352a71baefb70f49bdd3ac2f6c07b",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/sdl/SDL_ttf/COPYING.txt",
+      "repository": "repos/nxdk/lib/sdl/SDL_ttf",
+      "revision": "200901a8f55bcf7aa031157f53a575c942d2b7aa",
+      "sha256": "8d15afc2f598daeb35509393ef341236c73352a71baefb70f49bdd3ac2f6c07b"
+    },
+    {
+      "file": "freetype-license.txt",
+      "source_sha256": "f6333b3a9106f10190e96d9f994f934deb7a5632851a1aaf846b94651a80f4da",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/sdl/SDL_ttf/external/freetype-2.4.12/docs/LICENSE.TXT",
+      "repository": "repos/nxdk/lib/sdl/SDL_ttf",
+      "revision": "200901a8f55bcf7aa031157f53a575c942d2b7aa",
+      "sha256": "f6333b3a9106f10190e96d9f994f934deb7a5632851a1aaf846b94651a80f4da"
+    },
+    {
+      "file": "freetype-FTL.txt",
+      "source_sha256": "f4b133e25df1f86ad3ffea453aa0e613f0474f34778dbbb3e437e7b2724937d8",
+      "source_encoding": "cp1252",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/sdl/SDL_ttf/external/freetype-2.4.12/docs/FTL.TXT",
+      "repository": "repos/nxdk/lib/sdl/SDL_ttf",
+      "revision": "200901a8f55bcf7aa031157f53a575c942d2b7aa",
+      "sha256": "4a9a548027a2c1d37788519dea833294c9c81f1ebc280e817f41f50d0c642d78"
+    },
+    {
+      "file": "GPL-2.0.txt",
+      "source_sha256": "c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/sdl/SDL_ttf/external/freetype-2.4.12/docs/GPLv2.TXT",
+      "repository": "repos/nxdk/lib/sdl/SDL_ttf",
+      "revision": "200901a8f55bcf7aa031157f53a575c942d2b7aa",
+      "sha256": "c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18"
+    },
+    {
+      "file": "zlib.txt",
+      "source_sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/zlib/zlib/LICENSE",
+      "repository": "repos/nxdk/lib/zlib/zlib",
+      "revision": "51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf",
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "file": "libpng.txt",
+      "source_sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/libpng/libpng/LICENSE",
+      "repository": "repos/nxdk/lib/libpng/libpng",
+      "revision": "a40189cf881e9f0db80511c382292a5604c3c3d1",
+      "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b"
+    },
+    {
+      "file": "libjpeg-license.md",
+      "source_sha256": "69e570a251515ced17d4492256d57c89db77ed949652f88a44c80c1ca9607920",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/libjpeg/libjpeg-turbo/LICENSE.md",
+      "repository": "repos/nxdk/lib/libjpeg/libjpeg-turbo",
+      "revision": "166e34213e4f4e2363ce058a7bcc69fd03e38b76",
+      "sha256": "69e570a251515ced17d4492256d57c89db77ed949652f88a44c80c1ca9607920"
+    },
+    {
+      "file": "libjpeg-IJG.txt",
+      "source_sha256": "82fece2bff2669c476495f0fe70096b154e8bc5b40916a64e99836d9a01c3110",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/libjpeg/libjpeg-turbo/README.ijg",
+      "repository": "repos/nxdk/lib/libjpeg/libjpeg-turbo",
+      "revision": "166e34213e4f4e2363ce058a7bcc69fd03e38b76",
+      "sha256": "82fece2bff2669c476495f0fe70096b154e8bc5b40916a64e99836d9a01c3110"
+    },
+    {
+      "file": "lwip.txt",
+      "source_sha256": "ef4aac92e05e87cd1cdc140870ed52206ba03d4a7fe46c1e11d7ffa6c87d252b",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/net/lwip/COPYING",
+      "repository": "repos/nxdk/lib/net/lwip",
+      "revision": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+      "sha256": "ef4aac92e05e87cd1cdc140870ed52206ba03d4a7fe46c1e11d7ffa6c87d252b"
+    },
+    {
+      "file": "pdclib.txt",
+      "source_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/pdclib/COPYING.CC0",
+      "repository": "repos/nxdk/lib/pdclib",
+      "revision": "9d257524e20e3e1ac90163b37f07702053e36321",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "file": "libcxx.txt",
+      "source_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/libcxx/LICENSE.TXT",
+      "repository": "repos/nxdk/lib/libcxx",
+      "revision": "3111bbf75a5f89d382c7f3366a166b662d43048a",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "file": "libusbohci.txt",
+      "source_sha256": "49bbe9114e49214df2ccc324cb3ac8d1d1aa1c3a0947f94c286765e86647b32e",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/lib/usb/libusbohci/LICENSE.txt",
+      "repository": "repos/nxdk/lib/usb/libusbohci",
+      "revision": "6a0c5fefbcd9db53f4a27ee10df99f93d5bce745",
+      "sha256": "49bbe9114e49214df2ccc324cb3ac8d1d1aa1c3a0947f94c286765e86647b32e"
+    },
+    {
+      "file": "nxdk-MIT.txt",
+      "source_sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/LICENSES/MIT.txt",
+      "repository": "repos/nxdk",
+      "revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+    },
+    {
+      "file": "nxdk-NCSA.txt",
+      "source_sha256": "b31bbfd06e221b39e1a877fb3f91b32fe9e88c87c1b46d11cd2bd5c822ec71e3",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/LICENSES/NCSA.txt",
+      "repository": "repos/nxdk",
+      "revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+      "sha256": "b31bbfd06e221b39e1a877fb3f91b32fe9e88c87c1b46d11cd2bd5c822ec71e3"
+    },
+    {
+      "file": "nxdk-Apache-2.0.txt",
+      "source_sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/LICENSES/Apache-2.0.txt",
+      "repository": "repos/nxdk",
+      "revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "file": "nxdk-CC0-1.0.txt",
+      "source_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "source_encoding": "utf-8",
+      "export_encoding": "utf-8",
+      "source": "repos/nxdk/LICENSES/CC0-1.0.txt",
+      "repository": "repos/nxdk",
+      "revision": "c5c574c6ba5778595b782064044ff56b407e835b",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "file": "game-source-notice.txt",
+      "source": "repos/modern/src/smw/main.cpp (license comment only)",
+      "repository": "repos/modern",
+      "revision": "3052d1b984c3100b87e3910d90bffc65fb533836",
+      "sha256": "acdf1bc56466767e0e7db30cad34b8845d461d437effabf66ca740cf82db9b35"
+    }
+  ]
+}
