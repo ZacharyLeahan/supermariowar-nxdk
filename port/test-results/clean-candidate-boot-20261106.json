@@ -1,0 +1,12 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "source_commit": "3052d1b984c3100b87e3910d90bffc65fb533836",
+  "compiled": true,
+  "hardware_tested_scope": "Cold application launch from dashboard and visible title only; not console power-cycle",
+  "hardware": "128 MB Xbox with LIMIT64MB restriction",
+  "emulator_tested": false,
+  "full_acceptance": false,
+  "installed_default_replaced": false,
+  "image_sha256": "f307118d0d8984522e082d204d69186013ab6e4a9e042947fe8fada06595f219",
+  "independent_exact_build": "Running; prior PE comparison found only 22 slash-normalization bytes after JPEG clean fix and path map; final no-file-reproducible comparison pending"
+}

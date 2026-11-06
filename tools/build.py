@@ -13,7 +13,7 @@ lock=json.loads((root/'upstream-lock.json').read_text());build_config=lock['game
 env=os.environ.copy();env['NXDK_DIR']=str(sdk);env['SOURCE_DATE_EPOCH']=lock['source_date_epoch']
 # Keep __FILE__ assertion strings independent of the reconstructed checkout path.
 # Use the established development build prefix for comparison with native candidates.
-prefix_map='-ffile-prefix-map='+str(w)+'='+build_config['source_path_prefix']
+prefix_map='-ffile-prefix-map='+str(w)+'='+build_config['source_path_prefix']+' -fno-file-reproducible'
 for key in ('CFLAGS','CXXFLAGS'):env[key]=(env.get(key,'')+' '+prefix_map).strip()
 env['PATH']=os.pathsep.join([str(sdk/'bin'),'/opt/homebrew/opt/llvm/bin','/usr/local/opt/llvm/bin','/opt/homebrew/opt/bison/bin','/opt/homebrew/opt/flex/bin',env.get('PATH','')])
 flags=build_config['make_flags']+['SMW_GIT_REVISION='+build_config['embedded_revision'],'SMW_GIT_DATE='+build_config['embedded_date']]

@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "3052d1b984c3100b87e3910d90bffc65fb533836",
+  "port_source_revision": "df3c40c5e7d7e5bdb2c5f5c27e0eb07de8ea92b2",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -186,6 +186,7 @@
     "port/test-results/audio-startup-state-baseline.json": "a236f8ff0158053531bcaa6316dd3bc10f8350e0d2cde047082a8e5d13e70ad3",
     "port/test-results/audio-startup-state-baseline.log": "8fb5be9178d90a0b8dc256cb24f9a84190a825dc7e60b6a8d8d18924d3693ded",
     "port/test-results/audio-user-confirmation-20261025.json": "9cd8bcfe160e9a2c4d8d208b3282e53e521813082ee1f35d6553f72c0464669b",
+    "port/test-results/clean-candidate-boot-20261106.json": "c68d59224dacedf106b2048e3aae57dd1fd0d7f4f9f90d0bf4cb25dc6e092ec8",
     "port/test-results/clean-close-ten-minute-match.json": "17587f9109ac20b5bb49faa9f04889a2fa1e88f485bcaffbdbd099dbd0ef765b",
     "port/test-results/clean-ui-ready-both-bad-crc.json": "8901d4e2b444ca7bc47719c38a6d336b621d7cba55655dec5673acca7cede4cd",
     "port/test-results/clean-ui-ready-first-warm.json": "fc893c09764b7e361dbad3e0aca3dee01b4e2941c0e6c4515c50a4cc2433e766",
