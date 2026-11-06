@@ -72,3 +72,24 @@ For each historical `data.zip` object, obtain bytes with
 A full publication audit must inspect content as well as filename extensions.
 
 This is a technical inventory and publication boundary, not a legal clearance.
+
+## Clean executable inventory, November 6
+
+This is separate from the lean repository's reachable-history audit. Candidate
+`4addeb4e...` has five sections (`.text`, `.rdata`, `.data`, `.edataxb`, `.tls`),
+no `.rsrc` section and no section marked as an inserted file. Its header contains
+a 329-byte compressed logo matching nxdk `tools/cxbe/Logo.cpp` byte-for-byte.
+The executable therefore must not be described as having no embedded graphics.
+That SDK logo is not a game-data directory or a Mario sprite bundle.
+
+Container-signature scanning found no Ogg, GIF or ZIP-local signatures. Its PNG
+hit has zero width/height; the RIFF hit is an x86 comparison immediate without a
+WAVE header, and the JPEG-like bytes sit in an integer table rather than a valid
+complete JPEG header. These bounded observations do not prove absence of every
+custom/compressed image or settle redistribution rights. The scan does not grant
+publication approval. See [inventory](test-results/clean-xbe-resource-inventory-20261106.json).
+
+The lean recipe's audit still covers source history only; private packages,
+XBEs, game assets, screenshots and WAV captures remain outside that repository.
+Executable-only publication still needs complete dependency notices and the
+final external-data installation workflow. No public binary upload has occurred.

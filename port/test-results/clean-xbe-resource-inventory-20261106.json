@@ -1,0 +1,76 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "bytes": 3473408,
+  "sections": [
+    {
+      "name": ".text",
+      "raw_bytes": 2302464,
+      "inserted_file_flag": false,
+      "sha256": "e159c095901c0c6976ce56f3061e3a98d159247f6036466d48e6972e35008753"
+    },
+    {
+      "name": ".rdata",
+      "raw_bytes": 1122488,
+      "inserted_file_flag": false,
+      "sha256": "f50ad7bcde0ca605ae87a222f65c25fdcd65478b29a8c9cd29a0f0c1b073f32d"
+    },
+    {
+      "name": ".data",
+      "raw_bytes": 25820,
+      "inserted_file_flag": false,
+      "sha256": "5ef9b43d228c0cbd273e133239ef07e5ed2b9229af308cd496dc3ae2d99e94f2"
+    },
+    {
+      "name": ".edataxb",
+      "raw_bytes": 1100,
+      "inserted_file_flag": false,
+      "sha256": "b381e55c6586a101782cfbf5daa9caae59fb2782d391e99deb2a21c85cee4c99"
+    },
+    {
+      "name": ".tls",
+      "raw_bytes": 12,
+      "inserted_file_flag": false,
+      "sha256": "e7757379b5249eccee11e55246a58ac28bfa212ec5a194e94879dca61baed49f"
+    }
+  ],
+  "cxbe_default_logo": {
+    "present": true,
+    "bytes": 329,
+    "sha256": "9f62d7dec506cad8a51cc43902203f20578d49574410fb7c1181b48d56b127c4",
+    "matches_sdk_Logo_cpp_array": true,
+    "source": "XboxDev/nxdk tools/cxbe/Logo.cpp",
+    "source_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
+  },
+  "media_signature_offsets": {
+    "PNG": [
+      3181701
+    ],
+    "Ogg": [],
+    "RIFF_WAVE": [
+      1436688
+    ],
+    "JPEG_SOI": [
+      3110315
+    ],
+    "GIF87a": [],
+    "GIF89a": [],
+    "ZIP_local": []
+  },
+  "scope": "Structural inventory and signature scan only. Absence of common container signatures is not proof that no encoded/custom-format graphics exist, nor rights clearance. SDK default compressed logo is present; do not describe XBE as containing no embedded graphics. No .rsrc section or inserted-file section found only if shown by section table. Game data remains externally loaded.",
+  "signature_review": {
+    "PNG": {
+      "offset": 3181701,
+      "ihdr_width": 0,
+      "ihdr_height": 0,
+      "finding": "Signature and zero-dimension header constants; not a usable standalone PNG at this offset. Exact source attribution not established by this scan."
+    },
+    "RIFF_WAVE": {
+      "offset": 1436688,
+      "finding": "RIFF bytes are an x86 comparison immediate in .text; no WAVE identifier at RIFF+8, not a valid WAV header."
+    },
+    "JPEG_SOI": {
+      "offset": 3110315,
+      "finding": "Hit occurs inside aligned signed integer table; following marker sequence is not a valid complete JPEG header. Exact source attribution not established."
+    }
+  }
+}

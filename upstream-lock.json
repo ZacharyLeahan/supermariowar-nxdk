@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "9fa595c0309afc6a9dc82fad402fa691c6c7009f",
+  "port_source_revision": "dd14170ff1b61c6fb1fb2ad23378744db267b08e",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -28,7 +28,7 @@
     }
   ],
   "overlay_sha256": {
-    "port/ASSET-PUBLICATION-AUDIT.md": "41f89b1151b3bfbbd3335e987a5e94e8633a22dce5b9977da02c35acefd3a92f",
+    "port/ASSET-PUBLICATION-AUDIT.md": "bffcec0ef807aae7ec189efed31ec3a48a5bf288673260d2d436f7801af2f7fc",
     "port/AUDIO-CONTRIBUTION.md": "34121c976f8a34696bd3f39edd9e77ad94ffc3cda88cd47b2d0bfea09ed1ac87",
     "port/AUDIO-STARTUP.md": "11ddc1d59b3372f26f8d09b28f713a587317cec32daf704d123260d48ba0a991",
     "port/AUDIO.md": "956ab053a28b708688b1315186cde05315945c5513092ef15e3e36ab42eff7d0",
@@ -202,6 +202,7 @@
     "port/test-results/clean-ui-ready-package.json": "589530f1f25a46b5bf46d6bf114fc9fcb37c2e4fd5ce475edaf20063ac959a8d",
     "port/test-results/clean-ui-ready-ten-minute-match.json": "28aab6dbec16ecc42475c7fb7d41ba9470619cdd0eb1a38e01a3cfc65c1bad44",
     "port/test-results/clean-ui-ready-warm-5.json": "7021a6a69af31bb1c22aa8b33525be56bc80cce0e906107e76551dad19a475cc",
+    "port/test-results/clean-xbe-resource-inventory-20261106.json": "fb5e2018183196bde15461cedb60c1acfb15cb3c0e01e6d621918b24405a20ec",
     "port/test-results/controller-preferences-v7-build.json": "3cd8e3016ed62f04d1735cced9d3c438d29856957b1c286e33ae59cddd7ae0cb",
     "port/test-results/controller-save-v7-recovery.json": "bd090043596c06043a8f7a56bd4e17383dd60de313872d3ec26e8f931f52e21c",
     "port/test-results/controller-save-v7-recovery.log": "e1e8a1a23e8885dd7c0d80e570c4faa8d5241d321d05ea96323e931417c32c2e",
