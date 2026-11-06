@@ -1,0 +1,65 @@
+{
+  "xbe_sha256": "84a132cdd1f16613dcefb6e3fddff415bee31d8c8ddb9398ca651ad9d32b1855",
+  "status": "native batch exited cleanly; broader release gates remain open",
+  "gameplay_state_enum": 5,
+  "performance_by_appstate": {
+    "0": {
+      "samples": 4,
+      "fps_min": 28.0,
+      "fps_median": 62.4,
+      "fps_max": 62.4,
+      "mean_update_us": 8657,
+      "mean_present_us": 6316
+    },
+    "1": {
+      "samples": 100,
+      "fps_min": 50.1,
+      "fps_median": 52.3,
+      "fps_max": 61.2,
+      "mean_update_us": 9170,
+      "mean_present_us": 6672
+    },
+    "2": {
+      "samples": 1,
+      "fps_min": 54.6,
+      "fps_median": 54.6,
+      "fps_max": 54.6,
+      "mean_update_us": 7348,
+      "mean_present_us": 6389
+    },
+    "5": {
+      "samples": 71,
+      "fps_min": 46.5,
+      "fps_median": 60.9,
+      "fps_max": 62.3,
+      "mean_update_us": 5294,
+      "mean_present_us": 6499
+    }
+  },
+  "minimum_reported_available_kib": 14804,
+  "music_underruns_max": 0,
+  "stderr_bytes": 0,
+  "shutdown_clean": true,
+  "watchdog_markers_present": [],
+  "saved_slots": [
+    {
+      "file": "smw-pref0.bin",
+      "generation": 63,
+      "health_maxlife": 10,
+      "health_extra_life_percent": 100,
+      "health_startlife": 6,
+      "sha256": "b0f75e25b5ff045c44f8a7fa065d11776edbe2f52abe2b156079572ce6457201"
+    },
+    {
+      "file": "smw-pref1.bin",
+      "generation": 62,
+      "health_maxlife": 10,
+      "health_extra_life_percent": 100,
+      "health_startlife": 6,
+      "sha256": "af304c3b88a56a9130d13307e76a8e879e125f5bae5778d3a8adf44e4e0594ee"
+    }
+  ],
+  "scope": "Mixed long idle/CPU Health play and short four-human mode smokes; ten-second average reporting windows can include transitions. Capture rate is not game FPS.",
+  "performance_reporting_interval_ms": 10000,
+  "performance_limit": "FPSLimiter reports the app state only at the end of each ten-second window; short mode runs include menu/loading time. No per-mode steady-state FPS qualification inferred."
+}

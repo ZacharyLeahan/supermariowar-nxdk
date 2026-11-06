@@ -173,3 +173,24 @@ capture. This establishes audibility only; mixing, all effects and seamless
 loops still require review. Host mixer/decoder, save-record and controller
 routing checks passed independently. See
 [audio confirmation](test-results/audio-user-confirmation-20261025.json).
+
+## November 2026 exact-candidate regression
+
+Candidate `84a132cdd1f16613dcefb6e3fddff415bee31d8c8ddb9398ca651ad9d32b1855`
+passed initial launch/input/exit coverage across all 22 modes using direct P1
+and Wi-Fi S3 P2–P4. Mode-specific observations and untested objectives are
+recorded in [mode smokes](test-results/mode-smokes-20261106.json); these brief
+checks do not qualify every mode objective or a complete match in each mode.
+The Health CPU match completed, four-human simultaneous movement was observed,
+and two thumbnail pages (18 previews) plus map selection passed. Existing
+Health limits and a non-default extra-heart rate survived native reload;
+the temporary rate was then restored to 20 in the UI. Healing is still open.
+See [candidate baseline](test-results/health-candidate-baseline-20261106.json).
+
+A preserved native batch exited normally with zero reported music underruns,
+empty error output and no watchdog marker. Minimum reported free memory was
+14804 KiB. FPS reports cover ten-second windows and label only the final app
+state; short menu/game transitions cannot establish per-mode steady-state
+performance. See [native logs](test-results/health-mode-batch-native-logs-20261106.json).
+The KVM routing interruption was repaired in a separate chat; delivery-counter
+qualification is distinct from the actual game observations above.

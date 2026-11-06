@@ -10,7 +10,8 @@
     "Entered settings and selected Health mode",
     "Opened Health options: Start Life 6 and Max Life 10 after loading existing preferences",
     "Launched Health on 0smw with P1 human and three CPUs; four HUDs each show three starting hearts",
-    "Bounded P1 movement/jump/run inputs accepted; later screenshot shows changed positions, damage and P1 life loss"
+    "Bounded P1 movement/jump/run inputs accepted; later screenshot shows changed positions, damage and P1 life loss",
+    "Observed Health results: CPU Player 4 wins with 2 lives; P1 human and three CPUs, mostly autonomous play during KVM maintenance"
   ],
   "audio": {
     "capture_seconds": 8,
@@ -45,7 +46,65 @@
     "kvm_crash_dump_bytes": 2112,
     "live_tests": "interrupted by another KVM restart; no game-failure attribution",
     "log": "Route 2 failed: signed=1 bytes=-1 errno=12",
-    "interpretation": "ENOMEM is a KVM sender-resource error, not evidence of a game defect"
+    "interpretation": "KVM sendto returned errno 12; maintenance later repaired preferred-interface selection. This report does not attribute a game defect or claim heap exhaustion.",
+    "maintenance_report": "Separate KVM repair completed two one-minute delivery checks; game-specific four-human tests must still be repeated"
   },
-  "full_health_match_completed": false
+  "full_health_match_completed": true,
+  "health_result_image_sha256": "22999f434639a981073831b4de6a26191ec976e4fd01974fadf90741c2a0ca6e",
+  "thumbnails": {
+    "status": "native page and selection checks passed",
+    "previews_reviewed": 18,
+    "pages_reviewed": 2,
+    "selected_map": "1-3",
+    "images_sha256": {
+      "smw-health-thumbs-page1-20261106/run-1-step-1.jpg": "1a83ba3a4a2bdcb38f007765f1c980f30ede187b2c94f058c199ffb24b26ea15",
+      "smw-health-thumbs-page2-20261106/run-1-step-2.jpg": "714e29bde8edf3dc5793822872cf8e09369a48c6bc9dec50bce7f252ff0ee309",
+      "smw-health-map-select-20261106/run-1-step-4.jpg": "65288248fc84c1634f017369c3b8f2e12b49c0c22b763d8e170d576380be50d1"
+    },
+    "scope": "Existing cache browser rendering, page navigation and selection only; missing/corrupt cache fixtures not repeated on this XBE"
+  },
+  "mixed_controller_lobby": {
+    "status": "native isolated ready checks passed",
+    "physical_transport": [
+      "P1 direct DEVICE USB",
+      "P2 Wi-Fi S3",
+      "P3 Wi-Fi S3",
+      "P4 Wi-Fi S3"
+    ],
+    "observed_game_players": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "result": "Each route readied only its matching player; all four ready enabled Continue",
+    "images_sha256": {
+      "run-1-step-0.jpg": "c0cb79e132e6c45447120b8c2ac4f0da032872fa10665a81f944a0e2b59a4551",
+      "run-1-step-1.jpg": "eaef4989da952b0320bd83ff72e7e1e5ddf20f4efe606821c132cd10d9237571",
+      "run-1-step-2.jpg": "4a61c6afe13cc1591e56450f448088f7edc840f53dd4b50f99c96ade6d19d5a7",
+      "run-1-step-3.jpg": "eba07d5027d59cb83b0216398cbfd6723ebac48e38412f2dcac363bc57dd569f"
+    },
+    "gameplay_simultaneous_pending": true,
+    "kvm_candidate_firmware_sha256": "d93318bfd105117a441bba0c087b4ab392626045aa95de62d14484842acdb3b6"
+  },
+  "simultaneous_gameplay": {
+    "status": "bounded native input and release observed",
+    "map": "1-3",
+    "mode": "Health",
+    "human_players": 4,
+    "scope": "Two 1.8-second alternating simultaneous movement/jump batches; changed positions, damage and continued progress after release; no frame-accurate latency claim",
+    "normal_exit_observed": true
+  },
+  "save_reload": {
+    "status": "native reload of migrated limits and non-default rate observed",
+    "health_startlife": 6,
+    "health_maxlife": 10,
+    "health_extra_life_percent": 100,
+    "source_saved_generation": 63,
+    "four_human_assignments_restored": true,
+    "selected_map_and_mode_persisted": false,
+    "selected_map_and_mode_note": "Selected map/mode reset to 0smw/Classic; option values and player types persist",
+    "options_image_sha256": "44e627e669129e2186182590f086f42a6aa5f60a5c7512ddd41c703335a8c4c3",
+    "scope": "Health options and player types only; full goals/skins/packs and malformed-record native acceptance remain open"
+  }
 }

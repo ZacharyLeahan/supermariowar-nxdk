@@ -1,0 +1,140 @@
+{
+  "name": "Race four-human smoke",
+  "start_state": "Game settings Start selected after King Of The Hill, map 1986, four humans",
+  "steps": [
+    {
+      "name": "focus-mode",
+      "player": 1,
+      "buttons": [
+        "down"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 500
+    },
+    {
+      "name": "edit-mode",
+      "player": 1,
+      "buttons": [
+        "a"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 500
+    },
+    {
+      "name": "next-mode",
+      "player": 1,
+      "buttons": [
+        "right"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 500
+    },
+    {
+      "name": "confirm-mode",
+      "player": 1,
+      "buttons": [
+        "a"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 500,
+      "screenshot": true
+    },
+    {
+      "name": "focus-start",
+      "player": 1,
+      "buttons": [
+        "up"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 500
+    },
+    {
+      "name": "launch",
+      "player": 1,
+      "buttons": [
+        "a"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 5000,
+      "screenshot": true
+    },
+    {
+      "name": "player-1-input",
+      "player": 1,
+      "buttons": [
+        "right",
+        "a",
+        "x"
+      ],
+      "hold_ms": 1000,
+      "wait_ms": 200
+    },
+    {
+      "name": "player-2-input",
+      "player": 2,
+      "buttons": [
+        "left",
+        "a",
+        "x"
+      ],
+      "hold_ms": 1000,
+      "wait_ms": 200
+    },
+    {
+      "name": "player-3-input",
+      "player": 3,
+      "buttons": [
+        "right",
+        "a",
+        "x"
+      ],
+      "hold_ms": 1000,
+      "wait_ms": 200
+    },
+    {
+      "name": "player-4-input",
+      "player": 4,
+      "buttons": [
+        "left",
+        "a",
+        "x"
+      ],
+      "hold_ms": 1000,
+      "wait_ms": 200
+    },
+    {
+      "name": "after-input",
+      "wait_ms": 1200,
+      "screenshot": true
+    },
+    {
+      "name": "exit-dialog",
+      "player": 1,
+      "buttons": [
+        "b"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 500,
+      "screenshot": true
+    },
+    {
+      "name": "choose-yes",
+      "player": 1,
+      "buttons": [
+        "left"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 300
+    },
+    {
+      "name": "confirm-exit",
+      "player": 1,
+      "buttons": [
+        "a"
+      ],
+      "hold_ms": 150,
+      "wait_ms": 1200,
+      "screenshot": true
+    }
+  ]
+}
