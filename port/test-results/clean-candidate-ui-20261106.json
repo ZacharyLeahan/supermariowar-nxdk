@@ -1,0 +1,29 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "hardware_scope": [
+    "P1 direct USB and Wi-Fi P2\u2013P4 each readied only matching player",
+    "All four human slots ready and settings reached",
+    "Nine first-page thumbnails visibly rendered",
+    "1986 selected from thumbs with correct full preview",
+    "Four-human Classic5 match launched on1986"
+  ],
+  "not_yet_qualified": [
+    "Completed match",
+    "Simultaneous active input",
+    "Native logs for this session",
+    "Audio",
+    "Missing/corrupt thumbnail cache"
+  ],
+  "emulator_tested": false,
+  "full_acceptance": false,
+  "image_sha256": {
+    "smw-clean-ready-four-20261106/run-1-step-1.jpg": "4151c00485b22564281bdae06e916490b61a4ece3e722f8f0bbe810b2dbc7ab9",
+    "smw-clean-ready-four-20261106/run-1-step-0.jpg": "c0cb79e132e6c45447120b8c2ac4f0da032872fa10665a81f944a0e2b59a4551",
+    "smw-clean-ready-four-20261106/run-1-step-2.jpg": "4a61c6afe13cc1591e56450f448088f7edc840f53dd4b50f99c96ade6d19d5a7",
+    "smw-clean-ready-four-20261106/run-1-step-3.jpg": "eba07d5027d59cb83b0216398cbfd6723ebac48e38412f2dcac363bc57dd569f",
+    "smw-clean-ready-four-20261106/run-1-step-4.jpg": "d138a445a851bc459f24fc8222d4e19e52b8eddaea5cd1c93e38f309d4ec8066",
+    "smw-clean-thumbs-open-20261106/run-1-step-2.jpg": "1a83ba3a4a2bdcb38f007765f1c980f30ede187b2c94f058c199ffb24b26ea15",
+    "smw-clean-thumbs-select-20261106/run-1-step-3.jpg": "78afd3a30022370a49477e23d699d6571a55d974eee35445b73b0e27f120c0af",
+    "smw-clean-classic-start-20261106/run-1-step-3.jpg": "72737c6fc139420670ffaa4c836352689ed6800d7bdfc00334f82d25f00756a9"
+  }
+}
