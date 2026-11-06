@@ -145,3 +145,18 @@ icon and small-poster sizes. This is **not dashboard-tested or release-accepted*
 confirm the icon shape, text legibility and actual view layouts on the Xbox.
 Only [hash-bound textual provenance](test-results/original-vector-artwork-20261106.json)
 is committed. Images, SVGs and renderer remain outside the code-only repository.
+
+## Private dashboard install assembly
+
+The local `SMW-nxdk-dashboard-20261106.zip` now assembles the clean candidate,
+pinned external game data (FATX exclusions retained), text notices, synopsis and
+nine original artwork/resource files. The synopsis folder name matches the
+archive's top-level folder. It has 1,544 files; ZIP integrity, all 1,543 listed
+checksums and every archive member against the unpacked tree passed. Archive
+SHA-256: `01c6b8f9a494a1f94246600bcd786d12212948a0a36df73ed041b2a83632df0d`.
+
+This private local-install archive contains upstream media and must not be pushed
+to the code-only source repository. Assembly code and original SVGs remain in
+private workspace artifacts. The package has not been installed or visually
+reviewed in XBMC4Gamers, and is not release accepted. See
+[verification record](test-results/private-dashboard-package-20261106.json).

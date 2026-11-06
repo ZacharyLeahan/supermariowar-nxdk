@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "01c6b8f9a494a1f94246600bcd786d12212948a0a36df73ed041b2a83632df0d",
+  "files": 1544,
+  "checksums_verified": 1543,
+  "dashboard_resources": 9,
+  "data_included": true,
+  "public_upload_allowed": false,
+  "release_accepted": false,
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "zip_integrity_verified": true,
+  "all_zip_members_match_unpacked_files": true,
+  "scope": "Private local-install package; contains upstream game media and original vector artwork; not for public upload. Dashboard installation/display untested. Generated from package-game.py base plus archived local assembly script.",
+  "assembly_script_sha256": "e0321eee690f583de494ccef52bc088f99b4efdc35b2b6e6e7de5586c9e191ba"
+}
