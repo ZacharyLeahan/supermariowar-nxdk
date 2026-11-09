@@ -41,7 +41,7 @@
   "health_settings_changed": false,
   "healing_test_performed": false,
   "restart_cause": "Unknown; uptime reset but retained ring log begins after boot. Same reported firmware build.",
-  "native_logs_pending": true,
+  "native_logs_pending": false,
   "recovery_requested": "Reconnect main DEVICE USB and P2 Xbox-side adapter; no firmware or BIOS changes.",
   "normal_exit_returned_to_dashboard": false,
   "recovery_chord": {
@@ -53,5 +53,15 @@
     "hold_ms": 3500,
     "released": true,
     "dashboard_return_verified": false
-  }
+  },
+  "stderr_bytes": 0,
+  "clean_audio_shutdown": true,
+  "native_detected_physical_ports": [
+    3,
+    4
+  ],
+  "native_log_sha256": "330091d65c64db80c51b6cf5e4ed7bef163818a92db5f040be58e5de439e2fda",
+  "watchdog_markers_present": false,
+  "dashboard_recovered_on_resume": true,
+  "interpretation": "Native log confirms clean game shutdown. Earlier failure to observe FTP/dashboard did not establish a game shutdown hang. P1/P2 were absent at game initialization."
 }
