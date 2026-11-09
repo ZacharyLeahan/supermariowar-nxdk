@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "44b8061902509174233f491dc0c5cd71ba59c3fa",
+  "port_source_revision": "02272ba74dcfcfb07179c82fe7c1e4ec8aabd9a2",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -267,6 +267,7 @@
     "port/test-results/menu-rle-workaround-observer.json": "aecf6919caf812cc1549cb2021991ec4bb83e5ff750ad849bfc0e025403ca2cd",
     "port/test-results/menu-screen-observer.json": "04f41466d4d7a7886d656bfb3ec86b52ff18a6602d9bb4ddca86fa29ea85cb1b",
     "port/test-results/mixed-controller-routing-20261109.json": "b047fd78c94b2f3297d907293b731a312d556497fcb8f68aaced4797b095e713",
+    "port/test-results/mixed-team-time60-20261109.json": "2b5a4782f74ee111f7d1f3b2c32770329fe051d0e778ce408059d74a863a7d03",
     "port/test-results/mode-smokes-20261106.json": "95b43930aa7d513a0dfbdc33da60f242e5afa2ef1cb3a20d76f523f23810a12e",
     "port/test-results/opaque-copy-both-bad-crc.json": "50cba458806d003dac1d38cbb9659f0798e06df80e8ece68655e4ef8a061780e",
     "port/test-results/opaque-copy-candidate.json": "5a89ef03e5ab27b529597189ebe61938d28a0e3c68ce1a749430acf8bed26bc7",

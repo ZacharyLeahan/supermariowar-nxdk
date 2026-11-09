@@ -1,0 +1,84 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "installed_program": "/F/SMW-nxdk-dashboard-20261106/default.xbe",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "transport": {
+    "p1": "direct USB",
+    "p2_p4": "Wi-Fi"
+  },
+  "map": "0smw",
+  "mode": "Time Limit",
+  "goal_seconds": 60,
+  "teams": [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "ready_isolation_visually_reviewed": true,
+  "completed": true,
+  "result": "Tie Game",
+  "team_scores": [
+    2,
+    2
+  ],
+  "timer_checkpoints": [
+    60,
+    23,
+    7
+  ],
+  "simultaneous_batches_completed": 24,
+  "hold_ms": 1200,
+  "gap_ms": 700,
+  "report_refresh_ms": 100,
+  "transport_sample_seconds": 14.55,
+  "send_error_deltas": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "completion_deltas": [
+    1455,
+    1426,
+    1600,
+    1375
+  ],
+  "return_to_settings_visually_reviewed": true,
+  "native_logs_pending": false,
+  "evidence_directories": [
+    "smw-mixed-two-teams-20261109",
+    "smw-mixed-team-time60-launch-20261109",
+    "smw-mixed-team-time-inputs-20261109"
+  ],
+  "limitations": [
+    "Initial gameplay preceded the simultaneous-input batches; not continuous full-match input.",
+    "Transport delivery sample does not establish frame-accurate synchronization or latency.",
+    "Physical stock 64 MB console, cold-power boot and emulator not tested."
+  ],
+  "full_release_acceptance": false,
+  "commands_sha256": "4e4495b11807b1a57a540e21c0d6ced4926ea3dc17210177e62b7d387ba7e5c4",
+  "stderr_bytes": 0,
+  "audio_underruns": 0,
+  "clean_audio_shutdown": true,
+  "native_log_sha256": "8c38729e07550258e494d1fd5d1f189b6769f77c8df6d15b60f595d24b4cf9db",
+  "state5_fps_windows": [
+    44.7,
+    60.6,
+    61.3,
+    60.9,
+    61.1,
+    61.0,
+    61.1,
+    60.8,
+    62.4,
+    62.4,
+    62.4
+  ],
+  "performance_scope": "10-second aggregate windows; include launch and results, not worst-frame or isolated steady-play measurement"
+}
