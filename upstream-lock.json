@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "ed7ce2a7471af993434aa5cde7ec9c8b3e246875",
+  "port_source_revision": "79bdb3586498b79621bc083fd6cd29c3746464d8",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -291,6 +291,7 @@
     "port/test-results/mixed-mode-smokes-20261109.json": "ba902fad50edeea2455bbb4b2fab0c722775bdc15342ff6ca0cef0ba5a46eaa2",
     "port/test-results/mixed-team-time60-20261109.json": "2b5a4782f74ee111f7d1f3b2c32770329fe051d0e778ce408059d74a863a7d03",
     "port/test-results/mode-smokes-20261106.json": "95b43930aa7d513a0dfbdc33da60f242e5afa2ef1cb3a20d76f523f23810a12e",
+    "port/test-results/no-controller-boot-20261109.json": "214d6ddbdd437cd8e6cf4558a9ab9a7150f3bfe96e36859e26c703511ed6f5e2",
     "port/test-results/opaque-copy-both-bad-crc.json": "50cba458806d003dac1d38cbb9659f0798e06df80e8ece68655e4ef8a061780e",
     "port/test-results/opaque-copy-candidate.json": "5a89ef03e5ab27b529597189ebe61938d28a0e3c68ce1a749430acf8bed26bc7",
     "port/test-results/opaque-copy-captured-audio.json": "259400373cee53a080aa296aed9ac54b6f122897d4b298fd9cf7a57969ac77ca",
@@ -307,7 +308,7 @@
     "port/test-results/optimized-startup.log": "9e53d7f40f9f7b506a07dc86e02189811ae134fb5dcd29539812e73736052704",
     "port/test-results/original-vector-artwork-20261106.json": "3fff409dab9cb72a7d90014b58cd6ac0b5cc1f3eddb3fac07d0120c08f621b51",
     "port/test-results/physical-slots-v8-build.json": "5ca9a04460075bfe32d005b4d205f2250bc0a30a3d18a5f487b78f5b31067841",
-    "port/test-results/player-selector-recovery-alias-20261109.json": "aac47d15d7895a1a5b90a0fdebbac5fe311c707088eed6940e1aa1f21e7608f1",
+    "port/test-results/player-selector-recovery-alias-20261109.json": "1bba47733c45195236b9f7ee6c208813a83ca34dd7fc5542de2d9621f83ac2d6",
     "port/test-results/powerup-save-v2.json": "ade06cb3487731aa467ba7c47eb0a89d21058c8772362163105c592d0e5b043a",
     "port/test-results/powerup-save-v2.log": "c15ea9b88932c98ba81eb28427465cb0b18604f04ba8cb560445bacd23b163e7",
     "port/test-results/preferences-ui.json": "dfd3c324186f7d05e7fca2b06f2f298141dff20f72b002e61671b65f2e9c7404",

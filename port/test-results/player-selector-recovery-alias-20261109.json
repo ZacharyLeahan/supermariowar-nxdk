@@ -27,6 +27,10 @@
   "reconstruction_build_info_sha256": "22b2aa9c44043b51518eb38c840a2e38eba490b3742c176ac35b3b992bc95dbd",
   "hardware_scope": "Targeted selector regression: P1/P2 absent/unconfigured, P3 menu recovery aliases two logical outputs. Single Down sets P1 Bot, single Right selects P2, single Down sets P2 Bot; P3/P4 stay human.",
   "fixed_hardware_evidence": "smw-selector-fix-native-20261109",
-  "native_logs_pending": true,
-  "follow_up": "Targeted selector regression passes58c7, but team selection exposes assigned recovery-pad A consumed before native slot. Follow-up input fix and new-XBE qualification required."
+  "native_logs_pending": false,
+  "follow_up": "Targeted selector regression passes58c7, but team selection exposes assigned recovery-pad A consumed before native slot. Follow-up input fix and new-XBE qualification required.",
+  "native_audio_clean_shutdown": true,
+  "native_stderr_bytes": 0,
+  "native_log_sha256": "79d0327b064de84a9126e713aa18a6adf1c6552d2afc81e144356d8d81db978c",
+  "automatic_dashboard_return_accepted": false
 }

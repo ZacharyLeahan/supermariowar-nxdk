@@ -1,0 +1,9 @@
+{
+  "observation": "User power-cycled Xbox with controller USB adapters disconnected; fresh XBMC view and FTP access recovered.",
+  "evidence": "smw-no-pad-boot-view-20261109",
+  "boot_with_adapters_prior": "Black screen and no FTP; HDMI1280x720 signal present.",
+  "isolated_adapter": null,
+  "causality_proven": false,
+  "scope": "One controller-free boot; does not establish a specific adapter, firmware or game cause.",
+  "game_launched_during_check": false
+}
