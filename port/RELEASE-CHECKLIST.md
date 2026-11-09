@@ -50,12 +50,28 @@ are not all-mode, endurance, reconnect or listening acceptance. See
 [cache recovery](test-results/clean-candidate-cache-recovery-20261106.json) and
 [exact build](test-results/clean-reconstruction-exact-20261106.json).
 
-The broader 22-mode smokes, completed 120-second Time match, healing and malformed
-save tests from November 6 belong to `84a132cd`, not this executable. Keep their
-hashes separate when assessing regression. On the current mode-test launch the
-KVM restarted, P1 lost USB enumeration and P2 stopped USB completions; software
-reattach did not recover P1. That is an unqualified rig interruption, not proof of
-a game freeze. Preserve that session until log collection is possible.
+November 9 adds a completed four-human 120-second Time match on 1986, short
+Frag/Jail/Coin smokes, and a completed two-on-two 60-second Time match on 0smw
+with wired P1 plus Wi-Fi P2–P4. The team match ended in a reviewed 2–2 tie;
+its concurrent 14.55-second transport sample had zero new send errors on all
+four routes. Both match sessions exited normally with empty stderr, zero logged
+audio underruns and clean audio shutdown. The earlier all-Wi-Fi Time sample
+had ten new P1 send errors; retain that limitation separately.
+
+A fresh packaged install into `/F/SMW-nxdk-dashboard-20261106` verified all
+1,544 files by FTP readback, generated nine valid 160×120 thumbnail PNGs from an
+absent cache directory, and saved/reloaded native preferences. Health defaults
+were 6/10; temporary Extra Life 25% survived reload before being restored to
+20%. This does not close objective-depth, reconnect, listening, cold-boot or
+physical-stock-64-MB acceptance. See [fresh install](test-results/private-package-install-20261109.json),
+[full Time match](test-results/clean-four-human-time120-20261109.json), and
+[mixed team match](test-results/mixed-team-time60-20261109.json).
+
+The interrupted November 6 session has been archived. On November 9 the KVM
+initially failed WebSocket handshakes; restarting only the KVM restored control.
+The initial reload navigation during a P1 handoff ended unexpectedly in gameplay;
+its cause remains unassigned. Subsequent checks re-established and reviewed each
+starting screen. Do not infer a game freeze from those rig interruptions.
 
 ## Existing evidence (scope matters)
 
