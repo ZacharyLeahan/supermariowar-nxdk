@@ -1,0 +1,25 @@
+{
+  "xbe_sha256": "84fbddeb6e17820c80a1262456632a743260e4ae73c44d1a5df6974b1adc6339",
+  "source_commit": "3dfac6c495666009cea04a3c240185e7a1ee51ca",
+  "compiled": true,
+  "independently_reconstructed_byte_identical": true,
+  "reconstruction_scope": "Fresh workspace, pinned dependencies, no external game assets, same host/toolchain.",
+  "host_asan_ubsan_pass": true,
+  "host_pre_fix_failure": "Assigned pad menu_select never reached outputControls[2] while P1 recovery consumed the button.",
+  "host_scope": [
+    "Assigned remaining pad retains its custom menu button and player slot",
+    "Unassigned-pad menu recovery retained",
+    "Keyboard recovery retained",
+    "Four-controller gameplay, dense reordering, removal and reconnect tested with virtual SDL devices"
+  ],
+  "hardware_tested": false,
+  "emulator_tested": false,
+  "hardware_follow_up": [
+    "Missing-P1 player selector must change one value per press",
+    "P3/P4 must independently Ready their own slots and enter settings",
+    "Local match, Health healing, audio and normal dashboard return",
+    "Restore original four-human preferences"
+  ],
+  "previous58c7_scope": "Selector-only native regression passed; team-ready follow-up exposed the button-consumption issue, so58c7 is not a release candidate.",
+  "release_accepted": false
+}

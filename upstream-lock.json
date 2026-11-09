@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "3dfac6c495666009cea04a3c240185e7a1ee51ca",
+  "port_source_revision": "ed7ce2a7471af993434aa5cde7ec9c8b3e246875",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -52,7 +52,7 @@
     "port/Preferences.h": "fff06861dad25a7fff6c1cd984c07ce2ec3654b1ef25cc82a49716a1fd7f9541",
     "port/PreferencesCodec.h": "7ac6c2adad7a88e2c3da51a8bf0c71f3ccab7a9c107ac24f86b3b7911ff309ed",
     "port/README.md": "830a534fe89f1079b22401725f81ef985d05ce4553774a5fa005576590169eec",
-    "port/RELEASE-CHECKLIST.md": "eeb60b87e2f95f5123e3180f237983ee9d73ac43fbd950a72dd2bcd09a11a119",
+    "port/RELEASE-CHECKLIST.md": "4a7568eae8e1d55b53a1de9725fcf1836bffe6a94ffeeae00be5d6e7f6413f34",
     "port/REPRODUCIBLE-CXBE.md": "281622c84e0407405d38cf32255f3f516f9609607b044f67cfe795f1c313b832",
     "port/RLE-RENDERING.md": "9ba45d6b30046623df509911b2732b6c1419b9e364484d3a09800af233fc97ea",
     "port/ROCKY5-PACKAGING.md": "4104b46e449bfb37ce8cfdb1ac91b380e551782ec39854352840365d20f48008",
@@ -278,12 +278,13 @@
     "port/test-results/guarded-v8-match-exit.json": "aa75197768f26d70eaa262a8835dccedc9ac4fc32896f32cd5fe92748af4ea9d",
     "port/test-results/guarded-v8-menu-soak.json": "7f2cae1dbc4dd293d1f85397344b3af72596ac5a951bdec05181fd0296867578",
     "port/test-results/health-candidate-baseline-20261106.json": "4a1878fdfcd266d6da914a2fa17168883a565a732198517e3c1d584d32e47d37",
-    "port/test-results/health-entry-interrupted-20261109.json": "4a60dd81c9246b9f0dc911b4fdd2761b08cfbee219dfcd3a7068efda5afde280",
+    "port/test-results/health-entry-interrupted-20261109.json": "e9337698a44c7dd7258ad9de679a1bcec3c22a0281af2267df90d2b527ea1c49",
     "port/test-results/health-healing-native-20261106.json": "3212925aab184f81da8cbe88cf3955e105a55ae79a2d51ad8dc81261e562d7c5",
     "port/test-results/health-life-migration-20261106.json": "0384e20e735ad52ba7f13f3a9ed0118a76b1960d4736e5368332efab5b695f31",
     "port/test-results/health-mode-batch-native-logs-20261106.json": "fc0e2ae6c8a589df2598b8d3d108680466d5bbecb10019cf9782782977437284",
     "port/test-results/loop-resampler-continuity.json": "d1aeb5d96d1f261d4cca69b96d026586f8ff8b10fa3a6df6940f40bb9e7df5d5",
     "port/test-results/menu-frame-observer-first.json": "fdb7d06eb01d166f5044f5561f34a9e1700a9179047eb2c1b75a594678a3986d",
+    "port/test-results/menu-recovery-own-slot-20261109.json": "80ca875b03dcee0d4228d8a1ad4cb2973ea7e53113606b01b7b937cdd652d025",
     "port/test-results/menu-rle-workaround-observer.json": "aecf6919caf812cc1549cb2021991ec4bb83e5ff750ad849bfc0e025403ca2cd",
     "port/test-results/menu-screen-observer.json": "04f41466d4d7a7886d656bfb3ec86b52ff18a6602d9bb4ddca86fa29ea85cb1b",
     "port/test-results/mixed-controller-routing-20261109.json": "b047fd78c94b2f3297d907293b731a312d556497fcb8f68aaced4797b095e713",

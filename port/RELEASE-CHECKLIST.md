@@ -38,6 +38,27 @@ external-data downloader workflow remain unresolved; no public upload has occurr
   same runtime source but still needs its targeted Health regression. See
   [healing result](test-results/health-healing-native-20261106.json).
 
+## Combined menu-recovery candidate (hardware qualification pending)
+
+Candidate `84fbddeb6e17820c80a1262456632a743260e4ae73c44d1a5df6974b1adc6339`
+(source `3dfac6c49566`) includes the selector fix below plus preservation of
+assigned pads' own menu input. Previously, missing-P1 recovery could consume
+P3's A before its own team-ready slot received it. An assigned pad now navigates
+through its own profile; an unassigned pad retains the default menu-recovery
+path. Virtual SDL regression failed before this change and passes after it,
+including keyboard recovery, physical-slot reordering, removal and reconnect.
+
+The clean development and fresh independent code-only builds are byte-identical
+on the same host/toolchain. This candidate is compiled only; no emulator or
+native acceptance transfers from earlier hashes. Native selector changes passed
+on intermediate `58c7e48d`, but its team-ready follow-up exposed the remaining
+button issue, so that intermediate is not a release candidate. See
+[combined fix result](test-results/menu-recovery-own-slot-20261109.json).
+
+Audio-close completion in recovered logs does not by itself establish complete
+runtime teardown or automatic dashboard return. The return interruption with
+missing/unconfigured P1/P2 remains open pending recovery and isolation.
+
 ## Player-selector fix candidate (compiled; hardware qualification pending)
 
 Candidate `58c7e48d8bc21fe9df46fc752ff7c16e66d203a56c2080aa087c1dd6b7eb7ff5`

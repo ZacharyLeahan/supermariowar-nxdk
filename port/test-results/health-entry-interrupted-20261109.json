@@ -63,5 +63,5 @@
   "native_log_sha256": "330091d65c64db80c51b6cf5e4ed7bef163818a92db5f040be58e5de439e2fda",
   "watchdog_markers_present": false,
   "dashboard_recovered_on_resume": true,
-  "interpretation": "Native log confirms clean game shutdown. Earlier failure to observe FTP/dashboard did not establish a game shutdown hang. P1/P2 were absent at game initialization."
+  "interpretation": "Native log confirms completed audio teardown, empty stderr and no watchdog marker. That does not prove complete runtime teardown or automatic dashboard return. P1/P2 were absent at initialization; root cause of return interruption remains unisolated."
 }
