@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "9f6ae75ce32881b52509c97164fed7c4ce7c6722",
+  "port_source_revision": "df5bee75b40965f73ab26ae866d956fa9d665d4b",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -259,6 +259,7 @@
     "port/test-results/guarded-v8-match-exit.json": "aa75197768f26d70eaa262a8835dccedc9ac4fc32896f32cd5fe92748af4ea9d",
     "port/test-results/guarded-v8-menu-soak.json": "7f2cae1dbc4dd293d1f85397344b3af72596ac5a951bdec05181fd0296867578",
     "port/test-results/health-candidate-baseline-20261106.json": "4a1878fdfcd266d6da914a2fa17168883a565a732198517e3c1d584d32e47d37",
+    "port/test-results/health-entry-interrupted-20261109.json": "3a8cdb97dc1af649b261bd388b4bbb101335f1916158be91548fb5d0781a418b",
     "port/test-results/health-healing-native-20261106.json": "3212925aab184f81da8cbe88cf3955e105a55ae79a2d51ad8dc81261e562d7c5",
     "port/test-results/health-life-migration-20261106.json": "0384e20e735ad52ba7f13f3a9ed0118a76b1960d4736e5368332efab5b695f31",
     "port/test-results/health-mode-batch-native-logs-20261106.json": "fc0e2ae6c8a589df2598b8d3d108680466d5bbecb10019cf9782782977437284",

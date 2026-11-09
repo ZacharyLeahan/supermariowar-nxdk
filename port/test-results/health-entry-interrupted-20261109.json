@@ -1,0 +1,57 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "attempted_test": "Targeted Health healing regression after the archived 17-mode audit",
+  "outcome": "INCONCLUSIVE_CONTROLLER_ROUTE_INTERRUPTION",
+  "game_hang_established": false,
+  "p3_game_navigation_visually_verified": true,
+  "kvm_firmware": {
+    "version": "v.0.56.1-180-g4d170a7-dirty",
+    "built": "Nov  9 2026 07:56:08",
+    "partition": "ota_1",
+    "uptimeSeconds": 159,
+    "crashDumpBytes": 0
+  },
+  "agent_requested_kvm_restart_during_this_attempt": false,
+  "observed_controller_routes": [
+    {
+      "player": 1,
+      "transport": "wifi",
+      "connection": 0,
+      "completion_delta": null
+    },
+    {
+      "player": 2,
+      "transport": "wifi",
+      "connection": 1,
+      "completion_delta": 0
+    },
+    {
+      "player": 3,
+      "transport": "wifi",
+      "connection": 2,
+      "completion_delta": 1400
+    },
+    {
+      "player": 4,
+      "transport": "wifi",
+      "connection": 2,
+      "completion_delta": 1400
+    }
+  ],
+  "health_settings_changed": false,
+  "healing_test_performed": false,
+  "restart_cause": "Unknown; uptime reset but retained ring log begins after boot. Same reported firmware build.",
+  "native_logs_pending": true,
+  "recovery_requested": "Reconnect main DEVICE USB and P2 Xbox-side adapter; no firmware or BIOS changes.",
+  "normal_exit_returned_to_dashboard": false,
+  "recovery_chord": {
+    "player": 3,
+    "buttons": [
+      "back",
+      "start"
+    ],
+    "hold_ms": 3500,
+    "released": true,
+    "dashboard_return_verified": false
+  }
+}
