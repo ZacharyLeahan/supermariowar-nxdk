@@ -400,7 +400,7 @@
     "port/tools/save_preflight.py": "1447c3f7ce8b63e660fd68873195000b5181fefcd566e3fe1350290cfad208e5"
   },
   "patches_sha256": {
-    "game.patch": "31bb198e95e7f2c746fe510731f04a6f5abccabbe6f565ad1659fd388feae9a3",
+    "game.patch": "9cd2667d5cfce4422be7156fd73c6f4adda9ff89737baf2d62bf1d321e3d3067",
     "nxdk-audio-ready.patch": "303a595d2b88e3afba2bf6b71a6e23390d2bc5dc52ea38dbbe238d90243b04e7",
     "nxdk-cxbe-epoch.patch": "438fc6a535c89a5a298e06167dab79f2f971f15bb73ed6fa293e94b0d4a28049",
     "sdl2-audio-close.patch": "cb4e0f8649968d3246e7457ad28c3458e06d08211f88d72dcdcb284ed6d23525",

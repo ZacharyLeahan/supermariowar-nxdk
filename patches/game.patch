@@ -37,6 +37,20 @@ index 1b4486b2..f72b1782 100644
 +[submodule "ports/nxdk/vendor/stb"]
 +	path = ports/nxdk/vendor/stb
 +	url = https://github.com/nothings/stb.git
+diff --git a/ports/nxdk/vendor/fmt b/ports/nxdk/vendor/fmt
+new file mode 160000
+index 00000000..e69e5f97
+--- /dev/null
++++ b/ports/nxdk/vendor/fmt
+@@ -0,0 +1 @@
++Subproject commit e69e5f977d458f2650bb346dadf2ad30c5320281
+diff --git a/ports/nxdk/vendor/stb b/ports/nxdk/vendor/stb
+new file mode 160000
+index 00000000..2c980bb5
+--- /dev/null
++++ b/ports/nxdk/vendor/stb
+@@ -0,0 +1 @@
++Subproject commit 2c980bb59875b0d32144a71867fbdebb2f77cd20
 diff --git a/src/common/CmdArgs.cpp b/src/common/CmdArgs.cpp
 index 29e27585..ac7dd221 100644
 --- a/src/common/CmdArgs.cpp
