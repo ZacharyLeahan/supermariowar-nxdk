@@ -1,4 +1,5 @@
 #include "ui/MI_Image.h"
+#include "ui/MI_PlayerSelect.h"
 #include "ui/MI_SelectField.h"
 #include "ui/MI_SliderField.h"
 #include "GameValues.h"
@@ -70,5 +71,23 @@ int main()
     input.outputControls[0].menu_right.fPressed=true;
     for(int i=0;i<40;++i)slider.SendInput(&input);
     assert(slider.currentValue()==100 && output==100);
-    std::puts("PASS: repeated slider boundaries, hidden items, wrap-enabled selection and production fast-scroll input (rendering excluded)");
+    MI_PlayerSelect players(nullptr,0,0,"Players",400,150);
+    for (int i=0;i<4;++i) game_values.playercontrol[i]=1;
+    input.ResetKeys();
+    // Missing-P1 recovery aliases a real pad into outputs0 and2. A shared
+    // selector must consume that direction once, without skipping CPU/slots.
+    input.outputControls[0].menu_down.fPressed=true;
+    input.outputControls[2].menu_down.fPressed=true;
+    players.SendInput(&input);
+    assert(game_values.playercontrol[0]==2);
+    input.ResetKeys();
+    input.outputControls[0].menu_right.fPressed=true;
+    input.outputControls[2].menu_right.fPressed=true;
+    players.SendInput(&input);
+    input.ResetKeys();
+    input.outputControls[0].menu_down.fPressed=true;
+    input.outputControls[2].menu_down.fPressed=true;
+    players.SendInput(&input);
+    assert(game_values.playercontrol[1]==2 && game_values.playercontrol[2]==1);
+    std::puts("PASS: repeated slider boundaries, hidden items, wrap-enabled selection and production fast-scroll input, recovery-alias player selector (rendering excluded)");
 }

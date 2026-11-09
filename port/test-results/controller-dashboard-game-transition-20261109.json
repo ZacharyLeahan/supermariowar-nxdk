@@ -1,0 +1,24 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "status": "inconclusive root cause; reproducible observations retained",
+  "dashboard": {
+    "p1": "absent",
+    "p2_connection": 2,
+    "p2_completion_delta_14s": 1400,
+    "p3_p4_advance": true
+  },
+  "after_game_launch": {
+    "p2_connection": 1,
+    "p2_title_input_advanced": false,
+    "p3_connection": 2,
+    "p3_title_input_advanced": true
+  },
+  "firmware_context": "P1/P2 S3 0.2.2; P3/P4 S3 0.2.1; main build20261109-075608. Version difference is a possible factor, not an established cause.",
+  "limitations": [
+    "P1 was already absent before launch.",
+    "Not isolated from prior KVM restart or physical cabling.",
+    "No firmware changed by this game test.",
+    "Does not establish SDL/nxdk or S3 firmware fault without independent diagnostic reproduction."
+  ],
+  "gameplay_qualification": false
+}

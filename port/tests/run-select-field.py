@@ -10,6 +10,6 @@ env=dict(os.environ,DYLD_LIBRARY_PATH=str(Path(prefix)/'lib')+':/opt/homebrew/li
 with tempfile.TemporaryDirectory(prefix='smw-select-field-') as tmp:
     exe=Path(tmp)/'select-field'
     sources=['input.cpp','GameModeSettings.cpp','uicontrol.cpp','RandomNumberGenerator.cpp','ui/MI_SelectField.cpp','ui/MI_SliderField.cpp','ui/MI_Image.cpp']
-    subprocess.run([cxx,'-std=c++20','-O1','-g','-fsanitize=address,undefined','-DNXDK','-I'+str(root/'src/common'),
-                    str(port/'tests/select-field.cpp'),*[str(root/'src/common'/s) for s in sources],*sdl,'-o',str(exe)],check=True)
+    subprocess.run([cxx,'-std=c++20','-O1','-g','-fsanitize=address,undefined','-DNXDK','-I'+str(root/'src/common'),'-I'+str(root/'src/smw'),
+                    str(port/'tests/select-field.cpp'),*[str(root/'src/common'/s) for s in sources],str(root/'src/smw/ui/MI_PlayerSelect.cpp'),*sdl,'-o',str(exe)],check=True)
     subprocess.run([str(exe)],env=env,check=True,timeout=30)

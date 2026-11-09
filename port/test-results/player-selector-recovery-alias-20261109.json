@@ -1,0 +1,20 @@
+{
+  "reproduced_xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "hardware_reproduction": "P1 absent; P3 drives menu recovery and its own output. One Down changes P1 human to None, skipping CPU; one Right advances selection from P1 to P3.",
+  "hardware_evidence": "smw-health-two-pad-cpu-20261109",
+  "cause": "MI_PlayerSelect processes every logical output without stopping after a direction; recovery aliases one physical pad into two outputs.",
+  "fix_scope": "NXDK-only shared player selector consumes one directional output per update. Player-specific team/game input remains unchanged.",
+  "host_regression": {
+    "production_code_tested": true,
+    "asan_ubsan": true,
+    "before_fix": "Assertion failed: game_values.playercontrol[0]==2",
+    "after_fix": "PASS",
+    "covers": [
+      "Duplicate Down changes human to CPU once",
+      "Duplicate Right selects next slot once",
+      "Next duplicate Down modifies P2, not P3"
+    ]
+  },
+  "fixed_xbe_hardware_tested": false,
+  "release_accepted": false
+}

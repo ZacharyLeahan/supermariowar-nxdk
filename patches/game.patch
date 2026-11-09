@@ -3637,3 +3637,22 @@ index 7640d8e9..5e57da06 100644
  }
  
  void WorldMap::SetTileConnections(short iCol, short iRow)
+diff --git a/src/smw/ui/MI_PlayerSelect.cpp b/src/smw/ui/MI_PlayerSelect.cpp
+index a497bc8f..725fbd12 100644
+--- a/src/smw/ui/MI_PlayerSelect.cpp
++++ b/src/smw/ui/MI_PlayerSelect.cpp
+@@ -87,6 +87,14 @@ MenuCodeEnum MI_PlayerSelect::SendInput(CPlayerInput* playerInput)
+             fModifying = false;
+             return MENU_CODE_UNSELECT_ITEM;
+         }
++#ifdef NXDK
++        // A recovery pad can drive both its own slot and absent P1 in menus.
++        // This shared selector must apply that physical press only once.
++        const auto &keys = playerInput->outputControls[iPlayer];
++        if (keys.menu_left.fPressed || keys.menu_right.fPressed ||
++            keys.menu_up.fPressed || keys.menu_down.fPressed)
++            return MENU_CODE_NONE;
++#endif
+     }
+ 
+     return MENU_CODE_NONE;
