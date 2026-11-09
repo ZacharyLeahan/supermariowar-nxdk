@@ -12,14 +12,39 @@
     "Keyboard recovery retained",
     "Four-controller gameplay, dense reordering, removal and reconnect tested with virtual SDL devices"
   ],
-  "hardware_tested": false,
+  "hardware_tested": true,
   "emulator_tested": false,
   "hardware_follow_up": [
-    "Missing-P1 player selector must change one value per press",
-    "P3/P4 must independently Ready their own slots and enter settings",
-    "Local match, Health healing, audio and normal dashboard return",
-    "Restore original four-human preferences"
+    "Four-human mixed-controller match on this executable",
+    "Captured/listened audio on this executable",
+    "Controller reconnect and broader endurance"
   ],
   "previous58c7_scope": "Selector-only native regression passed; team-ready follow-up exposed the button-consumption issue, so58c7 is not a release candidate.",
-  "release_accepted": false
+  "release_accepted": false,
+  "hardware_scope": "Missing P1/P2; P3/P4 available. Single selector steps verified; P3 independently Ready, P4 independently Ready, Continue enters match settings.",
+  "hardware_evidence": [
+    "smw-combined-selector-retry-20261109",
+    "smw-combined-fix-team-entry-20261109",
+    "smw-combined-fix-ready-20261109"
+  ],
+  "native_logs_pending": false,
+  "executed_hardware_scenarios": [
+    {
+      "path": "scenarios/missing-p1-20261109/smw-combined-selector-retry-20261109.json",
+      "sha256": "22fb627b2f59b44cfa12ae975682646aecb7e0d71a55e21f78a9240f1653a014"
+    },
+    {
+      "path": "scenarios/missing-p1-20261109/smw-combined-fix-team-entry-20261109.json",
+      "sha256": "f4ceda7d77113b3a645790535d1a45bfea2878b587100c96e0bd7c1db4b04b3e"
+    },
+    {
+      "path": "scenarios/missing-p1-20261109/smw-combined-fix-ready-20261109.json",
+      "sha256": "4b4253262296fcde24f0f2d98cd4f35e72491b61eaca90d04f56790aeba8e018"
+    }
+  ],
+  "hardware_caveat": "Initial title confirmation was missed; first navigation attempt ended in Options and was excluded. Retry starts from visually reviewed Main Options focus.",
+  "native_stderr_bytes": 0,
+  "native_clean_audio_shutdown": true,
+  "native_log_sha256": "4f940672bbe44ebe2b7770f23014b65b552f9e71ce720680d389c71bdda916f6",
+  "native_completed_match": "Health5 BonusParadise; twoCPU plus P3/P4 humans; P2Wins2; zero native music underruns; dashboard return visually verified"
 }

@@ -49,8 +49,17 @@ path. Virtual SDL regression failed before this change and passes after it,
 including keyboard recovery, physical-slot reordering, removal and reconnect.
 
 The clean development and fresh independent code-only builds are byte-identical
-on the same host/toolchain. This candidate is compiled only; no emulator or
-native acceptance transfers from earlier hashes. Native selector changes passed
+on the same host/toolchain. Targeted native missing-P1 selector and independent
+P3/P4 Ready checks now pass. A Health5 match on Bonus Paradise completed with
+P2 CPU winning on two lives; P1/P2 were CPUs and P3/P4 humans. Native records
+confirm6/10/20 health settings, healing reached five full hearts, damage and
+elimination occurred, stderr was empty, native music underruns were zero and
+audio teardown completed. XBMC return was visually verified; original four-human
+saves were restored byte-for-byte. This does not transfer older all-mode or
+four-human acceptance to the new executable. PCM capture failed with KVM HTTP503
+“Audio task unavailable”; capture/listening remains open. See
+[combined Health match](test-results/combined-health-native-20261109.json).
+No emulator acceptance is claimed. Native selector changes passed
 on intermediate `58c7e48d`, but its team-ready follow-up exposed the remaining
 button issue, so that intermediate is not a release candidate. See
 [combined fix result](test-results/menu-recovery-own-slot-20261109.json).
