@@ -1,0 +1,31 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "transport_sample_seconds": 14.53,
+  "p1_transport": "direct",
+  "p2_p4_transport": "wifi",
+  "send_error_deltas": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "completion_deltas": [
+    1451,
+    1379,
+    1376,
+    1376
+  ],
+  "visually_reviewed_direct_p1_menu_navigation": true,
+  "game_observations": [
+    "smw-direct-p1-live-check-20261109",
+    "smw-direct-health-options-20261109",
+    "smw-direct-restore-save-exit-20261109"
+  ],
+  "limitations": [
+    "Passive route sample establishes report delivery, not simultaneous gameplay or button isolation.",
+    "Initial reload navigation ended unexpectedly in gameplay during controller handoff; cause unassigned; re-established known menu before subsequent checks."
+  ],
+  "fully_qualified": false
+}

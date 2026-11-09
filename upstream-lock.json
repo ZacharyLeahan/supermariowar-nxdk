@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "e8fd87a3985a18d187a92a83479b91765ad83d20",
+  "port_source_revision": "44b8061902509174233f491dc0c5cd71ba59c3fa",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -266,6 +266,7 @@
     "port/test-results/menu-frame-observer-first.json": "fdb7d06eb01d166f5044f5561f34a9e1700a9179047eb2c1b75a594678a3986d",
     "port/test-results/menu-rle-workaround-observer.json": "aecf6919caf812cc1549cb2021991ec4bb83e5ff750ad849bfc0e025403ca2cd",
     "port/test-results/menu-screen-observer.json": "04f41466d4d7a7886d656bfb3ec86b52ff18a6602d9bb4ddca86fa29ea85cb1b",
+    "port/test-results/mixed-controller-routing-20261109.json": "b047fd78c94b2f3297d907293b731a312d556497fcb8f68aaced4797b095e713",
     "port/test-results/mode-smokes-20261106.json": "95b43930aa7d513a0dfbdc33da60f242e5afa2ef1cb3a20d76f523f23810a12e",
     "port/test-results/opaque-copy-both-bad-crc.json": "50cba458806d003dac1d38cbb9659f0798e06df80e8ece68655e4ef8a061780e",
     "port/test-results/opaque-copy-candidate.json": "5a89ef03e5ab27b529597189ebe61938d28a0e3c68ce1a749430acf8bed26bc7",
@@ -288,6 +289,7 @@
     "port/test-results/preferences-ui.json": "dfd3c324186f7d05e7fca2b06f2f298141dff20f72b002e61671b65f2e9c7404",
     "port/test-results/preferences-ui.log": "dd8095e92967ba823d54402191224d7b4bc8b688256847fc84ff43ce97df8822",
     "port/test-results/private-dashboard-package-20261106.json": "34290e0bdf547204d4e7a74b77c83543c63732f89f53c07909c23375d90e11f6",
+    "port/test-results/private-package-install-20261109.json": "385b097c9b92a9535e621d15a382b15d4c03a8cab629442d5a757c88841cede8",
     "port/test-results/ready-link-full-clean-rebuild.json": "fffed9e5c40b6795c2a9b82022e712cc1ef65a5db7e44265949b5a6a4c4d64a0",
     "port/test-results/ready-link-game-first-warm.json": "16b5e62db388fcfa4e731379f84bba58d9fd9edc48d004f90f27d7d2335bd6af",
     "port/test-results/ready-link-game-warm-observations.json": "e06eadefb70643eee864847bbc872611280ee91404cbd4e68a3d83a2f3e532e5",

@@ -1,0 +1,136 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "source_commit": "3052d1b984c3100b87e3910d90bffc65fb533836",
+  "package_archive_sha256": "01c6b8f9a494a1f94246600bcd786d12212948a0a36df73ed041b2a83632df0d",
+  "new_title_directory": "/F/SMW-nxdk-dashboard-20261106",
+  "verified_remote_files": 1544,
+  "existing_title_overwritten": false,
+  "cache_directory_absent_before_first_launch": true,
+  "save_files_absent_before_first_launch": true,
+  "boot_title_visually_verified": true,
+  "dashboard_artwork_view_tested": false,
+  "full_release_acceptance": false,
+  "emulator_tested": false,
+  "first_thumbnail_page_visually_verified": true,
+  "health_defaults_visually_verified": {
+    "startlife": 6,
+    "maxlife": 10
+  },
+  "first_run_save_reload_pending": false,
+  "generated_cache_pngs": [
+    {
+      "name": "0smw.png",
+      "bytes": 6189,
+      "sha256": "266e4a9285489adc6a5f90b5bfececb42c5799d4d94b72cd07722ffc80dcdba2",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "NMcCoy_1-3.png",
+      "bytes": 5165,
+      "sha256": "a780e829515276f1ac9ed5bda4f7266826f987ea18882ca4bc3b103f825ba6f0",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "Xijar_1986.png",
+      "bytes": 8748,
+      "sha256": "8c991c15e857fca75c97011c8c2022502d2d473e663ee9e192e043a98cde6478",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "2skyfight.png",
+      "bytes": 5550,
+      "sha256": "1d40c158c5831db19ce1786174ef81797d4b4c4eb3e089f5d154b4f5dda29033",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "3blockforts.png",
+      "bytes": 5645,
+      "sha256": "7f6dedead38fd23c9c9688612169bc370b97e0f11dd271590572c4ad43a95ced",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "4highabove.png",
+      "bytes": 5726,
+      "sha256": "796ed690766d818ef8bb43e9c91926672e12ed14ccf72d495b8a380cf9ab5778",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "5fall.png",
+      "bytes": 4760,
+      "sha256": "c83ae94d5224295a31a533ec19d0e100f96bec50458ee5de32f8101dfae85f30",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "mp1_above the clouds.png",
+      "bytes": 5460,
+      "sha256": "2145faa0a19e05a61ab60fd0881a4169f19ad32f0282e2636ac0697f87e69ad2",
+      "dimensions": [
+        160,
+        120
+      ]
+    },
+    {
+      "name": "cristomarquez_abovethedomes.png",
+      "bytes": 7970,
+      "sha256": "f7d6473b5b1dba8c692442d87844c727d8df88d0ecf819219a5e3a1b6642bae3",
+      "dimensions": [
+        160,
+        120
+      ]
+    }
+  ],
+  "first_run_native_defaults_log_confirmed": true,
+  "first_run_stderr_bytes": 0,
+  "first_run_clean_shutdown": true,
+  "first_saved_health": {
+    "generation": 1,
+    "maxlife": 10,
+    "startlife": 6,
+    "rate": 25
+  },
+  "reload_native_generation": 1,
+  "reloaded_then_restored_health_records": [
+    {
+      "slot": "smw-pref0.bin",
+      "generation": 3,
+      "maxlife": 10,
+      "startlife": 6,
+      "rate": 20,
+      "sha256": "43feee39a1fb613289ecce626d0269dbf59a4fc9e804976f7e03c96e70fa5c65"
+    },
+    {
+      "slot": "smw-pref1.bin",
+      "generation": 2,
+      "maxlife": 10,
+      "startlife": 6,
+      "rate": 25,
+      "sha256": "b8a36061c4a91156cf62ee7b7be52e28bf1bbbd936a7ffbbc6365d16968697ae"
+    }
+  ],
+  "reload_stderr_bytes": 0,
+  "reload_clean_shutdown": true,
+  "reload_log_sha256": "07f8af6c6d9659beeeb4e2e6eaeb535fe74ea3f17ae2cd539920e80107da3262",
+  "wired_p1_menu_navigation_visually_verified": true,
+  "unexpected_gameplay_during_controller_handoff": "Reload navigation plan did not end in expected menu; later reviewed gameplay, then re-established menu state using direct P1. No attribution of cause."
+}
