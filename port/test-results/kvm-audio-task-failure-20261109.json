@@ -1,0 +1,19 @@
+{
+  "game_xbe_sha256": "84fbddeb6e17820c80a1262456632a743260e4ae73c44d1a5df6974b1adc6339",
+  "capture_attempts": 2,
+  "capture_http_status": 503,
+  "bounded_error_body": "Audio task unavailable",
+  "captured_pcm_bytes": 0,
+  "kvm_firmware_build": "Nov 9 2026 07:56:08",
+  "kvm_internal_free_bytes": 11003,
+  "kvm_internal_largest_bytes": 6912,
+  "kvm_uptime_seconds": 6443,
+  "game_native_music_underruns": 0,
+  "game_stderr_bytes": 0,
+  "game_completed_health_match": true,
+  "game_audio_teardown_clean": true,
+  "game_silence_established": false,
+  "memory_leak_established": false,
+  "recovery": "Only KVM restart requested after visually verified XBMC, native-log archival and original-save restoration. LAN, hostname and known Tailscale HTTP checks subsequently unavailable; physical KVM power-cycle requested.",
+  "qualification": "No PCM or listening acceptance from this run. Do not attribute the capture task failure to nxdk/game audio without separate evidence."
+}

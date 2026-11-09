@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "1970d71bb99a4af4c0cce0e0dd49ff2e22f900b3",
+  "port_source_revision": "94a5e588d01a52b1c6dfb3a00a1bef0b26d3ad99",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -287,6 +287,7 @@
     "port/test-results/health-healing-native-20261106.json": "3212925aab184f81da8cbe88cf3955e105a55ae79a2d51ad8dc81261e562d7c5",
     "port/test-results/health-life-migration-20261106.json": "0384e20e735ad52ba7f13f3a9ed0118a76b1960d4736e5368332efab5b695f31",
     "port/test-results/health-mode-batch-native-logs-20261106.json": "fc0e2ae6c8a589df2598b8d3d108680466d5bbecb10019cf9782782977437284",
+    "port/test-results/kvm-audio-task-failure-20261109.json": "20dad9c0ced6264be496c6adc3461b8fd6c42ebbf0c6c4ccd11edefc53b556ca",
     "port/test-results/loop-resampler-continuity.json": "d1aeb5d96d1f261d4cca69b96d026586f8ff8b10fa3a6df6940f40bb9e7df5d5",
     "port/test-results/menu-frame-observer-first.json": "fdb7d06eb01d166f5044f5561f34a9e1700a9179047eb2c1b75a594678a3986d",
     "port/test-results/menu-recovery-own-slot-20261109.json": "e2f4c955ac8acf55597bd0ee993313d8f8621a7e9aff15dd8d338d0847cc74c6",
