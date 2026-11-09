@@ -37,20 +37,6 @@ index 1b4486b2..f72b1782 100644
 +[submodule "ports/nxdk/vendor/stb"]
 +	path = ports/nxdk/vendor/stb
 +	url = https://github.com/nothings/stb.git
-diff --git a/ports/nxdk/vendor/fmt b/ports/nxdk/vendor/fmt
-new file mode 160000
-index 00000000..e69e5f97
---- /dev/null
-+++ b/ports/nxdk/vendor/fmt
-@@ -0,0 +1 @@
-+Subproject commit e69e5f977d458f2650bb346dadf2ad30c5320281
-diff --git a/ports/nxdk/vendor/stb b/ports/nxdk/vendor/stb
-new file mode 160000
-index 00000000..2c980bb5
---- /dev/null
-+++ b/ports/nxdk/vendor/stb
-@@ -0,0 +1 @@
-+Subproject commit 2c980bb59875b0d32144a71867fbdebb2f77cd20
 diff --git a/src/common/CmdArgs.cpp b/src/common/CmdArgs.cpp
 index 29e27585..ac7dd221 100644
 --- a/src/common/CmdArgs.cpp
@@ -1314,7 +1300,7 @@ index 0b635a81..2c86b5b4 100644
      std::optional<RGB> m_color_key = colors::MAGENTA;
      std::optional<Uint8> m_alpha = std::nullopt;
 diff --git a/src/common/input.cpp b/src/common/input.cpp
-index c983716f..1ce080c9 100644
+index c983716f..7fc567d2 100644
 --- a/src/common/input.cpp
 +++ b/src/common/input.cpp
 @@ -4,6 +4,35 @@
@@ -1353,7 +1339,7 @@ index c983716f..1ce080c9 100644
  
  CPlayerInput::CPlayerInput()
  {
-@@ -66,6 +95,39 @@ void CPlayerInput::ResetKeys()
+@@ -66,6 +95,49 @@ void CPlayerInput::ResetKeys()
  //iGameState == 0 for in game and 1 for menu
  void CPlayerInput::Update(SDL_Event event, short iGameState)
  {
@@ -1365,8 +1351,18 @@ index c983716f..1ce080c9 100644
 +    const auto *selected = inputControls[0];
 +    if (iGameState == 1 && (!selected || selected->iDevice < 0 ||
 +        !nxdk_joystick_for_slot(selected->iDevice))) {
-+        for (short slot = 0; slot < 4; ++slot)
-+            if (nxdk_joystick_for_slot(slot)) { recoveryDevice = slot; break; }
++        for (short slot = 0; slot < 4; ++slot) {
++            if (!nxdk_joystick_for_slot(slot)) continue;
++            // An assigned pad already navigates global menus through its own
++            // output. Aliasing it into P1 duplicates hats and steals buttons
++            // before its own team-ready action can receive them.
++            bool assigned = false;
++            for (short player = 1; player < MAX_PLAYERS; ++player)
++                if (inputControls[player] && inputControls[player]->iDevice == slot)
++                    assigned = true;
++            if (!assigned) recoveryDevice = slot;
++            break;
++        }
 +    }
 +    if (nxdkRecoveryDevice != recoveryDevice) {
 +        ResetKeys();
@@ -1393,7 +1389,7 @@ index c983716f..1ce080c9 100644
  	bool fFound = false;
      for (short iPlayer = -1; iPlayer < MAX_PLAYERS; iPlayer++) {
  		CInputControl * inputControl;
-@@ -74,7 +136,11 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
+@@ -74,7 +146,11 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
  
  		//Allow keyboard input from player 1 at all times (even when he is configured to use joystick)
          if (iPlayer == -1) {
@@ -1406,7 +1402,7 @@ index c983716f..1ce080c9 100644
  				inputControl = &game_values.inputConfiguration[0][0].inputGameControls[1];
  				outputControl = &outputControls[0];
  				iDeviceID = game_values.inputConfiguration[0][0].iDevice;
-@@ -85,9 +151,13 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
+@@ -85,9 +161,13 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
  			if (!inputControls[iPlayer])
  				continue;
  
@@ -3610,6 +3606,25 @@ index d37471f5..1037a76f 100644
          mapSurfaces[iMap] = ImageLoader(sConvertedPath.c_str()).withoutColorKey().create();
          mapListNodes[iMap] = &(*itr).second;
          mapNames[iMap] = (*itr).first.c_str();
+diff --git a/src/smw/ui/MI_PlayerSelect.cpp b/src/smw/ui/MI_PlayerSelect.cpp
+index a497bc8f..725fbd12 100644
+--- a/src/smw/ui/MI_PlayerSelect.cpp
++++ b/src/smw/ui/MI_PlayerSelect.cpp
+@@ -87,6 +87,14 @@ MenuCodeEnum MI_PlayerSelect::SendInput(CPlayerInput* playerInput)
+             fModifying = false;
+             return MENU_CODE_UNSELECT_ITEM;
+         }
++#ifdef NXDK
++        // A recovery pad can drive both its own slot and absent P1 in menus.
++        // This shared selector must apply that physical press only once.
++        const auto &keys = playerInput->outputControls[iPlayer];
++        if (keys.menu_left.fPressed || keys.menu_right.fPressed ||
++            keys.menu_up.fPressed || keys.menu_down.fPressed)
++            return MENU_CODE_NONE;
++#endif
+     }
+ 
+     return MENU_CODE_NONE;
 diff --git a/src/smw/world.cpp b/src/smw/world.cpp
 index 7640d8e9..5e57da06 100644
 --- a/src/smw/world.cpp
@@ -3637,22 +3652,3 @@ index 7640d8e9..5e57da06 100644
  }
  
  void WorldMap::SetTileConnections(short iCol, short iRow)
-diff --git a/src/smw/ui/MI_PlayerSelect.cpp b/src/smw/ui/MI_PlayerSelect.cpp
-index a497bc8f..725fbd12 100644
---- a/src/smw/ui/MI_PlayerSelect.cpp
-+++ b/src/smw/ui/MI_PlayerSelect.cpp
-@@ -87,6 +87,14 @@ MenuCodeEnum MI_PlayerSelect::SendInput(CPlayerInput* playerInput)
-             fModifying = false;
-             return MENU_CODE_UNSELECT_ITEM;
-         }
-+#ifdef NXDK
-+        // A recovery pad can drive both its own slot and absent P1 in menus.
-+        // This shared selector must apply that physical press only once.
-+        const auto &keys = playerInput->outputControls[iPlayer];
-+        if (keys.menu_left.fPressed || keys.menu_right.fPressed ||
-+            keys.menu_up.fPressed || keys.menu_down.fPressed)
-+            return MENU_CODE_NONE;
-+#endif
-     }
- 
-     return MENU_CODE_NONE;

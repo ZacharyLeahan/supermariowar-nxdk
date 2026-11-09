@@ -56,6 +56,18 @@ int main()
     assert(!input.outputControls[0].menu_select.fDown);
     button(0, 0, true, 0);
     assert(!input.outputControls[0].game_jump.fDown);
+    // A pad already bound to another player must keep its own menu buttons;
+    // aliasing it into absent P1 would consume A before its own ready action.
+    auto &native = game_values.inputConfiguration[2][1];
+    const auto originalNative = native;
+    native.iDevice = 0;
+    native.inputGameControls[1].menu_select = JOY_BUTTON_START;
+    input.ResetKeys();
+    button(0, 0, true, 1);
+    assert(input.outputControls[2].menu_select.fDown);
+    assert(!input.outputControls[0].menu_select.fDown);
+    button(0, 0, false, 1);
+    native = originalNative;
     handles[3] = saved;
     input.ResetKeys();
     // Keyboard remains usable while attached pad offers menu recovery.
@@ -114,9 +126,12 @@ int main()
     assert(nxdk_joystick_for_slot(2) == physical[2]);
     assert(nxdk_joystick_for_slot(3) == physical[3]);
     SDL_Event recover{}; recover.type = SDL_JOYBUTTONDOWN;
-    recover.jbutton.which = SDL_JoystickInstanceID(physical[1]); recover.jbutton.button = 0;
+    recover.jbutton.which = SDL_JoystickInstanceID(physical[1]); recover.jbutton.button = 1;
     input.Update(recover, 1);
-    assert(input.outputControls[0].menu_select.fDown);
+    // An assigned remaining pad navigates through its own profile, including
+    // its custom menu button, rather than impersonating disconnected P1.
+    assert(!input.outputControls[0].menu_select.fDown);
+    assert(input.outputControls[1].menu_select.fDown);
     input.ResetKeys();
     recover.jbutton.button = 1;
     input.Update(recover, 0);

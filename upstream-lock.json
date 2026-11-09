@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "fb2d79b4d99a9423429edc3827e438bf19d43851",
+  "port_source_revision": "3dfac6c495666009cea04a3c240185e7a1ee51ca",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -306,7 +306,7 @@
     "port/test-results/optimized-startup.log": "9e53d7f40f9f7b506a07dc86e02189811ae134fb5dcd29539812e73736052704",
     "port/test-results/original-vector-artwork-20261106.json": "3fff409dab9cb72a7d90014b58cd6ac0b5cc1f3eddb3fac07d0120c08f621b51",
     "port/test-results/physical-slots-v8-build.json": "5ca9a04460075bfe32d005b4d205f2250bc0a30a3d18a5f487b78f5b31067841",
-    "port/test-results/player-selector-recovery-alias-20261109.json": "31ea9cb8b21bfbea1371ef3a9cc3185266182f6be7f40b15cc8828f432f14db3",
+    "port/test-results/player-selector-recovery-alias-20261109.json": "aac47d15d7895a1a5b90a0fdebbac5fe311c707088eed6940e1aa1f21e7608f1",
     "port/test-results/powerup-save-v2.json": "ade06cb3487731aa467ba7c47eb0a89d21058c8772362163105c592d0e5b043a",
     "port/test-results/powerup-save-v2.log": "c15ea9b88932c98ba81eb28427465cb0b18604f04ba8cb560445bacd23b163e7",
     "port/test-results/preferences-ui.json": "dfd3c324186f7d05e7fca2b06f2f298141dff20f72b002e61671b65f2e9c7404",
@@ -352,7 +352,7 @@
     "port/test-results/v8-warm-start-failed.json": "5cb86026e4ba26b766722b3c88d97d34cf820eb9bd8bd7f3a1b961c2e9c5eeba",
     "port/tests/backend.cpp": "8a7d45ad5e5459ad40da661e349cb55e36b58eb2eb5956288cf3e286bd0a5fa2",
     "port/tests/compat.cpp": "f0074c740d86a0ac580c89bb16e135e7173b4f48c6236672e8711f9bc779a4ae",
-    "port/tests/controllers.cpp": "ac7a74c19d776e11d9299dd014828892650da2a94392fd8fb91baa07403cbcb5",
+    "port/tests/controllers.cpp": "a68a649a2f78dc17458e7e0bd85d7a5254cc91c4e6f0fe8620554e3c5173e3fc",
     "port/tests/mixer.cpp": "ec0f2cfd5abb9685195e637b91c1dea0ca9f733510204dcde65e1ff511e5c7a2",
     "port/tests/opaque-rgb565.c": "cc7522d13a01f9eedb9c0065d6d22bced41cf185148d012168f3bb16775c77dd",
     "port/tests/preferences.cpp": "4b34c3857a9dd3c6ecf5c4a6d7049bbd7e8d23f12d48a91813a02d5542c8c962",
@@ -400,7 +400,7 @@
     "port/tools/save_preflight.py": "1447c3f7ce8b63e660fd68873195000b5181fefcd566e3fe1350290cfad208e5"
   },
   "patches_sha256": {
-    "game.patch": "957490c7bc6beca1bcec4ab7c2236325b88b5a16182789d8fdf863de09d38e99",
+    "game.patch": "31bb198e95e7f2c746fe510731f04a6f5abccabbe6f565ad1659fd388feae9a3",
     "nxdk-audio-ready.patch": "303a595d2b88e3afba2bf6b71a6e23390d2bc5dc52ea38dbbe238d90243b04e7",
     "nxdk-cxbe-epoch.patch": "438fc6a535c89a5a298e06167dab79f2f971f15bb73ed6fa293e94b0d4a28049",
     "sdl2-audio-close.patch": "cb4e0f8649968d3246e7457ad28c3458e06d08211f88d72dcdcb284ed6d23525",
@@ -435,7 +435,7 @@
     "src/common/gfx/gfxSDL.cpp": "ac35bef47a93575fe5217999c0dfc452cf5c798db4b3b802864bb996e3445c7c",
     "src/common/gfx/gfxSprite.cpp": "d2e9b90103bbb823529a8aeb14c4d4aa9c4fc697f666d8b0e80b2677818a89ae",
     "src/common/gfx/gfxSprite.h": "0ee98511c5737f9409dfe97bd6a0972a50e0ea37fbe61d365fff1b923222206e",
-    "src/common/input.cpp": "cc51ef3dbbb2748b53dd796371ee3850aa2fadff3531f6be5c35bb0fbc757c45",
+    "src/common/input.cpp": "7bf3e7d28d533f7cbfd9befcdd6a41c3419c7627b605db3e41554931072af5de",
     "src/common/input.h": "e4c989d12ce8117153bac6b98b534c2e07af3e8d69160205fdd46c0cd2fb381d",
     "src/common/map.cpp": "34d0d7931c35d0a23455c2cbded5baf8515f223c1ffedb50acdcf13f347a5cbe",
     "src/common/map/MapReader16xx.cpp": "4f92c2c3253a57f9fd93f15ecbc2f072069d02a75cc795d3ea962e3e5342a003",
@@ -500,7 +500,7 @@
   "current_hardware_tested_xbe_sha256": "10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c",
   "current_hardware_test_source_revision": "d82d9af1789cb2da9e9db4b580a1542a118078ae",
   "game_build": {
-    "embedded_revision": "d1273c51e37d",
+    "embedded_revision": "3dfac6c49566",
     "embedded_date": "2026-11-09",
     "make_flags": [
       "PREFERENCES=1",
@@ -510,7 +510,7 @@
       "EXIT_WATCHDOG_MS=10000",
       "RUNTIME_WATCHDOG_MS=45000"
     ],
-    "scope": "Player-selector recovery fix candidate58c7e48d: compiled and host regression-tested; hardware acceptance pending. Display stamp is independent of synthetic reconstruction commit.",
+    "scope": "Combined selector and assigned-pad menu recovery fixes; host regression-tested; clean build and hardware qualification tracked separately.",
     "source_path_prefix": "/tmp/smw-xbe-workspace"
   }
 }

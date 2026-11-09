@@ -15,7 +15,7 @@
       "Next duplicate Down modifies P2, not P3"
     ]
   },
-  "fixed_xbe_hardware_tested": false,
+  "fixed_xbe_hardware_tested": true,
   "release_accepted": false,
   "fixed_xbe_sha256": "58c7e48d8bc21fe9df46fc752ff7c16e66d203a56c2080aa087c1dd6b7eb7ff5",
   "fixed_xbe_bytes": 3473408,
@@ -24,5 +24,9 @@
   "independent_recipe_byte_identical": true,
   "reconstruction_data_initialized": false,
   "reconstruction_scope": "Fresh source and SDK checkout; initialized pinned dependencies from local caches; full clean independent build; same host/toolchain; no emulator or new-XBE hardware acceptance.",
-  "reconstruction_build_info_sha256": "22b2aa9c44043b51518eb38c840a2e38eba490b3742c176ac35b3b992bc95dbd"
+  "reconstruction_build_info_sha256": "22b2aa9c44043b51518eb38c840a2e38eba490b3742c176ac35b3b992bc95dbd",
+  "hardware_scope": "Targeted selector regression: P1/P2 absent/unconfigured, P3 menu recovery aliases two logical outputs. Single Down sets P1 Bot, single Right selects P2, single Down sets P2 Bot; P3/P4 stay human.",
+  "fixed_hardware_evidence": "smw-selector-fix-native-20261109",
+  "native_logs_pending": true,
+  "follow_up": "Targeted selector regression passes58c7, but team selection exposes assigned recovery-pad A consumed before native slot. Follow-up input fix and new-XBE qualification required."
 }
