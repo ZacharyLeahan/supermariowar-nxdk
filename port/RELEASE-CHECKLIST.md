@@ -45,8 +45,9 @@ Candidate `58c7e48d8bc21fe9df46fc752ff7c16e66d203a56c2080aa087c1dd6b7eb7ff5`
 when an available pad aliases missing P1 for menu recovery. One P3 Down on the
 previous candidate cycled Human→CPU→None, and Right skipped a player slot.
 An ASan/UBSan regression against production selector code failed before the fix
-and passed after it. The new clean XBE is compiled, with native acceptance still
-pending. Team/game input code is unchanged. All earlier native mode, save and
+and passed after it. The new clean XBE is compiled and independently reconstructed byte-for-byte
+from the code-only recipe on the same host/toolchain, without game assets. Native
+acceptance is still pending. Team/game input code is unchanged. All earlier native mode, save and
 performance results remain bound to their original XBE hashes.
 
 The separately observed P2 transition from configured in XBMC to unconfigured

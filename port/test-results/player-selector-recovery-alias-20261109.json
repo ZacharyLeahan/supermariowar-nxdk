@@ -16,5 +16,13 @@
     ]
   },
   "fixed_xbe_hardware_tested": false,
-  "release_accepted": false
+  "release_accepted": false,
+  "fixed_xbe_sha256": "58c7e48d8bc21fe9df46fc752ff7c16e66d203a56c2080aa087c1dd6b7eb7ff5",
+  "fixed_xbe_bytes": 3473408,
+  "source_commit": "d1273c51e37dbb13dd9a0909f8d5044d5a76a8d3",
+  "compiled": true,
+  "independent_recipe_byte_identical": true,
+  "reconstruction_data_initialized": false,
+  "reconstruction_scope": "Fresh source and SDK checkout; initialized pinned dependencies from local caches; full clean independent build; same host/toolchain; no emulator or new-XBE hardware acceptance.",
+  "reconstruction_build_info_sha256": "22b2aa9c44043b51518eb38c840a2e38eba490b3742c176ac35b3b992bc95dbd"
 }
