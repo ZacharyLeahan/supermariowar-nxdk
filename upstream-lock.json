@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "d93c44ee9fcc681284ff3fbac8ab4abdf71dcdad",
+  "port_source_revision": "9f6ae75ce32881b52509c97164fed7c4ce7c6722",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -52,7 +52,7 @@
     "port/Preferences.h": "fff06861dad25a7fff6c1cd984c07ce2ec3654b1ef25cc82a49716a1fd7f9541",
     "port/PreferencesCodec.h": "7ac6c2adad7a88e2c3da51a8bf0c71f3ccab7a9c107ac24f86b3b7911ff309ed",
     "port/README.md": "830a534fe89f1079b22401725f81ef985d05ce4553774a5fa005576590169eec",
-    "port/RELEASE-CHECKLIST.md": "39a809a4fb80522eb6e306c06e23cfd2d02230c20aec05caf972b72a64cde503",
+    "port/RELEASE-CHECKLIST.md": "952dcc01faff867acf8f6d23e9ef992d06712eab8fd1cb3dd517c014ea2cea84",
     "port/REPRODUCIBLE-CXBE.md": "281622c84e0407405d38cf32255f3f516f9609607b044f67cfe795f1c313b832",
     "port/RLE-RENDERING.md": "9ba45d6b30046623df509911b2732b6c1419b9e364484d3a09800af233fc97ea",
     "port/ROCKY5-PACKAGING.md": "4104b46e449bfb37ce8cfdb1ac91b380e551782ec39854352840365d20f48008",
@@ -267,6 +267,7 @@
     "port/test-results/menu-rle-workaround-observer.json": "aecf6919caf812cc1549cb2021991ec4bb83e5ff750ad849bfc0e025403ca2cd",
     "port/test-results/menu-screen-observer.json": "04f41466d4d7a7886d656bfb3ec86b52ff18a6602d9bb4ddca86fa29ea85cb1b",
     "port/test-results/mixed-controller-routing-20261109.json": "b047fd78c94b2f3297d907293b731a312d556497fcb8f68aaced4797b095e713",
+    "port/test-results/mixed-mode-smokes-20261109.json": "99c120cfbf5173ba07b8f9e700d47f742990c3d10066811039655ca8763a5194",
     "port/test-results/mixed-team-time60-20261109.json": "2b5a4782f74ee111f7d1f3b2c32770329fe051d0e778ce408059d74a863a7d03",
     "port/test-results/mode-smokes-20261106.json": "95b43930aa7d513a0dfbdc33da60f242e5afa2ef1cb3a20d76f523f23810a12e",
     "port/test-results/opaque-copy-both-bad-crc.json": "50cba458806d003dac1d38cbb9659f0798e06df80e8ece68655e4ef8a061780e",

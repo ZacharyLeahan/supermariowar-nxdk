@@ -58,6 +58,17 @@ four routes. Both match sessions exited normally with empty stderr, zero logged
 audio underruns and clean audio shutdown. The earlier all-Wi-Fi Time sample
 had ten new P1 send errors; retain that limitation separately.
 
+The mixed-controller follow-up completed 17 further mode launch/input/exit
+checks on 0smw (Stomp through Shy Guy Tag), with 17 native game entries, empty
+stderr, zero logged music underruns and clean shutdown. Combined with the
+prior clean-candidate Classic/Frag/Time/Jail/Coin records, all 22 modes now have
+basic clean-candidate coverage. Chicken, Tag, Domination, Hill, Owned, Frenzy,
+Survival and Phanto showed scoring or life changes. This is not full-objective
+acceptance. An eight-second PCM capture overlapping Card Collection contained
+56 left and 2 right full-scale samples (longest run six samples), despite zero
+capture overruns; listening/clipping investigation remains open. See
+[mixed-mode audit](test-results/mixed-mode-smokes-20261109.json).
+
 A fresh packaged install into `/F/SMW-nxdk-dashboard-20261106` verified all
 1,544 files by FTP readback, generated nine valid 160×120 thumbnail PNGs from an
 absent cache directory, and saved/reloaded native preferences. Health defaults

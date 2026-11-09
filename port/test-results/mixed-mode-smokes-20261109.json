@@ -1,0 +1,187 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "hardware_tested": true,
+  "emulator_tested": false,
+  "map": "0smw",
+  "humans": 4,
+  "transport": "direct P1, Wi-Fi P2-P4",
+  "scope": "Bounded launch, separate per-player input, exit dialog and return to settings. Not full matches or complete objectives.",
+  "native_logs_pending": false,
+  "modes": [
+    {
+      "index": 5,
+      "name": "Stomp",
+      "observed": "Enemies spawned; all four score counters zero at reviewed checkpoint; exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-05-stomp-20261109"
+    },
+    {
+      "index": 6,
+      "name": "Yoshi Eggs",
+      "observed": "Eggs and Yoshi target spawned; four score counters zero at reviewed checkpoint; exit dialog and return reviewed.",
+      "evidence": "smw-mixed-four-human-06-eggs-20261109"
+    },
+    {
+      "index": 7,
+      "name": "Capture The Flag",
+      "observed": "Four colored flags/bases visible; score counters zero; normal exit and return reviewed. No flag capture isolated.",
+      "evidence": "smw-mixed-four-human-07-ctf-20261109"
+    },
+    {
+      "index": 8,
+      "name": "Chicken",
+      "observed": "P4 chicken role visible and score4; other scores0; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-08-chicken-20261109"
+    },
+    {
+      "index": 9,
+      "name": "Tag",
+      "observed": "Role and decrementing scores visible:169,192,200,200; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-09-tag-20261109"
+    },
+    {
+      "index": 10,
+      "name": "Star",
+      "observed": "Countdown23, P3 dark role, all five lives visible; normal exit and return reviewed. Full countdown/life-loss not isolated.",
+      "evidence": "smw-mixed-four-human-10-star-20261109"
+    },
+    {
+      "index": 11,
+      "name": "Domination",
+      "observed": "Colored control blocks; all players scored8,7,2,4; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-11-domination-20261109"
+    },
+    {
+      "index": 12,
+      "name": "King Of The Hill",
+      "observed": "Hill region visible; P1/P3 score6/6 and then P3 reaches7 at exit-dialog checkpoint; normal return reviewed.",
+      "evidence": "smw-mixed-four-human-12-hill-20261109"
+    },
+    {
+      "index": 13,
+      "name": "Race",
+      "observed": "Four numbered checkpoints visible; no lap completion isolated, all scores zero; exit dialog and return reviewed.",
+      "evidence": "smw-mixed-four-human-13-race-20261109"
+    },
+    {
+      "index": 14,
+      "name": "Owned",
+      "observed": "P3 ownership indicator; P4 score4 then5 across live/exit-dialog checkpoints; normal return reviewed.",
+      "evidence": "smw-mixed-four-human-14-owned-20261109"
+    },
+    {
+      "index": 15,
+      "name": "Frenzy",
+      "observed": "Powerup cards spawned; P2 score1; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-15-frenzy-20261109"
+    },
+    {
+      "index": 16,
+      "name": "Survival",
+      "observed": "Falling Thwomp hazards; lives20,19,18,19 demonstrate decrements; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-16-survival-20261109"
+    },
+    {
+      "index": 17,
+      "name": "Greed",
+      "observed": "Four40-coin counters and active players; no coin transfer isolated; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-17-greed-20261109"
+    },
+    {
+      "index": 18,
+      "name": "Health",
+      "observed": "All four players start with three full displayed hearts (six internal half-heart units), five lives; normal exit and return reviewed. Healing/full-cap behavior not exercised.",
+      "evidence": "smw-mixed-four-human-18-health-20261109"
+    },
+    {
+      "index": 19,
+      "name": "Card Collection",
+      "observed": "Collectible cards spawned; no scoring isolated; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-19-cards-20261109"
+    },
+    {
+      "index": 20,
+      "name": "Phanto",
+      "observed": "Key visible; P1 score3; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-20-phanto-20261109"
+    },
+    {
+      "index": 21,
+      "name": "Shy Guy Tag",
+      "observed": "Four active players, counters zero; no role transfer isolated; normal exit and return reviewed.",
+      "evidence": "smw-mixed-four-human-21-shyguy-20261109"
+    }
+  ],
+  "release_accepted": false,
+  "pcm_capture": {
+    "started_utc": "2026-11-09T19:20:06.612601+00:00",
+    "url": "http://192.168.1.218",
+    "before": {
+      "available": true,
+      "enabled": true,
+      "streaming": false,
+      "rate": 48000,
+      "channels": 2,
+      "frames": 645360,
+      "overruns": 0,
+      "peak": 0.250824,
+      "rms": 0.106757,
+      "sample_age_ms": 2408835,
+      "active_frames": 617205,
+      "peak_max": 0.682831
+    },
+    "requested_seconds": 8,
+    "subjective_listening_pass": false,
+    "headers": {
+      "Content-Type": "application/octet-stream",
+      "Cache-Control": "no-store",
+      "Connection": "close",
+      "X-Audio-Rate": "48000",
+      "X-Audio-Format": "s16le-stereo"
+    },
+    "elapsed_seconds": 8.010309458,
+    "after": {
+      "available": true,
+      "enabled": true,
+      "streaming": false,
+      "rate": 48000,
+      "channels": 2,
+      "frames": 384480,
+      "overruns": 0,
+      "peak": 0.164856,
+      "rms": 0.061858,
+      "sample_age_ms": 3,
+      "active_frames": 321570,
+      "peak_max": 1.0
+    },
+    "received_bytes": 1536000,
+    "discarded_partial_frame_bytes": 0,
+    "captured_seconds": 8.0,
+    "complete": true,
+    "channels": [
+      {
+        "peak": 32768,
+        "rms": 4711.53591067562,
+        "full_scale_samples": 56,
+        "active_samples_over_32": 317417
+      },
+      {
+        "peak": 32768,
+        "rms": 4818.1024517476235,
+        "full_scale_samples": 2,
+        "active_samples_over_32": 317555
+      }
+    ],
+    "wav_sha256": "401ac283b0de39012c7bf9df9c359b9524b8fc9c1c6d4cf86c8a46a0060a3769",
+    "scope": "Capture overlaps the Card Collection scenario; not a subjective listening pass. Full-scale samples56 left/2 right require separate listening/clipping investigation."
+  },
+  "native_log_sha256": "abdf104bb44cc658b363111d9901306855878562bfe2b3c753839abf48b88e03",
+  "stderr_bytes": 0,
+  "audio_underruns": 0,
+  "clean_audio_shutdown": true,
+  "minimum_logged_available_kib": 15848,
+  "native_game_entries": 17,
+  "pcm_full_scale_longest_run_samples": [
+    6,
+    1
+  ]
+}
