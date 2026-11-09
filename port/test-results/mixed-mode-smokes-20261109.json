@@ -12,103 +12,137 @@
       "index": 5,
       "name": "Stomp",
       "observed": "Enemies spawned; all four score counters zero at reviewed checkpoint; exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-05-stomp-20261109"
+      "evidence": "smw-mixed-four-human-05-stomp-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-05-stomp-20261109.json",
+      "scenario_sha256": "6a9d642d3807de17d26975e5788b570c42c8356c15f54deb55e51a32061ff8eb"
     },
     {
       "index": 6,
       "name": "Yoshi Eggs",
       "observed": "Eggs and Yoshi target spawned; four score counters zero at reviewed checkpoint; exit dialog and return reviewed.",
-      "evidence": "smw-mixed-four-human-06-eggs-20261109"
+      "evidence": "smw-mixed-four-human-06-eggs-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-06-eggs-20261109.json",
+      "scenario_sha256": "1ab025774c7c2dfa9c9b832c67e7d9c71274891c812dbf0f528c4ee9cea75ed9"
     },
     {
       "index": 7,
       "name": "Capture The Flag",
       "observed": "Four colored flags/bases visible; score counters zero; normal exit and return reviewed. No flag capture isolated.",
-      "evidence": "smw-mixed-four-human-07-ctf-20261109"
+      "evidence": "smw-mixed-four-human-07-ctf-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-07-ctf-20261109.json",
+      "scenario_sha256": "df678aec4dca2bb48d4298d8fa591980cacc79f3db28817ff8a86c1a23ab59e6"
     },
     {
       "index": 8,
       "name": "Chicken",
       "observed": "P4 chicken role visible and score4; other scores0; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-08-chicken-20261109"
+      "evidence": "smw-mixed-four-human-08-chicken-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-08-chicken-20261109.json",
+      "scenario_sha256": "84ef116e9440ffc93e6177b08e4596f76f402085ac1510845f8ee436b2cbddbb"
     },
     {
       "index": 9,
       "name": "Tag",
       "observed": "Role and decrementing scores visible:169,192,200,200; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-09-tag-20261109"
+      "evidence": "smw-mixed-four-human-09-tag-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-09-tag-20261109.json",
+      "scenario_sha256": "d84d670d29b47d1154cd084425e9e4c9c72df5c0c37c74fe17269bd37bab8048"
     },
     {
       "index": 10,
       "name": "Star",
       "observed": "Countdown23, P3 dark role, all five lives visible; normal exit and return reviewed. Full countdown/life-loss not isolated.",
-      "evidence": "smw-mixed-four-human-10-star-20261109"
+      "evidence": "smw-mixed-four-human-10-star-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-10-star-20261109.json",
+      "scenario_sha256": "3fddf43a59e46777515ff510c406b283fb8d3c87013a602d37d59d9e487f6ee4"
     },
     {
       "index": 11,
       "name": "Domination",
       "observed": "Colored control blocks; all players scored8,7,2,4; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-11-domination-20261109"
+      "evidence": "smw-mixed-four-human-11-domination-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-11-domination-20261109.json",
+      "scenario_sha256": "db2952c2428f1c0a6418c33f6c6aa7860e15e834b66b106874aef6ec0720e721"
     },
     {
       "index": 12,
       "name": "King Of The Hill",
       "observed": "Hill region visible; P1/P3 score6/6 and then P3 reaches7 at exit-dialog checkpoint; normal return reviewed.",
-      "evidence": "smw-mixed-four-human-12-hill-20261109"
+      "evidence": "smw-mixed-four-human-12-hill-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-12-hill-20261109.json",
+      "scenario_sha256": "6611af33d24328097dd168c150b1ba52cbc4580170f1922e4f1832f15fc30e10"
     },
     {
       "index": 13,
       "name": "Race",
       "observed": "Four numbered checkpoints visible; no lap completion isolated, all scores zero; exit dialog and return reviewed.",
-      "evidence": "smw-mixed-four-human-13-race-20261109"
+      "evidence": "smw-mixed-four-human-13-race-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-13-race-20261109.json",
+      "scenario_sha256": "cdb8ac81a2ef6645534b7cd7275fb4b9e14ea75e0206e8934bdee8284a3bdc68"
     },
     {
       "index": 14,
       "name": "Owned",
       "observed": "P3 ownership indicator; P4 score4 then5 across live/exit-dialog checkpoints; normal return reviewed.",
-      "evidence": "smw-mixed-four-human-14-owned-20261109"
+      "evidence": "smw-mixed-four-human-14-owned-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-14-owned-20261109.json",
+      "scenario_sha256": "2d050f6bb295f174d2632b5023bbb9774f46deb3b2a421c1dc397e5486978a53"
     },
     {
       "index": 15,
       "name": "Frenzy",
       "observed": "Powerup cards spawned; P2 score1; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-15-frenzy-20261109"
+      "evidence": "smw-mixed-four-human-15-frenzy-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-15-frenzy-20261109.json",
+      "scenario_sha256": "4d7d00d5ba5134ed48d3ab9083b1949d2ad3710577034af6b2b8af343503ecfb"
     },
     {
       "index": 16,
       "name": "Survival",
       "observed": "Falling Thwomp hazards; lives20,19,18,19 demonstrate decrements; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-16-survival-20261109"
+      "evidence": "smw-mixed-four-human-16-survival-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-16-survival-20261109.json",
+      "scenario_sha256": "da9cabddf5450e8a7a554b3d13ca748916d42b84e02248d19cfd2c7e8e95edf6"
     },
     {
       "index": 17,
       "name": "Greed",
       "observed": "Four40-coin counters and active players; no coin transfer isolated; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-17-greed-20261109"
+      "evidence": "smw-mixed-four-human-17-greed-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-17-greed-20261109.json",
+      "scenario_sha256": "0e8e99dada0560ad7b60526bcb870c53fede1943e944f09a224b139a59085b6d"
     },
     {
       "index": 18,
       "name": "Health",
       "observed": "All four players start with three full displayed hearts (six internal half-heart units), five lives; normal exit and return reviewed. Healing/full-cap behavior not exercised.",
-      "evidence": "smw-mixed-four-human-18-health-20261109"
+      "evidence": "smw-mixed-four-human-18-health-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-18-health-20261109.json",
+      "scenario_sha256": "0c986050099472036a16729ace9e9645616055c5bd25db551b92f340a78fdc2c"
     },
     {
       "index": 19,
       "name": "Card Collection",
       "observed": "Collectible cards spawned; no scoring isolated; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-19-cards-20261109"
+      "evidence": "smw-mixed-four-human-19-cards-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-19-cards-20261109.json",
+      "scenario_sha256": "b1fa52d3f6765793ca268292b6158339f299301296f0e29fbac4beceb94b6a86"
     },
     {
       "index": 20,
       "name": "Phanto",
       "observed": "Key visible; P1 score3; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-20-phanto-20261109"
+      "evidence": "smw-mixed-four-human-20-phanto-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-20-phanto-20261109.json",
+      "scenario_sha256": "422f2d79957d129d7f28b327a0bf4eacce621453ed321995855f427126e6e13d"
     },
     {
       "index": 21,
       "name": "Shy Guy Tag",
       "observed": "Four active players, counters zero; no role transfer isolated; normal exit and return reviewed.",
-      "evidence": "smw-mixed-four-human-21-shyguy-20261109"
+      "evidence": "smw-mixed-four-human-21-shyguy-20261109",
+      "scenario": "scenarios/mixed-20261109/smw-mixed-four-human-21-shyguy-20261109.json",
+      "scenario_sha256": "478f16c21578c88af1f28eba216c4e9f6a381e7cac49e55f820f6ef9a5ae84b3"
     }
   ],
   "release_accepted": false,
