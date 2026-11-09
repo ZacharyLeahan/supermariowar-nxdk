@@ -1,0 +1,85 @@
+{
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "date": "2026-11-09",
+  "controller_transport": "Wi-Fi P1 fallback and Wi-Fi P2\u2013P4; direct P1 not active in live telemetry",
+  "kvm_build": "Nov9 07:56:08, paired firmware bb4302c5; version180dirty",
+  "modes": [
+    {
+      "index": 1,
+      "name": "Frag Limit",
+      "map": "1986",
+      "human_players": 4,
+      "launch_input_and_return_visually_reviewed": true,
+      "goal": 20,
+      "scores_at_checkpoint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_match_completed": false,
+      "scope": "Short independent per-player movement/jump input and normal menu return; no frag scoring observed",
+      "evidence_directory": "smw-clean-four-human-01-frag-20261109",
+      "image_sha256": {
+        "run-1-step-3.jpg": "65f2068b4b20839487dc37ed036e3e6c59cbd267364df33ac4d18582bac8b59e",
+        "run-1-step-13.jpg": "d337270609b038be3c588acc2b8fb84aa9f48b726a596748c4279ffd4bc03ff6",
+        "run-1-step-10.jpg": "c8c31a829291a33838878bb077f2a8797427d4f7b26d3b5b6954d2d3fee0c3f8",
+        "run-1-step-11.jpg": "0e4cb72ffe70d1457963c5cbbb9442a313019cf1152f3e5aced11fa7776c3ef0",
+        "run-1-step-5.jpg": "a6c0d72137f34e5e3822c52baa640180bc8132402e5e35f980a2b72a77304488"
+      }
+    },
+    {
+      "index": 3,
+      "name": "Jail",
+      "map": "1986",
+      "human_players": 4,
+      "launch_input_and_return_visually_reviewed": true,
+      "goal": 20,
+      "scores_at_checkpoint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_match_completed": false,
+      "scope": "Movement and menu return observed; no jail capture or rescue isolated",
+      "evidence_directory": "smw-clean-four-human-03-jail-20261109",
+      "image_sha256": {
+        "run-1-step-3.jpg": "84e499b313764800b3ba8aadc4cf852412e6bc64603baefaa06452d61493779a",
+        "run-1-step-13.jpg": "1134915239cce1e4dc2cc72ee3bb1f3cae6d2edf7b9091dcd5808ce4354afad9",
+        "run-1-step-10.jpg": "821847c56a04a803f19df4ec4548b5f1f923f638ee680cf21547986246a70409",
+        "run-1-step-11.jpg": "87f6b581cf0c05eb12826855196f61a7dcf6648f01836df101fb0b8b1d34dec9",
+        "run-1-step-5.jpg": "f4b957352d29b13bb5cda0e6971082721fce840e99425d1e98f142e3b8f9d5ed"
+      }
+    },
+    {
+      "index": 4,
+      "name": "Coin Collection",
+      "map": "1986",
+      "human_players": 4,
+      "launch_input_and_return_visually_reviewed": true,
+      "goal": 20,
+      "scores_at_checkpoint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_match_completed": false,
+      "scope": "Coin spawn, movement and menu return observed; no coin scoring isolated",
+      "evidence_directory": "smw-clean-four-human-04-coins-20261109",
+      "image_sha256": {
+        "run-1-step-3.jpg": "43333896e6dc8b066f33e7c34a197bc8bbe6b45dcc070db98df97c813423e2b0",
+        "run-1-step-13.jpg": "33e211e48aaced5fc1ec0349b16743edff170191e60f633b31f38bc4fa9b7023",
+        "run-1-step-10.jpg": "c17ad0d1019a9fb45120e0ff4bdfb743f5d7757afd9c0104e7032f4c8d058d6c",
+        "run-1-step-11.jpg": "626d904805ad6e4fe21d7f7f7921ab0a574969f631edebc307f97f4a73373fb5",
+        "run-1-step-5.jpg": "93908e6cb1424cf3dcbb3a225fcbceda52209fa463c4465dadbbdbc82de5b207"
+      }
+    }
+  ],
+  "native_logs_pending": false,
+  "native_log_sha256": "13a5f9030b85099dcd2225cd15421e0791ad40fe29258ea813a4b5bed371536e",
+  "stderr_bytes": 0,
+  "music_underruns_max": 0,
+  "clean_session_shutdown": true
+}

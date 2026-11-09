@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "8f46017ed9be48b853cefc023c40da4619731224",
+  "port_source_revision": "e8fd87a3985a18d187a92a83479b91765ad83d20",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -217,6 +217,8 @@
     "port/test-results/clean-candidate-native-session-20261106.json": "b7ac476311517e6b57aaac9f2c6bc1d61d2079821da1daca37d024c1e37ba47c",
     "port/test-results/clean-candidate-ui-20261106.json": "fc0791fba31b72c6a6ed0a485f999b3b37722564fe3b0073cc15ae0a520732ce",
     "port/test-results/clean-close-ten-minute-match.json": "17587f9109ac20b5bb49faa9f04889a2fa1e88f485bcaffbdbd099dbd0ef765b",
+    "port/test-results/clean-four-human-time120-20261109.json": "c32c5ac6b7e11ff3170741eb34af96c6eb8e7f15564f5c98ea4f076643678951",
+    "port/test-results/clean-mode-smokes-20261109.json": "cc7801003baed7b5d8c493b9bec83f83d0d9e1c81798f78e818bc1119c955e5a",
     "port/test-results/clean-notices-package-20261106.json": "04d0c3e22b353f792ea0c304589d485e47b0fdfdbd6b8032b791019b128a9ab6",
     "port/test-results/clean-reconstruction-exact-20261106.json": "2be506754a8e9017683e740b1ce16ec5dd321eb8b1b4ad247bbb08329959bb59",
     "port/test-results/clean-ui-ready-both-bad-crc.json": "8901d4e2b444ca7bc47719c38a6d336b621d7cba55655dec5673acca7cede4cd",

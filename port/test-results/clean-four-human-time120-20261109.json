@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-09",
+  "xbe_sha256": "4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9",
+  "mode": "Time Limit",
+  "goal_seconds": 120,
+  "map": "1986",
+  "humans": 4,
+  "transport": "Wi-Fi P1 fallback and Wi-Fi P2\u2013P4; not wired P1",
+  "completed_match": true,
+  "winner": 4,
+  "scores_p1_to_p4": [
+    1,
+    2,
+    0,
+    3
+  ],
+  "timer_checkpoints": [
+    119,
+    77,
+    58,
+    39,
+    20,
+    1
+  ],
+  "simultaneous_input_batches": 64,
+  "active_play_input_scope": "Input started at timer77; first40batches reached timer1. Later batches include results and do not establish full-match continuous input. Each batch1200ms held then700ms release gap,100ms refresh.",
+  "normal_return_to_settings": true,
+  "time_goal_reload_observed": 120,
+  "audio": {
+    "complete": true,
+    "captured_seconds": 12.0,
+    "elapsed_seconds": 12.01505175,
+    "received_bytes": 2304000,
+    "channels": [
+      {
+        "peak": 22375,
+        "rms": 3097.0581572110605,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 539014
+      },
+      {
+        "peak": 19347,
+        "rms": 2761.278373602084,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 541805
+      }
+    ],
+    "wav_sha256": "b43861af31f9fcd33d7f69447cae9f188c73796282625a9a040f49351377a5e0"
+  },
+  "audio_capture_overrun_delta": 0,
+  "subjective_listening_pass": false,
+  "controller_telemetry": {
+    "seconds": 14.551,
+    "deltas": [
+      {
+        "player": 1,
+        "transport": "wifi",
+        "consumed": 1400,
+        "send_errors": 10
+      },
+      {
+        "player": 2,
+        "transport": "wifi",
+        "consumed": 1400,
+        "send_errors": 0
+      },
+      {
+        "player": 3,
+        "transport": "wifi",
+        "consumed": 1600,
+        "send_errors": 0
+      },
+      {
+        "player": 4,
+        "transport": "wifi",
+        "consumed": 1600,
+        "send_errors": 0
+      }
+    ],
+    "strict_zero_error_check_passed": false,
+    "scope": "All USB completions advanced; P1 had10senderrors, preventing zero-error transport acceptance. Game remained responsive at captured checkpoints."
+  },
+  "native_logs_pending": false,
+  "emulator_tested": false,
+  "hardware": "128MBXbox with LIMIT64MB application restriction; not physical64MBhardware",
+  "images_sha256": {
+    "006-checkpoint-60.jpg": "de0cf3848d365d0c79827a2e53707a686a452ea894ed50f6c4f3308b26c64d8d",
+    "001-checkpoint-10.jpg": "ef0a8b47eb976a86b494f0e168718a1002ad82a21482ede4e04d40c235736703",
+    "008-return-settings.jpg": "c1e2aa88413beeeb6ae55ef165cb882bac3d6509dfcc498192ec89d089445adc",
+    "007-after-input.jpg": "cd8b7556ac4f3421e841f44cd9ff41be0611a60fb7e3b726949d4dc524772e51",
+    "005-checkpoint-50.jpg": "f35c1b421aef6fe800332b86b6ed56b83dcfa697c9f1aacd97b1722040932ac4",
+    "004-checkpoint-40.jpg": "c9c6b53b9addc970cb159df15afb9e03c5e72191a6bafdc3ffa4b5046c75d06e",
+    "003-checkpoint-30.jpg": "db506b24977a5392528830b339f868cb7a54e076fce6920b6a0478be60b93f5f",
+    "002-checkpoint-20.jpg": "c31446bfc2e9b85ff43d2a5c59ff87dfa18525b39441abaf92db971270499a79",
+    "000-before-input.jpg": "9b8c6255334c6cd1de4b5fdb122b4f658954f18936ee694d30cb313b3ff86339"
+  },
+  "native_log_sha256": "13a5f9030b85099dcd2225cd15421e0791ad40fe29258ea813a4b5bed371536e",
+  "stderr_bytes": 0,
+  "music_underruns_max": 0,
+  "clean_shutdown": true,
+  "performance": {
+    "steady_selected_ten_second_window_fps": [
+      60.8,
+      61.9,
+      61.1,
+      61.2,
+      61.0,
+      61.1,
+      61.0,
+      61.0,
+      61.1,
+      61.1
+    ],
+    "minimum": 60.8,
+    "median": 61.1,
+    "maximum": 61.9,
+    "scope": "First10complete10-second state5windows after initial mixed Time transition window.100seconds selected before results; includes initial idle gameplay before input, not solely active-input frames. Not a worst-case frame-time bound.",
+    "excluded_initial_transition_fps": 50.1
+  },
+  "minimum_reported_available_kib": 17504
+}
