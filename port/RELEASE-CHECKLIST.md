@@ -38,7 +38,24 @@ external-data downloader workflow remain unresolved; no public upload has occurr
   same runtime source but still needs its targeted Health regression. See
   [healing result](test-results/health-healing-native-20261106.json).
 
-## Latest clean candidate (supersedes older executable status)
+## Player-selector fix candidate (compiled; hardware qualification pending)
+
+Candidate `58c7e48d8bc21fe9df46fc752ff7c16e66d203a56c2080aa087c1dd6b7eb7ff5`
+(source `d1273c51e37d`) fixes duplicate actions in the shared Players selector
+when an available pad aliases missing P1 for menu recovery. One P3 Down on the
+previous candidate cycled Human→CPU→None, and Right skipped a player slot.
+An ASan/UBSan regression against production selector code failed before the fix
+and passed after it. The new clean XBE is compiled, with native acceptance still
+pending. Team/game input code is unchanged. All earlier native mode, save and
+performance results remain bound to their original XBE hashes.
+
+The separately observed P2 transition from configured in XBMC to unconfigured
+after launch has not been isolated to nxdk, game code or controller firmware.
+Do not merge that transport issue with the reproduced selector defect. See
+[selector regression](test-results/player-selector-recovery-alias-20261109.json)
+and [controller transition](test-results/controller-dashboard-game-transition-20261109.json).
+
+## Clean baseline with native evidence
 
 Candidate `4addeb4e...` is reconstructed byte-for-byte on the same host/toolchain.
 Its installed-session XBE has passed boot, isolated P1–P4 readiness, a completed
