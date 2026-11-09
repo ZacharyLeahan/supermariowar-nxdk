@@ -500,8 +500,8 @@
   "current_hardware_tested_xbe_sha256": "10910209be2ef92fe5f9f3d1b38e06f0ced0ea86d453d9100d13ee519bb3c83c",
   "current_hardware_test_source_revision": "d82d9af1789cb2da9e9db4b580a1542a118078ae",
   "game_build": {
-    "embedded_revision": "3c441985ee68",
-    "embedded_date": "2026-11-06",
+    "embedded_revision": "d1273c51e37d",
+    "embedded_date": "2026-11-09",
     "make_flags": [
       "PREFERENCES=1",
       "AUDIO_FAILURE_DMA_LOG=1",
@@ -510,7 +510,7 @@
       "EXIT_WATCHDOG_MS=10000",
       "RUNTIME_WATCHDOG_MS=45000"
     ],
-    "scope": "Explicit configuration of hardware-qualified candidate 84a132cd; display stamp is independent of the synthetic reconstruction commit. Runtime source/provenance must still be verified.",
+    "scope": "Player-selector recovery fix candidate58c7e48d: compiled and host regression-tested; hardware acceptance pending. Display stamp is independent of synthetic reconstruction commit.",
     "source_path_prefix": "/tmp/smw-xbe-workspace"
   }
 }
