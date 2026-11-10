@@ -1,0 +1,1 @@
+{"name": "smw-timed-start-20261110", "start_state": "Reviewed Time Limit 60, 0smw, Mode selected, four humans", "steps": [{"name": "start-focus", "player": 1, "buttons": ["up"], "hold_ms": 400, "wait_ms": 1500}, {"name": "start-match", "player": 1, "buttons": ["a"], "hold_ms": 400, "wait_ms": 3000, "screenshot": true}]}

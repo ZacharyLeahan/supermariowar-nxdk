@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-10",
+  "xbe_sha256": "84fbddeb6e17820c80a1262456632a743260e4ae73c44d1a5df6974b1adc6339",
+  "mode": "Time Limit",
+  "seconds": 60,
+  "map": "0smw",
+  "players": "four humans; direct P1, Wi-Fi P2\u2013P4",
+  "match_completed": true,
+  "result": "four-way tie",
+  "scores": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "result_sha256": "fd5ecf7468b01f2a63bdb8903c7271a783ddb1dad5e5e5b78165db8cf388701d",
+  "audio": {
+    "started_utc": "2026-11-10T14:14:42.571839+00:00",
+    "url": "http://192.168.1.218",
+    "before": {
+      "available": true,
+      "enabled": true,
+      "streaming": false,
+      "rate": 48000,
+      "channels": 2,
+      "frames": 0,
+      "overruns": 0,
+      "peak": 0.0,
+      "rms": 0.0,
+      "sample_age_ms": -1,
+      "active_frames": 0,
+      "peak_max": 0.0
+    },
+    "requested_seconds": 12,
+    "subjective_listening_pass": false,
+    "headers": {
+      "Content-Type": "application/octet-stream",
+      "Cache-Control": "no-store",
+      "Connection": "close",
+      "X-Audio-Rate": "48000",
+      "X-Audio-Format": "s16le-stereo"
+    },
+    "elapsed_seconds": 12.010007625,
+    "after": {
+      "available": true,
+      "enabled": true,
+      "streaming": true,
+      "rate": 48000,
+      "channels": 2,
+      "frames": 576480,
+      "overruns": 0,
+      "peak": 0.608459,
+      "rms": 0.275093,
+      "sample_age_ms": 0,
+      "active_frames": 567958,
+      "peak_max": 0.958862
+    },
+    "received_bytes": 2304000,
+    "discarded_partial_frame_bytes": 0,
+    "captured_seconds": 12.0,
+    "complete": true,
+    "channels": [
+      {
+        "peak": 31420,
+        "rms": 5566.305290192499,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 563511
+      },
+      {
+        "peak": 30479,
+        "rms": 5332.230538336211,
+        "full_scale_samples": 0,
+        "active_samples_over_32": 563047
+      }
+    ],
+    "wav_sha256": "82b745b7e6748f0cd84822ed92892b0d97c65d1228e1ec2d849878cf05ad166c"
+  },
+  "transport_limit": "Post-KVM-restart P3 status interval stale with zero completion delta; P3 then accepted ready and match showed player3 scoring. Error-free controller transport not qualified.",
+  "native_logs_pending": false,
+  "release_accepted": false,
+  "emulator_tested": false,
+  "volume_tests": {
+    "muted-audio": {
+      "complete": true,
+      "captured_seconds": 5.0,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        }
+      ],
+      "wav_sha256": "c5f5b94f6900524f13910b578b94b488e506b21cfc58b718fc648d468ac1e51a",
+      "capture_overruns_delta": 0
+    },
+    "effects-only-audio": {
+      "complete": true,
+      "captured_seconds": 8.0,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        }
+      ],
+      "wav_sha256": "46ea71da247c66a543a722efb94bc0008c5448bc6b03da650b8d818627c196ac",
+      "capture_overruns_delta": 0
+    },
+    "music-only-audio": {
+      "complete": true,
+      "captured_seconds": 8.0,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 5896.063710473143,
+          "full_scale_samples": 4,
+          "active_samples_over_32": 378920
+        },
+        {
+          "peak": 32768,
+          "rms": 6077.262197708382,
+          "full_scale_samples": 13,
+          "active_samples_over_32": 378702
+        }
+      ],
+      "wav_sha256": "ca905d815787a918c2c001b9751ea865a92f36cf90da1e98dbdd7dc205aeffdb",
+      "capture_overruns_delta": 0
+    }
+  },
+  "volume_test_interpretation": "Both sliders Off: exact zero PCM. Music Max, effects Off: nonzero stereo with 4/13 full-scale samples; clipping attribution unresolved. Effects Max, music Off: silent during menu focus moves; no isolated effect trigger, not an effects acceptance pass. Both sliders visually restored to Max before exit.",
+  "native_log_sha256": "8b81344c2b599ce481279da1a18538a4d2384bc41c0f9d3999f24415ab3b3406",
+  "native_error_bytes": 0,
+  "native_max_music_underruns": 0,
+  "native_audio_close_clean": true,
+  "native_watchdog_markers_present": false,
+  "native_game_fps_windows": {
+    "count": 9,
+    "min": 45.2,
+    "median": 61.1,
+    "max": 62.3
+  },
+  "minimum_logged_available_kib": 19864,
+  "native_save_generations": {
+    "smw-pref0.bin": 27,
+    "smw-pref1.bin": 28
+  },
+  "normal_dashboard_exit_visually_verified": true,
+  "original_max_volumes_native_save_log_verified": true,
+  "upstream_menu_source_analysis": {
+    "decoder": "host ffmpeg, float32 stereo resampled48k; not Xbox decoder acceptance",
+    "source_sha256": "80321a3ce91f7fbb27ae68c9c93daf27d2d89b272a8d47cfdd2ded3e4b5be002",
+    "seconds": 153.33879166666668,
+    "peak": 1.1206697225570679,
+    "samples_at_or_above_unity": 768
+  },
+  "clipping_interpretation": "Host decoding of pinned menu.ogg exceeds unity (peak1.12067,768 samples); source overshoot is a plausible contributor. This does not establish exact correspondence to captured full-scale samples or exclude pipeline issues."
+}

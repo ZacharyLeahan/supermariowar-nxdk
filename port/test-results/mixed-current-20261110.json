@@ -17,7 +17,7 @@
   "commands_sha256": "2c1b263877ab75a2753920e26f95d08a56dbadd559cadd0cfaa65796b29c9acd",
   "match_completed": false,
   "failure": "JPEG endpoint returned HTTP503 no video signal after 44 completed input batches. KVM remained reachable; HDMI status signal=false, FTP timed out. Cause unclassified; awaiting physical screen/power confirmation. All inputs released. Native logs not yet retrieved.",
-  "native_logs_pending": true,
+  "native_logs_pending": false,
   "audio": {
     "dashboard-audio": {
       "complete": true,
@@ -124,5 +124,17 @@
     "wifi_beacon_age_ms_over": 136000,
     "interpretation": "Direct USB no longer configured and all three receiver beacons stale alongside HDMI loss. Consistent with console/adapter power or host loss; not sufficient to classify root cause. Await user observation."
   },
-  "hdmi_receiver_reconnect": "POST succeeded but fresh frame still HTTP503 no video signal; no Xbox reset performed"
+  "hdmi_receiver_reconnect": "POST succeeded but fresh frame still HTTP503 no video signal; no Xbox reset performed",
+  "native_log_sha256": "9a698fdf7e98208a14190134fbb2e4b9dd369623d171650ce93061ad11a06cfe",
+  "native_error_bytes": 0,
+  "native_watchdog_markers_present": false,
+  "native_audio_max_underruns": 0,
+  "native_last_music_loops": 3,
+  "native_game_fps_windows": {
+    "count": 15,
+    "min": 45.8,
+    "median": 61.1,
+    "max": 61.3
+  },
+  "recovered_dashboard": "User confirmed; fresh image reviewed and FTP logs retrieved. Log ends during gameplay with no normal audio-close/exit tail; cause remains unresolved."
 }
