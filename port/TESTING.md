@@ -194,3 +194,10 @@ state; short menu/game transitions cannot establish per-mode steady-state
 performance. See [native logs](test-results/health-mode-batch-native-logs-20261106.json).
 The KVM routing interruption was repaired in a separate chat; delivery-counter
 qualification is distinct from the actual game observations above.
+
+
+## Current mixed-controller run, 10 November 2026
+
+Exact candidate `84fbddeb6e17820c80a1262456632a743260e4ae73c44d1a5df6974b1adc6339` booted, accepted independent ready actions from wired P1 and Wi-Fi P2–P4, and ran four-human Classic on 0smw. After 44 completed simultaneous-input batches, the KVM reported no HDMI signal and Xbox FTP timed out. The match result and cause remain unverified; native logs must be preserved before another launch. Wi-Fi send errors occurred despite all four routes remaining configured and advancing in bounded samples.
+
+The recovered KVM audio service captured eight seconds of non-silent menu audio and 30 seconds of gameplay stereo PCM. Gameplay had zero reported capture overruns and zero full-scale samples; the menu capture had two full-scale samples per channel. This is measured capture evidence, not listening or complete audio acceptance. See [exact-candidate results](test-results/mixed-current-20261110.json).

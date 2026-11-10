@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-10",
+  "xbe_sha256": "84fbddeb6e17820c80a1262456632a743260e4ae73c44d1a5df6974b1adc6339",
+  "source_commit": "3dfac6c495666009cea04a3c240185e7a1ee51ca",
+  "hardware": "128 MB Stellar Xbox with application memory restriction; not stock-64 hardware qualification",
+  "controllers": [
+    "direct P1",
+    "Wi-Fi P2",
+    "Wi-Fi P3",
+    "Wi-Fi P4"
+  ],
+  "four_independent_ready_actions_visually_reviewed": true,
+  "mode": "Classic",
+  "lives": 10,
+  "map": "0smw",
+  "completed_input_batches": 44,
+  "commands_sha256": "2c1b263877ab75a2753920e26f95d08a56dbadd559cadd0cfaa65796b29c9acd",
+  "match_completed": false,
+  "failure": "JPEG endpoint returned HTTP503 no video signal after 44 completed input batches. KVM remained reachable; HDMI status signal=false, FTP timed out. Cause unclassified; awaiting physical screen/power confirmation. All inputs released. Native logs not yet retrieved.",
+  "native_logs_pending": true,
+  "audio": {
+    "dashboard-audio": {
+      "complete": true,
+      "captured_seconds": 8.0,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        }
+      ],
+      "wav_sha256": "46ea71da247c66a543a722efb94bc0008c5448bc6b03da650b8d818627c196ac",
+      "overruns_delta": 0
+    },
+    "title-audio": {
+      "complete": true,
+      "captured_seconds": 12.0,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0.0,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 0
+        }
+      ],
+      "wav_sha256": "96406d284f841ea0b131b2920232a8519d62ca49b0af870e0d9f17ec0bccb0cd",
+      "overruns_delta": 0
+    },
+    "menu-audio": {
+      "complete": true,
+      "captured_seconds": 8.0,
+      "channels": [
+        {
+          "peak": 32768,
+          "rms": 5948.134193977562,
+          "full_scale_samples": 2,
+          "active_samples_over_32": 378610
+        },
+        {
+          "peak": 32767,
+          "rms": 6072.144755426551,
+          "full_scale_samples": 2,
+          "active_samples_over_32": 377046
+        }
+      ],
+      "wav_sha256": "1e150b5bc2f7d7607b7377b65f62dc25ecb470d8c55015b5cd061e63f9dcc7ee",
+      "overruns_delta": 0
+    },
+    "classic-audio": {
+      "complete": true,
+      "captured_seconds": 30.0,
+      "channels": [
+        {
+          "peak": 22711,
+          "rms": 3217.0340317628193,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 1364151
+        },
+        {
+          "peak": 23926,
+          "rms": 2890.727472176242,
+          "full_scale_samples": 0,
+          "active_samples_over_32": 1369884
+        }
+      ],
+      "wav_sha256": "f72d63e7041bce01c3fadbd195c73ef5ef9164aec24752591933e5d8736acd27",
+      "overruns_delta": 0
+    }
+  },
+  "audio_listening_pass": false,
+  "transport": "All configured and advancing. Dashboard 14.53s zero new errors. In-game first sample P2 +4, P4 +5 errors; active sample P2 +7; other routes zero. Error-free continuity not qualified.",
+  "screenshots_sha256": {
+    "000-batch-4.jpg": "3c14ba588e599e05d2c2e68caa3e50a04e0b13e010a5ad46e0c1f99ed36192f5",
+    "001-batch-8.jpg": "b85766d518855399bacdad90d69217c5e25a2dffc1e078b9d5c2bd1bfaa97a8e",
+    "002-batch-12.jpg": "cbdd0660d55629f76256a7e1e2649773eb21c685ae95b8d08ea36ee592979b21",
+    "003-batch-16.jpg": "a24268dbe955660793a95cb2037a20c51be395d45d34b3c5fd16edb60c36c28b",
+    "004-batch-20.jpg": "35f27d26f112fb0a258654214867524dec3c3fb108f383eeff839c9e97f6b665",
+    "005-batch-24.jpg": "190011880cb6fea6c5efdd275b8439b8190b58966dc603950c4e4b8dda3139b4",
+    "006-after-first-plan.jpg": "0bccbb8f1cfe1fc205291e210aee0bdb2966439dbaaa013f83314997e3e52488",
+    "007-batch-4.jpg": "3ec7168e5e5036d743115546f6938d322d814c79e5900bbcc3b4df3f5d0073ad",
+    "008-batch-8.jpg": "a3d7e7834cc9421fe853f5d97c6a0fede16b6405083a93858bdd0ee541015b4f",
+    "009-batch-12.jpg": "286bdb658c5b2e48248b622cbb12717a64e66a0969e5a57e81a3d711298227ea",
+    "010-batch-16.jpg": "3f07796f60ffd1b7da5e40048cf191aa26b59a1d09444cf22dfd7548025d35b6"
+  },
+  "emulator_tested": false,
+  "release_accepted": false,
+  "post_video_loss_telemetry": {
+    "direct_p1_connection": 1,
+    "direct_p1_completion_age_ms": 135584,
+    "wifi_p2_p3_p4_connection": 3,
+    "wifi_beacon_age_ms_over": 136000,
+    "interpretation": "Direct USB no longer configured and all three receiver beacons stale alongside HDMI loss. Consistent with console/adapter power or host loss; not sufficient to classify root cause. Await user observation."
+  },
+  "hdmi_receiver_reconnect": "POST succeeded but fresh frame still HTTP503 no video signal; no Xbox reset performed"
+}

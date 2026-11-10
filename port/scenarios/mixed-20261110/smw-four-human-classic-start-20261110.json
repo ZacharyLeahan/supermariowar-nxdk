@@ -1,0 +1,1 @@
+{"name": "smw-four-human-classic-start-20261110", "start_state": "Reviewed Classic 10 lives, 0smw, four humans, Start selected", "steps": [{"name": "start", "player": 1, "buttons": ["a"], "hold_ms": 400, "wait_ms": 5000, "screenshot": true}]}

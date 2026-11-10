@@ -6,7 +6,7 @@
     "pin_policy": "Last commit immediately before upstream SDL3 conversion; immutable SDL2 game baseline, not a moving branch",
     "first_sdl3_commit": "cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397"
   },
-  "port_source_revision": "94a5e588d01a52b1c6dfb3a00a1bef0b26d3ad99",
+  "port_source_revision": "39d66f24e6b54b72b697378499894108e571def6",
   "nxdk": {
     "url": "https://github.com/XboxDev/nxdk",
     "revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2"
@@ -64,7 +64,7 @@
     "port/SaveFileSlots.h": "3f3b8b3e07bb6722eab7d85cd1458331cdb5b0ad9b0854d034685643be91a2a7",
     "port/SaveRecord.h": "66108d19fecef50c3375fbda4bf3f259ebde2b32dfa6e190275b9916071cda74",
     "port/SaveStore.h": "4030f2c352765a1bfbfe53eaea56c3614fb883ad53b5988bed8ab45fd0bc384f",
-    "port/TESTING.md": "a5894401b2c7b02ebb8f491b943cc9c2a262887bb1ea330a079a48f0b3e78e8d",
+    "port/TESTING.md": "1dfaa459f26ba92a319c8e088985a86779d266fa0b1d93bcacf67afcf64a5cf7",
     "port/THUMBNAILS.md": "aac631bfcb1dbcaf8413268cfc729c7b109ea5b0d40a349e6810c7e6335e3ad3",
     "port/Vorbis.c": "3640a9382ae0db121c19533de1eba23ca30c2a1785d98e6e25a35855dd916d2b",
     "port/notices/GPL-2.0.txt": "c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18",
@@ -173,6 +173,10 @@
     "port/scenarios/mixed-20261109/smw-mixed-four-human-19-cards-20261109.json": "b1fa52d3f6765793ca268292b6158339f299301296f0e29fbac4beceb94b6a86",
     "port/scenarios/mixed-20261109/smw-mixed-four-human-20-phanto-20261109.json": "422f2d79957d129d7f28b327a0bf4eacce621453ed321995855f427126e6e13d",
     "port/scenarios/mixed-20261109/smw-mixed-four-human-21-shyguy-20261109.json": "478f16c21578c88af1f28eba216c4e9f6a381e7cac49e55f820f6ef9a5ae84b3",
+    "port/scenarios/mixed-20261110/README.md": "611baea5af2a7ffe868afcb0fd1bf0ea70fbfdbe67c368b44824901cc661f693",
+    "port/scenarios/mixed-20261110/smw-four-human-classic-start-20261110.json": "1c50e2f3f36b1a1041f272117bc1da7abdb7f7d5b78f4299b797f2ca7bc7acaa",
+    "port/scenarios/mixed-20261110/smw-four-human-ready-20261110.json": "8a615ff7314adfe3bb436656a8a1c01129c75573a7270991b8ba3a66a7ba7d14",
+    "port/scenarios/mixed-20261110/smw-four-human-team-20261110.json": "6fa49453a729415c39a756b59ddd7bd31bf3fc0968ee08b9f067a331108d9ab0",
     "port/test-results/audio-assets.json": "76861acdd30830b4c7aa4b0c556d703c8e7b9159681797217a1fdc659a21f629",
     "port/test-results/audio-cached-reference-repeat.json": "b7f205d5c2e08a0c632223c21b70466cc24ecc21eca88e8d8b771dd6d76ed3dd",
     "port/test-results/audio-cached-reference-repeat.log": "7992f42039d7d53ebf8688fbca1a12ff052d3210aedfb011557307f27d3ed8bb",
@@ -294,6 +298,7 @@
     "port/test-results/menu-rle-workaround-observer.json": "aecf6919caf812cc1549cb2021991ec4bb83e5ff750ad849bfc0e025403ca2cd",
     "port/test-results/menu-screen-observer.json": "04f41466d4d7a7886d656bfb3ec86b52ff18a6602d9bb4ddca86fa29ea85cb1b",
     "port/test-results/mixed-controller-routing-20261109.json": "b047fd78c94b2f3297d907293b731a312d556497fcb8f68aaced4797b095e713",
+    "port/test-results/mixed-current-20261110.json": "862731f66d4bf64c6eeb268a6cf11239a825a5edf5ee8f9575c45ef7e4b8499b",
     "port/test-results/mixed-mode-smokes-20261109.json": "ba902fad50edeea2455bbb4b2fab0c722775bdc15342ff6ca0cef0ba5a46eaa2",
     "port/test-results/mixed-team-time60-20261109.json": "2b5a4782f74ee111f7d1f3b2c32770329fe051d0e778ce408059d74a863a7d03",
     "port/test-results/mode-smokes-20261106.json": "95b43930aa7d513a0dfbdc33da60f242e5afa2ef1cb3a20d76f523f23810a12e",
