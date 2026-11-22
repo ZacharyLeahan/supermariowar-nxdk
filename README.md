@@ -6,7 +6,7 @@ Remember **Super Mario War 1.7 April Fools Edition** or **1.8 Beta 1** on Xbox? 
 
 ## Get it on your Xbox
 
-1. **[Download the Xbox builder ZIP](https://github.com/ZacharyLeahan/supermariowar-nxdk/archive/f6edfe3610e0bfb54e339e814f55657be2a3d2e5.zip)** and extract it on your computer. This snapshot includes the audio fixes and Controller S icons.
+1. **[Download the Xbox builder ZIP](https://github.com/ZacharyLeahan/supermariowar-nxdk/releases/download/v0.3.0/SuperMarioWar-Xbox-Builder-v0.3.0.zip)** and extract it on your computer. Version 0.3.0 includes the audio fixes and Controller S icons.
 2. **Windows 10 or 11:** Double-click **Build Super Mario War.cmd**. The first run downloads a verified native toolchain (about 489 MiB) plus the game sources and data. The script keeps the tools in `%LOCALAPPDATA%\SuperMarioWarXbox` for later builds. You can run it directly from Windows without setting up WSL or Python yourself.
 
    **Mac:** Install [Homebrew](https://brew.sh/) if you need it, then double-click **Build Super Mario War.command**. The launcher uses Homebrew to install the build tools.
