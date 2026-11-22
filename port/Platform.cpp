@@ -20,6 +20,15 @@ extern "C" void nxdk_audio_close_load_configuration(void);
 #ifdef NXDK_AUDIO_START_SETTLE_EXPERIMENT
 extern "C" void nxdk_audio_settle_load_configuration(void);
 #endif
+namespace {
+void checkInGameReset(SDL_Joystick* pad) {
+    // Pinned nxdk SDL mapping: Back=6, Black=5, LT/RT=axes 2/5.
+    // Trigger axes range from -32768 at rest to 32767 fully pressed.
+    if (pad && SDL_JoystickGetButton(pad, 6) && SDL_JoystickGetButton(pad, 5) &&
+        SDL_JoystickGetAxis(pad, 2) > 16384 && SDL_JoystickGetAxis(pad, 5) > 16384)
+        HalReturnToFirmware(HalQuickRebootRoutine);
+}
+}
 void nxdk_poll_recovery() {
     nxdk_audio_update();
     // The KVM can reset/re-enumerate its virtual pad independently of the game.
@@ -42,6 +51,7 @@ void nxdk_poll_recovery() {
     static Uint32 held=0;
     bool reset=false;
     for (short i=0;i<joystickcount;i++) {
+        checkInGameReset(joysticks[i]);
         if (joysticks[i] && SDL_JoystickGetButton(joysticks[i],6) && SDL_JoystickGetButton(joysticks[i],7)) reset=true;
     }
     if (!reset) held=0;
@@ -172,8 +182,10 @@ namespace smw {
         SDL_PumpEvents();
         SDL_JoystickUpdate();
         bool reset=false;
-        for (auto* pad:pads)
+        for (auto* pad:pads) {
+            checkInGameReset(pad);
             if (pad && SDL_JoystickGetButton(pad,6) && SDL_JoystickGetButton(pad,7)) reset=true;
+        }
         if (!reset) held=0;
         else if (!held) held=SDL_GetTicks();
         else if (SDL_GetTicks()-held>=2000) break;

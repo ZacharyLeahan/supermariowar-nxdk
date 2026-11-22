@@ -38,6 +38,8 @@ Stomp your opponents, grab power-ups, and try to be the last player standing in 
 
 **Finish a session.** Choose **Exit** on the main menu to return to the dashboard, restart the Xbox, or power it off. Each action asks for confirmation.
 
+**In-game reset (IGR).** In builds made from current source, hold both triggers and press **Back + Black** on the same controller to return to the dashboard immediately. The published v0.3.0 builder predates this shortcut.
+
 ![Xbox Exit menu showing Return to Dashboard, Restart Xbox, Power Off Xbox, and Cancel](https://gist.githubusercontent.com/ZacharyLeahan/9f19b59192bac0b21cd025a845fb8d25/raw/50b00e2a1fce0625e9a2cb776084adc615fd18b2/exit-menu.jpg)
 
 ## From the April Fools Edition to 2.0
