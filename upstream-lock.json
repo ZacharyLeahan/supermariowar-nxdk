@@ -427,7 +427,7 @@
     "port/tools/save_preflight.py": "1447c3f7ce8b63e660fd68873195000b5181fefcd566e3fe1350290cfad208e5"
   },
   "patches_sha256": {
-    "game.patch": "9cd2667d5cfce4422be7156fd73c6f4adda9ff89737baf2d62bf1d321e3d3067",
+    "game.patch": "944706eef6e4b10545ad46db667147258f3a3c7d0869dbf50b8b7861bcc70d7c",
     "nxdk-audio-ready.patch": "303a595d2b88e3afba2bf6b71a6e23390d2bc5dc52ea38dbbe238d90243b04e7",
     "nxdk-cxbe-epoch.patch": "438fc6a535c89a5a298e06167dab79f2f971f15bb73ed6fa293e94b0d4a28049",
     "sdl2-audio-close.patch": "cb4e0f8649968d3246e7457ad28c3458e06d08211f88d72dcdcb284ed6d23525",
@@ -494,7 +494,7 @@
     "src/smw/gamemodes/Race.cpp": "3d4190d7250ef11391e887d9a152f7e5a08798be120691d4cb59a79c4a3f952d",
     "src/smw/gamemodes/Tag.h": "e256dae367b99a347d19ce6eacbb7385121e1ed0b4b0dfa2719a6966608d76fc",
     "src/smw/main.cpp": "500413259654ed5f40695e8bd0ad62b1c7fe58b467fc72ca0ada82fbd8b45c60",
-    "src/smw/menu/MainMenu.cpp": "5ef26cc4944aba7ef200de2b53f9486347408d3a1e92746509a1e71716c410bc",
+    "src/smw/menu/MainMenu.cpp": "238f971e2fdba8af27cae303652bfa5f8bdc8082e1d8ab6886aa1a6748751886",
     "src/smw/net.cpp": "8b6691e34d6195feec58c87aedb4058db9edff647ee1e226d8d30945d83c1744",
     "src/smw/objects/IO_FlameCannon.h": "d0845441ed820de178c3882f87981779966b8bcdf07ae9c170fc04000be5f0cf",
     "src/smw/objects/blocks/IO_Block.cpp": "f8de4dd685a02dbada2026808addc2d1a7f9553ef38d5fd684467ffc1ab305a7",
