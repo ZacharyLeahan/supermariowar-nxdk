@@ -15,7 +15,7 @@ The jump from 1.7 to 2.0 includes both 1.8 betas. If you played the old Xbox Bet
 
 ## Get it on your Xbox
 
-1. **[Download the Xbox builder ZIP](https://github.com/ZacharyLeahan/supermariowar-nxdk/releases/download/v0.3.0/SuperMarioWar-Xbox-Builder-v0.3.0.zip)** and extract it on your computer. Version 0.3.0 includes the audio fixes and Controller S icons.
+1. **[Download the v0.3.1 Xbox builder ZIP](https://github.com/ZacharyLeahan/supermariowar-nxdk/releases/download/v0.3.1/SuperMarioWar-Xbox-Builder-v0.3.1.zip)** and extract it on your computer.
 2. **Windows 10 or 11:** Double-click **Build Super Mario War.cmd**. The first run downloads a verified native toolchain (about 489 MiB) plus the game sources and data. The script keeps the tools in `%LOCALAPPDATA%\SuperMarioWarXbox` for later builds. You can run it directly from Windows without setting up WSL or Python yourself.
 
    **Mac:** Install [Homebrew](https://brew.sh/) if you need it, then double-click **Build Super Mario War.command**. The launcher uses Homebrew to install the build tools.
@@ -38,7 +38,7 @@ Stomp your opponents, grab power-ups, and try to be the last player standing in 
 
 **Finish a session.** Choose **Exit** on the main menu to return to the dashboard, restart the Xbox, or power it off. Each action asks for confirmation.
 
-**In-game reset (IGR).** In builds made from current source, hold both triggers and press **Back + Black** on the same controller to return to the dashboard immediately. The published v0.3.0 builder predates this shortcut.
+**In-game reset (IGR).** Starting with v0.3.1, hold both triggers and press **Back + Black** on the same controller to return to the dashboard immediately. This shortcut was tested on an original Xbox from the main menu and during a Classic match.
 
 ![Xbox Exit menu showing Return to Dashboard, Restart Xbox, Power Off Xbox, and Cancel](https://gist.githubusercontent.com/ZacharyLeahan/9f19b59192bac0b21cd025a845fb8d25/raw/50b00e2a1fce0625e9a2cb776084adc615fd18b2/exit-menu.jpg)
 
