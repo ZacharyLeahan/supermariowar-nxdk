@@ -4,10 +4,12 @@ Remember **Super Mario War 1.7 April Fools Edition** or **1.8 Beta 1** on Xbox? 
 
 ## Why upgrade from the April Fools Edition?
 
-- **Keep your match when a controller comes loose.** The game pauses and tells you which port needs a pad. Plug it back into that port and press **A** or **Start** to pick up where you left off.
-- **See who’s plugged in before you start.** Each player slot on the main menu shows a Controller S icon for a connected pad or a gray dash for an empty port. You can check all four from the couch.
-- **Get the later game fixes.** The 2.0 code sorts scores correctly and clears the previous map’s foreground tiles when you change maps. [Score fix](https://github.com/mmatyas/supermariowar/commit/c7056790ccb485b7309137251167b75fed1482e4) · [Map fix](https://github.com/mmatyas/supermariowar/commit/5693918)
-- **Finish the session with your controller.** Choose **Exit** to return to the dashboard, restart the Xbox, or shut it down.
+The jump from 1.7 to 2.0 includes both 1.8 betas. If you played the old Xbox Beta 1, the first two will be familiar.
+
+- **Play a whole world with your friends.** Beta 1 introduced an SMB3-style overworld that links matches together. Follow paths between stages, visit bonus houses for items, and take a detour for a pipe minigame. [Upstream changelog](https://github.com/mmatyas/supermariowar/blob/c7056790ccb485b7309137251167b75fed1482e4/CHANGELOG)
+- **Change what it takes to win.** In **Greed**, hits knock coins out of your opponents and the last player with money wins. **Health** gives everyone hearts so you can survive a hit. In **Collection**, you compete to complete sets of cards. All three joined the game in Beta 1. [Upstream changelog](https://github.com/mmatyas/supermariowar/blob/c7056790ccb485b7309137251167b75fed1482e4/CHANGELOG)
+- **Try Shyguy Tag and fight bosses.** Beta 2 added **Shyguy Tag** and a boxes minigame, and brought boss battles back to worlds and tours. The ice wand also gained new targets, so you can freeze an enemy, a moving shell, or a throwable block. [Beta 2 changes](https://github.com/mmatyas/supermariowar/blob/c7056790ccb485b7309137251167b75fed1482e4/CHANGELOG#L13)
+- **Get the later 2.0 fixes and improved audio.** Upstream counts at least 200 fixes since 1.8 and improved the quality of the music and sound effects. Among the fixes, capes stay visible as players fall and loading a world preserves its tour stops. [Upstream 2.0 overview](https://github.com/mmatyas/supermariowar/tree/c7056790ccb485b7309137251167b75fed1482e4#main-changes-since-18) · [Upstream release notes](https://github.com/mmatyas/supermariowar/releases/tag/2026-05)
 
 ![Original Xbox main menu with a Controller S icon under each of the four connected player slots](https://gist.githubusercontent.com/ZacharyLeahan/9f19b59192bac0b21cd025a845fb8d25/raw/a6f024b6d1dbdee4b10249a87499551f1649fdc2/main-menu.jpg)
 
