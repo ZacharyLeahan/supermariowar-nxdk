@@ -26,6 +26,22 @@
     "contest_content_present": false
   },
   "emulator_tested": false,
-  "hardware_tested": false,
+  "hardware_tested": true,
+  "hardware_test": {
+    "date": "2026-11-22",
+    "platform": "Physical original Xbox through ESP-KVM",
+    "remote_install_directory": "/F/SMW-native-v020",
+    "uploaded_files_hash_verified": 1489,
+    "existing_title_overwritten": false,
+    "video_mode": "720x480 progressive at 60 Hz",
+    "observed": [
+      "Title screen and main menu rendered",
+      "All four KVM controller routes readied players",
+      "Four-player Classic match started on 0smw",
+      "Player 1 accepted combined right and jump input",
+      "Pause and resume succeeded"
+    ],
+    "scope": "Short gameplay smoke test; not exhaustive mode, audio, save, long-run, or stock-64-MB acceptance"
+  },
   "artifacts_or_game_data_committed": false
 }

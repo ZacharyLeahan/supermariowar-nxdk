@@ -98,7 +98,13 @@ and staged 1,486 data files. The generated file began with the `XBEH` magic;
 the intentionally excluded Contest content was absent.
 
 The assembled folder and build workspace remained outside this repository.
-This verifies native compilation and asset-safe assembly, not gameplay: this
-exact XBE has not yet been run in an emulator or on original Xbox hardware.
-Machine-readable details are in
+After upload to a new Xbox directory, all 1,489 private package files passed
+readback hash verification. This exact XBE then booted on physical original
+Xbox hardware, rendered the title and menus at 720x480p60, accepted ready input
+from all four ESP-KVM controller routes, started a four-player Classic match on
+`0smw`, accepted a combined right/jump input from player 1, and paused/resumed.
+The pre-existing Xbox title was not overwritten. This is a short gameplay smoke
+test, not exhaustive mode, audio, save, long-run or stock-64-MB acceptance; no
+emulator test was performed. Private screenshots and the asset-bearing install
+remain outside the repository. Machine-readable details are in
 [native-windows-verification.json](native-windows-verification.json).
