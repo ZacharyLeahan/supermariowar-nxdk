@@ -381,31 +381,72 @@ index 72913c4..f492bef 100644
  #ifndef __EMSCRIPTEN__
      AddControl(miMainStartButton, miExitButton, miPlayerSelect, NULL, miQuickGameButton);
 diff --git a/src/smw/ui/MI_PlayerSelect.cpp b/src/smw/ui/MI_PlayerSelect.cpp
-index 725fbd1..2113da3 100644
+index 725fbd1..9ffb19b 100644
 --- a/src/smw/ui/MI_PlayerSelect.cpp
 +++ b/src/smw/ui/MI_PlayerSelect.cpp
-@@ -3,6 +3,10 @@
+@@ -3,6 +3,54 @@
  #include "GameValues.h"
  #include "ResourceManager.h"
  #include "ui/MI_Image.h"
 +#ifdef NXDK
 +#include "Platform.h"
-+#include <cstdio>
++#include <SDL.h>
++
++extern SDL_Surface* blitdest;
++
++static void drawControllerIndicator(int centerX, int top, bool connected)
++{
++    const Uint32 ink = SDL_MapRGB(blitdest->format, 32, 38, 43);
++    const auto fill = [centerX, top](int x, int y, int w, int h, Uint32 color) {
++        SDL_Rect rect{centerX + x, top + y, w, h};
++        SDL_FillRect(blitdest, &rect, color);
++    };
++
++    if (!connected) {
++        fill(-5, 4, 10, 4, ink);
++        fill(-4, 5, 8, 2, SDL_MapRGB(blitdest->format, 191, 195, 196));
++        return;
++    }
++
++    const Uint32 shell = SDL_MapRGB(blitdest->format, 53, 59, 62);
++    const Uint32 rim = SDL_MapRGB(blitdest->format, 166, 174, 171);
++    const Uint32 green = SDL_MapRGB(blitdest->format, 145, 234, 72);
++    // Shallow shoulders, a narrow waist and two tapered grips.
++    fill(-10, 0, 20, 10, rim);
++    fill(-12, 1, 24, 8, rim);
++    fill(-14, 3, 28, 6, rim);
++    for (int side : {-1, 1}) {
++        fill(side * 11 - 4, 5, 8, 6, rim);
++        fill(side * 12 - 3, 10, 6, 3, rim);
++        fill(side * 12 - 2, 13, 4, 2, rim);
++        fill(side * 11 - 3, 5, 6, 6, shell);
++        fill(side * 12 - 2, 10, 4, 3, shell);
++    }
++    fill(-11, 2, 22, 6, shell);
++    fill(-9, 1, 18, 8, shell);
++    // Offset sticks, low D-pad, green center jewel and ABXY diamond.
++    fill(-9, 2, 4, 3, rim);
++    fill(-8, 6, 2, 4, rim);
++    fill(-9, 7, 4, 2, rim);
++    fill(3, 7, 4, 3, rim);
++    fill(-2, 2, 4, 3, green);
++    fill(8, 1, 2, 2, SDL_MapRGB(blitdest->format, 255, 210, 57));
++    fill(5, 3, 2, 2, SDL_MapRGB(blitdest->format, 88, 160, 255));
++    fill(11, 3, 2, 2, SDL_MapRGB(blitdest->format, 255, 89, 75));
++    fill(8, 5, 2, 2, green);
++}
 +#endif
  
  extern CResourceManager* rm;
  extern CGameValues game_values;
-@@ -125,5 +129,13 @@ void MI_PlayerSelect::Draw()
+@@ -125,5 +173,10 @@
  
      for (short iPlayer = 0; iPlayer < 4; iPlayer++) {
          spr->draw(m_pos.x + iPlayerPosition[iPlayer], m_pos.y + 16, {game_values.playercontrol[iPlayer] * 34 + 32, 206, 34, 32});
 +#ifdef NXDK
 +        const int slot = game_values.inputConfiguration[iPlayer][1].iDevice;
-+        char status[16];
-+        std::snprintf(status, sizeof(status), "P%d %s", iPlayer + 1,
-+                      nxdk_controller_connected(slot) ? "ON" : "OFF");
-+        rm->menu_font_small.drawCentered(m_pos.x + iPlayerPosition[iPlayer] + 17,
-+                                         m_pos.y + 48, status);
++        drawControllerIndicator(m_pos.x + iPlayerPosition[iPlayer] + 17,
++                                m_pos.y + 48, nxdk_controller_connected(slot));
 +#endif
      }
  }

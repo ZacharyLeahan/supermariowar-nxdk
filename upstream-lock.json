@@ -428,7 +428,7 @@
   },
   "patches_sha256": {
     "game.patch": "944706eef6e4b10545ad46db667147258f3a3c7d0869dbf50b8b7861bcc70d7c",
-    "xbox-conveniences.patch": "b412a28b14b8878a623c67efe11d3b133c3f7328e7fe78dbd147733d08a8f93e",
+    "xbox-conveniences.patch": "a00d923c0547b568826a8a44cc07c1ab0ae93eb6140ed4140f84bc3d7ba24131",
     "nxdk-audio-ready.patch": "beaa37289f1327cbd5976df604c8022cd9e517b06a76d296edf5cca89a0b5d9e",
     "nxdk-cxbe-epoch.patch": "438fc6a535c89a5a298e06167dab79f2f971f15bb73ed6fa293e94b0d4a28049",
     "sdl2-audio-close.patch": "aca53d3047c06743e5ae8f80bff06b34aa654b94a21a91dcbde40fdc185c25f9",
@@ -526,7 +526,7 @@
     "src/smw/ui/MI_InputControlContainer.cpp": "0c2ab8f048341176388f2610bc2420dab167ab4ad34470e7fe166111e0df2bde",
     "src/smw/ui/MI_InputControlContainer.h": "883b8f786e9b3c3223f9168e37969bf1359a01f0d0f4dc9408d84660adc454b3",
     "src/smw/ui/MI_MapBrowser.cpp": "d2e0fa0f150d55fccee3e32c3e59a4aebd5810a9e6f65fab4c1a06d08be4ef3f",
-    "src/smw/ui/MI_PlayerSelect.cpp": "9900f4978a9bd1fe80e6c9aad68ccd0fe6a804e6c94ad48a10072e4ae4738041",
+    "src/smw/ui/MI_PlayerSelect.cpp": "84e52297eefd3a8c2123edc6dc86ae55ef5292b0e7f110948c56ae79f14794d9",
     "src/smw/world.cpp": "eefaec223f5371e557945f238d8e307df0ce5c3ff816f135b169a84af95e3172"
   },
   "sdl2_version": "2.0.9",
