@@ -71,6 +71,26 @@ acceptance. See [exact-build evidence](port/test-results/clean-reconstruction-ex
 
 The build does not create an uploadable release or automatically deploy anything.
 
+### One-command local Xbox folder
+
+For the easiest playable build, start with your own separate upstream checkout
+at the pinned revision and initialize its data submodule. Then run the bundled
+front end from Linux or WSL (keep the workspace on the Linux filesystem):
+
+```sh
+git clone https://github.com/mmatyas/supermariowar.git ~/supermariowar
+git -C ~/supermariowar checkout --detach c7056790ccb485b7309137251167b75fed1482e4
+git -C ~/supermariowar submodule update --init -- data
+python3 build-xbox.py ~/supermariowar /tmp/smw-xbox-play
+```
+
+The result is `/tmp/smw-xbox-play/SuperMarioWar`, ready to copy to a writable
+folder on a homebrew Xbox HDD. The script validates the exact source and data
+revisions, never modifies the supplied checkout, and omits the optional Contest
+worlds whose filenames are incompatible with FATX. The assembled folder remains
+local and must not be redistributed. This public repository and its source
+archives contain no game data, executable, or disc image.
+
 To run the game, obtain matching assets separately for local use. Either start
 with a different fresh workspace and explicitly request them:
 
