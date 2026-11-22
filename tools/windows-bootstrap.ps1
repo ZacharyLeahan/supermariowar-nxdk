@@ -49,6 +49,7 @@ if ($LASTEXITCODE -ne 0) { throw "Python installation in the native toolchain fa
 $env:SMW_KIT_WINDOWS = $kit
 $env:SMW_DEST_WINDOWS = $Destination
 $jobs = [Math]::Max(1, [Math]::Min(16, [Environment]::ProcessorCount))
+$env:SMW_JOBS = [string]$jobs
 Write-Host "Building the pinned source and data without WSL..."
-& $bash -lc 'kit=$(cygpath -u "$SMW_KIT_WINDOWS"); dest=$(cygpath -u "$SMW_DEST_WINDOWS"); cd "$kit"; exec python3 build-xbox.py --destination "$dest" --jobs '"$jobs"
+& $bash -lc 'kit=$(cygpath -u "$SMW_KIT_WINDOWS"); dest=$(cygpath -u "$SMW_DEST_WINDOWS"); cd "$kit"; exec python3 build-xbox.py --destination "$dest" --jobs "$SMW_JOBS"'
 if ($LASTEXITCODE -ne 0) { throw "Xbox build failed." }

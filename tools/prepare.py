@@ -15,8 +15,18 @@ if w.exists():p.error('Use a new workspace; existing directories are never overw
 if root==w or root in w.parents:p.error('Full checkouts and data must stay outside the lean repository')
 if any(c.isspace() for c in str(w)):p.error('Use a workspace path without whitespace for nxdk Makefiles')
 for rel,h in {**lock['overlay_sha256'],**{'patches/'+k:v for k,v in lock['patches_sha256'].items()}}.items():
- if hashlib.sha256((root/rel).read_bytes()).hexdigest()!=h:p.error('Recipe integrity mismatch: '+rel)
+ data=(root/rel).read_bytes()
+ actual=hashlib.sha256(data).hexdigest()
+ # Windows tools may check out text as CRLF despite the repository's LF
+ # attributes. Accept only the exact locked bytes or their LF-normalized form.
+ normalized=hashlib.sha256(data.replace(b'\r\n',b'\n')).hexdigest()
+ if actual!=h and normalized!=h:p.error('Recipe integrity mismatch: '+rel)
 w.mkdir(parents=True);(w/'repos').mkdir()
+patch_cache=w/'recipe-patches';patch_cache.mkdir()
+def patch_file(name):
+ target=patch_cache/name
+ target.write_bytes((root/'patches'/name).read_bytes().replace(b'\r\n',b'\n'))
+ return target
 def run(*cmd,cwd=None):subprocess.run([str(x) for x in cmd],cwd=cwd,check=True)
 def git(repo,*args):run('git','-C',repo,*args)
 def clone(info,dest,cache):
@@ -41,7 +51,8 @@ def modules(repo,cache=None,selected=None):
   modules(repo/path,local)
 modern=w/'repos/modern';sdk=w/'repos/nxdk'
 clone(lock['upstream'],modern,a.source_cache)
-git(modern,'apply','--check',root/'patches/game.patch');git(modern,'apply','--index',root/'patches/game.patch')
+for name in ['game.patch','xbox-conveniences.patch']:
+ patch=patch_file(name);git(modern,'apply','--check',patch);git(modern,'apply','--index',patch)
 shutil.copytree(root/'port',modern/'ports/nxdk',dirs_exist_ok=True)
 for link in lock['library_submodules']:(modern/link['path']).mkdir(parents=True,exist_ok=True)
 git(modern,'add','ports/nxdk')
@@ -49,7 +60,7 @@ git(modern,'add','ports/nxdk')
 run('git','-C',modern,'-c','user.name=nxdk port recipe','-c','user.email=recipe@localhost.invalid','commit','-m','Apply pinned nxdk port overlay and integration patches')
 clone(lock['nxdk'],sdk,a.sdk_cache)
 for name in ['nxdk-audio-ready.patch','nxdk-cxbe-epoch.patch','nxdk-clean-libjpeg.patch','nxdk-windows-response-file.patch']:
- git(sdk,'apply','--check',root/'patches'/name);git(sdk,'apply',root/'patches'/name)
+ patch=patch_file(name);git(sdk,'apply','--check',patch);git(sdk,'apply',patch)
 if not a.skip_dependencies:
  selected=[x['path'] for x in lock['library_submodules']]
  if a.with_data:selected.append('data')
@@ -57,7 +68,7 @@ if not a.skip_dependencies:
  sdl=sdk/'lib/sdl/SDL2'
  rev=subprocess.check_output(['git','-C',str(sdl),'rev-parse','HEAD'],text=True).strip()
  if rev!=lock['sdl2_revision']:raise SystemExit('Unexpected SDL2 revision')
- git(sdl,'apply','--check',root/'patches/sdl2-audio-close.patch');git(sdl,'apply',root/'patches/sdl2-audio-close.patch')
+ patch=patch_file('sdl2-audio-close.patch');git(sdl,'apply','--check',patch);git(sdl,'apply',patch)
 elif a.with_data:p.error('--with-data requires dependency initialization')
 record={'recipe_revision':subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip() if (root/'.git').exists() else 'uncommitted recipe','upstream_revision':lock['upstream']['revision'],'source_port_revision':lock['port_source_revision'],'dependencies_initialized':not a.skip_dependencies,'external_assets_requested':a.with_data,'compiled':False,'hardware_tested':False}
 (w/'PREPARED.json').write_text(json.dumps(record,indent=2)+'\n')

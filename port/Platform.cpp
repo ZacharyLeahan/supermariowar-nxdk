@@ -48,6 +48,38 @@ void nxdk_poll_recovery() {
     else if (!held) held=SDL_GetTicks();
     else if (SDL_GetTicks()-held>=2000) { fflush(nullptr); XReboot(); }
 }
+bool nxdk_controller_connected(int slot) {
+    return slot >= 0 && slot < 4 && nxdk_joystick_for_slot(slot) != nullptr;
+}
+bool nxdk_controller_button_down(int slot, int button) {
+    SDL_Joystick* joystick = slot >= 0 && slot < 4 ? nxdk_joystick_for_slot(slot) : nullptr;
+    return joystick && SDL_JoystickGetButton(joystick, button);
+}
+namespace {
+[[noreturn]] void waitForXboxTransition() {
+    for (;;) Sleep(1000);
+}
+void prepareXboxTransition(const char* action) {
+    printf("[exit] %s\n", action);
+    fflush(nullptr);
+    Sleep(100);
+}
+}
+[[noreturn]] void nxdk_return_to_dashboard() {
+    prepareXboxTransition("return to dashboard");
+    XLaunchXBEEx(nullptr, nullptr);
+    waitForXboxTransition();
+}
+[[noreturn]] void nxdk_restart_xbox() {
+    prepareXboxTransition("restart Xbox");
+    XReboot();
+    waitForXboxTransition();
+}
+[[noreturn]] void nxdk_power_off_xbox() {
+    prepareXboxTransition("power off Xbox");
+    HalInitiateShutdown();
+    waitForXboxTransition();
+}
 void nxdk_log_memory(const char* stage) {
     MM_STATISTICS stats = {}; stats.Length=sizeof(stats);
     if (MmQueryStatistics(&stats) >= 0)

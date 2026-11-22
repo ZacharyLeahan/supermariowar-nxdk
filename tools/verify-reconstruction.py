@@ -3,13 +3,18 @@
 import argparse,hashlib,json,pathlib,subprocess
 root=pathlib.Path(__file__).resolve().parent.parent
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('--workspace',type=pathlib.Path,required=True);a=p.parse_args();w=a.workspace.resolve();modern=w/'repos/modern';lock=json.loads((root/'upstream-lock.json').read_text());errors=[];checked=0
+def committed_bytes(rel):
+ return subprocess.check_output(['git','-C',str(modern),'cat-file','blob','HEAD:'+rel])
 for rel,h in lock['integration_result_sha256'].items():
- f=modern/rel
- if not f.is_file() or hashlib.sha256(f.read_bytes()).hexdigest()!=h:errors.append(rel)
+ try:actual=hashlib.sha256(committed_bytes(rel)).hexdigest()
+ except subprocess.CalledProcessError:actual='missing'
+ if actual!=h:errors.append(rel)
  checked+=1
 for rel,h in lock['overlay_sha256'].items():
- f=modern/'ports/nxdk'/pathlib.Path(rel).relative_to('port')
- if not f.is_file() or hashlib.sha256(f.read_bytes()).hexdigest()!=h:errors.append(str(f))
+ integrated='ports/nxdk/'+pathlib.Path(rel).relative_to('port').as_posix()
+ data=(modern/integrated).read_bytes() if (modern/integrated).is_file() else b''
+ actual=hashlib.sha256(data).hexdigest()
+ if actual!=h:errors.append(integrated)
  checked+=1
 for link in lock['library_submodules']:
  line=subprocess.check_output(['git','-C',str(modern),'ls-tree','HEAD',link['path']],text=True)
