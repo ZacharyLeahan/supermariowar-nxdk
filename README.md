@@ -41,12 +41,11 @@ SDL3 is outside the current port scope.
 
 ## Prepare, build and run locally
 
-Prerequisites: Git, Python 3, GNU make, clang/LLVM including lld/llvm-ar, CMake,
-bison and flex, plus nxdk's host-tool prerequisites. The original tested host
-was macOS arm64 with Homebrew LLVM 23.1.2. Other hosts are not qualified here.
-Use an external workspace with no spaces; the scripts refuse to overwrite an
-existing directory. Library/toolchain initialization can download substantial
-source code. Nothing is pushed by these commands.
+The novice launchers below install or download the open-source build prerequisites
+and create the complete local Xbox folder. Advanced/manual builds need Git,
+Python 3, GNU make, clang/LLVM including lld/llvm-ar, CMake, bison and flex,
+plus nxdk's host prerequisites. The original reproducible-build host was macOS
+arm64 with Homebrew LLVM 23.1.2. Nothing is pushed by these commands.
 
 ```sh
 # From this port-kit checkout; gets code/libraries but no game-data submodule.
@@ -73,9 +72,22 @@ The build does not create an uploadable release or automatically deploy anything
 
 ### One-command local Xbox folder
 
-For the easiest playable build, start with your own separate upstream checkout
-at the pinned revision and initialize its data submodule. Then run the bundled
-front end from Linux or WSL (keep the workspace on the Linux filesystem):
+Download and extract this release, then use the launcher for your computer:
+
+- **Windows 10/11:** double-click `Build Super Mario War.cmd`. It downloads a
+  pinned, SHA-256-verified XboxDev MSYS2/MinGW toolchain and builds natively;
+  WSL and Docker are not used. The first run downloads roughly 489 MiB plus
+  source dependencies.
+- **macOS:** double-click `Build Super Mario War.command`. Homebrew is the only
+  first-time prerequisite; the launcher installs/checks the required packages.
+
+Both launchers automatically download the exact locked game source and exact
+locked data commit into an external temporary workspace, build `default.xbe`,
+and create `SuperMarioWar-Xbox` on the desktop. The repository and its release
+remain source-only: the downloaded game data and assembled Xbox folder never
+enter Git or a release asset.
+
+Advanced users may instead supply an existing checkout:
 
 ```sh
 git clone https://github.com/mmatyas/supermariowar.git ~/supermariowar
@@ -84,12 +96,13 @@ git -C ~/supermariowar submodule update --init -- data
 python3 build-xbox.py ~/supermariowar /tmp/smw-xbox-play
 ```
 
-The result is `/tmp/smw-xbox-play/SuperMarioWar`, ready to copy to a writable
-folder on a homebrew Xbox HDD. The script validates the exact source and data
-revisions, never modifies the supplied checkout, and omits the optional Contest
-worlds whose filenames are incompatible with FATX. The assembled folder remains
-local and must not be redistributed. This public repository and its source
-archives contain no game data, executable, or disc image.
+The result is ready to copy to a writable folder on a homebrew Xbox HDD. Every
+path validates game commit `c7056790ccb485b7309137251167b75fed1482e4` and data
+commit `1139d89ef7e38368536317afd7db54cea2488d5b`; moving branches are never used.
+The script never modifies a supplied checkout and omits optional Contest worlds
+whose filenames are incompatible with FATX. The assembled folder remains local
+and must not be redistributed. This public repository and its source archives
+contain no game data, executable, or disc image.
 
 To run the game, obtain matching assets separately for local use. Either start
 with a different fresh workspace and explicitly request them:

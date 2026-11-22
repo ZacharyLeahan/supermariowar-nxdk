@@ -14,6 +14,8 @@ spec = importlib.util.spec_from_file_location("build_xbox", root / "build-xbox.p
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 lock = json.loads((root / "upstream-lock.json").read_text())
+assert lock["data"]["revision"] == "1139d89ef7e38368536317afd7db54cea2488d5b"
+assert lock["host_toolchains"]["windows_msys2"]["sha256"] == "af0c141751e4320d10708196697095923161167cad5b306be085d0ebd6dd1054"
 
 
 with tempfile.TemporaryDirectory(prefix="smw-build-xbox-test-") as tmp:

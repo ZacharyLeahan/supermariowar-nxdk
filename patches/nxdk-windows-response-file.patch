@@ -1,0 +1,91 @@
+diff --git a/bin/nxdk-lib b/bin/nxdk-lib
+index d979103..8ca3994 100755
+--- a/bin/nxdk-lib
++++ b/bin/nxdk-lib
+@@ -4,5 +4,32 @@
+ 
+ # SPDX-FileCopyrightText: 2021 Stefan Schmidt
+ 
+-llvm-lib \
+-    "$@"
++# MSYS can pass a large argv to this shell script, but launching the native
++# Windows llvm-lib.exe fails at the much smaller Windows command-line limit.
++# Use a response file on MSYS/MinGW and translate POSIX paths because arguments
++# read by llvm-lib are not processed by MSYS's normal argv path conversion.
++if command -v cygpath >/dev/null 2>&1; then
++    response=$(mktemp "${TMPDIR:-/tmp}/nxdk-lib.XXXXXX.rsp") || exit 1
++    trap 'rm -f "$response"' EXIT HUP INT TERM
++    for argument do
++        case "$argument" in
++            -out:/*|/OUT:/*)
++                path=${argument#*:}
++                printf '"/OUT:%s"\n' "$(cygpath -m "$path")" >> "$response"
++                ;;
++            /*)
++                if [ -e "$argument" ]; then
++                    printf '"%s"\n' "$(cygpath -m "$argument")" >> "$response"
++                else
++                    printf '"%s"\n' "$argument" >> "$response"
++                fi
++                ;;
++            *)
++                printf '"%s"\n' "$argument" >> "$response"
++                ;;
++        esac
++    done
++    llvm-lib "@$(cygpath -m "$response")"
++else
++    llvm-lib "$@"
++fi
+diff --git a/bin/nxdk-link b/bin/nxdk-link
+index 118426c..0974924 100755
+--- a/bin/nxdk-link
++++ b/bin/nxdk-link
+@@ -7,7 +7,40 @@
+-lld -flavor link \
+-    -subsystem:windows \
+-    -fixed \
+-    -base:0x00010000 \
+-    -stack:65536 \
+-    -merge:.edata=.edataxb \
+-    "$@"
++# Feed the native Windows linker a response file to avoid its command-line
++# length limit. Translate paths because response-file contents bypass MSYS's
++# normal argv conversion.
++if command -v cygpath >/dev/null 2>&1; then
++    response=$(mktemp "${TMPDIR:-/tmp}/nxdk-link.XXXXXX.rsp") || exit 1
++    trap 'rm -f "$response"' EXIT HUP INT TERM
++    for argument do
++        case "$argument" in
++            -out:/*)
++                path=${argument#*:}
++                printf '"-out:%s"\n' "$(cygpath -m "$path")" >> "$response"
++                ;;
++            /*)
++                if [ -e "$argument" ]; then
++                    printf '"%s"\n' "$(cygpath -m "$argument")" >> "$response"
++                else
++                    printf '"%s"\n' "$argument" >> "$response"
++                fi
++                ;;
++            *)
++                printf '"%s"\n' "$argument" >> "$response"
++                ;;
++        esac
++    done
++    lld -flavor link \
++        -subsystem:windows \
++        -fixed \
++        -base:0x00010000 \
++        -stack:65536 \
++        -merge:.edata=.edataxb \
++        "@$(cygpath -m "$response")"
++else
++    lld -flavor link \
++        -subsystem:windows \
++        -fixed \
++        -base:0x00010000 \
++        -stack:65536 \
++        -merge:.edata=.edataxb \
++        "$@"
++fi

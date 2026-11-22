@@ -17,6 +17,15 @@
     "revision": "1139d89ef7e38368536317afd7db54cea2488d5b",
     "included": false
   },
+  "host_toolchains": {
+    "windows_msys2": {
+      "release": "v260919200925",
+      "url": "https://github.com/XboxDev/nxdk-ci-environment-msys2/releases/download/v260919200925/msys64.7z",
+      "sha256": "af0c141751e4320d10708196697095923161167cad5b306be085d0ebd6dd1054",
+      "bytes": 512524436,
+      "source": "XboxDev/nxdk-ci-environment-msys2"
+    }
+  },
   "library_submodules": [
     {
       "path": "ports/nxdk/vendor/fmt",
@@ -422,7 +431,8 @@
     "nxdk-audio-ready.patch": "303a595d2b88e3afba2bf6b71a6e23390d2bc5dc52ea38dbbe238d90243b04e7",
     "nxdk-cxbe-epoch.patch": "438fc6a535c89a5a298e06167dab79f2f971f15bb73ed6fa293e94b0d4a28049",
     "sdl2-audio-close.patch": "cb4e0f8649968d3246e7457ad28c3458e06d08211f88d72dcdcb284ed6d23525",
-    "nxdk-clean-libjpeg.patch": "193cf5509e0d2d5ebeee0d1a80546aad7e72fcc3a919594e4085ad14d193d2be"
+    "nxdk-clean-libjpeg.patch": "193cf5509e0d2d5ebeee0d1a80546aad7e72fcc3a919594e4085ad14d193d2be",
+    "nxdk-windows-response-file.patch": "fffca1e00f490a856ecba24dc623cec27288ed82555e5b16420726fb298afcce"
   },
   "original_hardware_tested_xbe_sha256": "8df74f3854f99fcebcc8487bf0e042d65e161c749bd3a4ba402fe3d1afb12b19",
   "source_date_epoch": "1792148400",
