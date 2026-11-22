@@ -14,7 +14,8 @@ for rel,h in lock['overlay_sha256'].items():
  integrated='ports/nxdk/'+pathlib.Path(rel).relative_to('port').as_posix()
  data=(modern/integrated).read_bytes() if (modern/integrated).is_file() else b''
  actual=hashlib.sha256(data).hexdigest()
- if actual!=h:errors.append(integrated)
+ # Match prepare.py's handling of text files in native Windows checkouts.
+ if actual!=h and hashlib.sha256(data.replace(b'\r\n',b'\n')).hexdigest()!=h:errors.append(integrated)
  checked+=1
 for link in lock['library_submodules']:
  line=subprocess.check_output(['git','-C',str(modern),'ls-tree','HEAD',link['path']],text=True)

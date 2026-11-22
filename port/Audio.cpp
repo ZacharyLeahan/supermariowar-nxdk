@@ -88,11 +88,10 @@ void logFailedStartupDma(unsigned sample)
            r[0x174], r[0x175], r[0x176], r[0x17b]);
     const auto *r16 = reinterpret_cast<const volatile uint16_t *>(r);
     const auto *r32 = reinterpret_cast<const volatile uint32_t *>(r);
-    printf("[audio-platform-read] sample=%u reading_mmio=17c\n", sample);
-    printf("[audio-dma-registers] sample=%u global_control=%08lx global_status=%08lx platform_17c=%08lx "
+    printf("[audio-dma-registers] sample=%u global_control=%08lx global_status=%08lx "
            "analog base=%08lx remaining=%u prefetched=%u "
            "digital base=%08lx remaining=%u prefetched=%u\n", sample,
-           (unsigned long)r32[0x12c / 4], (unsigned long)r32[0x130 / 4], (unsigned long)r32[0x17c / 4],
+           (unsigned long)r32[0x12c / 4], (unsigned long)r32[0x130 / 4],
            (unsigned long)r32[0x110 / 4], r16[0x118 / 2], r[0x11a],
            (unsigned long)r32[0x170 / 4], r16[0x178 / 2], r[0x17a]);
     // These pinned HAL objects were locked by XAudioInit. Observe only; do not
@@ -505,11 +504,10 @@ static void logAudioInitState(const char *phase)
     const volatile auto *r = reinterpret_cast<const volatile uint8_t *>(0xfec00000);
     const volatile auto *r16 = reinterpret_cast<const volatile uint16_t *>(r);
     const volatile auto *r32 = reinterpret_cast<const volatile uint32_t *>(r);
-    printf("[audio-platform-read] phase=%s reading_mmio=17c\n", phase);
-    printf("[audio-init-state] phase=%s global_control=%08lx global_status=%08lx platform_17c=%08lx "
+    printf("[audio-init-state] phase=%s global_control=%08lx global_status=%08lx "
            "analog base=%08lx civ=%u lvi=%u status=%u control=%u remaining=%u "
            "digital base=%08lx civ=%u lvi=%u status=%u control=%u remaining=%u\n", phase,
-           (unsigned long)r32[0x12c / 4], (unsigned long)r32[0x130 / 4], (unsigned long)r32[0x17c / 4],
+           (unsigned long)r32[0x12c / 4], (unsigned long)r32[0x130 / 4],
            (unsigned long)r32[0x110 / 4], r[0x114], r[0x115], r[0x116], r[0x11b], r16[0x118 / 2],
            (unsigned long)r32[0x170 / 4], r[0x174], r[0x175], r[0x176], r[0x17b], r16[0x178 / 2]);
 }

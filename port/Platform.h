@@ -7,7 +7,6 @@ void nxdk_poll_recovery();
 void nxdk_guard_normal_exit();
 bool nxdk_controller_connected(int slot);
 bool nxdk_controller_button_down(int slot, int button);
-[[noreturn]] void nxdk_return_to_dashboard();
 [[noreturn]] void nxdk_restart_xbox();
 [[noreturn]] void nxdk_power_off_xbox();
 

@@ -176,7 +176,7 @@ index e11062c..99a73f8 100644
  
      // Options menu
      mOptionsMenu = std::make_unique<UI_OptionsMenu>();
-@@ -576,6 +582,27 @@ void MenuState::update()
+@@ -576,6 +582,29 @@ void MenuState::update()
          if (MENU_CODE_EXIT_APPLICATION == code) {
              Exit();
              return;
@@ -193,9 +193,11 @@ index e11062c..99a73f8 100644
 +            mExitMenu->hideConfirmation();
 +        } else if (MENU_CODE_EXIT_CONFIRM_YES == code) {
 +            const MenuCodeEnum action = mExitMenu->pendingAction();
++            if (action == MENU_CODE_EXIT_TO_DASHBOARD) {
++                Exit();
++                return;
++            }
 +            game_values.WriteConfig();
-+            if (action == MENU_CODE_EXIT_TO_DASHBOARD)
-+                nxdk_return_to_dashboard();
 +            if (action == MENU_CODE_EXIT_RESTART_XBOX)
 +                nxdk_restart_xbox();
 +            if (action == MENU_CODE_EXIT_POWER_OFF_XBOX)

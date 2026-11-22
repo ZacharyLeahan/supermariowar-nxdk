@@ -65,11 +65,6 @@ void prepareXboxTransition(const char* action) {
     Sleep(100);
 }
 }
-[[noreturn]] void nxdk_return_to_dashboard() {
-    prepareXboxTransition("return to dashboard");
-    XLaunchXBEEx(nullptr, nullptr);
-    waitForXboxTransition();
-}
 [[noreturn]] void nxdk_restart_xbox() {
     prepareXboxTransition("restart Xbox");
     XReboot();

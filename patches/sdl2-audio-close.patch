@@ -1,8 +1,38 @@
 diff --git a/src/audio/xbox/SDL_xboxaudio.c b/src/audio/xbox/SDL_xboxaudio.c
-index 5611c5d529a34f4701b4e26aa8efdc8cb88f9c3d..4bf745c73cb996f2440b57ca3ce0145304a7de74 100644
+index 5611c5d529a34f4701b4e26aa8efdc8cb88f9c3d..cedd339d6d420d376447b7a7149a4419ddf0d299 100644
 --- a/src/audio/xbox/SDL_xboxaudio.c
 +++ b/src/audio/xbox/SDL_xboxaudio.c
-@@ -124,10 +124,18 @@ XBOXAUDIO_OpenDevice(_THIS, void *handle, const char *devname, int iscapture)
+@@ -27,6 +27,7 @@
+ #include "SDL_xboxaudio.h"
+ 
+ #include "SDL_audio.h"
++#include "SDL_timer.h"
+ #include "../SDL_audio_c.h"
+ 
+ #include <xboxkrnl/xboxkrnl.h>
+@@ -43,6 +44,8 @@ xbox_audio_callback(void *pac97device, void *data)
+     /* This runs from a DPC, so it can't use the FPU without restoring it */
+ 
+     struct SDL_PrivateAudioData *audiodata = (struct SDL_PrivateAudioData *) data;
++    if (audiodata->poll_pcm)
++        return;
+     SDL_SemPost(audiodata->playsem);
+     return;
+ }
+@@ -92,6 +95,12 @@ XBOXAUDIO_OpenDevice(_THIS, void *handle, const char *devname, int iscapture)
+         return SDL_SetError("Open device failed!");
+     }
+ 
++    /* xemu's MCPX ACI implements the MMIO BAR, but neither mixer I/O BAR
++       nor S/PDIF playback. Its digital DMA cannot signal a paired completion.
++       On hardware, even an unassigned I/O BAR reads back with bit 0 set. */
++    unsigned int bars[3] = {~0u, ~0u, ~0u};
++    HalReadWritePCISpace(0, 6, 0x10, bars, sizeof(bars), FALSE);
++    _this->hidden->poll_pcm = bars[0] == 0 && bars[1] == 0 && (bars[2] & ~0xfu) == 0xfec00000;
+     XAudioInit(16, 2, xbox_audio_callback, (void *)_this->hidden);
+ 
+     /* Allocate buffers */
+@@ -124,10 +133,34 @@ XBOXAUDIO_OpenDevice(_THIS, void *handle, const char *devname, int iscapture)
  static void
  XBOXAUDIO_WaitDevice(_THIS)
  {
@@ -10,6 +40,22 @@ index 5611c5d529a34f4701b4e26aa8efdc8cb88f9c3d..4bf745c73cb996f2440b57ca3ce01453
 -    SDL_SemWait(_this->hidden->playsem);
 -
 -    return;
++    if (_this->hidden->poll_pcm) {
++        volatile Uint8 *regs = (volatile Uint8 *)0xfec00000;
++        const Uint8 expected = _this->hidden->next_completion;
++        while (!SDL_AtomicGet(&_this->shutdown)) {
++            // A single 32-bit read snapshots CIV, LVI and status together.
++            Uint32 position = *(volatile Uint32 *)(regs + 0x114);
++            Uint8 end = ((position & 31) + (((position >> 16) & 3) == 3)) & 31;
++            Uint8 completed = (end - expected) & 31;
++            if (completed && completed <= BUFFER_COUNT) {
++                _this->hidden->next_completion = (expected + 1) & 31;
++                return;
++            }
++            SDL_Delay(1);
++        }
++        return;
++    }
 +    /* Port experiment: a missing DMA notification must not prevent shutdown.
 +       A timeout is not a completion; keep waiting unless closing the device. */
 +    for (;;) {
@@ -25,3 +71,16 @@ index 5611c5d529a34f4701b4e26aa8efdc8cb88f9c3d..4bf745c73cb996f2440b57ca3ce01453
  }
  
  static Uint8 *
+diff --git a/src/audio/xbox/SDL_xboxaudio.h b/src/audio/xbox/SDL_xboxaudio.h
+index 031446cf830d91ad75271bda59bd98b0e18aa982..1facd3f379afb3562563ed57f7d4ce82325a6d49 100644
+--- a/src/audio/xbox/SDL_xboxaudio.h
++++ b/src/audio/xbox/SDL_xboxaudio.h
+@@ -37,6 +37,8 @@ typedef struct SDL_PrivateAudioData {
+     void* buffers[BUFFER_COUNT];
+     int next_buffer;
+     SDL_sem *playsem;
++    SDL_bool poll_pcm;
++    Uint8 next_completion;
+ } SDL_PrivateAudioData;
+ 
+ #endif /* SDL_xboxaudio_h_ */
