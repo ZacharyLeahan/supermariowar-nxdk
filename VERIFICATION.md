@@ -80,3 +80,25 @@ round followed by normal exit. It is installed as the current private test
 These are development-workspace builds and native tests with separate hashes.
 The updated recipe is source-reconstructed and hash-checked; the earlier clean
 recipe build above does not qualify this updated recipe as a new clean build.
+
+## Native Windows builder, 2026-11-22
+
+The source-only kit at recipe revision `242452c2022af0d1466916fb43b869a77ad55a34`
+completed a clean, end-to-end build on Windows using the pinned XboxDev
+MSYS2/MinGW toolchain. The test used neither WSL nor Docker. Python and the
+other Unix-style build utilities were installed only inside the isolated
+toolchain directory by the bootstrap script.
+
+The build consumed game source revision
+`c7056790ccb485b7309137251167b75fed1482e4` and data revision
+`1139d89ef7e38368536317afd7db54cea2488d5b`, produced a 3,469,312-byte XBE
+with SHA-256
+`f5e05e35f4a6b0ba0cd3b874be3530d0a8c85fb2bedb8d0a7a8d7d4b3a946922`,
+and staged 1,486 data files. The generated file began with the `XBEH` magic;
+the intentionally excluded Contest content was absent.
+
+The assembled folder and build workspace remained outside this repository.
+This verifies native compilation and asset-safe assembly, not gameplay: this
+exact XBE has not yet been run in an emulator or on original Xbox hardware.
+Machine-readable details are in
+[native-windows-verification.json](native-windows-verification.json).

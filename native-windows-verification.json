@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-22",
+  "host": "Windows 11",
+  "execution_environment": "Native XboxDev MSYS2/MinGW; no WSL or Docker",
+  "recipe_revision": "242452c2022af0d1466916fb43b869a77ad55a34",
+  "recipe_status": "",
+  "toolchain": {
+    "release": "v260919200925",
+    "archive_sha256": "af0c141751e4320d10708196697095923161167cad5b306be085d0ebd6dd1054",
+    "compiler": "clang version 22.1.8 (MSYS2 MINGW-packages d34feaaa1d0aff624c870910b6f2589aa40d20de)"
+  },
+  "inputs": {
+    "download_source_revision": "c7056790ccb485b7309137251167b75fed1482e4",
+    "download_data_revision": "1139d89ef7e38368536317afd7db54cea2488d5b",
+    "reconstructed_source_revision": "65d4c5a0b062ad44d99c210bb89fbd816facddcd",
+    "nxdk_revision": "14d5ee97e73347c973f1f57b68b79ec08c9e77f2",
+    "sdl2_revision": "2554902f7bbf469449216ee25f88016421271cd8"
+  },
+  "result": {
+    "clean_build": true,
+    "exit_code": 0,
+    "xbe_magic": "XBEH",
+    "xbe_sha256": "f5e05e35f4a6b0ba0cd3b874be3530d0a8c85fb2bedb8d0a7a8d7d4b3a946922",
+    "xbe_bytes": 3469312,
+    "staged_data_files": 1486,
+    "contest_content_present": false
+  },
+  "emulator_tested": false,
+  "hardware_tested": false,
+  "artifacts_or_game_data_committed": false
+}
