@@ -1,164 +1,58 @@
-# Super Mario War — nxdk
+# Super Mario War 2.0 for the original Xbox
 
-A lean, source-only port kit for the original Xbox using the open-source nxdk.
-This independent repository contains Xbox platform code, text patches, build
-recipes and test findings. It is not a GitHub fork or a complete copy of the
-game. No game sprites, audio, maps, screenshots, data archives, XBEs or release
-packages are included. No proprietary Microsoft XDK is required.
+Remember **Super Mario War 1.7 April Fools Edition** or **1.8 Beta 1** on Xbox? This port brings the later 2.0 game back to the original console. Upstream fixes include correctly sorted scores and a fix for foreground tiles carrying over from the previous map. On Xbox you can see which controllers are plugged in, reconnect a pad mid-match, and return to your dashboard from the familiar **Exit** button. [Score fix](https://github.com/mmatyas/supermariowar/commit/c7056790ccb485b7309137251167b75fed1482e4) · [Map fix](https://github.com/mmatyas/supermariowar/commit/5693918)
 
-The full upstream game and its history are obtained separately into an external
-workspace. That upstream history contains assets; it is never imported into this
-repository. Game data is a separate, optional local download. Referencing that
-download does not grant rights to the assets.
+![Original Xbox main menu with a Controller S icon under each of the four connected player slots](https://gist.githubusercontent.com/ZacharyLeahan/9f19b59192bac0b21cd025a845fb8d25/raw/a6f024b6d1dbdee4b10249a87499551f1649fdc2/main-menu.jpg)
 
-## What connects this kit to upstream
+## Get it on your Xbox
 
-- Game: [mmatyas/supermariowar](https://github.com/mmatyas/supermariowar), pinned
-  SDL2 base `c7056790ccb485b7309137251167b75fed1482e4`.
-- SDK: [XboxDev/nxdk](https://github.com/XboxDev/nxdk), pinned base
-  `14d5ee97e73347c973f1f57b68b79ec08c9e77f2`, plus the included SDK/SDL patches.
-- `port/` is copied into upstream's `ports/nxdk/` directory.
-- `patches/game.patch` supplies integration changes to the game and source-library
-  submodule pointers. It contains no game media or binary patch payloads.
-- `upstream-lock.json` records exact dependency revisions and SHA-256 hashes of
-  every overlay file and applied patch. The scripts reject mismatched inputs.
+1. **[Download the Xbox builder ZIP](https://github.com/ZacharyLeahan/supermariowar-nxdk/archive/f6edfe3610e0bfb54e339e814f55657be2a3d2e5.zip)** and extract it on your computer. This snapshot includes the audio fixes and Controller S icons.
+2. **Windows 10 or 11:** Double-click **Build Super Mario War.cmd**. The first run downloads a verified native toolchain (about 489 MiB) plus the game sources and data. The script keeps the tools in `%LOCALAPPDATA%\SuperMarioWarXbox` for later builds. You can run it directly from Windows without setting up WSL or Python yourself.
 
-## SDL2 pin policy
+   **Mac:** Install [Homebrew](https://brew.sh/) if you need it, then double-click **Build Super Mario War.command**. The launcher uses Homebrew to install the build tools.
+3. When the build finishes, look on your desktop for **SuperMarioWar-Xbox**. Copy the **whole folder** to a writable games directory on your homebrew Xbox hard drive, for example `F:\Games\SuperMarioWar-Xbox\`. Keep `default.xbe` and the `data` folder together.
+4. Launch **Super Mario War** from your dashboard, or open **default.xbe** in its file manager.
 
-The game base is the **last commit before upstream converted to SDL3**:
-`c7056790ccb485b7309137251167b75fed1482e4`. It is the direct parent of
-`cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397` ("Port to SDL3"). We pin the
-immutable commit, not `master`, a release archive or the moving `sdl2` branch.
-The latter currently points to an older SDL2 commit, not this final baseline.
-Future maintenance on a separate SDL2 branch does not silently change our base.
+The ZIP contains the builder and port source. It fetches a specific revision of the game and its data on your computer. Keep the assembled Xbox folder for local play. [Source and asset notices](NOTICE.md)
 
-The SDK library is pinned independently: nxdk's Xbox **SDL2 2.0.9** fork at
-`2554902f7bbf469449216ee25f88016421271cd8`, plus the shutdown patch in this kit.
-This is not a claim that 2.0.9 is the latest desktop SDL2 release. Replacing it
-with a newer desktop release requires porting and testing the Xbox backend.
-Upgrading either pin requires explicit patch/reconstruction and runtime review;
-SDL3 is outside the current port scope.
+## How it plays
 
-## Prepare, build and run locally
+Stomp your opponents, grab power-ups, and try to be the last player standing in **Classic**. Up to four players can share one Xbox, with bots to fill out a match. For a change of pace, steal the other team’s flag in **Capture the Flag** or fight over one patch of ground in **King of the Hill**. This Xbox port supports local multiplayer.
 
-The novice launchers below install or download the open-source build prerequisites
-and create the complete local Xbox folder. Advanced/manual builds need Git,
-Python 3, GNU make, clang/LLVM including lld/llvm-ar, CMake, bison and flex,
-plus nxdk's host prerequisites. The original reproducible-build host was macOS
-arm64 with Homebrew LLVM 23.1.2. Nothing is pushed by these commands.
+![A two-player Classic match on original Xbox hardware](https://gist.githubusercontent.com/ZacharyLeahan/9f19b59192bac0b21cd025a845fb8d25/raw/d4f18535c8c5cb3f88db83fa339ff7047e11c3af/classic-match.jpg)
+
+## Controllers and the Exit menu
+
+**Check your pads.** The portraits tell you who will play (human, bot, or empty). The small icon underneath tells you what’s plugged in. A Controller S means the pad is connected. A gray dash means the port is empty.
+
+**Recover a match.** If a human player’s pad comes loose, the game pauses and shows which port needs it. Plug it back into that port and press **A** or **Start**. If several pads came loose, each player confirms before play resumes.
+
+**Finish a session.** Choose **Exit** on the main menu to return to the dashboard, restart the Xbox, or power it off. Each action asks for confirmation.
+
+![Xbox Exit menu showing Return to Dashboard, Restart Xbox, Power Off Xbox, and Cancel](https://gist.githubusercontent.com/ZacharyLeahan/9f19b59192bac0b21cd025a845fb8d25/raw/50b00e2a1fce0625e9a2cb776084adc615fd18b2/exit-menu.jpg)
+
+## From the April Fools Edition to 2.0
+
+Samuele Poletto made *Mario War* for DOS in 2002. In 2004 Florian Hufsky began the open-source rewrite that became *Super Mario War*. Xbox players got builds including **1.7 April Fools Edition** and **1.8 Beta 1**. The Xbox archive lists Beta 1 in 2008. The original project later reached **1.8 Beta 2**. [Xbox release history](https://www.gamebrew.org/wiki/Super_Mario_War_Xbox) · [Original project archive](https://github.com/bjorn/super-mario-war)
+
+mmatyas continued development, bringing bug fixes, audio improvements, and support for newer platforms to the game. This Xbox port builds from the **October 4, 2026** revision of that 2.0 code. It was the last commit before upstream switched to SDL3, making it a fit for the SDL2 library in the open-source Xbox development kit, **nxdk**. [Upstream history and changes since 1.8](https://github.com/mmatyas/supermariowar/tree/c7056790ccb485b7309137251167b75fed1482e4#history) · [SDL3 transition](https://github.com/mmatyas/supermariowar/commit/cf1f6a5fe9e13565b4db2d37ab57d06b4f7d4397) · [XboxDev/nxdk](https://github.com/XboxDev/nxdk)
+
+## Tested on Xbox
+
+The screenshots above come from an original Xbox. Hardware checks covered a complete Classic match with music and effects, menu audio after a power cycle and dashboard relaunches, and the Controller S indicators at Xbox resolution. The audio fix also produced the startup sound in xemu. The physical test console has 128 MB of RAM. Testing on a stock 64 MB console is still open. [Hardware test notes](port/TESTING.md) · [Build verification](VERIFICATION.md)
+
+<details>
+<summary>Developer build and port details</summary>
+
+For a manual build with nxdk’s host prerequisites installed, use a fresh workspace outside this repository:
 
 ```sh
-# From this port-kit checkout; gets code/libraries but no game-data submodule.
 python3 tools/prepare.py --workspace /tmp/smw-nxdk-dev
 python3 tools/build.py --workspace /tmp/smw-nxdk-dev --clean
 ```
 
-The output is `/tmp/smw-nxdk-dev/repos/modern/ports/nxdk/bin/default.xbe`.
-Build logs and `KIT-BUILD-INFO.json` provenance stay in that external workspace.
-The lock also pins the embedded display revision/date and the complete make
-configuration, including the 45-second runtime watchdog used by candidate
-`84a132cd...`. The display revision identifies the runtime source; reconstructed
-Git commits are synthetic and are recorded separately in the build manifest.
-The corrected independent reconstruction and original clean development build
-now produce identical XBE SHA-256
-`4addeb4e4e32def7a77125edf1815d3c1065835239fd431a1afca39f844803a9`
-(3,473,408 bytes) on the same macOS/LLVM host. The recipe fixes nxdk's stale
-JPEG-object clean rule and maps compiler macro paths to the established
-`/tmp/smw-xbe-workspace` prefix with forward slashes. This establishes same-host
-reconstruction reproducibility, not cross-host reproducibility or full hardware
-acceptance. See [exact-build evidence](port/test-results/clean-reconstruction-exact-20261106.json).
+The XBE is written to `/tmp/smw-nxdk-dev/repos/modern/ports/nxdk/bin/default.xbe`. Add `--with-data` to the prepare command for a local play build, or use the desktop launcher above to assemble the Xbox folder automatically. The builder omits optional Contest worlds with filenames that FATX cannot store.
 
-The build does not create an uploadable release or automatically deploy anything.
+The lockfile records exact game, data, SDK and SDL revisions and the hashes of the port files and patches. Keep upstream checkouts, game assets and captures outside this repository. Run `python3 tools/audit.py` after committing changes to check reachable Git history. [Dependency lock](upstream-lock.json) · [Port notes](port/README.md) · [Notices and credits](NOTICE.md)
 
-### One-command local Xbox folder
-
-Download and extract this release, then use the launcher for your computer:
-
-- **Windows 10/11:** double-click `Build Super Mario War.cmd`. It downloads a
-  pinned, SHA-256-verified XboxDev MSYS2/MinGW toolchain and builds natively;
-  WSL and Docker are not used. The first run downloads roughly 489 MiB plus
-  source dependencies.
-- **macOS:** double-click `Build Super Mario War.command`. Homebrew is the only
-  first-time prerequisite; the launcher installs/checks the required packages.
-
-Both launchers automatically download the exact locked game source and exact
-locked data commit into an external temporary workspace, build `default.xbe`,
-and create `SuperMarioWar-Xbox` on the desktop. The repository and its release
-remain source-only: the downloaded game data and assembled Xbox folder never
-enter Git or a release asset.
-
-Advanced users may instead supply an existing checkout:
-
-```sh
-git clone https://github.com/mmatyas/supermariowar.git ~/supermariowar
-git -C ~/supermariowar checkout --detach c7056790ccb485b7309137251167b75fed1482e4
-git -C ~/supermariowar submodule update --init -- data
-python3 build-xbox.py ~/supermariowar /tmp/smw-xbox-play
-```
-
-The result is ready to copy to a writable folder on a homebrew Xbox HDD. Every
-path validates game commit `c7056790ccb485b7309137251167b75fed1482e4` and data
-commit `1139d89ef7e38368536317afd7db54cea2488d5b`; moving branches are never used.
-The script never modifies a supplied checkout and omits optional Contest worlds
-whose filenames are incompatible with FATX. The assembled folder remains local
-and must not be redistributed. This public repository and its source archives
-contain no game data, executable, or disc image.
-
-To run the game, obtain matching assets separately for local use. Either start
-with a different fresh workspace and explicitly request them:
-
-```sh
-python3 tools/prepare.py --workspace /tmp/smw-nxdk-play --with-data
-python3 tools/build.py --workspace /tmp/smw-nxdk-play --clean
-```
-
-Or initialize data in an already prepared code workspace:
-
-```sh
-git -C /tmp/smw-nxdk-dev/repos/modern submodule update --init -- data
-```
-
-The pinned data revision is `1139d89ef7e38368536317afd7db54cea2488d5b` from
-`mmatyas/supermariowar-data`. Keep its directory layout. Locally assemble a
-writable Xbox folder containing `default.xbe` and `data/` beside each other.
-The port reads `D:/data/`. See [port notes](port/README.md) for FATX limitations
-and hardware procedures. Do not upload that assembled game folder here.
-
-The kit targets SDL2, disabled networking, stock-64-MB memory constraints and up
-to four local players. A full clone may retain upstream's desktop packaging;
-this kit does not build or distribute desktop packages or icons.
-
-## Testing and limits
-
-[Testing approach and original hardware results](port/TESTING.md) describe the
-previous exact-XBE qualification: complete Classic and ten-minute local matches,
-saves/recovery checks, and captured music/effects. The test console was a 128 MB
-Stellar Xbox with a virtual pad and CPU players. Physical stock64 and four
-physical pads remain unqualified. The audio capture lost 0.825 seconds in its
-transport; subjective listening and gapless-loop acceptance remain open.
-
-[Kit verification](VERIFICATION.md) distinguishes reconstruction/build checks
-performed on this kit from those original hardware results. A freshly built
-XBE has new provenance and does not inherit another hash's hardware acceptance.
-This kit itself does not launch hardware or publish files.
-
-## Keep the repository lean
-
-Run `python3 tools/audit.py` after committing any proposed update. It scans every
-reachable blob for media/archive extensions, nontext content and common embedded
-media markers. It also checks patch target paths. This is a technical guard
-alongside review, not legal clearance or proof against all possible encodings.
-Ignore rules are additional protection, not a way to hide tracked assets.
-Never merge upstream's history into this repository or use `git push --mirror`.
-
-To develop, edit the reconstructed upstream checkout. Export reviewed source
-changes as text patches or update `port/`, update lockfile hashes, re-audit and
-re-run reconstruction checks. Avoid `git diff --binary`. Do not commit local
-checkouts, recordings, builds, screenshots or asset-containing archives.
-
-## Attribution and notices
-
-Super Mario War and its original authors are credited upstream and in preserved
-source headers. The work here derives from that game and adds nxdk platform
-support; it does not claim ownership of the game or Nintendo assets. Existing
-copyright/license notices in code remain intact. See [NOTICE.md](NOTICE.md).
+</details>
